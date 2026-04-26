@@ -4,402 +4,402 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JAMBO+ | Zanzibar Personal Shopping</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
-:root {
-  --primary:#0077b6; --pd:#025a8a; --pl:#e0f4ff;
-  --accent:#ffb703; --ad:#e0a100;
-  --bg:#f0f6ff; --white:#ffffff;
-  --dark:#1a2535; --text:#2c3e50; --grey:#64748b; --light:#e2e8f0;
-  --red:#e63946; --green:#22c55e; --yellow:#f59e0b; --blue:#3b82f6;
+
+:root{
+  --pr:#0077b6;--pd:#025a8a;--pl:#e0f4ff;
+  --ac:#ffb703;--ad:#e0a100;
+  --bg:#f0f6ff;--wh:#fff;
+  --dk:#1a2535;--tx:#2c3e50;--gr:#64748b;--lt:#e2e8f0;
+  --rd:#e63946;--gn:#22c55e;--yw:#f59e0b;--bl:#3b82f6;
   --wa:#25D366;
-  --shad:0 8px 32px rgba(0,119,182,0.12);
-  --shsm:0 2px 12px rgba(0,0,0,0.06);
-  --r:14px; --rs:8px;
-  --sw:256px;
+  --sh:0 8px 32px rgba(0,119,182,.12);
+  --ss:0 2px 12px rgba(0,0,0,.06);
+  --r:14px;--sw:256px;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:"DM Sans",sans-serif;background:var(--white);color:var(--text);line-height:1.6;overflow-x:hidden;}
-.wrap{max-width:1200px;margin:0 auto;padding:0 20px;}
+body{font-family:"DM Sans",sans-serif;background:#fff;color:var(--tx);line-height:1.6;overflow-x:hidden;}
+.w{max-width:1200px;margin:0 auto;padding:0 20px;}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 26px;border-radius:50px;font-weight:600;cursor:pointer;transition:all .22s;border:none;font-size:.94rem;font-family:inherit;text-decoration:none;}
-.btn-p{background:var(--primary);color:#fff;} .btn-p:hover{background:var(--pd);transform:translateY(-1px);}
-.btn-a{background:var(--accent);color:var(--dark);} .btn-a:hover{background:var(--ad);}
-.btn-w{background:var(--wa);color:#fff;} .btn-w:hover{background:#1ebc57;}
-.btn-d{background:var(--red);color:#fff;} .btn-d:hover{opacity:.88;}
-.btn-g{background:transparent;border:2px solid var(--light);color:var(--grey);} .btn-g:hover{border-color:var(--primary);color:var(--primary);}
-.btn-sm{padding:7px 15px;font-size:.82rem;}
+.bp{background:var(--pr);color:#fff;}.bp:hover{background:var(--pd);transform:translateY(-1px);}
+.ba{background:var(--ac);color:var(--dk);}.ba:hover{background:var(--ad);}
+.bw{background:var(--wa);color:#fff;}.bw:hover{background:#1ebc57;}
+.bd{background:var(--rd);color:#fff;}.bd:hover{opacity:.88;}
+.bg{background:transparent;border:2px solid var(--lt);color:var(--gr);}.bg:hover{border-color:var(--pr);color:var(--pr);}
+.bsm{padding:7px 15px;font-size:.82rem;}
 .gone{display:none!important;}
 
-/* HEADER */
-header{background:rgba(255,255,255,.97);backdrop-filter:blur(12px);position:sticky;top:0;z-index:900;border-bottom:1px solid var(--light);padding:14px 0;}
-nav{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;}
-.logo{font-family:"Poppins",sans-serif;font-size:1.7rem;font-weight:800;color:var(--primary);display:flex;align-items:center;gap:8px;}
-.logo span{color:var(--accent);}
-.nlinks{display:flex;gap:22px;list-style:none;align-items:center;}
-.nlinks a{color:var(--text);text-decoration:none;font-weight:500;font-size:.91rem;transition:color .2s;}
-.nlinks a:hover{color:var(--primary);}
-.lsel{padding:6px 11px;border-radius:20px;border:1.5px solid var(--primary);color:var(--primary);cursor:pointer;outline:none;font-family:inherit;font-size:.87rem;}
+header{background:rgba(255,255,255,.97);backdrop-filter:blur(12px);position:sticky;top:0;z-index:900;border-bottom:1px solid var(--lt);padding:14px 0;}
+.hbar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;}
+.logo{font-family:"Poppins",sans-serif;font-size:1.7rem;font-weight:800;color:var(--pr);display:flex;align-items:center;gap:8px;}
+.logo span{color:var(--ac);}
+.nl{display:flex;gap:22px;list-style:none;align-items:center;}
+.nl a{color:var(--tx);text-decoration:none;font-weight:500;font-size:.91rem;transition:color .2s;}
+.nl a:hover{color:var(--pr);}
+.lsel{padding:6px 11px;border-radius:20px;border:1.5px solid var(--pr);color:var(--pr);cursor:pointer;outline:none;font-family:inherit;font-size:.87rem;background:#fff;}
 
-/* HERO */
 .hero{background:linear-gradient(155deg,#e8f5ff 0%,#fff9e8 60%,#fff 100%);padding:58px 0 78px;text-align:center;}
-.hcontent{max-width:740px;margin:0 auto 38px;}
-.hero h1{font-family:"Poppins",sans-serif;font-size:2.55rem;font-weight:800;color:var(--dark);line-height:1.2;margin-bottom:12px;}
-.hero h1 em{font-style:normal;color:var(--primary);}
-.hero p{font-size:1.03rem;color:var(--grey);max-width:520px;margin:0 auto;}
+.hero h1{font-family:"Poppins",sans-serif;font-size:2.5rem;font-weight:800;color:var(--dk);line-height:1.2;margin-bottom:12px;}
+.hero h1 em{font-style:normal;color:var(--pr);}
+.hero .sub{font-size:1rem;color:var(--gr);max-width:500px;margin:0 auto;}
 
-/* FORM */
 .ocard{background:#fff;border-radius:var(--r);box-shadow:0 18px 56px rgba(0,0,0,.09);padding:38px;max-width:900px;margin:0 auto;border:1px solid #e8f0fe;}
-.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
-.fg{} 
-.fg label{display:block;margin-bottom:7px;font-weight:600;color:var(--dark);font-size:.87rem;}
-.req{color:var(--red);}
-.fc{width:100%;padding:12px 15px;border:2px solid var(--light);border-radius:9px;font-family:inherit;font-size:.94rem;transition:.22s;outline:none;background:#fafcff;color:var(--text);}
-.fc:focus{border-color:var(--primary);background:#fff;box-shadow:0 0 0 3px rgba(0,119,182,.07);}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+.fi{} 
+.fi label{display:block;margin-bottom:7px;font-weight:600;color:var(--dk);font-size:.87rem;}
+.req{color:var(--rd);}
+.fc{width:100%;padding:12px 15px;border:2px solid var(--lt);border-radius:9px;font-family:inherit;font-size:.94rem;transition:.22s;outline:none;background:#fafcff;color:var(--tx);}
+.fc:focus{border-color:var(--pr);background:#fff;box-shadow:0 0 0 3px rgba(0,119,182,.07);}
 textarea.fc{resize:vertical;min-height:155px;line-height:1.6;}
 .fw{grid-column:span 2;}
-.factions{margin-top:26px;padding-top:20px;border-top:1px solid var(--light);display:flex;justify-content:flex-end;align-items:center;gap:13px;}
-.fnote{flex:1;font-size:.82rem;color:var(--grey);}
+.fact{margin-top:26px;padding-top:20px;border-top:1px solid var(--lt);display:flex;justify-content:flex-end;align-items:center;gap:13px;}
+.fn{flex:1;font-size:.82rem;color:var(--gr);}
 
 /* Photo upload */
-.pup{border:2px dashed var(--light);border-radius:10px;padding:22px;text-align:center;cursor:pointer;transition:.22s;background:#fafcff;}
-.pup:hover{border-color:var(--primary);background:var(--pl);}
-.pprev{margin-top:11px;display:none;}
-.pprev img{max-width:100%;max-height:170px;border-radius:8px;border:2px solid var(--light);}
-.rpbtn{margin-top:7px;display:inline-flex;align-items:center;gap:5px;font-size:.81rem;color:var(--red);cursor:pointer;background:none;border:none;font-family:inherit;}
+.pu-box{border:2px dashed var(--lt);border-radius:10px;padding:22px;text-align:center;cursor:pointer;transition:.22s;background:#fafcff;}
+.pu-box:hover,.pu-box.drag{border-color:var(--pr);background:var(--pl);}
+.pu-box.ok{border-color:var(--gn);background:#f0fdf4;border-style:solid;}
+.pu-success{margin-top:12px;display:none;background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:12px 16px;display:flex;align-items:center;gap:10px;}
+.pu-success img{width:60px;height:60px;object-fit:cover;border-radius:6px;border:2px solid #86efac;}
+.pu-success .pu-info{flex:1;text-align:left;}
+.pu-success .pu-info p{font-weight:600;color:#065f46;font-size:.88rem;}
+.pu-success .pu-info small{color:#4ade80;font-size:.78rem;}
+.pu-rm{background:none;border:none;color:var(--rd);cursor:pointer;font-size:.82rem;font-family:inherit;display:flex;align-items:center;gap:4px;margin-top:4px;}
+.pu-thumb-wrap{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:1;border:2px solid #86efac;background:#f0fdf4;}
+.pu-thumb-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+.pu-thumb-rm{position:absolute;top:3px;right:3px;background:rgba(0,0,0,.55);color:#fff;border:none;border-radius:50%;width:20px;height:20px;cursor:pointer;font-size:.65rem;display:flex;align-items:center;justify-content:center;transition:.2s;}
+.pu-thumb-rm:hover{background:var(--rd);}
+.pu-slot-add{border:2px dashed var(--lt);border-radius:8px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;cursor:pointer;background:#fafcff;transition:.22s;color:var(--gr);font-size:1.3rem;}
+.pu-slot-add:hover{border-color:var(--pr);color:var(--pr);background:var(--pl);}
 
-/* POLICY */
-.psec{background:#fff;padding:58px 0;border-top:1px solid var(--light);}
+.psec{background:#fff;padding:58px 0;border-top:1px solid var(--lt);}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:22px;}
-.pcard{background:#fff;padding:22px;border-radius:var(--r);box-shadow:var(--shsm);border-left:5px solid var(--primary);}
-.pcard h3{margin-bottom:13px;font-size:1.08rem;display:flex;align-items:center;gap:9px;font-family:"Poppins",sans-serif;}
-.pcard ul{list-style:none;}
-.pcard li{margin-bottom:8px;font-size:.91rem;color:var(--grey);display:flex;align-items:start;gap:8px;}
-.pcard li i{color:var(--accent);margin-top:4px;flex-shrink:0;}
-.pcard.dng{border-left-color:var(--red);}
-.pcard.dng li i{color:var(--red);}
+.pc{background:#fff;padding:22px;border-radius:var(--r);box-shadow:var(--ss);border-left:5px solid var(--pr);}
+.pc h3{margin-bottom:13px;font-size:1.08rem;display:flex;align-items:center;gap:9px;font-family:"Poppins",sans-serif;}
+.pc ul{list-style:none;}
+.pc li{margin-bottom:8px;font-size:.91rem;color:var(--gr);display:flex;align-items:start;gap:8px;}
+.pc li i{color:var(--ac);margin-top:4px;flex-shrink:0;}
+.pc.dn{border-left-color:var(--rd);}
+.pc.dn li i{color:var(--rd);}
 
-/* TRACKER */
 .tsec{background:var(--bg);padding:58px 0;}
-.tbox{background:#fff;padding:38px;border-radius:var(--r);box-shadow:var(--shad);max-width:560px;margin:0 auto;text-align:center;}
+.tbox{background:#fff;padding:38px;border-radius:var(--r);box-shadow:var(--sh);max-width:560px;margin:0 auto;text-align:center;}
 .tres{margin-top:18px;padding:16px;border-radius:10px;font-weight:600;display:none;}
 
-/* REVIEWS */
-.rsec{background:#fff;padding:76px 0;}
+.revsec{background:#fff;padding:76px 0;}
 .rcont{display:grid;grid-template-columns:1fr 2fr;gap:34px;align-items:start;}
-.rform{background:#fff;padding:26px;border-radius:var(--r);box-shadow:var(--shad);border:1px solid var(--light);}
+.rfc{background:#fff;padding:26px;border-radius:var(--r);box-shadow:var(--sh);border:1px solid var(--lt);}
 .stars{display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:4px;}
 .stars input{display:none;}
 .stars label{cursor:pointer;color:#ddd;font-size:1.5rem;transition:.18s;}
-.stars input:checked ~ label,.stars label:hover,.stars label:hover ~ label{color:var(--accent);}
-.rlist{display:grid;gap:14px;}
-.ritem{background:var(--bg);padding:18px;border-radius:var(--r);border-left:4px solid var(--accent);}
-.rhdr{display:flex;justify-content:space-between;margin-bottom:7px;}
-.rauth{font-weight:700;}
-.rdate{font-size:.77rem;color:var(--grey);}
-.rstars{color:var(--accent);margin-bottom:7px;font-size:.88rem;}
+.stars input:checked ~ label,.stars label:hover,.stars label:hover ~ label{color:var(--ac);}
+.rl{display:grid;gap:14px;}
+.ri{background:var(--bg);padding:18px;border-radius:var(--r);border-left:4px solid var(--ac);}
+.rh{display:flex;justify-content:space-between;margin-bottom:7px;}
+.ra{font-weight:700;}
+.rd2{font-size:.77rem;color:var(--gr);}
+.rs{color:var(--ac);margin-bottom:7px;font-size:.88rem;}
 .stitle{text-align:center;margin-bottom:38px;}
-.stitle h2{font-family:"Poppins",sans-serif;font-size:2rem;color:var(--primary);margin-bottom:7px;font-weight:700;}
-.stitle p{color:var(--grey);max-width:540px;margin:0 auto;}
+.stitle h2{font-family:"Poppins",sans-serif;font-size:2rem;color:var(--pr);margin-bottom:7px;font-weight:700;}
+.stitle p{color:var(--gr);max-width:540px;margin:0 auto;}
 
-/* MODAL */
-.mover{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;justify-content:center;align-items:center;z-index:3000;opacity:0;pointer-events:none;transition:opacity .26s;}
-.mover.on{opacity:1;pointer-events:all;}
-.mbox{background:#fff;padding:36px;border-radius:var(--r);width:90%;max-width:500px;text-align:center;box-shadow:0 22px 65px rgba(0,0,0,.24);transform:translateY(16px);transition:transform .26s;}
-.mover.on .mbox{transform:translateY(0);}
-.mbox-lg{max-width:680px;}
-.mica{font-size:2.7rem;color:var(--green);margin-bottom:13px;}
+.mo{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;justify-content:center;align-items:center;z-index:3000;opacity:0;pointer-events:none;transition:opacity .26s;}
+.mo.on{opacity:1;pointer-events:all;}
+.mb{background:#fff;padding:36px;border-radius:var(--r);width:90%;max-width:500px;text-align:center;box-shadow:0 22px 65px rgba(0,0,0,.24);transform:translateY(16px);transition:transform .26s;}
+.mo.on .mb{transform:translateY(0);}
+.mb-lg{max-width:680px;}
+.mi{font-size:2.7rem;color:var(--gn);margin-bottom:13px;}
 
-/* FOOTER */
-footer{background:var(--dark);color:#fff;padding:48px 0;text-align:center;}
+footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
 .flogo{font-family:"Poppins",sans-serif;font-size:1.8rem;font-weight:800;margin-bottom:5px;}
-.flogo span{color:var(--accent);}
-.fsub{opacity:.5;font-size:.87rem;margin-bottom:22px;}
-.socs{margin-bottom:16px;}
-.socs a{color:#fff;font-size:1.5rem;margin:0 10px;transition:all .22s;text-decoration:none;display:inline-block;}
-.socs a:hover{transform:translateY(-4px);}
-.socs a.wa:hover{color:var(--wa);}
-.socs a.ig:hover{color:#E1306C;}
-.socs a.fb:hover{color:#1877F2;}
-.fcon{margin-bottom:22px;}
+.flogo span{color:var(--ac);}
+.soc{margin:18px 0 14px;}
+.soc a{color:#fff;font-size:1.5rem;margin:0 10px;transition:all .22s;text-decoration:none;display:inline-block;}
+.soc a:hover{transform:translateY(-4px);}
+.soc a.wa:hover{color:var(--wa);}
+.soc a.ig:hover{color:#E1306C;}
+.soc a.fb:hover{color:#1877F2;}
 .fcon a{color:rgba(255,255,255,.7);text-decoration:none;display:inline-flex;align-items:center;gap:7px;margin:5px 13px;font-size:.89rem;transition:color .22s;}
-.fcon a:hover{color:var(--accent);}
-.fcpy{opacity:.35;font-size:.81rem;}
+.fcon a:hover{color:var(--ac);}
+.fcp{opacity:.35;font-size:.81rem;margin-top:16px;}
 
-/* ═══ DASHBOARD ═══ */
+/* DASHBOARD */
 #dash{background:#f1f5fb;min-height:100vh;display:flex;}
-
-.sbar{width:var(--sw);background:var(--dark);padding:22px 14px;position:fixed;height:100vh;overflow-y:auto;display:flex;flex-direction:column;z-index:100;}
-.slogo{font-family:"Poppins",sans-serif;color:#fff;font-size:1.25rem;font-weight:800;padding:6px 10px 22px;display:flex;align-items:center;gap:10px;}
-.slogo span{color:var(--accent);}
-.dni{padding:10px 13px;display:flex;align-items:center;gap:11px;color:rgba(255,255,255,.52);cursor:pointer;border-radius:9px;margin-bottom:3px;transition:.18s;font-weight:500;font-size:.91rem;white-space:nowrap;}
-.dni i{width:17px;text-align:center;flex-shrink:0;}
-.dni:hover{background:rgba(255,255,255,.08);color:#fff;}
-.dni.act{background:var(--primary);color:#fff;}
-.dni.dng{color:rgba(255,100,100,.72);}
-.dni.dng:hover{background:rgba(230,57,70,.13);color:#ff8080;}
+.sb{width:var(--sw);background:var(--dk);padding:22px 14px;position:fixed;height:100vh;overflow-y:auto;display:flex;flex-direction:column;z-index:100;}
+.sl{font-family:"Poppins",sans-serif;color:#fff;font-size:1.25rem;font-weight:800;padding:6px 10px 22px;display:flex;align-items:center;gap:10px;}
+.sl span{color:var(--ac);}
+.ni{padding:10px 13px;display:flex;align-items:center;gap:11px;color:rgba(255,255,255,.52);cursor:pointer;border-radius:9px;margin-bottom:3px;transition:.18s;font-weight:500;font-size:.91rem;white-space:nowrap;}
+.ni i{width:17px;text-align:center;flex-shrink:0;}
+.ni:hover{background:rgba(255,255,255,.08);color:#fff;}
+.ni.act{background:var(--pr);color:#fff;}
+.ni.dn2{color:rgba(255,100,100,.72);}
+.ni.dn2:hover{background:rgba(230,57,70,.13);color:#ff8080;}
 .ssp{flex:1;}
 .sdiv{border:none;border-top:1px solid rgba(255,255,255,.07);margin:11px 0;}
+.dm{margin-left:var(--sw);padding:26px;width:100%;min-height:100vh;}
+.dh{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px;flex-wrap:wrap;gap:11px;}
+.dh h1{font-family:"Poppins",sans-serif;font-size:1.45rem;font-weight:700;color:var(--dk);}
+.dh p{color:var(--gr);font-size:.86rem;margin-top:2px;}
 
-.dmain{margin-left:var(--sw);padding:26px;width:100%;min-height:100vh;}
-.dhdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px;flex-wrap:wrap;gap:11px;}
-.dhdr h1{font-family:"Poppins",sans-serif;font-size:1.45rem;font-weight:700;color:var(--dark);}
-.dhdr p{color:var(--grey);font-size:.86rem;margin-top:2px;}
-
-/* KPIs */
-.kgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:24px;}
-.kc{background:#fff;border-radius:var(--r);padding:18px;box-shadow:var(--shsm);position:relative;overflow:hidden;}
-.kc::before{content:"";position:absolute;top:0;left:0;width:4px;height:100%;border-radius:4px 0 0 4px;}
-.kc.bl::before{background:var(--primary);}
-.kc.or::before{background:var(--yellow);}
-.kc.gn::before{background:var(--green);}
-.kc.rd::before{background:var(--red);}
+.kg{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:24px;}
+.kc{background:#fff;border-radius:var(--r);padding:18px;box-shadow:var(--ss);position:relative;overflow:hidden;}
+.kc::before{content:"";position:absolute;top:0;left:0;width:4px;height:100%;}
+.kc.bl::before{background:var(--pr);}
+.kc.or::before{background:var(--yw);}
+.kc.gn::before{background:var(--gn);}
+.kc.rd::before{background:var(--rd);}
 .kc.tc::before{background:#06b6d4;}
-.kc.vt::before{background:#8b5cf6;}
-.klbl{font-size:.77rem;color:var(--grey);font-weight:500;text-transform:uppercase;letter-spacing:.4px;margin-bottom:7px;}
-.kval{font-family:"Poppins",sans-serif;font-size:1.95rem;font-weight:800;color:var(--dark);line-height:1;}
-.kico{position:absolute;right:15px;top:50%;transform:translateY(-50%);font-size:1.55rem;opacity:.09;color:var(--dark);}
-.kchg{font-size:.77rem;margin-top:5px;color:var(--grey);}
-.kchg.up{color:var(--green);}
+.kl{font-size:.77rem;color:var(--gr);font-weight:500;text-transform:uppercase;letter-spacing:.4px;margin-bottom:7px;}
+.kv{font-family:"Poppins",sans-serif;font-size:1.95rem;font-weight:800;color:var(--dk);line-height:1;}
+.ki{position:absolute;right:15px;top:50%;transform:translateY(-50%);font-size:1.55rem;opacity:.09;color:var(--dk);}
+.kch{font-size:.77rem;margin-top:5px;color:var(--gr);}
+.kch.up{color:var(--gn);}
 
-/* Charts */
-.cgrid{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-bottom:22px;}
-.ccrd{background:#fff;border-radius:var(--r);padding:20px;box-shadow:var(--shsm);}
-.ccrd h3{font-size:.93rem;font-weight:700;color:var(--dark);margin-bottom:14px;display:flex;align-items:center;gap:7px;}
-.ccrd h3 i{color:var(--primary);}
-.cwrap{position:relative;height:210px;}
+.cg{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-bottom:22px;}
+.cc{background:#fff;border-radius:var(--r);padding:20px;box-shadow:var(--ss);}
+.cc h3{font-size:.93rem;font-weight:700;color:var(--dk);margin-bottom:14px;display:flex;align-items:center;gap:7px;}
+.cc h3 i{color:var(--pr);}
+.cw{position:relative;height:210px;}
 
-/* Dash Card */
-.dcrd{background:#fff;border-radius:var(--r);box-shadow:var(--shsm);overflow:hidden;margin-bottom:20px;}
-.dcrd-h{padding:16px 20px;border-bottom:1px solid var(--light);display:flex;justify-content:space-between;align-items:center;}
-.dcrd-h h3{font-size:.93rem;font-weight:700;color:var(--dark);display:flex;align-items:center;gap:7px;}
-.dcrd-h h3 i{color:var(--primary);}
+.dc{background:#fff;border-radius:var(--r);box-shadow:var(--ss);overflow:hidden;margin-bottom:20px;}
+.dch{padding:16px 20px;border-bottom:1px solid var(--lt);display:flex;justify-content:space-between;align-items:center;}
+.dch h3{font-size:.93rem;font-weight:700;color:var(--dk);display:flex;align-items:center;gap:7px;}
+.dch h3 i{color:var(--pr);}
 
-/* Table */
 .dt{width:100%;border-collapse:collapse;}
 .dt th,.dt td{padding:12px 15px;text-align:left;border-bottom:1px solid #f3f6fb;font-size:.86rem;}
-.dt th{background:#f8fafc;font-weight:600;color:var(--grey);font-size:.76rem;text-transform:uppercase;letter-spacing:.4px;}
+.dt th{background:#f8fafc;font-weight:600;color:var(--gr);font-size:.76rem;text-transform:uppercase;letter-spacing:.4px;}
 .dt tr:last-child td{border-bottom:none;}
 .dt tr:hover td{background:#fafcff;}
 .dt a{color:var(--wa);text-decoration:none;}
-.dt a:hover{text-decoration:underline;}
 
-/* Status select */
-.ssel{border:none;background:transparent;font-family:inherit;font-size:.81rem;font-weight:600;cursor:pointer;outline:none;padding:3px 7px;border-radius:6px;}
-.sp{background:#fef3c7;color:#92400e;}
-.sc{background:#dbeafe;color:#1e40af;}
-.sd{background:#d1fae5;color:#065f46;}
-.sx{background:#fee2e2;color:#991b1b;}
-
-/* Settings */
-.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-.scrd{background:#fff;border-radius:var(--r);padding:26px;box-shadow:var(--shsm);}
-.scrd h3{font-family:"Poppins",sans-serif;font-size:.98rem;font-weight:700;margin-bottom:3px;display:flex;align-items:center;gap:7px;color:var(--dark);}
-.scrd > p{font-size:.83rem;color:var(--grey);margin-bottom:18px;}
-.scrd .fg{margin-bottom:14px;}
-.scrd .fg label{font-size:.84rem;font-weight:600;color:var(--dark);margin-bottom:5px;display:block;}
-.stbar{height:4px;border-radius:2px;margin-top:5px;background:var(--light);overflow:hidden;}
-.stfil{height:100%;border-radius:2px;transition:width .28s,background .28s;}
+.ssg{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.sc2{background:#fff;border-radius:var(--r);padding:26px;box-shadow:var(--ss);}
+.sc2 h3{font-family:"Poppins",sans-serif;font-size:.98rem;font-weight:700;margin-bottom:3px;display:flex;align-items:center;gap:7px;color:var(--dk);}
+.sc2 > p{font-size:.83rem;color:var(--gr);margin-bottom:18px;}
+.fi2{margin-bottom:14px;}
+.fi2 label{font-size:.84rem;font-weight:600;color:var(--dk);margin-bottom:5px;display:block;}
+.stb{height:4px;border-radius:2px;margin-top:5px;background:var(--lt);overflow:hidden;}
+.stf{height:100%;border-radius:2px;transition:width .28s,background .28s;}
 .ali{padding:9px 13px;border-radius:8px;font-size:.84rem;margin-top:9px;display:none;}
 .ali.ok{background:#d1fae5;color:#065f46;}
 .ali.er{background:#fee2e2;color:#991b1b;}
 
-/* Order detail */
 .odg{display:grid;grid-template-columns:1fr 1fr;gap:14px;text-align:left;margin-top:14px;}
 .odf{background:#f8fafc;padding:11px 13px;border-radius:8px;}
-.odf label{font-size:.74rem;font-weight:600;color:var(--grey);text-transform:uppercase;letter-spacing:.4px;display:block;margin-bottom:3px;}
-.odf p{font-size:.91rem;color:var(--dark);font-weight:500;}
+.odf label{font-size:.74rem;font-weight:600;color:var(--gr);text-transform:uppercase;letter-spacing:.4px;display:block;margin-bottom:3px;}
+.odf p{font-size:.91rem;color:var(--dk);font-weight:500;}
 .ophv{grid-column:span 2;text-align:center;}
-.ophv img{max-width:100%;max-height:210px;border-radius:9px;border:2px solid var(--light);}
 
-.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 11px;border-radius:18px;font-size:.77rem;font-weight:600;}
-.b-p{background:#fef3c7;color:#92400e;}
-.b-c{background:#dbeafe;color:#1e40af;}
-.b-d{background:#d1fae5;color:#065f46;}
-.b-x{background:#fee2e2;color:#991b1b;}
+.badge{display:inline-flex;align-items:center;padding:3px 11px;border-radius:18px;font-size:.77rem;font-weight:600;}
+.bp2{background:#fef3c7;color:#92400e;}
+.bc{background:#dbeafe;color:#1e40af;}
+.bd2{background:#d1fae5;color:#065f46;}
+.bx{background:#fee2e2;color:#991b1b;}
 
-.empty{text-align:center;padding:44px 18px;}
-.empty i{font-size:2.3rem;color:var(--light);margin-bottom:11px;display:block;}
-.empty p{color:var(--grey);font-size:.88rem;}
+.ssel{border:1px solid var(--lt);background:#fff;font-family:inherit;font-size:.81rem;font-weight:600;cursor:pointer;outline:none;padding:5px 8px;border-radius:6px;}
+.sp2{background:#fef3c7;color:#92400e;border-color:#fcd34d;}
+.sc3{background:#dbeafe;color:#1e40af;border-color:#93c5fd;}
+.sd2{background:#d1fae5;color:#065f46;border-color:#6ee7b7;}
+.sx2{background:#fee2e2;color:#991b1b;border-color:#fca5a5;}
 
-/* Print */
+.emp{text-align:center;padding:44px 18px;}
+.emp i{font-size:2.3rem;color:var(--lt);margin-bottom:11px;display:block;}
+.emp p{color:var(--gr);font-size:.88rem;}
+
 #rcpt{display:none;}
 @media print{
   @page{size:auto;margin:0;}
-  body{margin:0;padding:0;background:#fff;}
   body>*:not(#rcpt){display:none!important;}
-  #rcpt{display:block!important;position:absolute;left:0;top:0;width:100%;padding:22px;color:#000;background:#fff;font-size:12pt;}
-  .rh{text-align:center;border-bottom:2px solid #000;padding-bottom:9px;margin-bottom:16px;}
-  .rr{display:flex;justify-content:space-between;margin-bottom:6px;font-size:11pt;}
-  .rd{border:1px dashed #ccc;padding:9px;margin:12px 0;min-height:48px;}
-  .rf{margin-top:26px;text-align:center;font-size:9pt;color:#555;}
+  #rcpt{display:block!important;position:absolute;left:0;top:0;width:100%;padding:22px;font-size:12pt;}
+  .rh2{text-align:center;border-bottom:2px solid #000;padding-bottom:9px;margin-bottom:16px;}
+  .rr2{display:flex;justify-content:space-between;margin-bottom:6px;}
+  .rd3{border:1px dashed #ccc;padding:9px;margin:12px 0;}
+  .rf2{margin-top:26px;text-align:center;font-size:9pt;color:#555;}
 }
-
 @media(max-width:900px){
-  .cgrid{grid-template-columns:1fr;}
-  .sgrid{grid-template-columns:1fr;}
+  .cg{grid-template-columns:1fr;}
+  .ssg{grid-template-columns:1fr;}
   .odg{grid-template-columns:1fr;}
   .ophv{grid-column:span 1;}
 }
 @media(max-width:768px){
-  .nlinks{display:none;}
+  .nl{display:none;}
   .hero h1{font-size:1.82rem;}
   .ocard{padding:20px;}
-  .fgrid{grid-template-columns:1fr;}
+  .fg{grid-template-columns:1fr;}
   .fw{grid-column:span 1;}
   .rcont{grid-template-columns:1fr;}
-  .sbar{width:62px;padding:14px 8px;}
-  .slogo span,.dni span,.dni em{display:none;}
-  .slogo{justify-content:center;}
-  .dmain{margin-left:62px;padding:14px;}
-  .kgrid{grid-template-columns:1fr 1fr;}
-  nav{justify-content:center;gap:11px;}
+  .sb{width:62px;padding:14px 8px;}
+  .sl span,.ni span{display:none;}
+  .sl{justify-content:center;}
+  .dm{margin-left:62px;padding:14px;}
+  .kg{grid-template-columns:1fr 1fr;}
+  .hbar{justify-content:center;gap:11px;}
 }
 </style>
 </head>
 <body>
 
-<!-- SUCCESS MODAL -->
-<div id="okModal" class="mover">
-  <div class="mbox">
-    <i class="fas fa-check-circle mica"></i>
-    <h3 style="font-family:Poppins,sans-serif;font-size:1.28rem;margin-bottom:7px;">Order Sent!</h3>
-    <p style="color:var(--grey);font-size:.91rem;">WhatsApp opened. Save your receipt as PDF!</p>
-    <a id="waLink" href="#" target="_blank" class="btn btn-w" style="margin-top:16px;width:100%;"><i class="fab fa-whatsapp"></i> Resend WhatsApp</a>
-    <button class="btn btn-g" onclick="closeOk()" style="margin-top:9px;width:100%;">Close</button>
+<div id="rcpt">
+  <div class="rh2"><p style="font-size:18pt;font-weight:800;font-family:Poppins,sans-serif">JAMBO+</p>
+  <p>Zanzibar Personal Shopping Service</p>
+  <p style="margin-top:6px">Order: <b><span id="r-id"></span></b> &nbsp;|&nbsp; Date: <span id="r-dt"></span></p></div>
+  <div class="rr2"><b>Client:</b><span id="r-nm"></span></div>
+  <div class="rr2"><b>Phone:</b><span id="r-ph"></span></div>
+  <div class="rr2"><b>Location:</b><span id="r-lc"></span></div>
+  <div class="rr2"><b>Urgency:</b><span id="r-ur"></span></div>
+  <div class="rr2"><b>Budget:</b><span id="r-bu"></span></div>
+  <div class="rd3"><p style="font-weight:700;margin-bottom:5px">Shopping List:</p><p id="r-it" style="white-space:pre-wrap"></p></div>
+  <p id="r-pn" style="display:none;font-size:10pt;color:#555;margin-top:7px"></p>
+  <div class="rf2"><p>Thank you for using JAMBO+!</p><p>+255 778 714 307 | info@jambo-plus.store</p><p>@jambo-plus (IG) | Mandibotek (FB)</p></div>
+</div>
+
+<!-- Success Modal -->
+<div id="okMod" class="mo">
+  <div class="mb">
+    <i class="fas fa-check-circle mi"></i>
+    <h3 style="font-family:Poppins,sans-serif;font-size:1.28rem;margin-bottom:7px">Order Sent!</h3>
+    <p style="color:var(--gr);font-size:.91rem">WhatsApp opened. Save the receipt PDF!</p>
+    <a id="waLnk" href="#" target="_blank" class="btn bw" style="margin-top:16px;width:100%"><i class="fab fa-whatsapp"></i> Resend WhatsApp</a>
+    <button class="btn bg" onclick="closeMod('okMod')" style="margin-top:9px;width:100%">Close</button>
   </div>
 </div>
 
-<!-- ORDER DETAIL MODAL -->
-<div id="odModal" class="mover">
-  <div class="mbox mbox-lg">
-    <div style="display:flex;justify-content:space-between;align-items:start;text-align:left;margin-bottom:14px;">
-      <div><h3 id="od-id" style="font-family:Poppins,sans-serif;font-size:1.12rem;"></h3><p id="od-date" style="color:var(--grey);font-size:.83rem;"></p></div>
-      <button class="btn btn-g btn-sm" onclick="closeOD()"><i class="fas fa-times"></i></button>
+<!-- Order Detail Modal -->
+<div id="odMod" class="mo">
+  <div class="mb mb-lg">
+    <div style="display:flex;justify-content:space-between;align-items:start;text-align:left;margin-bottom:14px">
+      <div><h3 id="od-id" style="font-family:Poppins,sans-serif;font-size:1.12rem"></h3><p id="od-dt" style="color:var(--gr);font-size:.83rem"></p></div>
+      <button class="btn bg bsm" onclick="closeMod('odMod')"><i class="fas fa-times"></i></button>
     </div>
     <div class="odg" id="od-body"></div>
-    <div style="margin-top:18px;display:flex;gap:9px;justify-content:flex-end;">
-      <button class="btn btn-w btn-sm" id="od-wa"><i class="fab fa-whatsapp"></i> Message</button>
-      <button class="btn btn-g btn-sm" onclick="closeOD()">Close</button>
+    <div style="margin-top:18px;display:flex;gap:9px;justify-content:flex-end">
+      <button class="btn bw bsm" id="od-wa"><i class="fab fa-whatsapp"></i> Message</button>
+      <button class="btn bg bsm" onclick="closeMod('odMod')">Close</button>
     </div>
   </div>
 </div>
 
-<!-- RECEIPT -->
-<div id="rcpt">
-  <div class="rh">
-    <p style="font-size:17pt;font-weight:800;font-family:Poppins,sans-serif;">JAMBO+</p>
-    <p style="font-size:10pt;margin-top:3px;">Zanzibar Personal Shopping Service</p>
-    <p style="margin-top:5px;">Order: <b><span id="r-id"></span></b>&nbsp;|&nbsp;Date: <span id="r-dt"></span></p>
-  </div>
-  <div class="rr"><b>Client:</b><span id="r-name"></span></div>
-  <div class="rr"><b>Phone:</b><span id="r-phone"></span></div>
-  <div class="rr"><b>Location:</b><span id="r-loc"></span></div>
-  <div class="rr"><b>Urgency:</b><span id="r-urg"></span></div>
-  <div class="rr"><b>Budget:</b><span id="r-bud"></span></div>
-  <div class="rd"><p style="font-weight:700;margin-bottom:5px;">Shopping List:</p><p id="r-items" style="white-space:pre-wrap;"></p></div>
-  <div id="r-pnote" style="display:none;font-size:10pt;color:#555;margin-top:7px;"></div>
-  <div class="rf">
-    <p>Thank you for using JAMBO+!</p>
-    <p>+255 778 714 307 | info@jambo-plus.store</p>
-    <p>@jambo-plus (IG) | Mandibotek (FB)</p>
+<!-- Login Modal -->
+<div id="lgMod" class="mo">
+  <div class="mb" style="max-width:340px">
+    <div class="logo" style="justify-content:center;font-size:1.35rem;margin-bottom:5px"><i class="fas fa-shopping-bag"></i> JAMBO<span>+</span></div>
+    <p style="color:var(--gr);font-size:.86rem;margin-bottom:18px">Owner Dashboard</p>
+    <div style="text-align:left;margin-bottom:13px">
+      <label style="font-size:.84rem;font-weight:600;margin-bottom:5px;display:block">Password</label>
+      <input type="password" id="lPw" class="fc" placeholder="Enter password">
+    </div>
+    <div id="lErr" style="display:none;background:#fee2e2;color:#991b1b;padding:8px 11px;border-radius:7px;font-size:.82rem;margin-bottom:11px">Wrong password. Try again.</div>
+    <button class="btn bp" style="width:100%" id="lBtn"><i class="fas fa-unlock"></i> Login</button>
+    <button class="btn bg" style="width:100%;margin-top:9px" onclick="closeMod('lgMod')">Cancel</button>
   </div>
 </div>
-
-<!-- ═══ PUBLIC VIEW ═══ -->
 <div id="pub">
 
 <header>
-  <div class="wrap">
-    <nav>
+  <div class="w">
+    <div class="hbar">
       <div class="logo"><i class="fas fa-shopping-bag"></i> JAMBO<span>+</span></div>
-      <ul class="nlinks">
-        <li><a href="#orderform">Place Order</a></li>
-        <li><a href="#policy">Policy</a></li>
-        <li><a href="#tracker">Track Order</a></li>
-        <li><a href="#reviews">Reviews</a></li>
+      <ul class="nl">
+        <li><a href="#orderf" id="nl-order">Place Order</a></li>
+        <li><a href="#policy" id="nl-policy">Policy</a></li>
+        <li><a href="#tracker" id="nl-track">Track Order</a></li>
+        <li><a href="#reviews" id="nl-rev">Reviews</a></li>
       </ul>
-      <div style="display:flex;gap:9px;align-items:center;">
-        <select class="lsel" id="langSel" onchange="changeLang()">
-          <option value="en">English</option><option value="sw">Kiswahili</option>
-          <option value="fr">Francais</option><option value="de">Deutsch</option>
-          <option value="es">Espanol</option><option value="it">Italiano</option>
-          <option value="zh">中文</option><option value="ru">Русский</option>
+      <div style="display:flex;gap:9px;align-items:center">
+        <select class="lsel" id="langSel">
+          <option value="en">English</option>
+          <option value="sw">Kiswahili</option>
+          <option value="fr">Francais</option>
+          <option value="de">Deutsch</option>
+          <option value="es">Espanol</option>
+          <option value="it">Italiano</option>
+          <option value="zh">中文</option>
+          <option value="ru">Русский</option>
           <option value="pt">Portugues</option>
         </select>
-        <button class="btn btn-p" onclick="showLogin()" style="padding:8px 17px;font-size:.87rem;"><i class="fas fa-lock"></i> <span>Login</span></button>
+        <button class="btn bp" id="loginBtn" style="padding:8px 17px;font-size:.87rem"><i class="fas fa-lock"></i> <span id="loginBtnTxt">Login</span></button>
       </div>
-    </nav>
+    </div>
   </div>
 </header>
 
-<section class="hero" id="orderform">
-  <div class="wrap">
-    <div class="hcontent">
-      <h1>Your Personal Shopper<br>in <em>Zanzibar</em></h1>
-      <p>Fill the form below — we find it, bargain for you, and deliver to your door.</p>
+<section class="hero" id="orderf">
+  <div class="w">
+    <div style="max-width:740px;margin:0 auto 36px">
+      <h1 id="heroTitle">Your Personal Shopper<br>in <em>Zanzibar</em></h1>
+      <p class="sub" id="heroSub">Fill the form below — we find it, bargain for you, and deliver to your door.</p>
     </div>
     <div class="ocard">
-      <div style="text-align:center;margin-bottom:26px;">
-        <span style="display:inline-flex;align-items:center;gap:7px;background:var(--pl);color:var(--primary);padding:7px 18px;border-radius:50px;font-size:.87rem;font-weight:600;">
+      <div style="text-align:center;margin-bottom:26px">
+        <span style="display:inline-flex;align-items:center;gap:7px;background:var(--pl);color:var(--pr);padding:7px 18px;border-radius:50px;font-size:.87rem;font-weight:600">
           <i class="fab fa-whatsapp"></i> Order via WhatsApp
         </span>
       </div>
-      <form id="oform" onsubmit="event.preventDefault();submitOrder();">
-        <div class="fgrid">
-          <div class="fg">
+      <form id="oform">
+        <div class="fg">
+          <div class="fi">
             <label>Full Name <span class="req">*</span></label>
-            <input type="text" id="cName" class="fc" placeholder="e.g. John Doe" required>
+            <input type="text" id="cNm" class="fc" placeholder="e.g. John Doe" required>
           </div>
-          <div class="fg">
+          <div class="fi">
             <label>WhatsApp Number <span class="req">*</span></label>
-            <input type="tel" id="cPhone" class="fc" placeholder="+255..." required>
+            <input type="tel" id="cPh" class="fc" placeholder="+255..." required>
           </div>
-          <div class="fg fw">
+          <div class="fi fw">
             <label>Delivery Location / Hotel <span class="req">*</span></label>
-            <input type="text" id="cLoc" class="fc" placeholder="e.g. Serena Hotel, Room 204" required>
+            <input type="text" id="cLc" class="fc" placeholder="e.g. Serena Hotel, Room 204" required>
           </div>
-          <div class="fg">
+          <div class="fi">
             <label>When do you need it?</label>
-            <select id="cUrg" class="fc">
+            <select id="cUr" class="fc">
               <option value="ASAP">As Soon As Possible</option>
               <option value="Today">Later Today</option>
               <option value="Tomorrow">Tomorrow</option>
               <option value="This Week">Later This Week</option>
             </select>
           </div>
-          <div class="fg">
+          <div class="fi">
             <label>Estimated Budget (Optional)</label>
-            <input type="text" id="cBud" class="fc" placeholder="e.g. 50,000 TZS">
+            <input type="text" id="cBu" class="fc" placeholder="e.g. 50,000 TZS">
           </div>
-          <div class="fg fw">
+          <div class="fi fw">
             <label>What do you want us to buy? <span class="req">*</span></label>
-            <p style="font-size:.79rem;color:var(--grey);margin-bottom:6px;">Be specific — brand, size, color, quantity.</p>
-            <textarea id="cItems" class="fc" placeholder="Example:&#10;2x Coke 500ml (cold)&#10;1x AA batteries (Duracell)&#10;Sunscreen SPF 50" required></textarea>
+            <p style="font-size:.79rem;color:var(--gr);margin-bottom:6px">Be specific — brand, size, color, quantity.</p>
+            <textarea id="cIt" class="fc" placeholder="Example:&#10;2x Coke 500ml&#10;1x AA batteries (Duracell)&#10;Sunscreen SPF50" required></textarea>
           </div>
-          <div class="fg fw">
+          <div class="fi fw">
             <label>
-              <i class="fas fa-camera" style="color:var(--primary);margin-right:5px;"></i>
-              Product Photo
-              <span style="color:var(--grey);font-weight:400;font-size:.84rem;"> — Optional, helps us find the exact item</span>
+              <i class="fas fa-camera" style="color:var(--pr);margin-right:5px"></i>
+              Product Photo <span style="color:var(--gr);font-weight:400;font-size:.84rem">(Optional — helps us find the exact item)</span>
             </label>
-            <div class="pup" id="pupArea" onclick="document.getElementById('pFile').click()">
-              <input type="file" id="pFile" accept="image/*" onchange="handlePhoto(event)" style="display:none;">
-              <i class="fas fa-cloud-upload-alt" style="font-size:1.5rem;color:var(--grey);margin-bottom:7px;display:block;"></i>
-              <p style="color:var(--grey);font-size:.87rem;">Tap to upload a photo of the product</p>
-              <p style="color:var(--light);font-size:.76rem;margin-top:3px;">JPG / PNG — max 5MB</p>
+            <div class="pu-box" id="puBox">
+              <input type="file" id="pFile" accept="image/*" multiple style="display:none">
+              <i class="fas fa-images" style="font-size:1.6rem;color:var(--gr);margin-bottom:8px;display:block"></i>
+              <p style="color:var(--gr);font-size:.87rem;font-weight:600">Tap to upload product photos</p>
+              <p style="color:#cbd5e1;font-size:.76rem;margin-top:4px">Up to 10 images &bull; JPG / PNG &bull; max 5MB each</p>
             </div>
-            <div class="pprev" id="pprev">
-              <img id="ppimg" src="" alt="Preview">
-              <br>
-              <button type="button" class="rpbtn" onclick="removePhoto()"><i class="fas fa-times-circle"></i> Remove photo</button>
+            <div id="puGrid" style="display:none;margin-top:12px">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+                <p style="font-size:.85rem;font-weight:600;color:var(--gn)"><i class="fas fa-check-circle"></i> <span id="puCount">0</span> photo(s) ready</p>
+                <div style="display:flex;gap:8px;align-items:center">
+                  <button type="button" id="puAddMore" class="pu-rm" style="color:var(--pr)"><i class="fas fa-plus-circle"></i> Add more</button>
+                  <button type="button" id="puClearAll" class="pu-rm"><i class="fas fa-times-circle"></i> Clear all</button>
+                </div>
+              </div>
+              <div id="puThumbs" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:8px"></div>
             </div>
           </div>
         </div>
-        <div class="factions">
-          <p class="fnote"><i class="fas fa-shield-alt" style="color:var(--primary);"></i> By confirming you agree to our service terms below.</p>
-          <button type="submit" class="btn btn-w" style="padding:13px 30px;"><i class="fab fa-whatsapp"></i> <span>Confirm Order</span></button>
+        <div class="fact">
+          <p class="fn"><i class="fas fa-shield-alt" style="color:var(--pr)"></i> By confirming you agree to our service terms.</p>
+          <button type="button" class="btn bw" id="submitBtn" style="padding:13px 30px">
+            <i class="fab fa-whatsapp"></i> <span id="submitTxt">Confirm Order</span>
+          </button>
         </div>
       </form>
     </div>
@@ -407,22 +407,19 @@ footer{background:var(--dark);color:#fff;padding:48px 0;text-align:center;}
 </section>
 
 <section id="policy" class="psec">
-  <div class="wrap">
-    <div class="stitle">
-      <h2>Service Policy &amp; Guidelines</h2>
-      <p>Everything you need to know before ordering.</p>
-    </div>
+  <div class="w">
+    <div class="stitle"><h2>Service Policy &amp; Guidelines</h2><p>Everything you need to know before ordering.</p></div>
     <div class="pgrid">
-      <div class="pcard">
-        <h3><i class="fas fa-users" style="color:var(--primary);"></i> Who We Serve</h3>
+      <div class="pc">
+        <h3><i class="fas fa-users" style="color:var(--pr)"></i> Who We Serve</h3>
         <ul>
           <li><i class="fas fa-check"></i><span><b>Tourists:</b> Souvenirs, essentials, local goods at fair prices.</span></li>
           <li><i class="fas fa-check"></i><span><b>Locals:</b> Errands for busy families and professionals.</span></li>
           <li><i class="fas fa-check"></i><span><b>Fees:</b> Item cost + service fee + delivery.</span></li>
         </ul>
       </div>
-      <div class="pcard dng">
-        <h3 style="color:var(--red);"><i class="fas fa-ban"></i> We Do NOT Buy</h3>
+      <div class="pc dn">
+        <h3 style="color:var(--rd)"><i class="fas fa-ban"></i> We Do NOT Buy</h3>
         <ul>
           <li><i class="fas fa-times-circle"></i><span><b>Medicine</b> — buy personally for safety.</span></li>
           <li><i class="fas fa-times-circle"></i><span><b>Alcohol</b> — not handled.</span></li>
@@ -430,8 +427,8 @@ footer{background:var(--dark);color:#fff;padding:48px 0;text-align:center;}
           <li><i class="fas fa-times-circle"></i><span><b>Large electronics</b> (TVs, fridges) — small ones fine.</span></li>
         </ul>
       </div>
-      <div class="pcard">
-        <h3><i class="fas fa-lightbulb" style="color:var(--accent);"></i> Essential Tips</h3>
+      <div class="pc">
+        <h3><i class="fas fa-lightbulb" style="color:var(--ac)"></i> Essential Tips</h3>
         <ul>
           <li><i class="fas fa-star"></i><span><b>Be specific</b> — exact brands, sizes, colors.</span></li>
           <li><i class="fas fa-star"></i><span><b>Payment:</b> M-Pesa, Tigo Pesa, Cash.</span></li>
@@ -444,38 +441,32 @@ footer{background:var(--dark);color:#fff;padding:48px 0;text-align:center;}
 </section>
 
 <section id="tracker" class="tsec">
-  <div class="wrap">
-    <div class="stitle">
-      <h2>Live Order Tracker</h2>
-      <p>Enter your Order ID from the receipt to check status.</p>
-    </div>
+  <div class="w">
+    <div class="stitle"><h2>Live Order Tracker</h2><p>Enter your Order ID from the receipt to check status.</p></div>
     <div class="tbox">
-      <i class="fas fa-map-marked-alt" style="font-size:2rem;color:var(--primary);display:block;margin-bottom:16px;"></i>
-      <div style="display:flex;gap:9px;justify-content:center;flex-wrap:wrap;">
-        <input type="text" id="tInput" class="fc" style="max-width:230px;" placeholder="e.g. ORD-1234">
-        <button class="btn btn-p" onclick="trackOrder()"><i class="fas fa-search"></i> Track</button>
+      <i class="fas fa-map-marked-alt" style="font-size:2rem;color:var(--pr);display:block;margin-bottom:16px"></i>
+      <div style="display:flex;gap:9px;justify-content:center;flex-wrap:wrap">
+        <input type="text" id="tIn" class="fc" style="max-width:230px" placeholder="e.g. ORD-1234">
+        <button class="btn bp" id="tBtn"><i class="fas fa-search"></i> Track</button>
       </div>
-      <div id="tResult" class="tres"></div>
+      <div id="tRes" class="tres"></div>
     </div>
   </div>
 </section>
 
-<section id="reviews" class="rsec">
-  <div class="wrap">
-    <div class="stitle">
-      <h2>Client Testimonies</h2>
-      <p>Real feedback from real customers.</p>
-    </div>
+<section id="reviews" class="revsec">
+  <div class="w">
+    <div class="stitle"><h2>Client Testimonies</h2><p>Real feedback from real customers.</p></div>
     <div class="rcont">
-      <div class="rform">
-        <h3 style="font-family:Poppins,sans-serif;color:var(--primary);margin-bottom:18px;">Leave a Review</h3>
-        <form onsubmit="event.preventDefault();submitRev();">
-          <div class="fg" style="margin-bottom:14px;">
-            <label style="font-size:.86rem;font-weight:600;color:var(--dark);margin-bottom:5px;display:block;">Your Name</label>
-            <input type="text" id="rName" class="fc" required>
+      <div class="rfc">
+        <h3 style="font-family:Poppins,sans-serif;color:var(--pr);margin-bottom:18px">Leave a Review</h3>
+        <form id="revForm">
+          <div style="margin-bottom:14px">
+            <label style="font-size:.86rem;font-weight:600;color:var(--dk);margin-bottom:5px;display:block">Your Name</label>
+            <input type="text" id="rNm" class="fc" required>
           </div>
-          <div class="fg" style="margin-bottom:14px;">
-            <label style="font-size:.86rem;font-weight:600;color:var(--dark);margin-bottom:7px;display:block;">Rating</label>
+          <div style="margin-bottom:14px">
+            <label style="font-size:.86rem;font-weight:600;color:var(--dk);margin-bottom:7px;display:block">Rating</label>
             <div class="stars">
               <input type="radio" id="s5" name="rt" value="5" required><label for="s5">&#9733;</label>
               <input type="radio" id="s4" name="rt" value="4"><label for="s4">&#9733;</label>
@@ -484,23 +475,23 @@ footer{background:var(--dark);color:#fff;padding:48px 0;text-align:center;}
               <input type="radio" id="s1" name="rt" value="1"><label for="s1">&#9733;</label>
             </div>
           </div>
-          <div class="fg" style="margin-bottom:14px;">
-            <label style="font-size:.86rem;font-weight:600;color:var(--dark);margin-bottom:5px;display:block;">Comment</label>
-            <textarea id="rCmt" class="fc" style="min-height:88px;" required></textarea>
+          <div style="margin-bottom:14px">
+            <label style="font-size:.86rem;font-weight:600;color:var(--dk);margin-bottom:5px;display:block">Comment</label>
+            <textarea id="rCm" class="fc" style="min-height:88px" required></textarea>
           </div>
-          <button class="btn btn-a" style="width:100%;">Post Review</button>
+          <button type="button" class="btn ba" style="width:100%" id="revBtn">Post Review</button>
         </form>
       </div>
-      <div class="rlist" id="revList"></div>
+      <div class="rl" id="revList"></div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
-    <div class="flogo"><i class="fas fa-shopping-bag" style="color:var(--accent);"></i> JAMBO<span>+</span></div>
-    <p class="fsub">Zanzibar Personal Shopping Service</p>
-    <div class="socs">
+  <div class="w">
+    <div class="flogo"><i class="fas fa-shopping-bag" style="color:var(--ac)"></i> JAMBO<span>+</span></div>
+    <p style="opacity:.5;font-size:.87rem;margin-bottom:22px">Zanzibar Personal Shopping Service</p>
+    <div class="soc">
       <a href="https://wa.me/255778714307" target="_blank" rel="noopener" class="wa"><i class="fab fa-whatsapp"></i></a>
       <a href="https://www.instagram.com/jambo-plus" target="_blank" rel="noopener" class="ig"><i class="fab fa-instagram"></i></a>
       <a href="https://www.facebook.com/Mandibotek" target="_blank" rel="noopener" class="fb"><i class="fab fa-facebook"></i></a>
@@ -509,122 +500,104 @@ footer{background:var(--dark);color:#fff;padding:48px 0;text-align:center;}
       <a href="tel:+255778714307"><i class="fas fa-phone"></i> +255 778 714 307</a>
       <a href="mailto:info@jambo-plus.store"><i class="fas fa-envelope"></i> info@jambo-plus.store</a>
     </div>
-    <p class="fcpy">&copy; 2024 JAMBO+ Zanzibar. All rights reserved.</p>
+    <p class="fcp">&copy; 2024 JAMBO+ Zanzibar. All rights reserved.</p>
   </div>
 </footer>
 </div>
 
-<!-- ═══ DASHBOARD ═══ -->
 <div id="dash" class="gone">
-  <aside class="sbar">
-    <div class="slogo"><i class="fas fa-shopping-bag" style="color:var(--accent);"></i><span>JAMBO<em style="color:var(--accent);">+</em></span></div>
+  <aside class="sb">
+    <div class="sl"><i class="fas fa-shopping-bag" style="color:var(--ac)"></i><span>JAMBO+</span></div>
     <nav>
-      <div class="dni act" data-t="analytics" onclick="switchTab(this)"><i class="fas fa-chart-line"></i><span> Analytics</span></div>
-      <div class="dni" data-t="orders" onclick="switchTab(this)"><i class="fas fa-inbox"></i><span> Orders</span><span id="obadge" style="margin-left:auto;background:var(--red);color:#fff;border-radius:11px;padding:1px 7px;font-size:.71rem;display:none;"></span></div>
-      <div class="dni" data-t="reviews" onclick="switchTab(this)"><i class="fas fa-star"></i><span> Reviews</span></div>
+      <div class="ni act" data-t="analytics"><i class="fas fa-chart-line"></i><span> Analytics</span></div>
+      <div class="ni" data-t="orders"><i class="fas fa-inbox"></i><span> Orders</span><span id="oBadge" style="margin-left:auto;background:var(--rd);color:#fff;border-radius:11px;padding:1px 7px;font-size:.71rem;display:none"></span></div>
+      <div class="ni" data-t="reviews"><i class="fas fa-star"></i><span> Reviews</span></div>
       <hr class="sdiv">
-      <div class="dni" data-t="settings" onclick="switchTab(this)"><i class="fas fa-cog"></i><span> Settings</span></div>
+      <div class="ni" data-t="settings"><i class="fas fa-cog"></i><span> Settings</span></div>
       <div class="ssp"></div>
-      <div class="dni dng" onclick="logout()"><i class="fas fa-sign-out-alt"></i><span> Logout</span></div>
+      <div class="ni dn2" id="logoutBtn"><i class="fas fa-sign-out-alt"></i><span> Logout</span></div>
     </nav>
   </aside>
-  <main class="dmain">
+  <main class="dm">
 
-    <!-- ANALYTICS -->
     <div id="tab-analytics">
-      <div class="dhdr">
-        <div><h1>Live Analytics</h1><p id="upd-ts" style="color:var(--grey);font-size:.84rem;"></p></div>
-        <button class="btn btn-g btn-sm" onclick="loadAnalytics()"><i class="fas fa-sync-alt"></i> Refresh</button>
+      <div class="dh">
+        <div><h1>Live Analytics</h1><p id="updTs"></p></div>
+        <button class="btn bg bsm" id="refBtn"><i class="fas fa-sync-alt"></i> Refresh</button>
       </div>
-      <div class="kgrid">
-        <div class="kc bl"><div class="klbl">Total Orders</div><div class="kval" id="k-tot">0</div><i class="fas fa-shopping-bag kico"></i><div class="kchg" id="k-tod"></div></div>
-        <div class="kc or"><div class="klbl">Pending</div><div class="kval" id="k-pnd">0</div><i class="fas fa-clock kico"></i></div>
-        <div class="kc bl" style="--primary:#3b82f6;"><div class="klbl">Processing</div><div class="kval" id="k-prc">0</div><i class="fas fa-spinner kico"></i></div>
-        <div class="kc gn"><div class="klbl">Delivered</div><div class="kval" id="k-del">0</div><i class="fas fa-check-circle kico"></i></div>
-        <div class="kc rd"><div class="klbl">Cancelled</div><div class="kval" id="k-can">0</div><i class="fas fa-times-circle kico"></i></div>
-        <div class="kc tc"><div class="klbl">Reviews</div><div class="kval" id="k-rev">0</div><i class="fas fa-star kico"></i><div class="kchg" id="k-avg"></div></div>
+      <div class="kg">
+        <div class="kc bl"><div class="kl">Total Orders</div><div class="kv" id="k-tot">0</div><i class="fas fa-shopping-bag ki"></i><div class="kch" id="k-tod"></div></div>
+        <div class="kc or"><div class="kl">Pending</div><div class="kv" id="k-pnd">0</div><i class="fas fa-clock ki"></i></div>
+        <div class="kc bl" style="--pr:#3b82f6"><div class="kl">Processing</div><div class="kv" id="k-prc">0</div><i class="fas fa-spinner ki"></i></div>
+        <div class="kc gn"><div class="kl">Delivered</div><div class="kv" id="k-del">0</div><i class="fas fa-check-circle ki"></i></div>
+        <div class="kc rd"><div class="kl">Cancelled</div><div class="kv" id="k-can">0</div><i class="fas fa-times-circle ki"></i></div>
+        <div class="kc tc"><div class="kl">Reviews</div><div class="kv" id="k-rev">0</div><i class="fas fa-star ki"></i><div class="kch" id="k-avg"></div></div>
       </div>
-      <div class="cgrid">
-        <div class="ccrd"><h3><i class="fas fa-chart-bar"></i> Orders — Last 7 Days</h3><div class="cwrap"><canvas id="ch-week"></canvas></div></div>
-        <div class="ccrd"><h3><i class="fas fa-chart-pie"></i> Orders by Status</h3><div class="cwrap"><canvas id="ch-stat"></canvas></div></div>
+      <div class="cg">
+        <div class="cc"><h3><i class="fas fa-chart-bar"></i> Orders Last 7 Days</h3><div class="cw"><canvas id="ch1"></canvas></div></div>
+        <div class="cc"><h3><i class="fas fa-chart-pie"></i> By Status</h3><div class="cw"><canvas id="ch2"></canvas></div></div>
       </div>
-      <div class="cgrid">
-        <div class="ccrd"><h3><i class="fas fa-bolt"></i> Orders by Urgency</h3><div class="cwrap"><canvas id="ch-urg"></canvas></div></div>
-        <div class="ccrd"><h3><i class="fas fa-star"></i> Rating Distribution</h3><div class="cwrap"><canvas id="ch-rat"></canvas></div></div>
+      <div class="cg">
+        <div class="cc"><h3><i class="fas fa-bolt"></i> By Urgency</h3><div class="cw"><canvas id="ch3"></canvas></div></div>
+        <div class="cc"><h3><i class="fas fa-star"></i> Ratings</h3><div class="cw"><canvas id="ch4"></canvas></div></div>
       </div>
-      <div class="dcrd">
-        <div class="dcrd-h"><h3><i class="fas fa-clock"></i> Recent Orders</h3><button class="btn btn-g btn-sm" onclick="document.querySelector('[data-t=orders]').click()">View All</button></div>
-        <div style="overflow-x:auto;"><table class="dt"><thead><tr><th>ID</th><th>Client</th><th>Items</th><th>Location</th><th>Status</th></tr></thead><tbody id="rec-tbody"></tbody></table></div>
+      <div class="dc">
+        <div class="dch"><h3><i class="fas fa-clock"></i> Recent Orders</h3><button class="btn bg bsm" id="viewAllBtn">View All</button></div>
+        <div style="overflow-x:auto"><table class="dt"><thead><tr><th>ID</th><th>Client</th><th>Items</th><th>Location</th><th>Status</th></tr></thead><tbody id="recTb"></tbody></table></div>
       </div>
     </div>
 
-    <!-- ORDERS -->
     <div id="tab-orders" class="gone">
-      <div class="dhdr">
-        <div><h1>All Orders</h1><p>Click a row to see full details. Update status inline.</p></div>
-        <div style="display:flex;gap:9px;flex-wrap:wrap;align-items:center;">
-          <select id="fStat" class="fc" style="width:145px;padding:8px 11px;font-size:.84rem;" onchange="loadOrdersTab()">
-            <option value="">All Statuses</option>
-            <option>Pending</option><option>Processing</option><option>Delivered</option><option>Cancelled</option>
-          </select>
-          <input type="text" id="fSearch" class="fc" placeholder="Search..." style="width:175px;padding:8px 11px;font-size:.84rem;" oninput="loadOrdersTab()">
+      <div class="dh">
+        <div><h1>All Orders</h1><p>Click a row to view details. Change status inline.</p></div>
+        <div style="display:flex;gap:9px;flex-wrap:wrap;align-items:center">
+          <select id="fSt" class="fc" style="width:145px;padding:8px 11px;font-size:.84rem"><option value="">All Statuses</option><option>Pending</option><option>Processing</option><option>Delivered</option><option>Cancelled</option></select>
+          <input type="text" id="fSr" class="fc" placeholder="Search..." style="width:175px;padding:8px 11px;font-size:.84rem">
         </div>
       </div>
-      <div class="dcrd">
-        <div style="overflow-x:auto;">
-          <table class="dt">
-            <thead><tr><th>Date / ID</th><th>Client</th><th>Phone</th><th>Items</th><th>Location</th><th>Photo</th><th>Status</th></tr></thead>
-            <tbody id="ord-tbody"></tbody>
-          </table>
-        </div>
+      <div class="dc">
+        <div style="overflow-x:auto"><table class="dt"><thead><tr><th>Date/ID</th><th>Client</th><th>Phone</th><th>Items</th><th>Location</th><th>Photo</th><th>Status</th></tr></thead><tbody id="ordTb"></tbody></table></div>
       </div>
     </div>
 
-    <!-- REVIEWS -->
     <div id="tab-reviews" class="gone">
-      <div class="dhdr"><div><h1>Manage Reviews</h1><p>Delete fake or inappropriate reviews.</p></div></div>
-      <div class="dcrd">
-        <div style="overflow-x:auto;">
-          <table class="dt">
-            <thead><tr><th>Date</th><th>Name</th><th>Rating</th><th>Comment</th><th>Delete</th></tr></thead>
-            <tbody id="rev-tbody"></tbody>
-          </table>
-        </div>
+      <div class="dh"><div><h1>Manage Reviews</h1><p>Delete fake or inappropriate reviews.</p></div></div>
+      <div class="dc">
+        <div style="overflow-x:auto"><table class="dt"><thead><tr><th>Date</th><th>Name</th><th>Rating</th><th>Comment</th><th>Delete</th></tr></thead><tbody id="revTb"></tbody></table></div>
       </div>
     </div>
 
-    <!-- SETTINGS -->
     <div id="tab-settings" class="gone">
-      <div class="dhdr"><div><h1>Settings</h1><p>Manage your password and data.</p></div></div>
-      <div class="sgrid">
-        <div class="scrd">
-          <h3><i class="fas fa-key" style="color:var(--primary);"></i> Change Password</h3>
+      <div class="dh"><div><h1>Settings</h1><p>Manage your password and data.</p></div></div>
+      <div class="ssg">
+        <div class="sc2">
+          <h3><i class="fas fa-key" style="color:var(--pr)"></i> Change Password</h3>
           <p>Update your dashboard login password at any time.</p>
-          <div class="fg"><label>Current Password</label><input type="password" id="curP" class="fc" placeholder="Enter current password"></div>
-          <div class="fg">
+          <div class="fi2"><label>Current Password</label><input type="password" id="curP" class="fc" placeholder="Current password"></div>
+          <div class="fi2">
             <label>New Password</label>
-            <input type="password" id="newP" class="fc" placeholder="Min 6 characters" oninput="chkStr()">
-            <div class="stbar"><div class="stfil" id="stfil" style="width:0;"></div></div>
-            <p id="stxt" style="font-size:.77rem;color:var(--grey);margin-top:3px;"></p>
+            <input type="password" id="newP" class="fc" placeholder="Min 6 characters">
+            <div class="stb"><div class="stf" id="stFil" style="width:0"></div></div>
+            <p id="stTxt" style="font-size:.77rem;color:var(--gr);margin-top:3px"></p>
           </div>
-          <div class="fg"><label>Confirm New Password</label><input type="password" id="cfmP" class="fc" placeholder="Repeat new password"></div>
-          <div id="pali" class="ali"></div>
-          <button class="btn btn-p" onclick="changePwd()" style="width:100%;margin-top:5px;"><i class="fas fa-save"></i> Update Password</button>
+          <div class="fi2"><label>Confirm New Password</label><input type="password" id="cfmP" class="fc" placeholder="Repeat new password"></div>
+          <div id="pAli" class="ali"></div>
+          <button class="btn bp" id="savePwBtn" style="width:100%;margin-top:5px"><i class="fas fa-save"></i> Update Password</button>
         </div>
-        <div class="scrd">
-          <h3><i class="fas fa-store" style="color:var(--accent);"></i> Business Info</h3>
-          <p>Your contact details shown on receipts and website.</p>
-          <div style="background:var(--bg);border-radius:9px;padding:14px;display:grid;gap:11px;">
-            <div style="display:flex;align-items:center;gap:9px;font-size:.88rem;"><i class="fab fa-whatsapp" style="color:var(--wa);width:20px;"></i>+255 778 714 307</div>
-            <div style="display:flex;align-items:center;gap:9px;font-size:.88rem;"><i class="fas fa-envelope" style="color:var(--primary);width:20px;"></i>info@jambo-plus.store</div>
-            <div style="display:flex;align-items:center;gap:9px;font-size:.88rem;"><i class="fab fa-instagram" style="color:#E1306C;width:20px;"></i>@jambo-plus</div>
-            <div style="display:flex;align-items:center;gap:9px;font-size:.88rem;"><i class="fab fa-facebook" style="color:#1877F2;width:20px;"></i>Mandibotek</div>
+        <div class="sc2">
+          <h3><i class="fas fa-store" style="color:var(--ac)"></i> Business Info</h3>
+          <p>Contact details shown on receipts and website.</p>
+          <div style="background:var(--bg);border-radius:9px;padding:14px;display:grid;gap:11px">
+            <div style="display:flex;align-items:center;gap:9px;font-size:.88rem"><i class="fab fa-whatsapp" style="color:var(--wa);width:20px"></i>+255 778 714 307</div>
+            <div style="display:flex;align-items:center;gap:9px;font-size:.88rem"><i class="fas fa-envelope" style="color:var(--pr);width:20px"></i>info@jambo-plus.store</div>
+            <div style="display:flex;align-items:center;gap:9px;font-size:.88rem"><i class="fab fa-instagram" style="color:#E1306C;width:20px"></i>@jambo-plus</div>
+            <div style="display:flex;align-items:center;gap:9px;font-size:.88rem"><i class="fab fa-facebook" style="color:#1877F2;width:20px"></i>Mandibotek</div>
           </div>
-          <div style="margin-top:18px;padding:14px;background:#fffbeb;border-radius:9px;border-left:4px solid var(--accent);">
-            <p style="font-size:.84rem;font-weight:600;"><i class="fas fa-database" style="color:var(--accent);"></i> Storage Note</p>
-            <p style="font-size:.8rem;color:var(--grey);margin-top:3px;">All data is stored in your browser. It persists on this device until cleared.</p>
+          <div style="margin-top:18px;padding:14px;background:#fffbeb;border-radius:9px;border-left:4px solid var(--ac)">
+            <p style="font-size:.84rem;font-weight:600"><i class="fas fa-database" style="color:var(--ac)"></i> Storage</p>
+            <p style="font-size:.8rem;color:var(--gr);margin-top:3px">All data stored in your browser locally. Persists until cleared.</p>
           </div>
-          <button class="btn btn-d" onclick="clearData()" style="width:100%;margin-top:14px;"><i class="fas fa-trash-alt"></i> Clear All Data</button>
+          <button class="btn bd" id="clearBtn" style="width:100%;margin-top:14px"><i class="fas fa-trash-alt"></i> Clear All Data</button>
         </div>
       </div>
     </div>
@@ -632,356 +605,626 @@ footer{background:var(--dark);color:#fff;padding:48px 0;text-align:center;}
   </main>
 </div>
 
-<!-- LOGIN MODAL -->
-<div id="loginMod" class="mover">
-  <div class="mbox" style="max-width:340px;">
-    <div class="logo" style="justify-content:center;font-size:1.35rem;margin-bottom:5px;"><i class="fas fa-shopping-bag"></i> JAMBO<span>+</span></div>
-    <p style="color:var(--grey);font-size:.86rem;margin-bottom:18px;">Owner Dashboard</p>
-    <div class="fg" style="text-align:left;margin-bottom:13px;">
-      <label style="font-size:.84rem;font-weight:600;margin-bottom:5px;display:block;">Password</label>
-      <input type="password" id="lPass" class="fc" placeholder="Enter password" onkeydown="if(event.key==='Enter')doLogin()">
-    </div>
-    <div id="lErr" style="display:none;background:#fee2e2;color:#991b1b;padding:8px 11px;border-radius:7px;font-size:.82rem;margin-bottom:11px;">Wrong password.</div>
-    <button class="btn btn-p" style="width:100%;" onclick="doLogin()"><i class="fas fa-unlock"></i> Login</button>
-    <button class="btn btn-g" style="width:100%;margin-top:9px;" onclick="closeLogin()">Cancel</button>
-  </div>
-</div>
-
 <script>
-const WA="255778714307";
-const DP="admin";
-/* Language */
-const LANGS = {
-  en:{ order:"Place Order",policy:"Policy",tracker:"Track Order",reviews:"Reviews",login:"Login",
-       h1:"Your Personal Shopper in Zanzibar",hsub:"Fill the form below — we find it, bargain for you, and deliver to your door.",
-       confirm:"Confirm Order" },
-  sw:{ order:"Weka Oda",policy:"Sera",tracker:"Fuatilia Oda",reviews:"Maoni",login:"Ingia",
-       h1:"Mnunuzi Wako Binafsi Zanzibar",hsub:"Jaza fomu hapa. Tutafuta, tutapunguza bei na tukuletea mlangoni.",
-       confirm:"Thibitisha Oda" },
-  fr:{ order:"Commander",policy:"Politique",tracker:"Suivre",reviews:"Avis",login:"Connexion",
-       h1:"Votre Assistant Shopping à Zanzibar",hsub:"Remplissez le formulaire — nous trouvons, négocions et livrons.",
-       confirm:"Confirmer la commande" },
-  de:{ order:"Bestellen",policy:"Richtlinien",tracker:"Verfolgen",reviews:"Bewertungen",login:"Anmelden",
-       h1:"Ihr persönlicher Einkäufer in Sansibar",hsub:"Formular ausfüllen — wir finden, handeln und liefern.",
-       confirm:"Bestellung bestätigen" },
-  es:{ order:"Pedir",policy:"Política",tracker:"Rastrear",reviews:"Reseñas",login:"Entrar",
-       h1:"Tu comprador personal en Zanzíbar",hsub:"Rellena el formulario — encontramos, negociamos y entregamos.",
-       confirm:"Confirmar pedido" },
-  it:{ order:"Ordina",policy:"Politica",tracker:"Traccia",reviews:"Recensioni",login:"Accedi",
-       h1:"Il tuo personal shopper a Zanzibar",hsub:"Compila il modulo — troviamo, trattiamo e consegniamo.",
-       confirm:"Conferma ordine" },
-  zh:{ order:"下订单",policy:"政策",tracker:"追踪",reviews:"评价",login:"登录",
-       h1:"您在桑给巴尔的私人购物助手",hsub:"填写表格 — 我们找到、砍价并送货上门。",
-       confirm:"确认订单" },
-  ru:{ order:"Заказать",policy:"Политика",tracker:"Отследить",reviews:"Отзывы",login:"Войти",
-       h1:"Ваш личный шоппер на Занзибаре",hsub:"Заполните форму — мы найдём, поторгуемся и доставим.",
-       confirm:"Подтвердить заказ" },
-  pt:{ order:"Pedir",policy:"Política",tracker:"Rastrear",reviews:"Avaliações",login:"Entrar",
-       h1:"Seu comprador pessoal em Zanzibar",hsub:"Preencha o formulário — encontramos, negociamos e entregamos.",
-       confirm:"Confirmar pedido" }
-};
-function changeLang(){
-  const lang=document.getElementById("langSel").value;
-  const t=LANGS[lang]||LANGS.en;
-  const setTxt=(id,v)=>{const el=document.getElementById(id);if(el)el.innerText=v;};
-  // nav links
-  const nl=document.querySelectorAll(".nlinks a");
-  if(nl[0])nl[0].innerText=t.order;
-  if(nl[1])nl[1].innerText=t.policy;
-  if(nl[2])nl[2].innerText=t.tracker;
-  if(nl[3])nl[3].innerText=t.reviews;
-  // hero
-  document.querySelector(".hero h1").innerText=t.h1;
-  document.querySelector(".hero p").innerText=t.hsub;
-  // submit btn span
-  const sb=document.querySelector("#oform .btn-w span");
-  if(sb)sb.innerText=t.confirm;
-  // login btn
-  const lb=document.querySelector("header .btn-p span");
-  if(lb)lb.innerText=t.login;
-}
 
-let chts={},photo64=null;
+(function() {
+  var WA = "255778714307";
+  var DP = "admin";
+  var chts = {};
+  var photos = []; // array of {data, name, size}
 
-function gPass(){return localStorage.getItem("jp_pw")||DP;}
-function gOrders(){return JSON.parse(localStorage.getItem("jp_ord")||"[]");}
-function sOrders(o){localStorage.setItem("jp_ord",JSON.stringify(o));}
-function gRevs(){return JSON.parse(localStorage.getItem("jp_rev")||"[]");}
-function sRevs(r){localStorage.setItem("jp_rev",JSON.stringify(r));}
-function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+  function gPass() { return localStorage.getItem("jp_pw") || DP; }
+  function gOrders() { try { return JSON.parse(localStorage.getItem("jp_ord") || "[]"); } catch(e) { return []; } }
+  function sOrders(o) { localStorage.setItem("jp_ord", JSON.stringify(o)); }
+  function gRevs() { try { return JSON.parse(localStorage.getItem("jp_rev") || "[]"); } catch(e) { return []; } }
+  function sRevs(r) { localStorage.setItem("jp_rev", JSON.stringify(r)); }
 
-function statusBadge(s){
-  const m={Pending:"b-p",Processing:"b-c",Delivered:"b-d",Cancelled:"b-x"};
-  return '<span class="badge '+(m[s]||"b-p")+'">'+s+"</span>";
-}
-
-/* Photo */
-function handlePhoto(e){
-  const f=e.target.files[0];if(!f)return;
-  if(f.size>5*1024*1024){alert("Max 5MB");return;}
-  const r=new FileReader();
-  r.onload=ev=>{
-    photo64=ev.target.result;
-    document.getElementById("ppimg").src=photo64;
-    document.getElementById("pprev").style.display="block";
-    document.getElementById("pupArea").style.borderColor="var(--green)";
-    document.getElementById("pupArea").style.background="#f0fdf4";
-  };
-  r.readAsDataURL(f);
-}
-function removePhoto(){
-  photo64=null;document.getElementById("pFile").value="";
-  document.getElementById("pprev").style.display="none";
-  document.getElementById("pupArea").style.borderColor="var(--light)";
-  document.getElementById("pupArea").style.background="#fafcff";
-}
-
-/* Order */
-function submitOrder(){
-  const name=document.getElementById("cName").value.trim();
-  const phone=document.getElementById("cPhone").value.trim();
-  const loc=document.getElementById("cLoc").value.trim();
-  const urg=document.getElementById("cUrg").value;
-  const bud=document.getElementById("cBud").value.trim();
-  const items=document.getElementById("cItems").value.trim();
-  const date=new Date().toLocaleDateString("en-GB");
-  const id="ORD-"+Math.floor(1000+Math.random()*9000);
-  const order={id,date,name,phone,loc,urg,bud,items,photo:photo64||null,status:"Pending",ts:Date.now()};
-  const orders=gOrders();orders.unshift(order);sOrders(orders);
-  document.getElementById("r-id").innerText=id;
-  document.getElementById("r-dt").innerText=date;
-  document.getElementById("r-name").innerText=name;
-  document.getElementById("r-phone").innerText=phone;
-  document.getElementById("r-loc").innerText=loc;
-  document.getElementById("r-urg").innerText=urg;
-  document.getElementById("r-bud").innerText=bud||"Not specified";
-  document.getElementById("r-items").innerText=items;
-  const pn=document.getElementById("r-pnote");
-  if(photo64){pn.style.display="block";pn.innerText="Photo of product uploaded with this order.";}
-  else pn.style.display="none";
-  const msg=["JAMBO+ NEW ORDER: "+id,"","Client: "+name,"Phone: "+phone,"Location: "+loc,"Urgency: "+urg,"Budget: "+(bud||"Not specified"),"","Items:"+"
-"+items,photo64?"\nProduct photo uploaded - check dashboard.":""].join("\n");
-  const waUrl="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
-  window.open(waUrl,"_blank");
-  document.getElementById("waLink").href=waUrl;
-  document.getElementById("okModal").classList.add("on");
-  setTimeout(()=>window.print(),900);
-  document.getElementById("oform").reset();removePhoto();
-}
-function closeOk(){document.getElementById("okModal").classList.remove("on");}
-
-/* Reviews public */
-function submitRev(){
-  const name=document.getElementById("rName").value.trim();
-  const r=document.querySelector("input[name=rt]:checked");
-  if(!r){alert("Pick a rating.");return;}
-  const comment=document.getElementById("rCmt").value.trim();
-  const revs=gRevs();
-  revs.unshift({id:Date.now(),name,rating:+r.value,comment,date:new Date().toLocaleDateString("en-GB")});
-  sRevs(revs);
-  document.getElementById("rName").value="";document.getElementById("rCmt").value="";
-  document.querySelectorAll("input[name=rt]").forEach(x=>x.checked=false);
-  loadRevsPub();alert("Thank you!");
-}
-function loadRevsPub(){
-  const revs=gRevs(),el=document.getElementById("revList");
-  el.innerHTML="";
-  if(!revs.length){el.innerHTML='<p style="text-align:center;color:var(--grey);padding:28px;">No reviews yet — be first!</p>';return;}
-  revs.forEach(rv=>{
-    const d=document.createElement("div");d.className="ritem";
-    d.innerHTML='<div class="rhdr"><span class="rauth">'+esc(rv.name)+'</span><span class="rdate">'+rv.date+'</span></div><div class="rstars">'+"&#9733;".repeat(rv.rating)+"&#9734;".repeat(5-rv.rating)+'</div><p>'+esc(rv.comment)+'</p>';
-    el.appendChild(d);
-  });
-}
-
-/* Tracker */
-function trackOrder(){
-  const id=document.getElementById("tInput").value.trim().toUpperCase();
-  const box=document.getElementById("tResult");
-  if(!id){box.style.cssText="display:block;background:#fee2e2;color:#991b1b;border-radius:9px;padding:14px;";box.innerHTML="Enter an Order ID.";return;}
-  const found=gOrders().find(o=>o.id===id);
-  box.style.display="block";
-  const sc={Pending:"#fef3c7",Processing:"#dbeafe",Delivered:"#d1fae5",Cancelled:"#fee2e2"};
-  const tc={Pending:"#92400e",Processing:"#1e40af",Delivered:"#065f46",Cancelled:"#991b1b"};
-  if(found){
-    box.style.cssText="display:block;background:"+(sc[found.status]||"#e0f7fa")+";color:"+(tc[found.status]||"#025a8a")+";border-radius:9px;padding:16px;";
-    box.innerHTML="<div style='font-size:1.08rem;margin-bottom:5px;'><i class='fas fa-check-circle'></i> Order Found</div>Status: <b>"+found.status+"</b><br>Client: "+esc(found.name)+"<br><small style='opacity:.65'>"+found.date+"</small>";
-  } else {
-    box.style.cssText="display:block;background:#fee2e2;color:#991b1b;border-radius:9px;padding:14px;";
-    box.innerHTML="<i class='fas fa-times-circle'></i> Not found. Check your receipt.";
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,"&amp;")
+      .replace(/</g,"&lt;")
+      .replace(/>/g,"&gt;")
+      .replace(/"/g,"&quot;");
   }
-}
 
-/* Login */
-function showLogin(){document.getElementById("loginMod").classList.add("on");document.getElementById("lErr").style.display="none";document.getElementById("lPass").value="";}
-function closeLogin(){document.getElementById("loginMod").classList.remove("on");}
-function doLogin(){
-  if(document.getElementById("lPass").value===gPass()){
-    closeLogin();document.getElementById("pub").classList.add("gone");document.getElementById("dash").classList.remove("gone");
-    loadAnalytics();
-  } else {document.getElementById("lErr").style.display="block";document.getElementById("lPass").value="";}
-}
-function logout(){document.getElementById("dash").classList.add("gone");document.getElementById("pub").classList.remove("gone");}
+  function el(id) { return document.getElementById(id); }
+  function val(id) { return el(id) ? el(id).value.trim() : ""; }
 
-/* Tabs */
-function switchTab(el){
-  const t=el.getAttribute("data-t");
-  document.querySelectorAll("[id^='tab-']").forEach(x=>x.classList.add("gone"));
-  document.getElementById("tab-"+t).classList.remove("gone");
-  document.querySelectorAll(".dni").forEach(x=>x.classList.remove("act"));
-  el.classList.add("act");
-  if(t==="orders") loadOrdersTab();
-  if(t==="reviews") loadRevsAdmin();
-  if(t==="analytics") loadAnalytics();
-}
+  /* ── MODALS ── */
+  function openMod(id) {
+    var m = el(id);
+    if (m) m.classList.add("on");
+  }
+  window.closeMod = function(id) {
+    var m = el(id);
+    if (m) m.classList.remove("on");
+  };
 
-/* Analytics */
-function loadAnalytics(){
-  const orders=gOrders(),revs=gRevs();
-  const bs={Pending:0,Processing:0,Delivered:0,Cancelled:0};
-  orders.forEach(o=>{if(bs[o.status]!==undefined)bs[o.status]++;});
-  document.getElementById("k-tot").innerText=orders.length;
-  document.getElementById("k-pnd").innerText=bs.Pending;
-  document.getElementById("k-prc").innerText=bs.Processing;
-  document.getElementById("k-del").innerText=bs.Delivered;
-  document.getElementById("k-can").innerText=bs.Cancelled;
-  document.getElementById("k-rev").innerText=revs.length;
-  document.getElementById("upd-ts").innerText="Updated: "+new Date().toLocaleTimeString();
-  const today=new Date().toLocaleDateString("en-GB");
-  const tc=orders.filter(o=>o.date===today).length;
-  document.getElementById("k-tod").innerHTML=tc?'<span class="up"><i class="fas fa-arrow-up"></i> '+tc+' today</span>':'<span>0 today</span>';
-  const ob=document.getElementById("obadge");
-  ob.innerText=bs.Pending||"";ob.style.display=bs.Pending?"":"none";
-  if(revs.length){const avg=(revs.reduce((s,r)=>s+r.rating,0)/revs.length).toFixed(1);document.getElementById("k-avg").innerHTML='<span><i class="fas fa-star" style="color:var(--accent);"></i> '+avg+' avg</span>';}
-  /* Charts */
-  const days=[],dc=[];
-  for(let i=6;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);days.push(d.toLocaleDateString("en-GB",{weekday:"short",day:"numeric"}));dc.push(orders.filter(o=>o.date===d.toLocaleDateString("en-GB")).length);}
-  dBar("ch-week",days,dc,"Orders","#0077b6");
-  dDo("ch-stat",Object.keys(bs),Object.values(bs),["#f59e0b","#3b82f6","#22c55e","#e63946"]);
-  const um={ASAP:0,Today:0,Tomorrow:0,"This Week":0};
-  orders.forEach(o=>{if(um[o.urg]!==undefined)um[o.urg]++;});
-  dBar("ch-urg",Object.keys(um),Object.values(um),"Orders","#ffb703");
-  const rm={5:0,4:0,3:0,2:0,1:0};revs.forEach(r=>{rm[r.rating]++;});
-  dBar("ch-rat",["5★","4★","3★","2★","1★"],Object.values(rm),"Reviews","#f59e0b");
-  /* Recent */
-  const tb=document.getElementById("rec-tbody");tb.innerHTML="";
-  const rec=orders.slice(0,8);
-  if(!rec.length){tb.innerHTML='<tr><td colspan="5"><div class="empty"><i class="fas fa-inbox"></i><p>No orders yet.</p></div></td></tr>';return;}
-  rec.forEach(o=>{const tr=document.createElement("tr");tr.innerHTML="<td><b>"+o.id+"</b><br><small style='color:var(--grey)'>"+o.date+"</small></td><td>"+esc(o.name)+"</td><td style='max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;'>"+esc(o.items.substring(0,38))+"...</td><td>"+esc(o.loc)+"</td><td>"+statusBadge(o.status)+"</td>";tb.appendChild(tr);});
-}
+  /* ── STATUS helpers ── */
+  function sBadge(s) {
+    var map = { Pending:"bp2", Processing:"bc", Delivered:"bd2", Cancelled:"bx" };
+    return '<span class="badge ' + (map[s] || "bp2") + '">' + s + "</span>";
+  }
+  function sCls(s) {
+    var map = { Pending:"sp2", Processing:"sc3", Delivered:"sd2", Cancelled:"sx2" };
+    return map[s] || "sp2";
+  }
 
-/* Orders tab */
-function loadOrdersTab(){
-  const filt=(document.getElementById("fStat").value||"").toLowerCase();
-  const srch=(document.getElementById("fSearch").value||"").toLowerCase();
-  let orders=gOrders();
-  if(filt) orders=orders.filter(o=>o.status.toLowerCase()===filt);
-  if(srch) orders=orders.filter(o=>[o.name,o.id,o.phone,o.items,o.loc].join(" ").toLowerCase().includes(srch));
-  const tb=document.getElementById("ord-tbody");tb.innerHTML="";
-  if(!orders.length){tb.innerHTML='<tr><td colspan="7"><div class="empty"><i class="fas fa-inbox"></i><p>No orders match.</p></div></td></tr>';return;}
-  orders.forEach(o=>{
-    const tr=document.createElement("tr");tr.style.cursor="pointer";
-    tr.innerHTML='<td onclick="openOD(''+o.id+'')"><b>'+o.id+'</b><br><small style="color:var(--grey)">'+o.date+'</small></td><td onclick="openOD(''+o.id+'')">'+esc(o.name)+'</td><td><a href="https://wa.me/'+o.phone.replace(/\D/g,"")+'" target="_blank" onclick="event.stopPropagation()">'+esc(o.phone)+' <i class="fab fa-whatsapp"></i></a></td><td onclick="openOD(''+o.id+'')" style="max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+esc(o.items.substring(0,32))+'...</td><td onclick="openOD(''+o.id+'')">'+esc(o.loc)+'</td><td onclick="openOD(''+o.id+'')" style="text-align:center;">'+(o.photo?'<i class="fas fa-image" style="color:var(--primary);font-size:1.05rem;" title="Has photo"></i>':'<span style="color:var(--light)">—</span>')+'</td><td><select class="ssel s'+statusCls(o.status)+'" onchange="upStatus(''+o.id+'',this)" onclick="event.stopPropagation()"><option '+(o.status==="Pending"?"selected":"")+'">Pending</option><option '+(o.status==="Processing"?"selected":"")+'">Processing</option><option '+(o.status==="Delivered"?"selected":"")+'">Delivered</option><option '+(o.status==="Cancelled"?"selected":"")+'">Cancelled</option></select></td>';
-    tb.appendChild(tr);
+  /* ── LANGUAGE ── */
+  var LANG = {
+    en: { order:"Place Order", policy:"Policy", track:"Track Order", rev:"Reviews", login:"Login",
+          title:"Your Personal Shopper in Zanzibar",
+          sub:"Fill the form below — we find it, bargain for you, and deliver to your door.",
+          confirm:"Confirm Order" },
+    sw: { order:"Weka Oda", policy:"Sera", track:"Fuatilia Oda", rev:"Maoni", login:"Ingia",
+          title:"Mnunuzi Wako Binafsi Zanzibar",
+          sub:"Jaza fomu hapa. Tutafuta, tutapunguza bei na tukuletea mlangoni.",
+          confirm:"Thibitisha Oda" },
+    fr: { order:"Commander", policy:"Politique", track:"Suivre", rev:"Avis", login:"Connexion",
+          title:"Votre Personal Shopper a Zanzibar",
+          sub:"Remplissez le formulaire — nous trouvons, negocions et livrons.",
+          confirm:"Confirmer la commande" },
+    de: { order:"Bestellen", policy:"Richtlinien", track:"Verfolgen", rev:"Bewertungen", login:"Anmelden",
+          title:"Ihr personlicher Einkaufer in Sansibar",
+          sub:"Formular ausfüllen — wir finden, handeln und liefern.",
+          confirm:"Bestellung bestatigen" },
+    es: { order:"Pedir", policy:"Politica", track:"Rastrear", rev:"Resenas", login:"Entrar",
+          title:"Tu comprador personal en Zanzibar",
+          sub:"Rellena el formulario — encontramos, negociamos y entregamos.",
+          confirm:"Confirmar pedido" },
+    it: { order:"Ordina", policy:"Politica", track:"Traccia", rev:"Recensioni", login:"Accedi",
+          title:"Il tuo personal shopper a Zanzibar",
+          sub:"Compila il modulo — troviamo, trattiamo e consegniamo.",
+          confirm:"Conferma ordine" },
+    zh: { order:"下订单", policy:"政策", track:"追踪", rev:"评价", login:"登录",
+          title:"您在桑给巴尔的私人购物助手",
+          sub:"填写表格 — 我们找到、砍价并送货上门。",
+          confirm:"确认订单" },
+    ru: { order:"Zakazat", policy:"Politika", track:"Otsledit", rev:"Otzyvy", login:"Voyti",
+          title:"Vash lichny shopper na Zanzibara",
+          sub:"Zapolnite formu — my naydyom, poktorguimsya i dostavim.",
+          confirm:"Podtverdit zakaz" },
+    pt: { order:"Pedir", policy:"Politica", track:"Rastrear", rev:"Avaliacoes", login:"Entrar",
+          title:"Seu comprador pessoal em Zanzibar",
+          sub:"Preencha o formulario — encontramos, negociamos e entregamos.",
+          confirm:"Confirmar pedido" }
+  };
+
+  function changeLang() {
+    var code = el("langSel").value;
+    var t = LANG[code] || LANG.en;
+    function setText(id, v) { var e = el(id); if (e) e.innerText = v; }
+    setText("nl-order", t.order);
+    setText("nl-policy", t.policy);
+    setText("nl-track", t.track);
+    setText("nl-rev", t.rev);
+    setText("loginBtnTxt", t.login);
+    setText("heroTitle", t.title);
+    setText("heroSub", t.sub);
+    setText("submitTxt", t.confirm);
+  }
+
+  /* ── PHOTO UPLOAD ── */
+  function setupPhoto() {
+    var box = el("puBox");
+    var fileIn = el("pFile");
+    if (!box || !fileIn) return;
+
+    function readFiles(files) {
+      var remaining = 10 - photos.length;
+      if (remaining <= 0) { alert("Maximum 10 photos allowed."); return; }
+      var toAdd = Array.from(files).slice(0, remaining);
+      var oversized = toAdd.filter(function(f) { return f.size > 5 * 1024 * 1024; });
+      if (oversized.length) { alert(oversized.length + " file(s) exceed 5MB and were skipped."); }
+      toAdd = toAdd.filter(function(f) { return f.size <= 5 * 1024 * 1024 && f.type.startsWith("image/"); });
+      if (!toAdd.length) return;
+      var loaded = 0;
+      toAdd.forEach(function(file) {
+        var reader = new FileReader();
+        reader.onload = function(ev) {
+          photos.push({ data: ev.target.result, name: file.name, size: file.size });
+          loaded++;
+          if (loaded === toAdd.length) renderThumbs();
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function renderThumbs() {
+      var grid = el("puGrid");
+      var thumbs = el("puThumbs");
+      var count = el("puCount");
+      if (!photos.length) { grid.style.display = "none"; box.classList.remove("ok"); return; }
+      grid.style.display = "block";
+      box.classList.add("ok");
+      count.innerText = photos.length;
+      thumbs.innerHTML = "";
+      photos.forEach(function(p, i) {
+        var wrap = document.createElement("div");
+        wrap.className = "pu-thumb-wrap";
+        wrap.innerHTML = "<img src='" + p.data + "' alt='" + esc(p.name) + "'><button type='button' class='pu-thumb-rm' data-i='" + i + "' title='Remove'><i class='fas fa-times'></i></button>";
+        wrap.querySelector(".pu-thumb-rm").addEventListener("click", function() {
+          photos.splice(parseInt(this.getAttribute("data-i")), 1);
+          renderThumbs();
+        });
+        thumbs.appendChild(wrap);
+      });
+      // Add-more slot if under limit
+      if (photos.length < 10) {
+        var slot = document.createElement("div");
+        slot.className = "pu-slot-add";
+        slot.title = "Add more photos";
+        slot.innerHTML = "<i class='fas fa-plus'></i>";
+        slot.addEventListener("click", function() { fileIn.value = ""; fileIn.click(); });
+        thumbs.appendChild(slot);
+      }
+    }
+
+    // Click on box
+    box.addEventListener("click", function() { if (!photos.length) { fileIn.value = ""; fileIn.click(); } });
+
+    // File input change
+    fileIn.addEventListener("change", function(e) { readFiles(e.target.files); });
+
+    // Add more button
+    el("puAddMore").addEventListener("click", function() { fileIn.value = ""; fileIn.click(); });
+
+    // Clear all button
+    el("puClearAll").addEventListener("click", function() {
+      photos = [];
+      fileIn.value = "";
+      el("puGrid").style.display = "none";
+      box.classList.remove("ok");
+      el("puThumbs").innerHTML = "";
+    });
+
+    // Drag and drop
+    box.addEventListener("dragover", function(e) { e.preventDefault(); box.classList.add("drag"); });
+    box.addEventListener("dragleave", function() { box.classList.remove("drag"); });
+    box.addEventListener("drop", function(e) {
+      e.preventDefault();
+      box.classList.remove("drag");
+      readFiles(e.dataTransfer.files);
+    });
+  }
+
+  /* ── SUBMIT ORDER ── */
+  function submitOrder() {
+    var name = val("cNm");
+    var phone = val("cPh");
+    var loc = val("cLc");
+    var urg = el("cUr") ? el("cUr").value : "ASAP";
+    var bud = val("cBu");
+    var items = val("cIt");
+
+    if (!name) { alert("Please enter your name."); return; }
+    if (!phone) { alert("Please enter your WhatsApp number."); return; }
+    if (!loc) { alert("Please enter your delivery location."); return; }
+    if (!items) { alert("Please describe what you want to buy."); return; }
+
+    var date = new Date().toLocaleDateString("en-GB");
+    var ordId = "ORD-" + Math.floor(1000 + Math.random() * 9000);
+
+    var order = {
+      id: ordId, date: date, name: name, phone: phone,
+      loc: loc, urg: urg, bud: bud, items: items,
+      photos: photos.map(function(p) { return { data: p.data, name: p.name }; }),
+      status: "Pending", ts: Date.now()
+    };
+    var orders = gOrders();
+    orders.unshift(order);
+    sOrders(orders);
+
+    // Fill receipt
+    el("r-id").innerText = ordId;
+    el("r-dt").innerText = date;
+    el("r-nm").innerText = name;
+    el("r-ph").innerText = phone;
+    el("r-lc").innerText = loc;
+    el("r-ur").innerText = urg;
+    el("r-bu").innerText = bud || "Not specified";
+    el("r-it").innerText = items;
+    var pn = el("r-pn");
+    if (photos.length) { pn.style.display = "block"; pn.innerText = photos.length + " product photo(s) uploaded with this order."; }
+    else { pn.style.display = "none"; }
+
+    // Build WhatsApp message
+    var msgParts = [
+      "JAMBO+ NEW ORDER: " + ordId,
+      "",
+      "Client: " + name,
+      "Phone: " + phone,
+      "Location: " + loc,
+      "Urgency: " + urg,
+      "Budget: " + (bud || "Not specified"),
+      "",
+      "Items Needed:",
+      items
+    ];
+    if (photos.length) { msgParts.push(""); msgParts.push("Note: Customer uploaded " + photos.length + " product photo(s). Check dashboard."); }
+    var msg = msgParts.join("\n");
+
+    var waUrl = "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg);
+    window.open(waUrl, "_blank");
+    el("waLnk").href = waUrl;
+    openMod("okMod");
+    setTimeout(function() { window.print(); }, 900);
+
+    el("oform").reset();
+    // Reset photos
+    photos = [];
+    var box2 = el("puBox"); if (box2) box2.classList.remove("ok");
+    var grid2 = el("puGrid"); if (grid2) grid2.style.display = "none";
+    var fi2 = el("pFile"); if (fi2) fi2.value = "";
+    var tb2 = el("puThumbs"); if (tb2) tb2.innerHTML = "";
+  }
+
+  /* ── REVIEWS ── */
+  function submitRev() {
+    var name = val("rNm");
+    var rEl = document.querySelector("input[name='rt']:checked");
+    var comment = val("rCm");
+    if (!name) { alert("Please enter your name."); return; }
+    if (!rEl) { alert("Please select a rating."); return; }
+    if (!comment) { alert("Please write a comment."); return; }
+    var revs = gRevs();
+    revs.unshift({ id: Date.now(), name: name, rating: parseInt(rEl.value), comment: comment, date: new Date().toLocaleDateString("en-GB") });
+    sRevs(revs);
+    el("rNm").value = ""; el("rCm").value = "";
+    document.querySelectorAll("input[name='rt']").forEach(function(x) { x.checked = false; });
+    loadRevsPub();
+    alert("Thank you for your review!");
+  }
+
+  function loadRevsPub() {
+    var revs = gRevs();
+    var container = el("revList");
+    if (!container) return;
+    container.innerHTML = "";
+    if (!revs.length) {
+      container.innerHTML = "<p style='text-align:center;color:var(--gr);padding:28px'>No reviews yet — be first!</p>";
+      return;
+    }
+    revs.forEach(function(rv) {
+      var d = document.createElement("div");
+      d.className = "ri";
+      var stars = "";
+      for (var i = 0; i < rv.rating; i++) stars += "&#9733;";
+      for (var j = rv.rating; j < 5; j++) stars += "&#9734;";
+      d.innerHTML = "<div class='rh'><span class='ra'>" + esc(rv.name) + "</span><span class='rd2'>" + rv.date + "</span></div><div class='rs'>" + stars + "</div><p>" + esc(rv.comment) + "</p>";
+      container.appendChild(d);
+    });
+  }
+
+  /* ── TRACKER ── */
+  function trackOrder() {
+    var id = val("tIn").toUpperCase();
+    var box = el("tRes");
+    box.style.display = "block";
+    if (!id) { box.style.cssText = "display:block;background:#fee2e2;color:#991b1b;border-radius:10px;padding:14px;font-weight:600"; box.innerHTML = "Please enter an Order ID."; return; }
+    var found = null;
+    var orders = gOrders();
+    for (var i = 0; i < orders.length; i++) { if (orders[i].id === id) { found = orders[i]; break; } }
+    var sc = { Pending:"#fef3c7", Processing:"#dbeafe", Delivered:"#d1fae5", Cancelled:"#fee2e2" };
+    var tc = { Pending:"#92400e", Processing:"#1e40af", Delivered:"#065f46", Cancelled:"#991b1b" };
+    if (found) {
+      box.style.cssText = "display:block;background:" + (sc[found.status] || "#e0f7fa") + ";color:" + (tc[found.status] || "#025a8a") + ";border-radius:10px;padding:16px;font-weight:600";
+      box.innerHTML = "<div style='font-size:1.08rem;margin-bottom:5px'><i class='fas fa-check-circle'></i> Order Found</div>Status: <b>" + found.status + "</b><br>Client: " + esc(found.name) + "<br><small style='opacity:.65'>" + found.date + "</small>";
+    } else {
+      box.style.cssText = "display:block;background:#fee2e2;color:#991b1b;border-radius:10px;padding:14px;font-weight:600";
+      box.innerHTML = "<i class='fas fa-times-circle'></i> Order not found. Check your receipt for the correct ID.";
+    }
+  }
+
+  /* ── LOGIN / LOGOUT ── */
+  function showLogin() {
+    el("lErr").style.display = "none";
+    el("lPw").value = "";
+    openMod("lgMod");
+    setTimeout(function() { el("lPw").focus(); }, 300);
+  }
+
+  function doLogin() {
+    var pw = el("lPw").value;
+    if (pw === gPass()) {
+      closeMod("lgMod");
+      el("pub").classList.add("gone");
+      el("dash").classList.remove("gone");
+      loadAnalytics();
+    } else {
+      el("lErr").style.display = "block";
+      el("lPw").value = "";
+      el("lPw").focus();
+    }
+  }
+
+  function doLogout() {
+    el("dash").classList.add("gone");
+    el("pub").classList.remove("gone");
+  }
+
+  /* ── DASHBOARD TABS ── */
+  function switchTab(targetT) {
+    ["analytics","orders","reviews","settings"].forEach(function(t) {
+      var tab = el("tab-" + t);
+      if (tab) tab.classList.add("gone");
+    });
+    var target = el("tab-" + targetT);
+    if (target) target.classList.remove("gone");
+    document.querySelectorAll(".ni").forEach(function(n) { n.classList.remove("act"); });
+    var activeNi = document.querySelector(".ni[data-t='" + targetT + "']");
+    if (activeNi) activeNi.classList.add("act");
+    if (targetT === "orders") loadOrdersTab();
+    if (targetT === "reviews") loadRevAdmin();
+    if (targetT === "analytics") loadAnalytics();
+  }
+
+  /* ── ANALYTICS ── */
+  function loadAnalytics() {
+    var orders = gOrders();
+    var revs = gRevs();
+    var bs = { Pending:0, Processing:0, Delivered:0, Cancelled:0 };
+    orders.forEach(function(o) { if (bs[o.status] !== undefined) bs[o.status]++; });
+    el("k-tot").innerText = orders.length;
+    el("k-pnd").innerText = bs.Pending;
+    el("k-prc").innerText = bs.Processing;
+    el("k-del").innerText = bs.Delivered;
+    el("k-can").innerText = bs.Cancelled;
+    el("k-rev").innerText = revs.length;
+    el("updTs").innerText = "Updated: " + new Date().toLocaleTimeString();
+    var today = new Date().toLocaleDateString("en-GB");
+    var tc = 0;
+    orders.forEach(function(o) { if (o.date === today) tc++; });
+    el("k-tod").innerHTML = tc ? "<span class='up'><i class='fas fa-arrow-up'></i> " + tc + " today</span>" : "<span>0 today</span>";
+    var ob = el("oBadge");
+    ob.innerText = bs.Pending || "";
+    ob.style.display = bs.Pending ? "" : "none";
+    if (revs.length) {
+      var sum = 0;
+      revs.forEach(function(r) { sum += r.rating; });
+      el("k-avg").innerHTML = "<span><i class='fas fa-star' style='color:var(--ac)'></i> " + (sum / revs.length).toFixed(1) + " avg</span>";
+    }
+    // Charts
+    var days = [], dc = [];
+    for (var i = 6; i >= 0; i--) {
+      var d = new Date(); d.setDate(d.getDate() - i);
+      days.push(d.toLocaleDateString("en-GB", {weekday:"short", day:"numeric"}));
+      var ds = d.toLocaleDateString("en-GB");
+      var cnt = 0;
+      orders.forEach(function(o) { if (o.date === ds) cnt++; });
+      dc.push(cnt);
+    }
+    dBar("ch1", days, dc, "Orders", "#0077b6");
+    dDo("ch2", ["Pending","Processing","Delivered","Cancelled"], [bs.Pending,bs.Processing,bs.Delivered,bs.Cancelled], ["#f59e0b","#3b82f6","#22c55e","#e63946"]);
+    var um = { ASAP:0, Today:0, Tomorrow:0, "This Week":0 };
+    orders.forEach(function(o) { if (um[o.urg] !== undefined) um[o.urg]++; });
+    dBar("ch3", Object.keys(um), Object.values(um), "Orders", "#ffb703");
+    var rm = { 5:0, 4:0, 3:0, 2:0, 1:0 };
+    revs.forEach(function(r) { rm[r.rating] = (rm[r.rating] || 0) + 1; });
+    dBar("ch4", ["5 Stars","4 Stars","3 Stars","2 Stars","1 Star"], [rm[5],rm[4],rm[3],rm[2],rm[1]], "Reviews", "#f59e0b");
+    // Recent
+    var tb = el("recTb"); tb.innerHTML = "";
+    var recent = orders.slice(0, 8);
+    if (!recent.length) { tb.innerHTML = "<tr><td colspan='5'><div class='emp'><i class='fas fa-inbox'></i><p>No orders yet.</p></div></td></tr>"; return; }
+    recent.forEach(function(o) {
+      var tr = document.createElement("tr");
+      tr.innerHTML = "<td><b>" + o.id + "</b><br><small style='color:var(--gr)'>" + o.date + "</small></td><td>" + esc(o.name) + "</td><td style='max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap'>" + esc(o.items.substring(0, 40)) + "...</td><td>" + esc(o.loc) + "</td><td>" + sBadge(o.status) + "</td>";
+      tb.appendChild(tr);
+    });
+  }
+
+  /* ── ORDERS TAB ── */
+  function loadOrdersTab() {
+    var filt = (el("fSt").value || "").toLowerCase();
+    var srch = (el("fSr").value || "").toLowerCase();
+    var orders = gOrders();
+    if (filt) orders = orders.filter(function(o) { return o.status.toLowerCase() === filt; });
+    if (srch) orders = orders.filter(function(o) { return (o.name + o.id + o.phone + o.items + o.loc).toLowerCase().indexOf(srch) > -1; });
+    var tb = el("ordTb"); tb.innerHTML = "";
+    if (!orders.length) { tb.innerHTML = "<tr><td colspan='7'><div class='emp'><i class='fas fa-inbox'></i><p>No orders match.</p></div></td></tr>"; return; }
+    orders.forEach(function(o) {
+      var tr = document.createElement("tr");
+      tr.style.cursor = "pointer";
+      var sel = "<select class='ssel " + sCls(o.status) + "' data-id='" + o.id + "' onclick='event.stopPropagation()'><option" + (o.status==="Pending"?" selected":"") + ">Pending</option><option" + (o.status==="Processing"?" selected":"") + ">Processing</option><option" + (o.status==="Delivered"?" selected":"") + ">Delivered</option><option" + (o.status==="Cancelled"?" selected":"") + ">Cancelled</option></select>";
+      tr.innerHTML = "<td><b>" + o.id + "</b><br><small style='color:var(--gr)'>" + o.date + "</small></td><td>" + esc(o.name) + "</td><td><a href='https://wa.me/" + o.phone.replace(/\D/g,"") + "' target='_blank' onclick='event.stopPropagation()'>" + esc(o.phone) + " <i class='fab fa-whatsapp'></i></a></td><td style='max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap'>" + esc(o.items.substring(0,32)) + "...</td><td>" + esc(o.loc) + "</td><td style='text-align:center'>" + (o.photos && o.photos.length ? "<span style='color:var(--pr);font-weight:700;font-size:.82rem'><i class='fas fa-images'></i> " + o.photos.length + "</span>" : "<span style='color:var(--lt)'>—</span>") + "</td><td>" + sel + "</td>";
+      tr.addEventListener("click", function() { openOrderDetail(o.id); });
+      tb.appendChild(tr);
+    });
+    // Attach status change listeners
+    tb.querySelectorAll("select.ssel").forEach(function(s) {
+      s.addEventListener("change", function() {
+        var id = this.getAttribute("data-id");
+        var newStatus = this.value;
+        var orders2 = gOrders();
+        var idx = -1;
+        for (var i = 0; i < orders2.length; i++) { if (orders2[i].id === id) { idx = i; break; } }
+        if (idx > -1) { orders2[idx].status = newStatus; sOrders(orders2); }
+        this.className = "ssel " + sCls(newStatus);
+        loadAnalytics();
+      });
+    });
+  }
+
+  /* ── ORDER DETAIL ── */
+  function openOrderDetail(id) {
+    var orders = gOrders();
+    var o = null;
+    for (var i = 0; i < orders.length; i++) { if (orders[i].id === id) { o = orders[i]; break; } }
+    if (!o) return;
+    el("od-id").innerText = "Order " + o.id;
+    el("od-dt").innerText = "Placed: " + o.date;
+    el("od-wa").onclick = function() { window.open("https://wa.me/" + o.phone.replace(/\D/g,""), "_blank"); };
+    el("od-body").innerHTML =
+      "<div class='odf'><label>Client</label><p>" + esc(o.name) + "</p></div>" +
+      "<div class='odf'><label>Phone</label><p>" + esc(o.phone) + "</p></div>" +
+      "<div class='odf'><label>Location</label><p>" + esc(o.loc) + "</p></div>" +
+      "<div class='odf'><label>Urgency</label><p>" + esc(o.urg) + "</p></div>" +
+      "<div class='odf'><label>Budget</label><p>" + (o.bud || "Not specified") + "</p></div>" +
+      "<div class='odf'><label>Status</label><p>" + sBadge(o.status) + "</p></div>" +
+      "<div class='odf' style='grid-column:span 2'><label>Shopping List</label><p style='white-space:pre-wrap'>" + esc(o.items) + "</p></div>" +
+      (o.photos && o.photos.length ? (function() {
+        var ph = "<div class='odf ophv'><label>Product Photos (" + o.photos.length + ")</label><div style='display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-top:8px'>";
+        o.photos.forEach(function(p) { ph += "<img src='" + p.data + "' style='width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;border:2px solid var(--lt)'>"; });
+        ph += "</div></div>"; return ph;
+      })() : "");
+    openMod("odMod");
+  }
+
+  /* ── REVIEWS ADMIN ── */
+  function loadRevAdmin() {
+    var revs = gRevs();
+    var tb = el("revTb"); tb.innerHTML = "";
+    if (!revs.length) { tb.innerHTML = "<tr><td colspan='5'><div class='emp'><i class='fas fa-star'></i><p>No reviews yet.</p></div></td></tr>"; return; }
+    revs.forEach(function(rv) {
+      var tr = document.createElement("tr");
+      var stars = "";
+      for (var i = 0; i < rv.rating; i++) stars += "&#9733;";
+      tr.innerHTML = "<td>" + rv.date + "</td><td>" + esc(rv.name) + "</td><td style='color:var(--ac)'>" + stars + "</td><td>" + esc(rv.comment) + "</td><td><button class='btn bd bsm' data-rid='" + rv.id + "'><i class='fas fa-trash'></i></button></td>";
+      tr.querySelector("button").addEventListener("click", function() {
+        var rid = parseInt(this.getAttribute("data-rid"));
+        if (!confirm("Delete this review?")) return;
+        sRevs(gRevs().filter(function(r) { return r.id !== rid; }));
+        loadRevAdmin(); loadRevsPub(); loadAnalytics();
+      });
+      tb.appendChild(tr);
+    });
+  }
+
+  /* ── PASSWORD ── */
+  function checkStrength() {
+    var p = el("newP").value;
+    var f = el("stFil"), t = el("stTxt");
+    if (!p) { f.style.width = "0"; t.innerText = ""; return; }
+    var sc = 0;
+    if (p.length >= 6) sc++;
+    if (p.length >= 10) sc++;
+    if (/[A-Z]/.test(p)) sc++;
+    if (/[0-9]/.test(p)) sc++;
+    if (/[^A-Za-z0-9]/.test(p)) sc++;
+    var labels = ["","Weak","Fair","Good","Strong","Very Strong"];
+    var colors = ["","#e63946","#f59e0b","#3b82f6","#22c55e","#16a34a"];
+    f.style.width = (sc * 20) + "%";
+    f.style.background = colors[sc] || colors[1];
+    t.innerText = labels[sc] || "";
+    t.style.color = colors[sc] || colors[1];
+  }
+
+  function changePwd() {
+    var cur = el("curP").value;
+    var nw = el("newP").value;
+    var cf = el("cfmP").value;
+    var ali = el("pAli");
+    function show(msg, ok) {
+      ali.className = "ali " + (ok ? "ok" : "er");
+      ali.innerText = msg;
+      ali.style.display = "block";
+      setTimeout(function() { ali.style.display = "none"; }, 4000);
+    }
+    if (cur !== gPass()) { show("Current password is incorrect.", false); return; }
+    if (nw.length < 6) { show("New password must be at least 6 characters.", false); return; }
+    if (nw !== cf) { show("Passwords do not match.", false); return; }
+    localStorage.setItem("jp_pw", nw);
+    show("Password updated successfully!", true);
+    el("curP").value = ""; el("newP").value = ""; el("cfmP").value = "";
+    el("stFil").style.width = "0"; el("stTxt").innerText = "";
+  }
+
+  function clearData() {
+    if (!confirm("DELETE ALL orders and reviews permanently?")) return;
+    if (!confirm("Final warning — this cannot be undone. Continue?")) return;
+    localStorage.removeItem("jp_ord"); localStorage.removeItem("jp_rev");
+    loadAnalytics(); loadRevsPub();
+    alert("All data cleared.");
+  }
+
+  /* ── CHARTS ── */
+  function dBar(id, labels, data, label, color) {
+    var c = el(id); if (!c) return;
+    if (chts[id]) chts[id].destroy();
+    chts[id] = new Chart(c, {
+      type: "bar",
+      data: { labels: labels, datasets: [{ label: label, data: data, backgroundColor: color + "44", borderColor: color, borderWidth: 2, borderRadius: 6 }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { stepSize: 1, color: "#94a3b8", font: { size: 10 } }, grid: { color: "#f1f5f9" } }, x: { ticks: { color: "#94a3b8", font: { size: 10 } }, grid: { display: false } } } }
+    });
+  }
+  function dDo(id, labels, data, colors) {
+    var c = el(id); if (!c) return;
+    if (chts[id]) chts[id].destroy();
+    var tot = data.reduce(function(a, b) { return a + b; }, 0);
+    chts[id] = new Chart(c, {
+      type: "doughnut",
+      data: { labels: labels, datasets: [{ data: data, backgroundColor: colors, borderWidth: 2, borderColor: "#fff" }] },
+      options: {
+        responsive: true, maintainAspectRatio: false, cutout: "62%",
+        plugins: {
+          legend: { position: "bottom", labels: { font: { size: 10 }, color: "#64748b", padding: 10 } },
+          tooltip: { callbacks: { label: function(ctx) { return ctx.label + ": " + ctx.parsed + (tot ? " (" + Math.round(ctx.parsed / tot * 100) + "%)" : ""); } } }
+        }
+      }
+    });
+  }
+
+  /* ── WIRE UP ALL EVENTS ON DOM READY ── */
+  document.addEventListener("DOMContentLoaded", function() {
+    if (!localStorage.getItem("jp_pw")) localStorage.setItem("jp_pw", DP);
+
+    // Language
+    el("langSel").addEventListener("change", changeLang);
+
+    // Login
+    el("loginBtn").addEventListener("click", showLogin);
+    el("lBtn").addEventListener("click", doLogin);
+    el("lPw").addEventListener("keydown", function(e) { if (e.key === "Enter") doLogin(); });
+
+    // Logout
+    el("logoutBtn").addEventListener("click", doLogout);
+
+    // Submit order
+    el("submitBtn").addEventListener("click", submitOrder);
+
+    // Track order
+    el("tBtn").addEventListener("click", trackOrder);
+    el("tIn").addEventListener("keydown", function(e) { if (e.key === "Enter") trackOrder(); });
+
+    // Reviews
+    el("revBtn").addEventListener("click", submitRev);
+
+    // Dashboard tabs
+    document.querySelectorAll(".ni[data-t]").forEach(function(ni) {
+      ni.addEventListener("click", function() { switchTab(this.getAttribute("data-t")); });
+    });
+
+    // View all button
+    el("viewAllBtn").addEventListener("click", function() { switchTab("orders"); });
+
+    // Refresh
+    el("refBtn").addEventListener("click", loadAnalytics);
+
+    // Settings
+    el("newP").addEventListener("input", checkStrength);
+    el("savePwBtn").addEventListener("click", changePwd);
+    el("clearBtn").addEventListener("click", clearData);
+
+    // Order filter/search
+    el("fSt").addEventListener("change", loadOrdersTab);
+    el("fSr").addEventListener("input", loadOrdersTab);
+
+    // Photo upload
+    setupPhoto();
+
+    // Close modals on backdrop click
+    document.querySelectorAll(".mo").forEach(function(m) {
+      m.addEventListener("click", function(e) {
+        if (e.target === m) m.classList.remove("on");
+      });
+    });
+
+    // Load reviews
+    loadRevsPub();
   });
-}
-function statusCls(s){return{Pending:"p",Processing:"c",Delivered:"d",Cancelled:"x"}[s]||"p";}
-function upStatus(id,sel){
-  const orders=gOrders(),i=orders.findIndex(o=>o.id===id);
-  if(i>-1){orders[i].status=sel.value;sOrders(orders);}
-  sel.className="ssel s"+statusCls(sel.value);
-  loadAnalytics();
-}
 
-/* Order detail */
-function openOD(id){
-  const o=gOrders().find(x=>x.id===id);if(!o)return;
-  document.getElementById("od-id").innerText="Order "+o.id;
-  document.getElementById("od-date").innerText="Placed: "+o.date;
-  document.getElementById("od-wa").onclick=()=>window.open("https://wa.me/"+o.phone.replace(/\D/g,""),"_blank");
-  document.getElementById("od-body").innerHTML=
-    '<div class="odf"><label>Client</label><p>'+esc(o.name)+'</p></div>'+
-    '<div class="odf"><label>Phone</label><p>'+esc(o.phone)+'</p></div>'+
-    '<div class="odf"><label>Delivery Location</label><p>'+esc(o.loc)+'</p></div>'+
-    '<div class="odf"><label>Urgency</label><p>'+esc(o.urg)+'</p></div>'+
-    '<div class="odf"><label>Budget</label><p>'+(o.bud||"Not specified")+'</p></div>'+
-    '<div class="odf"><label>Status</label><p>'+statusBadge(o.status)+'</p></div>'+
-    '<div class="odf" style="grid-column:span 2"><label>Shopping List</label><p style="white-space:pre-wrap">'+esc(o.items)+'</p></div>'+
-    (o.photo?'<div class="odf ophv"><label>Product Photo</label><br><img src="'+o.photo+'" style="max-width:100%;max-height:230px;border-radius:9px;border:2px solid var(--light);margin-top:7px;"></div>':'');
-  document.getElementById("odModal").classList.add("on");
-}
-function closeOD(){document.getElementById("odModal").classList.remove("on");}
+})();
 
-/* Reviews admin */
-function loadRevsAdmin(){
-  const revs=gRevs(),tb=document.getElementById("rev-tbody");tb.innerHTML="";
-  if(!revs.length){tb.innerHTML='<tr><td colspan="5"><div class="empty"><i class="fas fa-star"></i><p>No reviews yet.</p></div></td></tr>';return;}
-  revs.forEach(rv=>{const tr=document.createElement("tr");tr.innerHTML="<td>"+rv.date+"</td><td>"+esc(rv.name)+"</td><td style='color:var(--accent);'>"+"&#9733;".repeat(rv.rating)+"</td><td>"+esc(rv.comment)+"</td><td><button class='btn btn-d btn-sm' onclick='delRev("+rv.id+")'><i class='fas fa-trash'></i></button></td>";tb.appendChild(tr);});
-}
-function delRev(id){
-  if(!confirm("Delete this review?")) return;
-  sRevs(gRevs().filter(r=>r.id!==id));
-  loadRevsAdmin();loadRevsPub();loadAnalytics();
-}
-
-/* Password */
-function chkStr(){
-  const p=document.getElementById("newP").value;
-  const f=document.getElementById("stfil"),t=document.getElementById("stxt");
-  if(!p){f.style.width="0";t.innerText="";return;}
-  let sc=0;
-  if(p.length>=6)sc++;if(p.length>=10)sc++;
-  if(/[A-Z]/.test(p))sc++;if(/[0-9]/.test(p))sc++;if(/[^A-Za-z0-9]/.test(p))sc++;
-  const lb=["","Weak","Fair","Good","Strong","Very Strong"];
-  const cl=["","#e63946","#f59e0b","#3b82f6","#22c55e","#16a34a"];
-  f.style.width=(sc*20)+"%";f.style.background=cl[sc]||cl[1];
-  t.innerText=lb[sc]||"";t.style.color=cl[sc]||cl[1];
-}
-function changePwd(){
-  const cur=document.getElementById("curP").value;
-  const nw=document.getElementById("newP").value;
-  const cf=document.getElementById("cfmP").value;
-  const ali=document.getElementById("pali");
-  function show(m,ok){ali.className="ali "+(ok?"ok":"er");ali.innerText=m;ali.style.display="block";setTimeout(()=>ali.style.display="none",4000);}
-  if(cur!==gPass()){show("Current password is incorrect.","");return;}
-  if(nw.length<6){show("New password must be at least 6 characters.","");return;}
-  if(nw!==cf){show("Passwords do not match.","");return;}
-  localStorage.setItem("jp_pw",nw);
-  show("Password updated successfully!","ok");
-  document.getElementById("curP").value="";document.getElementById("newP").value="";document.getElementById("cfmP").value="";
-  document.getElementById("stfil").style.width="0";document.getElementById("stxt").innerText="";
-}
-
-/* Clear data */
-function clearData(){
-  if(!confirm("DELETE ALL orders and reviews?"))return;
-  if(!confirm("Final warning. This cannot be undone."))return;
-  localStorage.removeItem("jp_ord");localStorage.removeItem("jp_rev");
-  loadAnalytics();loadRevsPub();alert("Data cleared.");
-}
-
-/* Charts */
-function dBar(id,labels,data,label,color){
-  const c=document.getElementById(id);if(!c)return;
-  if(chts[id])chts[id].destroy();
-  chts[id]=new Chart(c,{type:"bar",data:{labels,datasets:[{label,data,backgroundColor:color+"44",borderColor:color,borderWidth:2,borderRadius:6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{stepSize:1,color:"#94a3b8",font:{size:10}},grid:{color:"#f1f5f9"}},x:{ticks:{color:"#94a3b8",font:{size:10}},grid:{display:false}}}}});
-}
-function dDo(id,labels,data,colors){
-  const c=document.getElementById(id);if(!c)return;
-  if(chts[id])chts[id].destroy();
-  const tot=data.reduce((a,b)=>a+b,0);
-  chts[id]=new Chart(c,{type:"doughnut",data:{labels,datasets:[{data,backgroundColor:colors,borderWidth:2,borderColor:"#fff"}]},options:{responsive:true,maintainAspectRatio:false,cutout:"62%",plugins:{legend:{position:"bottom",labels:{font:{size:10},color:"#64748b",padding:10}},tooltip:{callbacks:{label:ctx=>`${ctx.label}: ${ctx.parsed}${tot?" ("+Math.round(ctx.parsed/tot*100)+"%)":""`}}}}}}); 
-}
-
-/* Close on backdrop */
-["loginMod","odModal","okModal"].forEach(id=>{
-  document.getElementById(id).addEventListener("click",function(e){if(e.target===this){if(id==="loginMod")closeLogin();else if(id==="odModal")closeOD();else closeOk();}});
-});
-
-window.onload=function(){
-  if(!localStorage.getItem("jp_pw"))localStorage.setItem("jp_pw",DP);
-  loadRevsPub();
-};
 </script>
 </body>
 </html>
