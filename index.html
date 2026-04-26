@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
 
 :root{
@@ -262,9 +263,22 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
 <div id="okMod" class="mo">
   <div class="mb">
     <i class="fas fa-check-circle mi"></i>
-    <h3 style="font-family:Poppins,sans-serif;font-size:1.28rem;margin-bottom:7px">Order Sent!</h3>
-    <p style="color:var(--gr);font-size:.91rem">WhatsApp opened. Save the receipt PDF!</p>
-    <a id="waLnk" href="#" target="_blank" class="btn bw" style="margin-top:16px;width:100%"><i class="fab fa-whatsapp"></i> Resend WhatsApp</a>
+    <h3 style="font-family:Poppins,sans-serif;font-size:1.28rem;margin-bottom:10px">Order Confirmed!</h3>
+    <div style="text-align:left;background:#f8fafc;border-radius:10px;padding:14px;margin-bottom:16px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <i class="fas fa-file-pdf" style="color:#e63946;font-size:1.2rem;width:22px"></i>
+        <div><p style="font-weight:600;font-size:.88rem;color:#065f46">Receipt downloading...</p><p style="font-size:.78rem;color:var(--gr)">Check your downloads folder</p></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <i class="fas fa-tachometer-alt" style="color:var(--pr);font-size:1.2rem;width:22px"></i>
+        <div><p style="font-weight:600;font-size:.88rem;color:var(--dk)">Order saved to dashboard</p><p style="font-size:.78rem;color:var(--gr)">Visible in your owner panel</p></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <i class="fab fa-whatsapp" style="color:var(--wa);font-size:1.2rem;width:22px"></i>
+        <div><p style="font-weight:600;font-size:.88rem;color:var(--dk)">WhatsApp opened</p><p style="font-size:.78rem;color:var(--gr)">Send the pre-filled message to complete</p></div>
+      </div>
+    </div>
+    <a id="waLnk" href="#" target="_blank" class="btn bw" style="width:100%"><i class="fab fa-whatsapp"></i> Resend WhatsApp</a>
     <button class="btn bg" onclick="closeMod('okMod')" style="margin-top:9px;width:100%">Close</button>
   </div>
 </div>
@@ -815,20 +829,123 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
     orders.unshift(order);
     sOrders(orders);
 
-    // Fill receipt
-    el("r-id").innerText = ordId;
-    el("r-dt").innerText = date;
-    el("r-nm").innerText = name;
-    el("r-ph").innerText = phone;
-    el("r-lc").innerText = loc;
-    el("r-ur").innerText = urg;
-    el("r-bu").innerText = bud || "Not specified";
-    el("r-it").innerText = items;
-    var pn = el("r-pn");
-    if (photos.length) { pn.style.display = "block"; pn.innerText = photos.length + " product photo(s) uploaded with this order."; }
-    else { pn.style.display = "none"; }
+    // ── ACTION 1: Save to dashboard (localStorage) ─────────────────────────
+    // Already done above (orders.unshift + sOrders)
 
-    // Build WhatsApp message
+    // ── ACTION 2: Auto-download PDF receipt ─────────────────────────────────
+    try {
+      var jsPDF = window.jspdf.jsPDF;
+      var doc = new jsPDF({ unit: "mm", format: "a4" });
+      var lm = 20, rm = 190, y = 20;
+
+      // Header
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(22);
+      doc.setTextColor(0, 119, 182);
+      doc.text("JAMBO+", lm, y);
+      doc.setFontSize(10);
+      doc.setTextColor(100, 116, 139);
+      doc.setFont("helvetica", "normal");
+      y += 7;
+      doc.text("Zanzibar Personal Shopping Service", lm, y);
+      y += 5;
+      doc.setDrawColor(0, 119, 182);
+      doc.setLineWidth(0.5);
+      doc.line(lm, y, rm, y);
+      y += 8;
+
+      // Order ID + Date
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(11);
+      doc.setTextColor(30, 30, 30);
+      doc.text("Order Reference:", lm, y);
+      doc.setFont("helvetica", "normal");
+      doc.text(ordId, 70, y);
+      y += 7;
+      doc.setFont("helvetica", "bold");
+      doc.text("Date:", lm, y);
+      doc.setFont("helvetica", "normal");
+      doc.text(date, 70, y);
+      y += 10;
+
+      // Divider
+      doc.setDrawColor(220, 220, 220);
+      doc.line(lm, y, rm, y);
+      y += 8;
+
+      // Client details
+      var fields = [
+        ["Client Name", name],
+        ["WhatsApp", phone],
+        ["Delivery Location", loc],
+        ["Urgency", urg],
+        ["Budget", bud || "Not specified"]
+      ];
+      fields.forEach(function(f) {
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(10);
+        doc.setTextColor(100, 116, 139);
+        doc.text(f[0] + ":", lm, y);
+        doc.setFont("helvetica", "normal");
+        doc.setTextColor(30, 30, 30);
+        doc.text(String(f[1]), 70, y);
+        y += 7;
+      });
+
+      y += 3;
+      doc.setDrawColor(220, 220, 220);
+      doc.line(lm, y, rm, y);
+      y += 8;
+
+      // Shopping list box
+      doc.setFillColor(248, 250, 252);
+      doc.setDrawColor(0, 119, 182);
+      doc.setLineWidth(0.3);
+      var boxY = y;
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(10);
+      doc.setTextColor(0, 119, 182);
+      doc.text("Shopping List:", lm, y + 5);
+      y += 10;
+      doc.setFont("helvetica", "normal");
+      doc.setTextColor(30, 30, 30);
+      var lines = doc.splitTextToSize(items, rm - lm - 4);
+      doc.roundedRect(lm - 2, boxY, rm - lm + 4, lines.length * 5.5 + 14, 2, 2, "S");
+      lines.forEach(function(line) {
+        if (y > 270) { doc.addPage(); y = 20; }
+        doc.text(line, lm, y);
+        y += 5.5;
+      });
+      y += 8;
+
+      // Photos note
+      if (photos.length) {
+        doc.setFont("helvetica", "italic");
+        doc.setFontSize(9);
+        doc.setTextColor(100, 116, 139);
+        doc.text(photos.length + " product photo(s) submitted with this order. Check your dashboard.", lm, y);
+        y += 8;
+      }
+
+      // Footer
+      var footY = 275;
+      doc.setDrawColor(0, 119, 182);
+      doc.setLineWidth(0.4);
+      doc.line(lm, footY, rm, footY);
+      footY += 5;
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(8.5);
+      doc.setTextColor(100, 116, 139);
+      doc.text("Thank you for using JAMBO+!", 105, footY, { align: "center" });
+      footY += 5;
+      doc.text("+255 778 714 307  |  info@jambo-plus.store  |  @jambo-plus (IG)  |  Mandibotek (FB)", 105, footY, { align: "center" });
+
+      doc.save("JAMBO-Receipt-" + ordId + ".pdf");
+    } catch(pdfErr) {
+      console.warn("PDF generation failed:", pdfErr);
+    }
+
+    // ── ACTION 3: Open WhatsApp Business ────────────────────────────────────
     var msgParts = [
       "JAMBO+ NEW ORDER: " + ordId,
       "",
@@ -843,15 +960,15 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
     ];
     if (photos.length) { msgParts.push(""); msgParts.push("Note: Customer uploaded " + photos.length + " product photo(s). Check dashboard."); }
     var msg = msgParts.join("\n");
-
     var waUrl = "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg);
     window.open(waUrl, "_blank");
     el("waLnk").href = waUrl;
-    openMod("okMod");
-    setTimeout(function() { window.print(); }, 900);
 
+    // Show success modal
+    openMod("okMod");
+
+    // Reset form
     el("oform").reset();
-    // Reset photos
     photos = [];
     var box2 = el("puBox"); if (box2) box2.classList.remove("ok");
     var grid2 = el("puGrid"); if (grid2) grid2.style.display = "none";
