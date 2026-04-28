@@ -247,39 +247,39 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
 
 <div id="rcpt">
   <div class="rh2"><p style="font-size:18pt;font-weight:800;font-family:Poppins,sans-serif">JAMBO+</p>
-  <p>Zanzibar Personal Shopping Service</p>
+  <p id="rcpt-title">Zanzibar Personal Shopping Service</p>
   <p style="margin-top:6px">Order: <b><span id="r-id"></span></b> &nbsp;|&nbsp; Date: <span id="r-dt"></span></p></div>
-  <div class="rr2"><b>Client:</b><span id="r-nm"></span></div>
-  <div class="rr2"><b>Phone:</b><span id="r-ph"></span></div>
-  <div class="rr2"><b>Location:</b><span id="r-lc"></span></div>
-  <div class="rr2"><b>Urgency:</b><span id="r-ur"></span></div>
-  <div class="rr2"><b>Budget:</b><span id="r-bu"></span></div>
-  <div class="rd3"><p style="font-weight:700;margin-bottom:5px">Shopping List:</p><p id="r-it" style="white-space:pre-wrap"></p></div>
+  <div class="rr2"><b id="rcpt-lbl-client">Client:</b><span id="r-nm"></span></div>
+  <div class="rr2"><b id="rcpt-lbl-phone">Phone:</b><span id="r-ph"></span></div>
+  <div class="rr2"><b id="rcpt-lbl-loc">Location:</b><span id="r-lc"></span></div>
+  <div class="rr2"><b id="rcpt-lbl-urg">Urgency:</b><span id="r-ur"></span></div>
+  <div class="rr2"><b id="rcpt-lbl-bud">Budget:</b><span id="r-bu"></span></div>
+  <div class="rd3"><p style="font-weight:700;margin-bottom:5px" id="rcpt-lbl-items">Shopping List:</p><p id="r-it" style="white-space:pre-wrap"></p></div>
   <p id="r-pn" style="display:none;font-size:10pt;color:#555;margin-top:7px"></p>
-  <div class="rf2"><p>Thank you for using JAMBO+!</p><p>+255 778 714 307 | info@jambo-plus.store</p><p>@jambo-plus (IG) | Mandibotek (FB)</p></div>
+  <div class="rf2"><p id="rcpt-thank">Thank you for using JAMBO+!</p><p>+255 778 714 307 | info@jambo-plus.store</p><p>@jambo-plus (IG) | Mandibotek (FB)</p></div>
 </div>
 
 <!-- Success Modal -->
 <div id="okMod" class="mo">
   <div class="mb">
     <i class="fas fa-check-circle mi"></i>
-    <h3 style="font-family:Poppins,sans-serif;font-size:1.28rem;margin-bottom:10px">Order Confirmed!</h3>
+    <h3 id="mod-ok-title" style="font-family:Poppins,sans-serif;font-size:1.28rem;margin-bottom:10px">Order Confirmed!</h3>
     <div style="text-align:left;background:#f8fafc;border-radius:10px;padding:14px;margin-bottom:16px">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
         <i class="fas fa-file-pdf" style="color:#e63946;font-size:1.2rem;width:22px"></i>
-        <div><p style="font-weight:600;font-size:.88rem;color:#065f46">Receipt downloading...</p><p style="font-size:.78rem;color:var(--gr)">Check your downloads folder</p></div>
+        <div><p id="mod-ok-pdf1" style="font-weight:600;font-size:.88rem;color:#065f46">Receipt downloading...</p><p id="mod-ok-pdf2" style="font-size:.78rem;color:var(--gr)">Check your downloads folder</p></div>
       </div>
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
         <i class="fas fa-tachometer-alt" style="color:var(--pr);font-size:1.2rem;width:22px"></i>
-        <div><p style="font-weight:600;font-size:.88rem;color:var(--dk)">Order saved to dashboard</p><p style="font-size:.78rem;color:var(--gr)">Visible in your owner panel</p></div>
+        <div><p id="mod-ok-dash1" style="font-weight:600;font-size:.88rem;color:#065f46">Order saved to dashboard</p><p id="mod-ok-dash2" style="font-size:.78rem;color:var(--gr)">Visible in your owner panel</p></div>
       </div>
       <div style="display:flex;align-items:center;gap:10px">
         <i class="fab fa-whatsapp" style="color:var(--wa);font-size:1.2rem;width:22px"></i>
-        <div><p style="font-weight:600;font-size:.88rem;color:var(--dk)">WhatsApp opened</p><p style="font-size:.78rem;color:var(--gr)">Send the pre-filled message to complete</p></div>
+        <div><p id="mod-ok-wa1" style="font-weight:600;font-size:.88rem;color:#065f46">WhatsApp opened</p><p id="mod-ok-wa2" style="font-size:.78rem;color:var(--gr)">Send the pre-filled message to complete</p></div>
       </div>
     </div>
-    <a id="waLnk" href="#" target="_blank" class="btn bw" style="width:100%"><i class="fab fa-whatsapp"></i> Resend WhatsApp</a>
-    <button class="btn bg" onclick="closeMod('okMod')" style="margin-top:9px;width:100%">Close</button>
+    <a id="waLnk" href="#" target="_blank" class="btn bw" style="width:100%"><i class="fab fa-whatsapp"></i> <span id="mod-ok-resend">Resend WhatsApp</span></a>
+    <button class="btn bg" onclick="closeMod('okMod')" id="mod-ok-close" style="margin-top:9px;width:100%">Close</button>
   </div>
 </div>
 
@@ -292,8 +292,8 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
     </div>
     <div class="odg" id="od-body"></div>
     <div style="margin-top:18px;display:flex;gap:9px;justify-content:flex-end">
-      <button class="btn bw bsm" id="od-wa"><i class="fab fa-whatsapp"></i> Message</button>
-      <button class="btn bg bsm" onclick="closeMod('odMod')">Close</button>
+      <button class="btn bw bsm" id="od-wa"><i class="fab fa-whatsapp"></i> <span id="mod-od-msg">Message</span></button>
+      <button class="btn bg bsm" id="mod-od-close" onclick="closeMod('odMod')">Close</button>
     </div>
   </div>
 </div>
@@ -302,14 +302,14 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
 <div id="lgMod" class="mo">
   <div class="mb" style="max-width:340px">
     <div class="logo" style="justify-content:center;font-size:1.35rem;margin-bottom:5px"><i class="fas fa-shopping-bag"></i> JAMBO<span>+</span></div>
-    <p style="color:var(--gr);font-size:.86rem;margin-bottom:18px">Owner Dashboard</p>
+    <p id="mod-lg-sub" style="color:var(--gr);font-size:.86rem;margin-bottom:18px">Owner Dashboard</p>
     <div style="text-align:left;margin-bottom:13px">
-      <label style="font-size:.84rem;font-weight:600;margin-bottom:5px;display:block">Password</label>
+      <label id="mod-lg-lbl-pw" style="font-size:.84rem;font-weight:600;margin-bottom:5px;display:block">Password</label>
       <input type="password" id="lPw" class="fc" placeholder="Enter password">
     </div>
     <div id="lErr" style="display:none;background:#fee2e2;color:#991b1b;padding:8px 11px;border-radius:7px;font-size:.82rem;margin-bottom:11px">Wrong password. Try again.</div>
-    <button class="btn bp" style="width:100%" id="lBtn"><i class="fas fa-unlock"></i> Login</button>
-    <button class="btn bg" style="width:100%;margin-top:9px" onclick="closeMod('lgMod')">Cancel</button>
+    <button class="btn bp" id="lBtn" style="width:100%"><i class="fas fa-unlock"></i> <span id="mod-lg-btn">Login</span></button>
+    <button class="btn bg" id="mod-lg-cancel" style="width:100%;margin-top:9px" onclick="closeMod('lgMod')">Cancel</button>
   </div>
 </div>
 <div id="pub">
@@ -351,25 +351,25 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
     <div class="ocard">
       <div style="text-align:center;margin-bottom:26px">
         <span style="display:inline-flex;align-items:center;gap:7px;background:var(--pl);color:var(--pr);padding:7px 18px;border-radius:50px;font-size:.87rem;font-weight:600">
-          <i class="fab fa-whatsapp"></i> Order via WhatsApp
+          <i class="fab fa-whatsapp"></i> <span id="form-header-wa">Order via WhatsApp</span>
         </span>
       </div>
       <form id="oform">
         <div class="fg">
           <div class="fi">
-            <label>Full Name <span class="req">*</span></label>
+            <label id="lbl-name">Full Name <span class="req">*</span></label>
             <input type="text" id="cNm" class="fc" placeholder="e.g. John Doe" required>
           </div>
           <div class="fi">
-            <label>WhatsApp Number <span class="req">*</span></label>
+            <label id="lbl-phone">WhatsApp Number <span class="req">*</span></label>
             <input type="tel" id="cPh" class="fc" placeholder="+255..." required>
           </div>
           <div class="fi fw">
-            <label>Delivery Location / Hotel <span class="req">*</span></label>
+            <label id="lbl-loc">Delivery Location / Hotel <span class="req">*</span></label>
             <input type="text" id="cLc" class="fc" placeholder="e.g. Serena Hotel, Room 204" required>
           </div>
           <div class="fi">
-            <label>When do you need it?</label>
+            <label id="lbl-urg">When do you need it?</label>
             <select id="cUr" class="fc">
               <option value="ASAP">As Soon As Possible</option>
               <option value="Today">Later Today</option>
@@ -378,31 +378,31 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
             </select>
           </div>
           <div class="fi">
-            <label>Estimated Budget (Optional)</label>
+            <label id="lbl-budget">Estimated Budget (Optional)</label>
             <input type="text" id="cBu" class="fc" placeholder="e.g. 50,000 TZS">
           </div>
           <div class="fi fw">
-            <label>What do you want us to buy? <span class="req">*</span></label>
-            <p style="font-size:.79rem;color:var(--gr);margin-bottom:6px">Be specific — brand, size, color, quantity.</p>
+            <label id="lbl-items">What do you want us to buy? <span class="req">*</span></label>
+            <p id="lbl-items-sub" style="font-size:.79rem;color:var(--gr);margin-bottom:6px">Be specific — brand, size, color, quantity.</p>
             <textarea id="cIt" class="fc" placeholder="Example:&#10;2x Coke 500ml&#10;1x AA batteries (Duracell)&#10;Sunscreen SPF50" required></textarea>
           </div>
           <div class="fi fw">
-            <label>
+            <label id="lbl-photo">
               <i class="fas fa-camera" style="color:var(--pr);margin-right:5px"></i>
-              Product Photo <span style="color:var(--gr);font-weight:400;font-size:.84rem">(Optional — helps us find the exact item)</span>
+              Product Photo <span id="lbl-photo-opt" style="color:var(--gr);font-weight:400;font-size:.84rem">(Optional — helps us find the exact item)</span>
             </label>
             <div class="pu-box" id="puBox">
               <input type="file" id="pFile" accept="image/*" multiple style="display:none">
               <i class="fas fa-images" style="font-size:1.6rem;color:var(--gr);margin-bottom:8px;display:block"></i>
-              <p style="color:var(--gr);font-size:.87rem;font-weight:600">Tap to upload product photos</p>
-              <p style="color:#cbd5e1;font-size:.76rem;margin-top:4px">Up to 10 images &bull; JPG / PNG &bull; max 5MB each</p>
+              <p id="pu-tap" style="color:var(--gr);font-size:.87rem;font-weight:600">Tap to upload product photos</p>
+              <p id="pu-limit" style="color:#cbd5e1;font-size:.76rem;margin-top:4px">Up to 10 images &bull; JPG / PNG &bull; max 5MB each</p>
             </div>
             <div id="puGrid" style="display:none;margin-top:12px">
               <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-                <p style="font-size:.85rem;font-weight:600;color:var(--gn)"><i class="fas fa-check-circle"></i> <span id="puCount">0</span> photo(s) ready</p>
+                <p id="pu-ready" style="font-size:.85rem;font-weight:600;color:var(--gn)"><i class="fas fa-check-circle"></i> <span id="puCount">0</span> photo(s) ready</p>
                 <div style="display:flex;gap:8px;align-items:center">
-                  <button type="button" id="puAddMore" class="pu-rm" style="color:var(--pr)"><i class="fas fa-plus-circle"></i> Add more</button>
-                  <button type="button" id="puClearAll" class="pu-rm"><i class="fas fa-times-circle"></i> Clear all</button>
+                  <button type="button" id="puAddMore" class="pu-rm" style="color:var(--pr)"><i class="fas fa-plus-circle"></i> <span id="pu-add-more-txt">Add more</span></button>
+                  <button type="button" id="puClearAll" class="pu-rm"><i class="fas fa-times-circle"></i> <span id="pu-clear-txt">Clear all</span></button>
                 </div>
               </div>
               <div id="puThumbs" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:8px"></div>
@@ -410,7 +410,7 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
           </div>
         </div>
         <div class="fact">
-          <p class="fn"><i class="fas fa-shield-alt" style="color:var(--pr)"></i> By confirming you agree to our service terms.</p>
+          <p id="form-terms" class="fn"><i class="fas fa-shield-alt" style="color:var(--pr)"></i> By confirming you agree to our service terms.</p>
           <button type="button" class="btn bw" id="submitBtn" style="padding:13px 30px">
             <i class="fab fa-whatsapp"></i> <span id="submitTxt">Confirm Order</span>
           </button>
@@ -422,32 +422,32 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
 
 <section id="policy" class="psec">
   <div class="w">
-    <div class="stitle"><h2>Service Policy &amp; Guidelines</h2><p>Everything you need to know before ordering.</p></div>
+    <div class="stitle"><h2 id="pol-title">Service Policy &amp; Guidelines</h2><p id="pol-sub">Everything you need to know before ordering.</p></div>
     <div class="pgrid">
       <div class="pc">
-        <h3><i class="fas fa-users" style="color:var(--pr)"></i> Who We Serve</h3>
+        <h3><i class="fas fa-users" style="color:var(--pr)"></i> <span id="pol-who-title">Who We Serve</span></h3>
         <ul>
-          <li><i class="fas fa-check"></i><span><b>Tourists:</b> Souvenirs, essentials, local goods at fair prices.</span></li>
-          <li><i class="fas fa-check"></i><span><b>Locals:</b> Errands for busy families and professionals.</span></li>
-          <li><i class="fas fa-check"></i><span><b>Fees:</b> Item cost + service fee + delivery.</span></li>
+          <li><i class="fas fa-check"></i><span id="pol-who-li1"><b>Tourists:</b> Souvenirs, essentials, local goods at fair prices.</span></li>
+          <li><i class="fas fa-check"></i><span id="pol-who-li2"><b>Locals:</b> Errands for busy families and professionals.</span></li>
+          <li><i class="fas fa-check"></i><span id="pol-who-li3"><b>Fees:</b> Item cost + service fee + delivery.</span></li>
         </ul>
       </div>
       <div class="pc dn">
-        <h3 style="color:var(--rd)"><i class="fas fa-ban"></i> We Do NOT Buy</h3>
+        <h3 style="color:var(--rd)" id="pol-not-title"><i class="fas fa-ban"></i> We Do NOT Buy</h3>
         <ul>
-          <li><i class="fas fa-times-circle"></i><span><b>Medicine</b> — buy personally for safety.</span></li>
-          <li><i class="fas fa-times-circle"></i><span><b>Alcohol</b> — not handled.</span></li>
-          <li><i class="fas fa-times-circle"></i><span><b>Illegal products</b> — strictly refused.</span></li>
-          <li><i class="fas fa-times-circle"></i><span><b>Large electronics</b> (TVs, fridges) — small ones fine.</span></li>
+          <li><i class="fas fa-times-circle"></i><span id="pol-not-li1"><b>Medicine</b> — buy personally for safety.</span></li>
+          <li><i class="fas fa-times-circle"></i><span id="pol-not-li2"><b>Alcohol</b> — not handled.</span></li>
+          <li><i class="fas fa-times-circle"></i><span id="pol-not-li3"><b>Illegal products</b> — strictly refused.</span></li>
+          <li><i class="fas fa-times-circle"></i><span id="pol-not-li4"><b>Large electronics</b> (TVs, fridges) — small ones fine.</span></li>
         </ul>
       </div>
       <div class="pc">
-        <h3><i class="fas fa-lightbulb" style="color:var(--ac)"></i> Essential Tips</h3>
+        <h3><i class="fas fa-lightbulb" style="color:var(--ac)"></i> <span id="pol-tip-title">Essential Tips</span></h3>
         <ul>
-          <li><i class="fas fa-star"></i><span><b>Be specific</b> — exact brands, sizes, colors.</span></li>
-          <li><i class="fas fa-star"></i><span><b>Payment:</b> M-Pesa, Tigo Pesa, Cash.</span></li>
-          <li><i class="fas fa-star"></i><span><b>Min order:</b> 50,000 TZS. Below = 5,000 TZS fee.</span></li>
-          <li><i class="fas fa-star"></i><span><b>Receipt:</b> Reference only — your order gets delivered.</span></li>
+          <li><i class="fas fa-star"></i><span id="pol-tip-li1"><b>Be specific</b> — exact brands, sizes, colors.</span></li>
+          <li><i class="fas fa-star"></i><span id="pol-tip-li2"><b>Payment:</b> M-Pesa, Tigo Pesa, Cash.</span></li>
+          <li><i class="fas fa-star"></i><span id="pol-tip-li3"><b>Min order:</b> 50,000 TZS. Below = 5,000 TZS fee.</span></li>
+          <li><i class="fas fa-star"></i><span id="pol-tip-li4"><b>Receipt:</b> Reference only — your order gets delivered.</span></li>
         </ul>
       </div>
     </div>
@@ -456,12 +456,12 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
 
 <section id="tracker" class="tsec">
   <div class="w">
-    <div class="stitle"><h2>Live Order Tracker</h2><p>Enter your Order ID from the receipt to check status.</p></div>
+    <div class="stitle"><h2 id="track-title">Live Order Tracker</h2><p id="track-sub">Enter your Order ID from the receipt to check status.</p></div>
     <div class="tbox">
       <i class="fas fa-map-marked-alt" style="font-size:2rem;color:var(--pr);display:block;margin-bottom:16px"></i>
       <div style="display:flex;gap:9px;justify-content:center;flex-wrap:wrap">
         <input type="text" id="tIn" class="fc" style="max-width:230px" placeholder="e.g. ORD-1234">
-        <button class="btn bp" id="tBtn"><i class="fas fa-search"></i> Track</button>
+        <button class="btn bp" id="tBtn"><i class="fas fa-search"></i> <span id="track-btn">Track</span></button>
       </div>
       <div id="tRes" class="tres"></div>
     </div>
@@ -470,17 +470,17 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
 
 <section id="reviews" class="revsec">
   <div class="w">
-    <div class="stitle"><h2>Client Testimonies</h2><p>Real feedback from real customers.</p></div>
+    <div class="stitle"><h2 id="rev-title">Client Testimonies</h2><p id="rev-sub">Real feedback from real customers.</p></div>
     <div class="rcont">
       <div class="rfc">
-        <h3 style="font-family:Poppins,sans-serif;color:var(--pr);margin-bottom:18px">Leave a Review</h3>
+        <h3 id="rev-form-title" style="font-family:Poppins,sans-serif;color:var(--pr);margin-bottom:18px">Leave a Review</h3>
         <form id="revForm">
           <div style="margin-bottom:14px">
-            <label style="font-size:.86rem;font-weight:600;color:var(--dk);margin-bottom:5px;display:block">Your Name</label>
+            <label id="rev-lbl-name" style="font-size:.86rem;font-weight:600;color:var(--dk);margin-bottom:5px;display:block">Your Name</label>
             <input type="text" id="rNm" class="fc" required>
           </div>
           <div style="margin-bottom:14px">
-            <label style="font-size:.86rem;font-weight:600;color:var(--dk);margin-bottom:7px;display:block">Rating</label>
+            <label id="rev-lbl-rate" style="font-size:.86rem;font-weight:600;color:var(--dk);margin-bottom:7px;display:block">Rating</label>
             <div class="stars">
               <input type="radio" id="s5" name="rt" value="5" required><label for="s5">&#9733;</label>
               <input type="radio" id="s4" name="rt" value="4"><label for="s4">&#9733;</label>
@@ -490,10 +490,10 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
             </div>
           </div>
           <div style="margin-bottom:14px">
-            <label style="font-size:.86rem;font-weight:600;color:var(--dk);margin-bottom:5px;display:block">Comment</label>
+            <label id="rev-lbl-com" style="font-size:.86rem;font-weight:600;color:var(--dk);margin-bottom:5px;display:block">Comment</label>
             <textarea id="rCm" class="fc" style="min-height:88px" required></textarea>
           </div>
-          <button type="button" class="btn ba" style="width:100%" id="revBtn">Post Review</button>
+          <button type="button" class="btn ba" id="revBtn" style="width:100%">Post Review</button>
         </form>
       </div>
       <div class="rl" id="revList"></div>
@@ -504,7 +504,7 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
 <footer>
   <div class="w">
     <div class="flogo"><i class="fas fa-shopping-bag" style="color:var(--ac)"></i> JAMBO<span>+</span></div>
-    <p style="opacity:.5;font-size:.87rem;margin-bottom:22px">Zanzibar Personal Shopping Service</p>
+    <p id="ft-tag" style="opacity:.5;font-size:.87rem;margin-bottom:22px">Zanzibar Personal Shopping Service</p>
     <div class="soc">
       <a href="https://wa.me/255778714307" target="_blank" rel="noopener" class="wa"><i class="fab fa-whatsapp"></i></a>
       <a href="https://www.instagram.com/jambo-plus" target="_blank" rel="noopener" class="ig"><i class="fab fa-instagram"></i></a>
@@ -514,7 +514,7 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
       <a href="tel:+255778714307"><i class="fas fa-phone"></i> +255 778 714 307</a>
       <a href="mailto:info@jambo-plus.store"><i class="fas fa-envelope"></i> info@jambo-plus.store</a>
     </div>
-    <p class="fcp">&copy; 2024 JAMBO+ Zanzibar. All rights reserved.</p>
+    <p class="fcp" id="ft-cp">&copy; 2024 JAMBO+ Zanzibar. All rights reserved.</p>
   </div>
 </footer>
 </div>
@@ -523,84 +523,84 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
   <aside class="sb">
     <div class="sl"><i class="fas fa-shopping-bag" style="color:var(--ac)"></i><span>JAMBO+</span></div>
     <nav>
-      <div class="ni act" data-t="analytics"><i class="fas fa-chart-line"></i><span> Analytics</span></div>
-      <div class="ni" data-t="orders"><i class="fas fa-inbox"></i><span> Orders</span><span id="oBadge" style="margin-left:auto;background:var(--rd);color:#fff;border-radius:11px;padding:1px 7px;font-size:.71rem;display:none"></span></div>
-      <div class="ni" data-t="reviews"><i class="fas fa-star"></i><span> Reviews</span></div>
+      <div class="ni act" data-t="analytics"><i class="fas fa-chart-line"></i><span id="db-nav-ana"> Analytics</span></div>
+      <div class="ni" data-t="orders"><i class="fas fa-inbox"></i><span id="db-nav-ord"> Orders</span><span id="oBadge" style="margin-left:auto;background:var(--rd);color:#fff;border-radius:11px;padding:1px 7px;font-size:.71rem;display:none"></span></div>
+      <div class="ni" data-t="reviews"><i class="fas fa-star"></i><span id="db-nav-rev"> Reviews</span></div>
       <hr class="sdiv">
-      <div class="ni" data-t="settings"><i class="fas fa-cog"></i><span> Settings</span></div>
+      <div class="ni" data-t="settings"><i class="fas fa-cog"></i><span id="db-nav-set"> Settings</span></div>
       <div class="ssp"></div>
-      <div class="ni dn2" id="logoutBtn"><i class="fas fa-sign-out-alt"></i><span> Logout</span></div>
+      <div class="ni dn2" id="logoutBtn"><i class="fas fa-sign-out-alt"></i><span id="db-nav-out">Logout</span></div>
     </nav>
   </aside>
   <main class="dm">
 
     <div id="tab-analytics">
       <div class="dh">
-        <div><h1>Live Analytics</h1><p id="updTs"></p></div>
-        <button class="btn bg bsm" id="refBtn"><i class="fas fa-sync-alt"></i> Refresh</button>
+        <div><h1 id="db-ana-title">Live Analytics</h1><p id="updTs"></p></div>
+        <button class="btn bg bsm" id="refBtn"><i class="fas fa-sync-alt"></i> <span id="db-btn-ref">Refresh</span></button>
       </div>
       <div class="kg">
-        <div class="kc bl"><div class="kl">Total Orders</div><div class="kv" id="k-tot">0</div><i class="fas fa-shopping-bag ki"></i><div class="kch" id="k-tod"></div></div>
-        <div class="kc or"><div class="kl">Pending</div><div class="kv" id="k-pnd">0</div><i class="fas fa-clock ki"></i></div>
-        <div class="kc bl" style="--pr:#3b82f6"><div class="kl">Processing</div><div class="kv" id="k-prc">0</div><i class="fas fa-spinner ki"></i></div>
-        <div class="kc gn"><div class="kl">Delivered</div><div class="kv" id="k-del">0</div><i class="fas fa-check-circle ki"></i></div>
-        <div class="kc rd"><div class="kl">Cancelled</div><div class="kv" id="k-can">0</div><i class="fas fa-times-circle ki"></i></div>
-        <div class="kc tc"><div class="kl">Reviews</div><div class="kv" id="k-rev">0</div><i class="fas fa-star ki"></i><div class="kch" id="k-avg"></div></div>
+        <div class="kc bl"><div class="kl" id="db-k-tot">Total Orders</div><div class="kv" id="k-tot">0</div><i class="fas fa-shopping-bag ki"></i><div class="kch" id="k-tod"></div></div>
+        <div class="kc or"><div class="kl" id="db-k-pnd">Pending</div><div class="kv" id="k-pnd">0</div><i class="fas fa-clock ki"></i></div>
+        <div class="kc bl" style="--pr:#3b82f6"><div class="kl" id="db-k-prc">Processing</div><div class="kv" id="k-prc">0</div><i class="fas fa-spinner ki"></i></div>
+        <div class="kc gn"><div class="kl" id="db-k-del">Delivered</div><div class="kv" id="k-del">0</div><i class="fas fa-check-circle ki"></i></div>
+        <div class="kc rd"><div class="kl" id="db-k-can">Cancelled</div><div class="kv" id="k-can">0</div><i class="fas fa-times-circle ki"></i></div>
+        <div class="kc tc"><div class="kl" id="db-k-rev">Reviews</div><div class="kv" id="k-rev">0</div><i class="fas fa-star ki"></i><div class="kch" id="k-avg"></div></div>
       </div>
       <div class="cg">
-        <div class="cc"><h3><i class="fas fa-chart-bar"></i> Orders Last 7 Days</h3><div class="cw"><canvas id="ch1"></canvas></div></div>
-        <div class="cc"><h3><i class="fas fa-chart-pie"></i> By Status</h3><div class="cw"><canvas id="ch2"></canvas></div></div>
+        <div class="cc"><h3 id="db-ch-7d"><i class="fas fa-chart-bar"></i> Orders Last 7 Days</h3><div class="cw"><canvas id="ch1"></canvas></div></div>
+        <div class="cc"><h3 id="db-ch-st"><i class="fas fa-chart-pie"></i> By Status</h3><div class="cw"><canvas id="ch2"></canvas></div></div>
       </div>
       <div class="cg">
-        <div class="cc"><h3><i class="fas fa-bolt"></i> By Urgency</h3><div class="cw"><canvas id="ch3"></canvas></div></div>
-        <div class="cc"><h3><i class="fas fa-star"></i> Ratings</h3><div class="cw"><canvas id="ch4"></canvas></div></div>
+        <div class="cc"><h3 id="db-ch-ur"><i class="fas fa-bolt"></i> By Urgency</h3><div class="cw"><canvas id="ch3"></canvas></div></div>
+        <div class="cc"><h3 id="db-ch-rt"><i class="fas fa-star"></i> Ratings</h3><div class="cw"><canvas id="ch4"></canvas></div></div>
       </div>
       <div class="dc">
-        <div class="dch"><h3><i class="fas fa-clock"></i> Recent Orders</h3><button class="btn bg bsm" id="viewAllBtn">View All</button></div>
-        <div style="overflow-x:auto"><table class="dt"><thead><tr><th>ID</th><th>Client</th><th>Items</th><th>Location</th><th>Status</th></tr></thead><tbody id="recTb"></tbody></table></div>
+        <div class="dch"><h3 id="db-rc-title"><i class="fas fa-clock"></i> Recent Orders</h3><button class="btn bg bsm" id="viewAllBtn" id="db-btn-viewall">View All</button></div>
+        <div style="overflow-x:auto"><table class="dt"><thead><tr><th id="db-th-id">ID</th><th id="db-th-cli">Client</th><th id="db-th-itm">Items</th><th id="db-th-loc">Location</th><th id="db-th-st">Status</th></tr></thead><tbody id="recTb"></tbody></table></div>
       </div>
     </div>
 
     <div id="tab-orders" class="gone">
       <div class="dh">
-        <div><h1>All Orders</h1><p>Click a row to view details. Change status inline.</p></div>
+        <div><h1 id="db-ord-title">All Orders</h1><p id="db-ord-sub">Click a row to view details. Change status inline.</p></div>
         <div style="display:flex;gap:9px;flex-wrap:wrap;align-items:center">
           <select id="fSt" class="fc" style="width:145px;padding:8px 11px;font-size:.84rem"><option value="">All Statuses</option><option>Pending</option><option>Processing</option><option>Delivered</option><option>Cancelled</option></select>
-          <input type="text" id="fSr" class="fc" placeholder="Search..." style="width:175px;padding:8px 11px;font-size:.84rem">
+          <input type="text" id="fSr" class="fc" id="db-ord-srch" placeholder="Search..." style="width:175px;padding:8px 11px;font-size:.84rem">
         </div>
       </div>
       <div class="dc">
-        <div style="overflow-x:auto"><table class="dt"><thead><tr><th>Date/ID</th><th>Client</th><th>Phone</th><th>Items</th><th>Location</th><th>Photo</th><th>Status</th></tr></thead><tbody id="ordTb"></tbody></table></div>
+        <div style="overflow-x:auto"><table class="dt"><thead><tr><th id="db-od-th-dt">Date/ID</th><th id="db-od-th-cl">Client</th><th id="db-od-th-ph">Phone</th><th id="db-od-th-it">Items</th><th id="db-od-th-lo">Location</th><th id="db-od-th-pho">Photo</th><th id="db-od-th-st">Status</th></tr></thead><tbody id="ordTb"></tbody></table></div>
       </div>
     </div>
 
     <div id="tab-reviews" class="gone">
-      <div class="dh"><div><h1>Manage Reviews</h1><p>Delete fake or inappropriate reviews.</p></div></div>
+      <div class="dh"><div><h1 id="db-rev-title">Manage Reviews</h1><p id="db-rev-sub">Delete fake or inappropriate reviews.</p></div></div>
       <div class="dc">
-        <div style="overflow-x:auto"><table class="dt"><thead><tr><th>Date</th><th>Name</th><th>Rating</th><th>Comment</th><th>Delete</th></tr></thead><tbody id="revTb"></tbody></table></div>
+        <div style="overflow-x:auto"><table class="dt"><thead><tr><th id="db-rv-th-dt">Date</th><th id="db-rv-th-nm">Name</th><th id="db-rv-th-rt">Rating</th><th id="db-rv-th-cm">Comment</th><th id="db-rv-th-dl">Delete</th></tr></thead><tbody id="revTb"></tbody></table></div>
       </div>
     </div>
 
     <div id="tab-settings" class="gone">
-      <div class="dh"><div><h1>Settings</h1><p>Manage your password and data.</p></div></div>
+      <div class="dh"><div><h1 id="db-set-title">Settings</h1><p id="db-set-sub">Manage your password and data.</p></div></div>
       <div class="ssg">
         <div class="sc2">
-          <h3><i class="fas fa-key" style="color:var(--pr)"></i> Change Password</h3>
-          <p>Update your dashboard login password at any time.</p>
-          <div class="fi2"><label>Current Password</label><input type="password" id="curP" class="fc" placeholder="Current password"></div>
+          <h3 id="db-set-pw-t"><i class="fas fa-key" style="color:var(--pr)"></i> Change Password</h3>
+          <p id="db-set-pw-s">Update your dashboard login password at any time.</p>
+          <div class="fi2"><label id="db-set-lb-cur">Current Password</label><input type="password" id="curP" class="fc" placeholder="Current password"></div>
           <div class="fi2">
-            <label>New Password</label>
+            <label id="db-set-lb-new">New Password</label>
             <input type="password" id="newP" class="fc" placeholder="Min 6 characters">
             <div class="stb"><div class="stf" id="stFil" style="width:0"></div></div>
             <p id="stTxt" style="font-size:.77rem;color:var(--gr);margin-top:3px"></p>
           </div>
-          <div class="fi2"><label>Confirm New Password</label><input type="password" id="cfmP" class="fc" placeholder="Repeat new password"></div>
+          <div class="fi2"><label id="db-set-lb-cfm">Confirm New Password</label><input type="password" id="cfmP" class="fc" placeholder="Repeat new password"></div>
           <div id="pAli" class="ali"></div>
-          <button class="btn bp" id="savePwBtn" style="width:100%;margin-top:5px"><i class="fas fa-save"></i> Update Password</button>
+          <button class="btn bp" id="savePwBtn" style="width:100%;margin-top:5px"><i class="fas fa-save"></i> <span id="db-set-btn-up">Update Password</span></button>
         </div>
         <div class="sc2">
-          <h3><i class="fas fa-store" style="color:var(--ac)"></i> Business Info</h3>
-          <p>Contact details shown on receipts and website.</p>
+          <h3 id="db-set-inf-t"><i class="fas fa-store" style="color:var(--ac)"></i> Business Info</h3>
+          <p id="db-set-inf-s">Contact details shown on receipts and website.</p>
           <div style="background:var(--bg);border-radius:9px;padding:14px;display:grid;gap:11px">
             <div style="display:flex;align-items:center;gap:9px;font-size:.88rem"><i class="fab fa-whatsapp" style="color:var(--wa);width:20px"></i>+255 778 714 307</div>
             <div style="display:flex;align-items:center;gap:9px;font-size:.88rem"><i class="fas fa-envelope" style="color:var(--pr);width:20px"></i>info@jambo-plus.store</div>
@@ -608,10 +608,10 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
             <div style="display:flex;align-items:center;gap:9px;font-size:.88rem"><i class="fab fa-facebook" style="color:#1877F2;width:20px"></i>Mandibotek</div>
           </div>
           <div style="margin-top:18px;padding:14px;background:#fffbeb;border-radius:9px;border-left:4px solid var(--ac)">
-            <p style="font-size:.84rem;font-weight:600"><i class="fas fa-database" style="color:var(--ac)"></i> Storage</p>
-            <p style="font-size:.8rem;color:var(--gr);margin-top:3px">All data stored in your browser locally. Persists until cleared.</p>
+            <p id="db-set-sto-t" style="font-size:.84rem;font-weight:600"><i class="fas fa-database" style="color:var(--ac)"></i> Storage</p>
+            <p id="db-set-sto-s" style="font-size:.8rem;color:var(--gr);margin-top:3px">All data stored in your browser locally. Persists until cleared.</p>
           </div>
-          <button class="btn bd" id="clearBtn" style="width:100%;margin-top:14px"><i class="fas fa-trash-alt"></i> Clear All Data</button>
+          <button class="btn bd" id="clearBtn" style="width:100%;margin-top:14px"><i class="fas fa-trash-alt"></i> <span id="db-set-btn-clr">Clear All Data</span></button>
         </div>
       </div>
     </div>
@@ -625,7 +625,7 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
   var WA = "255778714307";
   var DP = "admin";
   var chts = {};
-  var photos = []; // array of {data, name, size}
+  var photos = []; 
 
   function gPass() { return localStorage.getItem("jp_pw") || DP; }
   function gOrders() { try { return JSON.parse(localStorage.getItem("jp_ord") || "[]"); } catch(e) { return []; } }
@@ -664,58 +664,652 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
     return map[s] || "sp2";
   }
 
-  /* ── LANGUAGE ── */
+  /* ── LANGUAGE DICTIONARY ── */
   var LANG = {
-    en: { order:"Place Order", policy:"Policy", track:"Track Order", rev:"Reviews", login:"Login",
-          title:"Your Personal Shopper in Zanzibar",
-          sub:"Fill the form below — we find it, bargain for you, and deliver to your door.",
-          confirm:"Confirm Order" },
-    sw: { order:"Weka Oda", policy:"Sera", track:"Fuatilia Oda", rev:"Maoni", login:"Ingia",
-          title:"Mnunuzi Wako Binafsi Zanzibar",
-          sub:"Jaza fomu hapa. Tutafuta, tutapunguza bei na tukuletea mlangoni.",
-          confirm:"Thibitisha Oda" },
-    fr: { order:"Commander", policy:"Politique", track:"Suivre", rev:"Avis", login:"Connexion",
-          title:"Votre Personal Shopper a Zanzibar",
-          sub:"Remplissez le formulaire — nous trouvons, negocions et livrons.",
-          confirm:"Confirmer la commande" },
-    de: { order:"Bestellen", policy:"Richtlinien", track:"Verfolgen", rev:"Bewertungen", login:"Anmelden",
-          title:"Ihr personlicher Einkaufer in Sansibar",
-          sub:"Formular ausfüllen — wir finden, handeln und liefern.",
-          confirm:"Bestellung bestatigen" },
-    es: { order:"Pedir", policy:"Politica", track:"Rastrear", rev:"Resenas", login:"Entrar",
-          title:"Tu comprador personal en Zanzibar",
-          sub:"Rellena el formulario — encontramos, negociamos y entregamos.",
-          confirm:"Confirmar pedido" },
-    it: { order:"Ordina", policy:"Politica", track:"Traccia", rev:"Recensioni", login:"Accedi",
-          title:"Il tuo personal shopper a Zanzibar",
-          sub:"Compila il modulo — troviamo, trattiamo e consegniamo.",
-          confirm:"Conferma ordine" },
-    zh: { order:"下订单", policy:"政策", track:"追踪", rev:"评价", login:"登录",
-          title:"您在桑给巴尔的私人购物助手",
-          sub:"填写表格 — 我们找到、砍价并送货上门。",
-          confirm:"确认订单" },
-    ru: { order:"Zakazat", policy:"Politika", track:"Otsledit", rev:"Otzyvy", login:"Voyti",
-          title:"Vash lichny shopper na Zanzibara",
-          sub:"Zapolnite formu — my naydyom, poktorguimsya i dostavim.",
-          confirm:"Podtverdit zakaz" },
-    pt: { order:"Pedir", policy:"Politica", track:"Rastrear", rev:"Avaliacoes", login:"Entrar",
-          title:"Seu comprador pessoal em Zanzibar",
-          sub:"Preencha o formulario — encontramos, negociamos e entregamos.",
-          confirm:"Confirmar pedido" }
+    en: {
+      nav_order:"Place Order", nav_policy:"Policy", nav_track:"Track Order", nav_rev:"Reviews", login:"Login",
+      hero_title:"Your Personal Shopper in Zanzibar",
+      hero_sub:"Fill the form below — we find it, bargain for you, and deliver to your door.",
+      form_wa:"Order via WhatsApp",
+      lbl_name:"Full Name", ph_name:"e.g. John Doe",
+      lbl_phone:"WhatsApp Number", ph_phone:"+255...",
+      lbl_loc:"Delivery Location / Hotel", ph_loc:"e.g. Serena Hotel, Room 204",
+      lbl_urg:"When do you need it?",
+      lbl_budget:"Estimated Budget (Optional)", ph_budget:"e.g. 50,000 TZS",
+      lbl_items:"What do you want us to buy?", lbl_items_sub:"Be specific — brand, size, color, quantity.",
+      ph_items:"Example:\n2x Coke 500ml\n1x AA batteries (Duracell)\nSunscreen SPF50",
+      lbl_photo:"Product Photo", lbl_photo_opt:"(Optional — helps us find the exact item)",
+      pu_tap:"Tap to upload product photos", pu_limit:"Up to 10 images • JPG / PNG • max 5MB each",
+      pu_ready:"photo(s) ready", pu_add:"Add more", pu_clear:"Clear all",
+      form_terms:"By confirming you agree to our service terms.", confirm:"Confirm Order",
+      
+      pol_title:"Service Policy & Guidelines", pol_sub:"Everything you need to know before ordering.",
+      pol_who:"Who We Serve", pol_who1:"Tourists: Souvenirs, essentials, local goods at fair prices.",
+      pol_who2:"Locals: Errands for busy families and professionals.", pol_who3:"Fees: Item cost + service fee + delivery.",
+      pol_not:"We Do NOT Buy", pol_not1:"Medicine — buy personally for safety.", pol_not2:"Alcohol — not handled.",
+      pol_not3:"Illegal products — strictly refused.", pol_not4:"Large electronics (TVs, fridges) — small ones fine.",
+      pol_tip:"Essential Tips", pol_tip1:"Be specific — exact brands, sizes, colors.", pol_tip2:"Payment: M-Pesa, Tigo Pesa, Cash.",
+      pol_tip3:"Min order: 50,000 TZS. Below = 5,000 TZS fee.", pol_tip4:"Receipt: Reference only — your order gets delivered.",
+
+      track_title:"Live Order Tracker", track_sub:"Enter your Order ID from the receipt to check status.",
+      ph_track:"e.g. ORD-1234", btn_track:"Track",
+      track_found:"Order Found", track_not:"Order not found. Check your receipt for the correct ID.",
+      
+      rev_title:"Client Testimonies", rev_sub:"Real feedback from real customers.",
+      rev_leave:"Leave a Review", rev_lbl_name:"Your Name", rev_lbl_rate:"Rating", rev_lbl_com:"Comment",
+      rev_post:"Post Review", rev_none:"No reviews yet — be the first!",
+
+      db_ana:"Analytics", db_ord:"Orders", db_rev:"Reviews", db_set:"Settings", db_out:"Logout",
+      db_tit_ana:"Live Analytics", db_btn_ref:"Refresh",
+      db_k_tot:"Total Orders", db_k_pnd:"Pending", db_k_prc:"Processing", db_k_del:"Delivered", db_k_can:"Cancelled", db_k_rev:"Reviews",
+      db_ch_7d:"Orders Last 7 Days", db_ch_st:"By Status", db_ch_ur:"By Urgency", db_ch_rt:"Ratings",
+      db_rc:"Recent Orders", db_view:"View All",
+      db_th_id:"ID", db_th_cli:"Client", db_th_itm:"Items", db_th_loc:"Location", db_th_st:"Status",
+      
+      db_tit_ord:"All Orders", db_sub_ord:"Click a row to view details. Change status inline.",
+      db_all_st:"All Statuses", db_search:"Search...",
+      db_th_dt:"Date/ID", db_th_cl:"Client", db_th_ph:"Phone", db_th_it:"Items", db_th_lo:"Location", db_th_phot:"Photo",
+      
+      db_tit_rev:"Manage Reviews", db_sub_rev:"Delete fake or inappropriate reviews.",
+      db_th_dt:"Date", db_th_nm:"Name", db_th_rt:"Rating", db_th_cm:"Comment", db_th_dl:"Delete",
+      
+      db_tit_set:"Settings", db_sub_set:"Manage your password and data.",
+      db_set_pw:"Change Password", db_set_pw_s:"Update your dashboard login password at any time.",
+      db_set_cur:"Current Password", db_set_new:"New Password", db_set_cfm:"Confirm New Password", db_set_upd:"Update Password",
+      db_set_bi:"Business Info", db_set_bi_s:"Contact details shown on receipts and website.",
+      db_set_sto:"Storage", db_set_sto_s:"All data stored in your browser locally. Persists until cleared.", db_set_clr:"Clear All Data",
+
+      mod_ok_t:"Order Confirmed!", mod_ok_pdf1:"Receipt downloading...", mod_ok_pdf2:"Check your downloads folder",
+      mod_ok_d1:"Order saved to dashboard", mod_ok_d2:"Visible in your owner panel", mod_ok_w1:"WhatsApp opened", mod_ok_w2:"Send the pre-filled message to complete",
+      mod_resend:"Resend WhatsApp", mod_close:"Close",
+      mod_od_msg:"Message",
+      mod_lg_sub:"Owner Dashboard", mod_lg_pw:"Password", mod_lg_btn:"Login", mod_lg_can:"Cancel",
+
+      rcpt_tit:"Zanzibar Personal Shopping Service", rcpt_cli:"Client:", rcpt_ph:"Phone:", rcpt_loc:"Location:", rcpt_urg:"Urgency:", rcpt_bud:"Budget:", rcpt_it:"Shopping List:",
+      rcpt_thank:"Thank you for using JAMBO+!", ft_cp:"© 2024 JAMBO+ Zanzibar. All rights reserved."
+    },
+    sw: {
+      nav_order:"Weka Oda", nav_policy:"Sera", nav_track:"Fuatilia Oda", nav_rev:"Maoni", login:"Ingia",
+      hero_title:"Mnunuzi Wako Binafsi Zanzibar",
+      hero_sub:"Jaza fomu hapa. Tutafuta, tutapunguza bei na tukuletea mlangoni.",
+      form_wa:"Agiza kupitia WhatsApp",
+      lbl_name:"Jina Kamili", ph_name:"mf. Juma Ali",
+      lbl_phone:"Namba ya WhatsApp", ph_phone:"+255...",
+      lbl_loc:"Mahali pa Kufikia / Hoteli", ph_loc:"mf. Hoteli ya Serena, Chumba 204",
+      lbl_urg:"Unahitaji lini?",
+      lbl_budget:"Bajeti Yakadiriva (Hiari)", ph_budget:"mf. 50,000 TZS",
+      lbl_items:"Unataka tununue nini?", lbl_items_sub:"Jiweke wazi — chapa, ukubwa, rangi, idadi.",
+      ph_items:"Mfano:\n2x Coke 500ml\n1x Betri za AA (Duracell)\nSunscreen SPF50",
+      lbl_photo:"Picha ya Bidhaa", lbl_photo_opt:"(Hiari — inatusaidia kupata bidhaa sahihi)",
+      pu_tap:"Gusa kupakia picha", pu_limit:"Picha 10 zaidi • JPG / PNG • ukubwa wa 5MB kila moja",
+      pu_ready:"picha ziko tayari", pu_add:"Ongeza zaidi", pu_clear:"Futa zote",
+      form_terms:"Kwa kuthibitisha unakubaliana na masharti yetu ya huduma.", confirm:"Thibitisha Oda",
+
+      pol_title:"Sera na Mwongozo wa Huduma", pol_sub:"Yote unayohitaji kujua kabla ya kuagiza.",
+      pol_who:"Tuhudumia Nani", pol_who1:"Watalii: Sokoni, mahitaji muhimu, bidhaa za kienyeji kwa bei ya haki.",
+      pol_who2:"Wenyeji: Huduma za kusafirisha kwa familia na wataalamu wasio na wa sana.", pol_who3:"Ada: Gharama ya bidhaa + ada ya huduma + usafirishaji.",
+      pol_not:"Hatununui", pol_not1:"Dawa — nunua mwenyewe kwa usalama.", pol_not2:"Kileo — hatuhudumii.",
+      pol_not3:"Bidhaa haramu — hatukubali.", pol_not4:"Vifaa vikubwa vya umeme (TV, friji) — vidogo poa.",
+      pol_tip:"Mbinu Muhimu", pol_tip1:"Jiweke wazi — chapa sahihi, ukubwa, rangi.", pol_tip2:"Malipo: M-Pesa, Tigo Pesa, Pesa taslimu.",
+      pol_tip3:"Oda ya chini: 50,000 TZS. Chini ya hiyo = ada ya 5,000 TZS.", pol_tip4:"Risiti: Rejea tu — oda yako inafikishwa.",
+
+      track_title:"Kifuatizi cha Oda moja kwa moja", track_sub:"Ingiza ID ya Oda kutoka kwenye risiti ili kuangalia hali.",
+      ph_track:"mf. ORD-1234", btn_track:"Fuatilia",
+      track_found:"Oda Imepatikana", track_not:"Oda haipatikani. Angalia risiti yako kwa ID sahihi.",
+
+      rev_title:"Ushuhuda wa Wateja", rev_sub:"Maoni ya kweli kutoka kwa wateja halisi.",
+      rev_leave:"Andika Maoni", rev_lbl_name:"Jina Lako", rev_lbl_rate:"Kadirio", rev_lbl_com:"Maoni",
+      rev_post:"Tuma Maoni", rev_none:"Hakuna maoni bado — kuwa wa kwanza!",
+
+      db_ana:"Uchambuzi", db_ord:"Oda", db_rev:"Maoni", db_set:"Mipangilio", db_out:"Ondoka",
+      db_tit_ana:"Uchambuzi wa Moja kwa Moja", db_btn_ref:"Sasisha",
+      db_k_tot:"Jumla ya Oda", db_k_pnd:"Inasubiri", db_k_prc:"Inashughulikiwa", db_k_del:"Imefikishwa", db_k_can:"Imefutwa", db_k_rev:"Maoni",
+      db_ch_7d:"Oda za Siku 7 Zilizopita", db_ch_st:"Kwa Hali", db_ch_ur:"Kwa Haraka", db_ch_rt:"Kadirio",
+      db_rc:"Oda za Hivi Karibuni", db_view:"Ona Zote",
+      db_th_id:"ID", db_th_cli:"Mteja", db_th_itm:"Vitu", db_th_loc:"Mahali", db_th_st:"Hali",
+
+      db_tit_ord:"Oda Zote", db_sub_ord:"Bofya mstari kuona maelezo. Badilisha hali ndani ya mstari.",
+      db_all_st:"Hali Zote", db_search:"Tafuta...",
+      db_th_dt:"Tarehe/ID", db_th_cl:"Mteja", db_th_ph:"Simu", db_th_it:"Vitu", db_th_lo:"Mahali", db_th_phot:"Picha",
+
+      db_tit_rev:"Dhibiti Maoni", db_sub_rev:"Futa maoni ya kuw au ya kashfa.",
+      db_th_dt:"Tarehe", db_th_nm:"Jina", db_th_rt:"Kadirio", db_th_cm:"Maoni", db_th_dl:"Futa",
+
+      db_tit_set:"Mipangilio", db_sub_set:"Dhibiti nywila na data yako.",
+      db_set_pw:"Badilisha Nywila", db_set_pw_s:"Sasisha nywila yako kuingia kwenye dashboard wakati wowote.",
+      db_set_cur:"Nywila ya Sasa", db_set_new:"Nywila Mpya", db_set_cfm:"Thibitisha Nywila Mpya", db_set_upd:"Sasisha Nywila",
+      db_set_bi:"Maelezo ya Biashara", db_set_bi_s:"Maelezo ya mawasiliano yanaonekana kwenye risiti na tovuti.",
+      db_set_sto:"Hifadhi", db_set_sto_s:"Data yote imehifadhiwa kwenye browser yako. Inabaki hadi ifutwe.", db_set_clr:"Futa Data Yote",
+
+      mod_ok_t:"Oda Imedhibitishwa!", mod_ok_pdf1:"Risiti inapakua...", mod_ok_pdf2:"Angalia folda yako za downloads",
+      mod_ok_d1:"Oda imehifadhiwa kwenye dashboard", mod_ok_d2:"Inaonekana kwenye paneli yako", mod_ok_w1:"WhatsApp imefunguliwa", mod_ok_w2:"Tuma ujumbe ulioandaliwa ukamilishe",
+      mod_resend:"Tuma WhatsApp upya", mod_close:"Funga",
+      mod_od_msg:"Ujumbe",
+      mod_lg_sub:"Dashboard ya Mwenza", mod_lg_pw:"Nywila", mod_lg_btn:"Ingia", mod_lg_can:"Ghairi",
+
+      rcpt_tit:"Huduma ya Ununuzi wa Kibinafsi Zanzibar", rcpt_cli:"Mteja:", rcpt_ph:"Simu:", rcpt_loc:"Mahali:", rcpt_urg:"Haraka:", rcpt_bud:"Bajeti:", rcpt_it:"Orodha ya Manunuzi:",
+      rcpt_thank:"Asante kwa kutumia JAMBO+!", ft_cp:"© 2024 JAMBO+ Zanzibar. Haki zote zimehifadhiwa."
+    },
+    fr: {
+      nav_order:"Commander", nav_policy:"Politique", nav_track:"Suivre", nav_rev:"Avis", login:"Connexion",
+      hero_title:"Votre Personal Shopper a Zanzibar",
+      hero_sub:"Remplissez le formulaire — nous trouvons, negocions et livrons.",
+      form_wa:"Commander via WhatsApp",
+      lbl_name:"Nom complet", ph_name:"ex. Jean Dupont",
+      lbl_phone:"Numéro WhatsApp", ph_phone:"+255...",
+      lbl_loc:"Lieu de livraison / Hôtel", ph_loc:"ex. Hôtel Serena, Chambre 204",
+      lbl_urg:"Quand en avez-vous besoin ?", lbl_budget:"Budget estimatif (Optionnel)", ph_budget:"ex. 50,000 TZS",
+      lbl_items:"Que voulez-vous que nous achetions ?", lbl_items_sub:"Soyez précis — marque, taille, couleur, quantité.",
+      ph_items:"Exemple:\n2x Coca 500ml\n1x Piles AA (Duracell)\nCrème solaire SPF50",
+      lbl_photo:"Photo du produit", lbl_photo_opt:"(Optionnel — nous aide à trouver l'article exact)",
+      pu_tap:"Touchez pour télécharger des photos", pu_limit:"Jusqu'à 10 images • JPG / PNG • max 5MB chacune",
+      pu_ready:"photo(s) prête(s)", pu_add:"Ajouter plus", pu_clear:"Tout effacer",
+      form_terms:"En confirmant, vous acceptez nos conditions de service.", confirm:"Confirmer la commande",
+      
+      pol_title:"Politique de service et directives", pol_sub:"Tout ce que vous devez savoir avant de commander.",
+      pol_who:"Qui nous servons", pol_who1:"Touristes : Souvenirs, essentiels, produits locaux à prix justes.",
+      pol_who2:"Locaux : Courses pour les familles et professionnels occupés.", pol_who3:"Frais : Coût de l'article + frais de service + livraison.",
+      pol_not:"Nous n'achetons PAS", pol_not1:"Médicaments — achetez personnellement pour sécurité.", pol_not2:"Alcool — non géré.",
+      pol_not3:"Produits illégaux — strictement refusé.", pol_not4:"Gros électroménager (TV, frigos) — les petits c'est bon.",
+      pol_tip:"Conseils essentiels", pol_tip1:"Soyez précis — marques exactes, tailles, couleurs.", pol_tip2:"Paiement : M-Pesa, Tigo Pesa, Espèces.",
+      pol_tip3:"Min. commande : 50,000 TZS. Moins = frais de 5,000 TZS.", pol_tip4:"Reçu : Référence seulement — votre commande est livrée.",
+
+      track_title:"Suivi de commande en direct", track_sub:"Entrez votre ID de commande sur le reçu pour vérifier le statut.",
+      ph_track:"ex. ORD-1234", btn_track:"Suivre",
+      track_found:"Commande trouvée", track_not:"Commande non trouvée. Vérifiez votre reçu pour le bon ID.",
+      
+      rev_title:"Témoignages clients", rev_sub:"De vrais avis de vrais clients.",
+      rev_leave:"Laisser un avis", rev_lbl_name:"Votre nom", rev_lbl_rate:"Note", rev_lbl_com:"Commentaire",
+      rev_post:"Publier l'avis", rev_none:"Aucun avis pour l'instant — soyez le premier !",
+
+      db_ana:"Analytique", db_ord:"Commandes", db_rev:"Avis", db_set:"Paramètres", db_out:"Déconnexion",
+      db_tit_ana:"Analytique en direct", db_btn_ref:"Actualiser",
+      db_k_tot:"Total Commandes", db_k_pnd:"En attente", db_k_prc:"En cours", db_k_del:"Livrée", db_k_can:"Annulée", db_k_rev:"Avis",
+      db_ch_7d:"Commandes des 7 derniers jours", db_ch_st:"Par statut", db_ch_ur:"Par urgence", db_ch_rt:"Notes",
+      db_rc:"Commandes récentes", db_view:"Voir tout",
+      db_th_id:"ID", db_th_cli:"Client", db_th_itm:"Articles", db_th_loc:"Lieu", db_th_st:"Statut",
+
+      db_tit_ord:"Toutes les commandes", db_sub_ord:"Cliquez sur une ligne pour voir les détails. Changer le statut en ligne.",
+      db_all_st:"Tous statuts", db_search:"Rechercher...",
+      db_th_dt:"Date/ID", db_th_cl:"Client", db_th_ph:"Tél", db_th_it:"Articles", db_th_lo:"Lieu", db_th_phot:"Photo",
+
+      db_tit_rev:"Gérer les avis", db_sub_rev:"Supprimer les faux ou inappropriés.",
+      db_th_dt:"Date", db_th_nm:"Nom", db_th_rt:"Note", db_th_cm:"Commentaire", db_th_dl:"Supprimer",
+
+      db_tit_set:"Paramètres", db_sub_set:"Gérez votre mot de passe et vos données.",
+      db_set_pw:"Changer le mot de passe", db_set_pw_s:"Mettez à jour votre mot de passe de connexion à tout moment.",
+      db_set_cur:"Mot de passe actuel", db_set_new:"Nouveau mot de passe", db_set_cfm:"Confirmer le nouveau mot de passe", db_set_upd:"Mettre à jour",
+      db_set_bi:"Infos entreprise", db_set_bi_s:"Détails de contact affichés sur les reçus et le site.",
+      db_set_sto:"Stockage", db_set_sto_s:"Toutes les données stockées localement. Persiste jusqu'à effacement.", db_set_clr:"Effacer tout",
+
+      mod_ok_t:"Commande confirmée !", mod_ok_pdf1:"Téléchargement du reçu...", mod_ok_pdf2:"Vérifiez votre dossier de téléchargement",
+      mod_ok_d1:"Commande sauvegardée sur le tableau de bord", mod_ok_d2:"Visible dans votre panneau", mod_ok_w1:"WhatsApp ouvert", mod_ok_w2:"Envoyez le message pré-rempli pour finaliser",
+      mod_resend:"Renvoyer WhatsApp", mod_close:"Fermer",
+      mod_od_msg:"Message",
+      mod_lg_sub:"Tableau de bord propriétaire", mod_lg_pw:"Mot de passe", mod_lg_btn:"Connexion", mod_lg_can:"Annuler",
+
+      rcpt_tit:"Service de shopping personnel Zanzibar", rcpt_cli:"Client:", rcpt_ph:"Tél:", rcpt_loc:"Lieu:", rcpt_urg:"Urgence:", rcpt_bud:"Budget:", rcpt_it:"Liste de courses:",
+      rcpt_thank:"Merci d'utiliser JAMBO+ !", ft_cp:"© 2024 JAMBO+ Zanzibar. Tous droits réservés."
+    },
+    de: {
+      nav_order:"Bestellen", nav_policy:"Richtlinien", nav_track:"Verfolgen", nav_rev:"Bewertungen", login:"Anmelden",
+      hero_title:"Ihr persönlicher Einkäufer in Sansibar",
+      hero_sub:"Formular ausfüllen — wir finden, handeln und liefern.",
+      form_wa:"Über WhatsApp bestellen",
+      lbl_name:"Vollständiger Name", ph_name:"z.B. Hans Müller",
+      lbl_phone:"WhatsApp Nummer", ph_phone:"+255...",
+      lbl_loc:"Lieferort / Hotel", ph_loc:"z.B. Serena Hotel, Zimmer 204",
+      lbl_urg:"Wann brauchen Sie es?", lbl_budget:"Geschätztes Budget (Optional)", ph_budget:"z.B. 50.000 TZS",
+      lbl_items:"Was sollen wir kaufen?", lbl_items_sub:"Seien Sie spezifisch — Marke, Größe, Farbe, Menge.",
+      ph_items:"Beispiel:\n2x Coke 500ml\n1x AA Batterien (Duracell)\nSonnencreme SPF50",
+      lbl_photo:"Produktfoto", lbl_photo_opt:"(Optional — hilft uns, das genaue Produkt zu finden)",
+      pu_tap:"Tippen Sie zum Hochladen von Fotos", pu_limit:"Bis zu 10 Bilder • JPG / PNG • max 5MB jedes",
+      pu_ready:"Foto(s) bereit", pu_add:"Mehr hinzufügen", pu_clear:"Alles löschen",
+      form_terms:"Durch Bestätigung stimmen Sie unseren Nutzungsbedingungen zu.", confirm:"Bestellung bestätigen",
+      
+      pol_title:"Service-Richtlinien & Leitfaden", pol_sub:"Alles was Sie vor der Bestellung wissen müssen.",
+      pol_who:"Wir bedienen", pol_who1:"Touristen: Souvenirs, Essentials, lokale Waren zu fairen Preisen.",
+      pol_who2:"Einheimische: Besorgungen für vielbeschäftigte Familien.", pol_who3:"Gebühren: Artikelpreis + Servicegebühr + Lieferung.",
+      pol_not:"Wir kaufen NICHT", pol_not1:"Medikamente — kaufen Sie diese persönlich aus Sicherheitsgründen.", pol_not2:"Alkohol — wird nicht gehandhabt.",
+      pol_not3:"Illegale Produkte — strikt abgelehnt.", pol_not4:"Große Elektronik (TVs, Kühlschränke) — Kleine ist okay.",
+      pol_tip:"Wichtige Tipps", pol_tip1:"Seien Sie spezifisch — genaue Marken, Größen, Farben.", pol_tip2:"Zahlung: M-Pesa, Tigo Pesa, Bargeld.",
+      pol_tip3:"Mindestbestellung: 50.000 TZS. Darunter = 5.000 TZS Gebühr.", pol_tip4:"Beleg: Nur Referenz — Ihre Bestellung wird geliefert.",
+
+      track_title:"Live-Bestellungs-Tracker", track_sub:"Geben Sie Ihre Bestell-ID vom Beleg ein, um den Status zu prüfen.",
+      ph_track:"z.B. ORD-1234", btn_track:"Verfolgen",
+      track_found:"Bestellung gefunden", track_not:"Bestellung nicht gefunden. Überprüfen Sie Ihren Beleg auf die korrekte ID.",
+      
+      rev_title:"Kundenreferenzen", rev_sub:"Echtes Feedback von echten Kunden.",
+      rev_leave:"Bewertung hinterlassen", rev_lbl_name:"Ihr Name", rev_lbl_rate:"Bewertung", rev_lbl_com:"Kommentar",
+      rev_post:"Bewertung posten", rev_none:"Noch keine Bewertungen — seien Sie der Erste !",
+
+      db_ana:"Analytik", db_ord:"Bestellungen", db_rev:"Bewertungen", db_set:"Einstellungen", db_out:"Abmelden",
+      db_tit_ana:"Live-Analytik", db_btn_ref:"Aktualisieren",
+      db_k_tot:"Alle Bestellungen", db_k_pnd:"Ausstehend", db_k_prc:"In Bearbeitung", db_k_del:"Geliefert", db_k_can:"Storniert", db_k_rev:"Bewertungen",
+      db_ch_7d:"Bestellungen letzte 7 Tage", db_ch_st:"Nach Status", db_ch_ur:"Nach Dringlichkeit", db_ch_rt:"Bewertungen",
+      db_rc:"Neueste Bestellungen", db_view:"Alle anzeigen",
+      db_th_id:"ID", db_th_cli:"Kunde", db_th_itm:"Artikel", db_th_loc:"Ort", db_th_st:"Status",
+
+      db_tit_ord:"Alle Bestellungen", db_sub_ord:"Klicken Sie auf eine Zeile für Details. Status direkt ändern.",
+      db_all_st:"Alle Status", db_search:"Suchen...",
+      db_th_dt:"Datum/ID", db_th_cl:"Kunde", db_th_ph:"Telefon", db_th_it:"Artikel", db_th_lo:"Ort", db_th_phot:"Foto",
+
+      db_tit_rev:"Bewertungen verwalten", db_sub_rev:"Löschen Sie gefälschte oder unangemessene Bewertungen.",
+      db_th_dt:"Datum", db_th_nm:"Name", db_th_rt:"Bewertung", db_th_cm:"Kommentar", db_th_dl:"Löschen",
+
+      db_tit_set:"Einstellungen", db_sub_set:"Verwalten Sie Ihr Passwort und Ihre Daten.",
+      db_set_pw:"Passwort ändern", db_set_pw_s:"Aktualisieren Sie Ihr Dashboard-Passwort jederzeit.",
+      db_set_cur:"Aktuelles Passwort", db_set_new:"Neues Passwort", db_set_cfm:"Neues Passwort bestätigen", db_set_upd:"Passwort aktualisieren",
+      db_set_bi:"Geschäftsinformationen", db_set_bi_s:"Kontaktdaten auf Belegen und Webseite.",
+      db_set_sto:"Speicher", db_set_sto_s:"Alle Daten lokal gespeichert. Verbleiben bis zum Löschen.", db_set_clr:"Alles löschen",
+
+      mod_ok_t:"Bestellung bestätigt!", mod_ok_pdf1:"Beleg wird heruntergeladen...", mod_ok_pdf2:"Prüfen Sie Ihren Download-Ordner",
+      mod_ok_d1:"Bestellung im Dashboard gespeichert", mod_ok_d2:"Sichtbar in Ihrem Eigentümer-Bereich", mod_ok_w1:"WhatsApp geöffnet", mod_ok_w2:"Senden Sie die vor ausgefüllte Nachricht zum Abschluss",
+      mod_resend:"WhatsApp erneut senden", mod_close:"Schließen",
+      mod_od_msg:"Nachricht",
+      mod_lg_sub:"Eigentümer-Dashboard", mod_lg_pw:"Passwort", mod_lg_btn:"Anmelden", mod_lg_can:"Abbrechen",
+
+      rcpt_tit:"Sansibar Personal Shopping Service", rcpt_cli:"Kunde:", rcpt_ph:"Telefon:", rcpt_loc:"Ort:", rcpt_urg:"Dringlichkeit:", rcpt_bud:"Budget:", rcpt_it:"Einkaufsliste:",
+      rcpt_thank:"Danke, dass Sie JAMBO+ nutzen!", ft_cp:"© 2024 JAMBO+ Sansibar. Alle Rechte vorbehalten."
+    },
+    es: {
+      nav_order:"Pedir", nav_policy:"Política", nav_track:"Rastrear", nav_rev:"Reseñas", login:"Entrar",
+      hero_title:"Tu comprador personal en Zanzibar",
+      hero_sub:"Rellena el formulario — encontramos, negociamos y entregamos.",
+      form_wa:"Pedir vía WhatsApp",
+      lbl_name:"Nombre completo", ph_name:"ej. Juan Pérez",
+      lbl_phone:"Número WhatsApp", ph_phone:"+255...",
+      lbl_loc:"Ubicación de entrega / Hotel", ph_loc:"ej. Hotel Serena, Habitación 204",
+      lbl_urg:"¿Cuándo lo necesitas?", lbl_budget:"Presupuesto estimado (Opcional)", ph_budget:"ej. 50,000 TZS",
+      lbl_items:"¿Qué quieres que compremos?", lbl_items_sub:"Sé específico — marca, talla, color, cantidad.",
+      ph_items:"Ejemplo:\n2x Coca 500ml\n1x Pilas AA (Duracell)\nProtector solar SPF50",
+      lbl_photo:"Foto del producto", lbl_photo_opt:"(Opcional — nos ayuda a encontrar el artículo exacto)",
+      pu_tap:"Toca para subir fotos", pu_limit:"Hasta 10 imágenes • JPG / PNG • max 5MB cada una",
+      pu_ready:"foto(s) lista(s)", pu_add:"Añadir más", pu_clear:"Borrar todo",
+      form_terms:"Al confirmar aceptas nuestros términos de servicio.", confirm:"Confirmar pedido",
+      
+      pol_title:"Política y Directrices de Servicio", pol_sub:"Todo lo que necesitas saber antes de pedir.",
+      pol_who:"A quién servimos", pol_who1:"Turistas: Recuerdos, esenciales, bienes locales a precios justos.",
+      pol_who2:"Locales: Recados para familias y profesionales ocupados.", pol_who3:"Tarifas: Costo del artículo + tarifa de servicio + entrega.",
+      pol_not:"NO compramos", pol_not1:"Medicinas — compra personalmente por seguridad.", pol_not2:"Alcohol — no se maneja.",
+      pol_not3:"Productos ilegales — estrictamente rechazado.", pol_not4:"Electrónica grande (TVs, neveras) — lo pequeño está bien.",
+      pol_tip:"Consejos esenciales", pol_tip1:"Sé específico — marcas exactas, tallas, colores.", pol_tip2:"Pago: M-Pesa, Tigo Pesa, Efectivo.",
+      pol_tip3:"Pedido mínimo: 50,000 TZS. Menos = tarifa de 5,000 TZS.", pol_tip4:"Recibo: Solo referencia — tu pedido es entregado.",
+
+      track_title:"Rastreador de Pedidos en Vivo", track_sub:"Ingresa tu ID de pedido del recibo para verificar el estado.",
+      ph_track:"ej. ORD-1234", btn_track:"Rastrear",
+      track_found:"Pedido encontrado", track_not:"Pedido no encontrado. Verifica tu recibo para el ID correcto.",
+      
+      rev_title:"Testimonios de Clientes", rev_sub:"Comentarios reales de clientes reales.",
+      rev_leave:"Dejar una reseña", rev_lbl_name:"Tu nombre", rev_lbl_rate:"Calificación", rev_lbl_com:"Comentario",
+      rev_post:"Publicar reseña", rev_none:"Aún no hay reseñas — ¡sé el primero !",
+
+      db_ana:"Analíticas", db_ord:"Pedidos", db_rev:"Reseñas", db_set:"Ajustes", db_out:"Salir",
+      db_tit_ana:"Analíticas en vivo", db_btn_ref:"Actualizar",
+      db_k_tot:"Pedidos totales", db_k_pnd:"Pendiente", db_k_prc:"Procesando", db_k_del:"Entregado", db_k_can:"Cancelado", db_k_rev:"Reseñas",
+      db_ch_7d:"Pedidos últimos 7 días", db_ch_st:"Por estado", db_ch_ur:"Por urgencia", db_ch_rt:"Calificaciones",
+      db_rc:"Pedidos recientes", db_view:"Ver todo",
+      db_th_id:"ID", db_th_cli:"Cliente", db_th_itm:"Artículos", db_th_loc:"Ubicación", db_th_st:"Estado",
+
+      db_tit_ord:"Todos los pedidos", db_sub_ord:"Haz clic en una fila para ver detalles. Cambia el estado en línea.",
+      db_all_st:"Todos los estados", db_search:"Buscar...",
+      db_th_dt:"Fecha/ID", db_th_cl:"Cliente", db_th_ph:"Teléfono", db_th_it:"Artículos", db_th_lo:"Ubicación", db_th_phot:"Foto",
+
+      db_tit_rev:"Gestionar reseñas", db_sub_rev:"Elimina reseñas falsas o inapropiadas.",
+      db_th_dt:"Fecha", db_th_nm:"Nombre", db_th_rt:"Calificación", db_th_cm:"Comentario", db_th_dl:"Eliminar",
+
+      db_tit_set:"Ajustes", db_sub_set:"Gestiona tu contraseña y datos.",
+      db_set_pw:"Cambiar contraseña", db_set_pw_s:"Actualiza tu contraseña de panel en cualquier momento.",
+      db_set_cur:"Contraseña actual", db_set_new:"Nueva contraseña", db_set_cfm:"Confirmar nueva contraseña", db_set_upd:"Actualizar contraseña",
+      db_set_bi:"Info del negocio", db_set_bi_s:"Detalles de contacto mostrados en recibos y web.",
+      db_set_sto:"Almacenamiento", db_set_sto_s:"Todos los datos se guardan localmente. Persisten hasta que se borren.", db_set_clr:"Borrar todo",
+
+      mod_ok_t:"¡Pedido confirmado!", mod_ok_pdf1:"Descargando recibo...", mod_ok_pdf2:"Revisa tu carpeta de descargas",
+      mod_ok_d1:"Pedido guardado en el panel", mod_ok_d2:"Visible en tu panel de dueño", mod_ok_w1:"WhatsApp abierto", mod_ok_w2:"Envía el mensaje prellenado para completar",
+      mod_resend:"Reenviar WhatsApp", mod_close:"Cerrar",
+      mod_od_msg:"Mensaje",
+      mod_lg_sub:"Panel de Dueño", mod_lg_pw:"Contraseña", mod_lg_btn:"Entrar", mod_lg_can:"Cancelar",
+
+      rcpt_tit:"Servicio de Compras Personal Zanzíbar", rcpt_cli:"Cliente:", rcpt_ph:"Tel:", rcpt_loc:"Ubicación:", rcpt_urg:"Urgencia:", rcpt_bud:"Presupuesto:", rcpt_it:"Lista de compras:",
+      rcpt_thank:"¡Gracias por usar JAMBO+ !", ft_cp:"© 2024 JAMBO+ Zanzíbar. Todos los derechos reservados."
+    },
+    it: {
+      nav_order:"Ordina", nav_policy:"Politica", nav_track:"Traccia", nav_rev:"Recensioni", login:"Accedi",
+      hero_title:"Il tuo personal shopper a Zanzibar",
+      hero_sub:"Compila il modulo — troviamo, trattiamo e consegniamo.",
+      form_wa:"Ordina via WhatsApp",
+      lbl_name:"Nome completo", ph_name:"es. Mario Rossi",
+      lbl_phone:"Numero WhatsApp", ph_phone:"+255...",
+      lbl_loc:"Luogo di consegna / Hotel", ph_loc:"es. Hotel Serena, Camera 204",
+      lbl_urg:"Quando ti serve?", lbl_budget:"Budget stimato (Opzionale)", ph_budget:"es. 50,000 TZS",
+      lbl_items:"Cosa vuoi che compriamo?", lbl_items_sub:"Sii specifico — marca, taglia, colore, quantità.",
+      ph_items:"Esempio:\n2x Coke 500ml\n1x Pile AA (Duracell)\nCrema solare SPF50",
+      lbl_photo:"Foto del prodotto", lbl_photo_opt:"(Opzionale — ci aiuta a trovare l'articolo esatto)",
+      pu_tap:"Tocca per caricare foto", pu_limit:"Fino a 10 immagini • JPG / PNG • max 5MB ciascuna",
+      pu_ready:"foto pronte", pu_add:"Aggiungi altro", pu_clear:"Cancella tutto",
+      form_terms:"Confermando accetti i nostri termini di servizio.", confirm:"Conferma ordine",
+      
+      pol_title:"Politica e Linee Guida del Servizio", pol_sub:"Tutto ciò che devi sapere prima di ordinare.",
+      pol_who:"Chi serviamo", pol_who1:"Turisti: Souvenir, essenziali, beni locali a prezzi equi.",
+      pol_who2:"Locali: Commissioni per famiglie e professionisti impegnati.", pol_who3:"Tariffe: Costo articolo + tariffe servizio + consegna.",
+      pol_not:"NON compriamo", pol_not1:"Medicine — acquista personalmente per sicurezza.", pol_not2:"Alcolici — non gestiti.",
+      pol_not3:"Prodotti illegali — severamente rifiutati.", pol_not4:"Elettrodomestici grandi (TV, frigo) — quelli piccoli vanno bene.",
+      pol_tip:"Consigli essenziali", pol_tip1:"Sii specifico — marchi esatti, taglie, colori.", pol_tip2:"Pagamento: M-Pesa, Tigo Pesa, Contanti.",
+      pol_tip3:"Ordine minimo: 50,000 TZS. Sotto = tariffa 5,000 TZS.", pol_tip4:"Ricevuta: Solo riferimento — il tuo ordine viene consegnato.",
+
+      track_title:"Tracciamento Ordini Live", track_sub:"Inserisci l'ID dell'ordine dalla ricevuta per controllare lo stato.",
+      ph_track:"es. ORD-1234", btn_track:"Traccia",
+      track_found:"Ordine trovato", track_not:"Ordine non trovato. Controlla la ricevuta per l'ID corretto.",
+      
+      rev_title:"Testimonianze dei Clienti", rev_sub:"Feedback reale da clienti reali.",
+      rev_leave:"Lascia una recensione", rev_lbl_name:"Il tuo nome", rev_lbl_rate:"Valutazione", rev_lbl_com:"Commento",
+      rev_post:"Pubblica recensione", rev_none:"Nessuna recensione ancora — sii il primo !",
+
+      db_ana:"Analitica", db_ord:"Ordini", db_rev:"Recensioni", db_set:"Impostazioni", db_out:"Esci",
+      db_tit_ana:"Analitica Live", db_btn_ref:"Aggiorna",
+      db_k_tot:"Ordini totali", db_k_pnd:"In attesa", db_k_prc:"In elaborazione", db_k_del:"Consegnato", db_k_can:"Annullato", db_k_rev:"Recensioni",
+      db_ch_7d:"Ordini ultimi 7 giorni", db_ch_st:"Per stato", db_ch_ur:"Per urgenza", db_ch_rt:"Valutazioni",
+      db_rc:"Ordini recenti", db_view:"Vedi tutto",
+      db_th_id:"ID", db_th_cli:"Cliente", db_th_itm:"Articoli", db_th_loc:"Luogo", db_th_st:"Stato",
+
+      db_tit_ord:"Tutti gli ordini", db_sub_ord:"Clicca una riga per vedere i dettagli. Cambia stato in linea.",
+      db_all_st:"Tutti gli stati", db_search:"Cerca...",
+      db_th_dt:"Data/ID", db_th_cl:"Cliente", db_th_ph:"Tel", db_th_it:"Articoli", db_th_lo:"Luogo", db_th_phot:"Foto",
+
+      db_tit_rev:"Gestisci recensioni", db_sub_rev:"Elimina recensioni false o inappropriate.",
+      db_th_dt:"Data", db_th_nm:"Nome", db_th_rt:"Valutazione", db_th_cm:"Commento", db_th_dl:"Elimina",
+
+      db_tit_set:"Impostazioni", db_sub_set:"Gestisci la tua password e i dati.",
+      db_set_pw:"Cambia password", db_set_pw_s:"Aggiorna la password del dashboard in qualsiasi momento.",
+      db_set_cur:"Password attuale", db_set_new:"Nuova password", db_set_cfm:"Conferma nuova password", db_set_upd:"Aggiorna password",
+      db_set_bi:"Info Business", db_set_bi_s:"Dettagli contatto mostrati su ricevute e sito.",
+      db_set_sto:"Archiviazione", db_set_sto_s:"Tutti i dati salvati localmente. Persistono fino alla cancellazione.", db_set_clr:"Cancella tutto",
+
+      mod_ok_t:"Ordine confermato!", mod_ok_pdf1:"Ricevuta in download...", mod_ok_pdf2:"Controlla la tua cartella download",
+      mod_ok_d1:"Ordine salvato nel dashboard", mod_ok_d2:"Visibile nel tuo pannello proprietario", mod_ok_w1:"WhatsApp aperto", mod_ok_w2:"Invia il messaggio precompilato per completare",
+      mod_resend:"Invia di nuovo WhatsApp", mod_close:"Chiudi",
+      mod_od_msg:"Messaggio",
+      mod_lg_sub:"Dashboard Proprietario", mod_lg_pw:"Password", mod_lg_btn:"Accedi", mod_lg_can:"Annulla",
+
+      rcpt_tit:"Servizio Shopping Personale Zanzibar", rcpt_cli:"Cliente:", rcpt_ph:"Tel:", rcpt_loc:"Luogo:", rcpt_urg:"Urgenza:", rcpt_bud:"Budget:", rcpt_it:"Lista della spesa:",
+      rcpt_thank:"Grazie per aver usato JAMBO+!", ft_cp:"© 2024 JAMBO+ Zanzibar. Tutti i diritti riservati."
+    },
+    zh: {
+      nav_order:"下订单", nav_policy:"政策", nav_track:"追踪", nav_rev:"评价", login:"登录",
+      hero_title:"您在桑给巴尔的私人购物助手",
+      hero_sub:"填写表格 — 我们找到、砍价并送货上门。",
+      form_wa:"通过 WhatsApp 订购",
+      lbl_name:"全名", ph_name:"例如：张三",
+      lbl_phone:"WhatsApp 号码", ph_phone:"+255...",
+      lbl_loc:"送货地点 / 酒店", ph_loc:"例如：Serena 酒店，204 房",
+      lbl_urg:"您什么时候需要？", lbl_budget:"预估预算（可选）", ph_budget:"例如：50,000 TZS",
+      lbl_items:"您想让我们买什么？", lbl_items_sub:"请具体说明 — 品牌、尺寸、颜色、数量。",
+      ph_items:"例子:\n2x 可乐 500ml\n1x AA 电池 (Duracell)\n防晒霜 SPF50",
+      lbl_photo:"产品照片", lbl_photo_opt:"（可选 — 帮助我们找到确切的商品）",
+      pu_tap:"点击上传产品照片", pu_limit:"最多 10 张图片 • JPG / PNG • 每张最大 5MB",
+      pu_ready:"张照片准备就绪", pu_add:"添加更多", pu_clear:"清除全部",
+      form_terms:"确认即表示您同意我们的服务条款。", confirm:"确认订单",
+
+      pol_title:"服务政策与指南", pol_sub:"下单前您需要了解的一切。",
+      pol_who:"我们为谁服务", pol_who1:"游客：纪念品、必需品、本地商品，价格公道。",
+      pol_who2:"当地人：为忙碌的家庭和专业人士跑腿。", pol_who3:"费用：商品费用 + 服务费 + 送货费。",
+      pol_not:"我们不购买", pol_not1:"药品 — 为了安全请自行购买。", pol_not2:"酒精 — 不处理。",
+      pol_not3:"非法产品 — 严格拒绝。", pol_not4:"大型电子产品（电视、冰箱） — 小型的可以。",
+      pol_tip:"重要提示", pol_tip1:"具体说明 — 确切的品牌、尺寸、颜色。", pol_tip2:"付款：M-Pesa, Tigo Pesa, 现金。",
+      pol_tip3:"最低订单：50,000 TZS。以下 = 5,000 TZS 费用。", pol_tip4:"收据：仅供参考 — 您的订单会送达。",
+
+      track_title:"实时订单追踪器", track_sub:"输入收据上的订单 ID 以检查状态。",
+      ph_track:"例如：ORD-1234", btn_track:"追踪",
+      track_found:"找到订单", track_not:"未找到订单。请检查您的收据以获取正确的 ID。",
+
+      rev_title:"客户见证", rev_sub:"真实客户的真实反馈。",
+      rev_leave:"发表评论", rev_lbl_name:"您的名字", rev_lbl_rate:"评分", rev_lbl_com:"评论",
+      rev_post:"发布评论", rev_none:"暂无评论 — 做第一个！",
+
+      db_ana:"分析", db_ord:"订单", db_rev:"评论", db_set:"设置", db_out:"登出",
+      db_tit_ana:"实时分析", db_btn_ref:"刷新",
+      db_k_tot:"总订单", db_k_pnd:"待处理", db_k_prc:"处理中", db_k_del:"已送达", db_k_can:"已取消", db_k_rev:"评论",
+      db_ch_7d:"过去 7 天的订单", db_ch_st:"按状态", db_ch_ur:"按紧急程度", db_ch_rt:"评分",
+      db_rc:"最近订单", db_view:"查看全部",
+      db_th_id:"ID", db_th_cli:"客户", db_th_itm:"商品", db_th_loc:"地点", db_th_st:"状态",
+
+      db_tit_ord:"所有订单", db_sub_ord:"点击一行查看详情。在线更改状态。",
+      db_all_st:"所有状态", db_search:"搜索...",
+      db_th_dt:"日期/ID", db_th_cl:"客户", db_th_ph:"电话", db_th_it:"商品", db_th_lo:"地点", db_th_phot:"照片",
+
+      db_tit_rev:"管理评论", db_sub_rev:"删除虚假或不当的评论。",
+      db_th_dt:"日期", db_th_nm:"姓名", db_th_rt:"评分", db_th_cm:"评论", db_th_dl:"删除",
+
+      db_tit_set:"设置", db_sub_set:"管理您的密码和数据。",
+      db_set_pw:"更改密码", db_set_pw_s:"随时更新您的仪表板登录密码。",
+      db_set_cur:"当前密码", db_set_new:"新密码", db_set_cfm:"确认新密码", db_set_upd:"更新密码",
+      db_set_bi:"商户信息", db_set_bi_s:"显示在收据和网站上的联系方式。",
+      db_set_sto:"存储", db_set_sto_s:"所有数据均存储在您的浏览器中本地。持续存在直到被清除。", db_set_clr:"清除所有数据",
+
+      mod_ok_t:"订单已确认！", mod_ok_pdf1:"正在下载收据...", mod_ok_pdf2:"检查您的下载文件夹",
+      mod_ok_d1:"订单已保存到仪表板", mod_ok_d2:"在您的所有者面板中可见", mod_ok_w1:"WhatsApp 已打开", mod_ok_w2:"发送预填写的消息以完成",
+      mod_resend:"重新发送 WhatsApp", mod_close:"关闭",
+      mod_od_msg:"信息",
+      mod_lg_sub:"所有者仪表板", mod_lg_pw:"密码", mod_lg_btn:"登录", mod_lg_can:"取消",
+
+      rcpt_tit:"桑给巴尔个人购物服务", rcpt_cli:"客户:", rcpt_ph:"电话:", rcpt_loc:"地点:", rcpt_urg:"紧急程度:", rcpt_bud:"预算:", rcpt_it:"购物清单:",
+      rcpt_thank:"感谢您使用 JAMBO+！", ft_cp:"© 2024 JAMBO+ 桑给巴尔。保留所有权利。"
+    },
+    ru: {
+      nav_order:"Заказать", nav_policy:"Политика", nav_track:"Отслежить", nav_rev:"Отзывы", login:"Войти",
+      hero_title:"Ваш личный шоппер на Занзибаре",
+      hero_sub:"Заполните форму — мы найдем, поторгуемся и доставим.",
+      form_wa:"Заказать через WhatsApp",
+      lbl_name:"Полное имя", ph_name:"напр. Иван Иванов",
+      lbl_phone:"Номер WhatsApp", ph_phone:"+255...",
+      lbl_loc:"Место доставки / Отель", ph_loc:"напр. Отель Serena, Комната 204",
+      lbl_urg:"Когда вам это нужно?", lbl_budget:"Примерный бюджет (Опционально)", ph_budget:"напр. 50,000 TZS",
+      lbl_items:"Что вы хотите, чтобы мы купили?", lbl_items_sub:"Будьте конкретны — бренд, размер, цвет, количество.",
+      ph_items:"Пример:\n2x Кока-кола 500мл\n1x Батарейки AA (Duracell)\nСолнцезащитный крем SPF50",
+      lbl_photo:"Фото продукта", lbl_photo_opt:"(Опционально — помогает нам найти точный товар)",
+      pu_tap:"Нажмите, чтобы загрузить фото", pu_limit:"До 10 изображений • JPG / PNG • максимум 5МБ каждое",
+      pu_ready:"фото готово", pu_add:"Добавить еще", pu_clear:"Очистить все",
+      form_terms:"Подтверждая, вы соглашаетесь с нашими условиями обслуживания.", confirm:"Подтвердить заказ",
+
+      pol_title:"Политика и правила обслуживания", pol_sub:"Все, что вам нужно знать перед заказом.",
+      pol_who:"Кому мы служим", pol_who1:"Туристы: Сувениры, необходимое, местные товары по честным ценам.",
+      pol_who2:"Местные жители: Поручения для занятых семей и профессионалов.", pol_who3:"Сборы: Стоимость товара + плата за сервис + доставка.",
+      pol_not:"Мы НЕ покупаем", pol_not1:"Лекарства — покупайте лично для безопасности.", pol_not2:"Алкоголь — не обрабатывается.",
+      pol_not3:"Нелегальные продукты — строго отказано.", pol_not4:"Крупная электроника (ТВ, холодильники) — мелкую можно.",
+      pol_tip:"Основные советы", pol_tip1:"Будьте конкретны — точные бренды, размеры, цвета.", pol_tip2:"Оплата: M-Pesa, Tigo Pesa, Наличные.",
+      pol_tip3:"Мин. заказ: 50,000 TZS. Меньше = сбор 5,000 TZS.", pol_tip4:"Чек: Только ссылка — ваш заказ будет доставлен.",
+
+      track_title:"Отслеживание заказов в реальном времени", track_sub:"Введите ID заказа из чека, чтобы проверить статус.",
+      ph_track:"напр. ORD-1234", btn_track:"Отследить",
+      track_found:"Заказ найден", track_not:"Заказ не найден. Проверьте чек на наличие правильного ID.",
+
+      rev_title:"Отзывы клиентов", rev_sub:"Реальные отзывы реальных клиентов.",
+      rev_leave:"Оставить отзыв", rev_lbl_name:"Ваше имя", rev_lbl_rate:"Рейтинг", rev_lbl_com:"Комментарий",
+      rev_post:"Отправить отзыв", rev_none:"Отзывов пока нет — будьте первым !",
+
+      db_ana:"Аналитика", db_ord:"Заказы", db_rev:"Отзывы", db_set:"Настройки", db_out:"Выйти",
+      db_tit_ana:"Аналитика в реальном времени", db_btn_ref:"Обновить",
+      db_k_tot:"Всего заказов", db_k_pnd:"В ожидании", db_k_prc:"В процессе", db_k_del:"Доставлено", db_k_can:"Отменено", db_k_rev:"Отзывы",
+      db_ch_7d:"Заказы за последние 7 дней", db_ch_st:"По статусу", db_ch_ur:"По срочности", db_ch_rt:"Рейтинги",
+      db_rc:"Недавние заказы", db_view:"Показать все",
+      db_th_id:"ID", db_th_cli:"Клиент", db_th_itm:"Товары", db_th_loc:"Место", db_th_st:"Статус",
+
+      db_tit_ord:"Все заказы", db_sub_ord:"Нажмите на строку для деталей. Измените статус прямо здесь.",
+      db_all_st:"Все статусы", db_search:"Поиск...",
+      db_th_dt:"Дата/ID", db_th_cl:"Клиент", db_th_ph:"Тел", db_th_it:"Товары", db_th_lo:"Место", db_th_phot:"Фото",
+
+      db_tit_rev:"Управление отзывами", db_sub_rev:"Удалить поддельные или неуместные отзывы.",
+      db_th_dt:"Дата", db_th_nm:"Имя", db_th_rt:"Рейтинг", db_th_cm:"Комментарий", db_th_dl:"Удалить",
+
+      db_tit_set:"Настройки", db_sub_set:"Управляйте паролем и данными.",
+      db_set_pw:"Сменить пароль", db_set_pw_s:"Обновите пароль входа в панель управления в любое время.",
+      db_set_cur:"Текущий пароль", db_set_new:"Новый пароль", db_set_cfm:"Подтвердите новый пароль", db_set_upd:"Обновить пароль",
+      db_set_bi:"Инфо о бизнесе", db_set_bi_s:"Контактные данные, показанные в чеках и на сайте.",
+      db_set_sto:"Хранилище", db_set_sto_s:"Все данные хранятся локально в браузере. Сохраняются до очистки.", db_set_clr:"Очистить все данные",
+
+      mod_ok_t:"Заказ подтвержден!", mod_ok_pdf1:"Чек скачивается...", mod_ok_pdf2:"Проверьте папку загрузок",
+      mod_ok_d1:"Заказ сохранен в панели управления", mod_ok_d2:"Видно на вашей панели владельца", mod_ok_w1:"WhatsApp открыт", mod_ok_w2:"Отправьте предварительно заполненное сообщение для завершения",
+      mod_resend:"Отправить WhatsApp снова", mod_close:"Закрыть",
+      mod_od_msg:"Сообщение",
+      mod_lg_sub:"Панель владельца", mod_lg_pw:"Пароль", mod_lg_btn:"Войти", mod_lg_can:"Отмена",
+
+      rcpt_tit:"Сервис личного шоппера Занзибар", rcpt_cli:"Клиент:", rcpt_ph:"Тел:", rcpt_loc:"Место:", rcpt_urg:"Срочность:", rcpt_bud:"Бюджет:", rcpt_it:"Список покупок:",
+      rcpt_thank:"Спасибо за использование JAMBO+!", ft_cp:"© 2024 JAMBO+ Занзибар. Все права защищены."
+    },
+    pt: {
+      nav_order:"Pedir", nav_policy:"Política", nav_track:"Rastrear", nav_rev:"Avaliações", login:"Entrar",
+      hero_title:"Seu comprador pessoal em Zanzibar",
+      hero_sub:"Preencha o formulário — encontramos, negociamos e entregamos.",
+      form_wa:"Peça via WhatsApp",
+      lbl_name:"Nome completo", ph_name:"ex. João Silva",
+      lbl_phone:"Número WhatsApp", ph_phone:"+255...",
+      lbl_loc:"Local de entrega / Hotel", ph_loc:"ex. Hotel Serena, Quarto 204",
+      lbl_urg:"Quando precisa?", lbl_budget:"Orçamento estimado (Opcional)", ph_budget:"ex. 50,000 TZS",
+      lbl_items:"O que quer que compremos?", lbl_items_sub:"Seja específico — marca, tamanho, cor, quantidade.",
+      ph_items:"Exemplo:\n2x Coca 500ml\n1x Pilhas AA (Duracell)\nProtetor solar SPF50",
+      lbl_photo:"Foto do produto", lbl_photo_opt:"(Opcional — ajuda-nos a encontrar o item exato)",
+      pu_tap:"Toque para enviar fotos", pu_limit:"Até 10 imagens • JPG / PNG • max 5MB cada",
+      pu_ready:"foto(s) pronta(s)", pu_add:"Adicionar mais", pu_clear:"Limpar tudo",
+      form_terms:"Ao confirmar, concorda com nossos termos de serviço.", confirm:"Confirmar pedido",
+
+      pol_title:"Política e Diretrizes de Serviço", pol_sub:"Tudo o que precisa saber antes de encomendar.",
+      pol_who:"Quem servimos", pol_who1:"Turistas: Lembranças, essenciais, bens locais a preços justos.",
+      pol_who2:"Locais: Recados para famílias e profissionais ocupados.", pol_who3:"Taxas: Custo do item + taxa de serviço + entrega.",
+      pol_not:"NÃO compramos", pol_not1:"Medicamentos — compre pessoalmente por segurança.", pol_not2:"Álcool — não manuseado.",
+      pol_not3:"Produtos ilegais — estritamente recusado.", pol_not4:"Eletrônicos grandes (TVs, geladeiras) — pequenos são ok.",
+      pol_tip:"Dicas essenciais", pol_tip1:"Seja específico — marcas exatas, tamanhos, cores.", pol_tip2:"Pagamento: M-Pesa, Tigo Pesa, Dinheiro.",
+      pol_tip3:"Pedido min: 50,000 TZS. Abaixo = taxa 5,000 TZS.", pol_tip4:"Recibo: Apenas referência — seu pedido é entregue.",
+
+      track_title:"Rastreador de Pedidos ao Vivo", track_sub:"Digite o ID do pedido no recibo para verificar o status.",
+      ph_track:"ex. ORD-1234", btn_track:"Rastrear",
+      track_found:"Pedido encontrado", track_not:"Pedido não encontrado. Verifique seu recibo para o ID correto.",
+
+      rev_title:"Depoimentos de Clientes", rev_sub:"Feedback real de clientes reais.",
+      rev_leave:"Deixar uma avaliação", rev_lbl_name:"Seu nome", rev_lbl_rate:"Classificação", rev_lbl_com:"Comentário",
+      rev_post:"Postar avaliação", rev_none:"Sem avaliações ainda — seja o primeiro !",
+
+      db_ana:"Análise", db_ord:"Pedidos", db_rev:"Avaliações", db_set:"Configurações", db_out:"Sair",
+      db_tit_ana:"Análise ao Vivo", db_btn_ref:"Atualizar",
+      db_k_tot:"Total de Pedidos", db_k_pnd:"Pendente", db_k_prc:"Processando", db_k_del:"Entregue", db_k_can:"Cancelado", db_k_rev:"Avaliações",
+      db_ch_7d:"Pedidos últimos 7 dias", db_ch_st:"Por status", db_ch_ur:"Por urgência", db_ch_rt:"Classificações",
+      db_rc:"Pedidos recentes", db_view:"Ver tudo",
+      db_th_id:"ID", db_th_cli:"Cliente", db_th_itm:"Itens", db_th_loc:"Local", db_th_st:"Status",
+
+      db_tit_ord:"Todos os Pedidos", db_sub_ord:"Clique numa linha para ver detalhes. Altere status em linha.",
+      db_all_st:"Todos os status", db_search:"Pesquisar...",
+      db_th_dt:"Data/ID", db_th_cl:"Cliente", db_th_ph:"Tel", db_th_it:"Itens", db_th_lo:"Local", db_th_phot:"Foto",
+
+      db_tit_rev:"Gerenciar avaliações", db_sub_rev:"Excluir avaliações falsas ou inadequadas.",
+      db_th_dt:"Data", db_th_nm:"Nome", db_th_rt:"Classificação", db_th_cm:"Comentário", db_th_dl:"Excluir",
+
+      db_tit_set:"Configurações", db_sub_set:"Gerencie sua senha e dados.",
+      db_set_pw:"Alterar senha", db_set_pw_s:"Atualize sua senha de login a qualquer momento.",
+      db_set_cur:"Senha atual", db_set_new:"Nova senha", db_set_cfm:"Confirmar nova senha", db_set_upd:"Atualizar senha",
+      db_set_bi:"Info Negócio", db_set_bi_s:"Detalhes de contato exibidos em recibos e site.",
+      db_set_sto:"Armazenamento", db_set_sto_s:"Todos os dados salvos localmente no navegador. Persistem até limpar.", db_set_clr:"Limpar tudo",
+
+      mod_ok_t:"Pedido confirmado!", mod_ok_pdf1:"Baixando recibo...", mod_ok_pdf2:"Verifique sua pasta de downloads",
+      mod_ok_d1:"Pedido salvo no painel", mod_ok_d2:"Visível no seu painel de proprietário", mod_ok_w1:"WhatsApp aberto", mod_ok_w2:"Envie a mensagem preenchida para concluir",
+      mod_resend:"Reenviar WhatsApp", mod_close:"Fechar",
+      mod_od_msg:"Mensagem",
+      mod_lg_sub:"Painel do Proprietário", mod_lg_pw:"Senha", mod_lg_btn:"Entrar", mod_lg_can:"Cancelar",
+
+      rcpt_tit:"Serviço de Compras Pessoais Zanzibar", rcpt_cli:"Cliente:", rcpt_ph:"Tel:", rcpt_loc:"Local:", rcpt_urg:"Urgência:", rcpt_bud:"Orçamento:", rcpt_it:"Lista de compras:",
+      rcpt_thank:"Obrigado por usar JAMBO+!", ft_cp:"© 2024 JAMBO+ Zanzibar. Todos os direitos reservados."
+    }
   };
 
   function changeLang() {
     var code = el("langSel").value;
     var t = LANG[code] || LANG.en;
-    function setText(id, v) { var e = el(id); if (e) e.innerText = v; }
-    setText("nl-order", t.order);
-    setText("nl-policy", t.policy);
-    setText("nl-track", t.track);
-    setText("nl-rev", t.rev);
-    setText("loginBtnTxt", t.login);
-    setText("heroTitle", t.title);
-    setText("heroSub", t.sub);
-    setText("submitTxt", t.confirm);
+
+    // Helper to set text
+    function txt(id, val) { var e = el(id); if(e && val) e.innerText = val; }
+    // Helper to set placeholder
+    function ph(id, val) { var e = el(id); if(e && val) e.placeholder = val; }
+    // Helper to set value (for selects/options, if we were changing them dynamically, though currently static)
+    function valSet(id, v) { var e = el(id); if(e) e.value = v; }
+
+    // Navbar
+    txt("nl-order", t.nav_order); txt("nl-policy", t.nav_policy); txt("nl-track", t.nav_track); txt("nl-rev", t.nav_rev);
+    txt("loginBtnTxt", t.login);
+
+    // Hero
+    txt("heroTitle", t.hero_title); txt("heroSub", t.hero_sub);
+    txt("form-header-wa", t.form_wa);
+
+    // Form
+    txt("lbl-name", t.lbl_name + " <span class='req'>*</span>"); ph("cNm", t.ph_name);
+    txt("lbl-phone", t.lbl_phone + " <span class='req'>*</span>"); ph("cPh", t.ph_phone);
+    txt("lbl-loc", t.lbl_loc + " <span class='req'>*</span>"); ph("cLc", t.ph_loc);
+    txt("lbl-urg", t.lbl_urg);
+    txt("lbl-budget", t.lbl_budget); ph("cBu", t.ph_budget);
+    txt("lbl-items", t.lbl_items + " <span class='req'>*</span>"); txt("lbl-items-sub", t.lbl_items_sub); ph("cIt", t.ph_items);
+    txt("lbl-photo", "<i class='fas fa-camera' style='color:var(--pr);margin-right:5px'></i>" + t.lbl_photo + " <span id='lbl-photo-opt' style='color:var(--gr);font-weight:400;font-size:.84rem'>"+t.lbl_photo_opt+"</span>");
+    txt("pu-tap", t.pu_tap); txt("pu-limit", t.pu_limit); txt("pu-add-more-txt", t.pu_add); txt("pu-clear-txt", t.pu_clear);
+    txt("form-terms", t.form_terms); txt("submitTxt", t.confirm);
+
+    // Policy
+    txt("pol-title", t.pol_title); txt("pol-sub", t.pol_sub);
+    txt("pol-who-title", t.pol_who); txt("pol-who-li1", t.pol_who1); txt("pol-who-li2", t.pol_who2); txt("pol-who-li3", t.pol_who3);
+    txt("pol-not-title", t.pol_not); txt("pol-not-li1", t.pol_not1); txt("pol-not-li2", t.pol_not2); txt("pol-not-li3", t.pol_not3); txt("pol-not-li4", t.pol_not4);
+    txt("pol-tip-title", t.pol_tip); txt("pol-tip-li1", t.pol_tip1); txt("pol-tip-li2", t.pol_tip2); txt("pol-tip-li3", t.pol_tip3); txt("pol-tip-li4", t.pol_tip4);
+
+    // Tracker
+    txt("track-title", t.track_title); txt("track-sub", t.track_sub); ph("tIn", t.ph_track); txt("track-btn", t.btn_track);
+
+    // Reviews
+    txt("rev-title", t.rev_title); txt("rev-sub", t.rev_sub);
+    txt("rev-form-title", t.rev_leave); txt("rev-lbl-name", t.rev_lbl_name); txt("rev-lbl-rate", t.rev_lbl_rate); txt("rev-lbl-com", t.rev_lbl_com); txt("revBtn", t.rev_post);
+
+    // Dashboard Nav
+    txt("db-nav-ana", t.db_ana); txt("db-nav-ord", t.db_ord); txt("db-nav-rev", t.db_rev); txt("db-nav-set", t.db_set); txt("db-nav-out", t.db_out);
+
+    // Dashboard Analytics
+    txt("db-ana-title", t.db_tit_ana); txt("refBtn", "<i class='fas fa-sync-alt'></i> " + t.db_btn_ref);
+    txt("db-k-tot", t.db_k_tot); txt("db-k-pnd", t.db_k_pnd); txt("db-k-prc", t.db_k_prc); txt("db-k-del", t.db_k_del); txt("db-k-can", t.db_k_can); txt("db-k-rev", t.db_k_rev);
+    txt("db-ch-7d", "<i class='fas fa-chart-bar'></i> " + t.db_ch_7d); txt("db-ch-st", "<i class='fas fa-chart-pie'></i> " + t.db_ch_st);
+    txt("db-ch-ur", "<i class='fas fa-bolt'></i> " + t.db_ch_ur); txt("db-ch-rt", "<i class='fas fa-star'></i> " + t.db_ch_rt);
+    txt("db-rc-title", "<i class='fas fa-clock'></i> " + t.db_rc); txt("viewAllBtn", t.db_view);
+    txt("db-th-id", t.db_th_id); txt("db-th-cli", t.db_th_cli); txt("db-th-itm", t.db_th_itm); txt("db-th-loc", t.db_th_loc); txt("db-th-st", t.db_th_st);
+
+    // Dashboard Orders
+    txt("db-ord-title", t.db_tit_ord); txt("db-ord-sub", t.db_sub_ord);
+    // Note: Select options stay same usually, but "All Statuses" could change
+    txt("db-od-th-dt", t.db_th_dt); txt("db-od-th-cl", t.db_th_cl); txt("db-od-th-ph", t.db_th_ph);
+    txt("db-od-th-it", t.db_th_it); txt("db-od-th-lo", t.db_th_lo); txt("db-od-th-pho", t.db_th_phot); txt("db-od-th-st", t.db_th_st);
+
+    // Dashboard Reviews
+    txt("db-rev-title", t.db_tit_rev); txt("db-rev-sub", t.db_sub_rev);
+    txt("db-rv-th-dt", t.db_th_dt); txt("db-rv-th-nm", t.db_th_nm); txt("db-rv-th-rt", t.db_th_rt); txt("db-rv-th-cm", t.db_th_cm); txt("db-rv-th-dl", t.db_th_dl);
+
+    // Dashboard Settings
+    txt("db-set-title", t.db_tit_set); txt("db-set-sub", t.db_sub_set);
+    txt("db-set-pw-t", "<i class='fas fa-key' style='color:var(--pr)'></i> " + t.db_set_pw); txt("db-set-pw-s", t.db_set_pw_s);
+    txt("db-set-lb-cur", t.db_set_cur); ph("curP", t.db_set_cur);
+    txt("db-set-lb-new", t.db_set_new); ph("newP", t.db_set_new);
+    txt("db-set-lb-cfm", t.db_set_cfm); ph("cfmP", t.db_set_cfm);
+    txt("savePwBtn", "<i class='fas fa-save'></i> " + t.db_set_upd);
+    txt("db-set-inf-t", "<i class='fas fa-store' style='color:var(--ac)'></i> " + t.db_set_bi); txt("db-set-inf-s", t.db_set_bi_s);
+    txt("db-set-sto-t", "<i class='fas fa-database' style='color:var(--ac)'></i> " + t.db_set_sto); txt("db-set-sto-s", t.db_set_sto_s);
+    txt("clearBtn", "<i class='fas fa-trash-alt'></i> " + t.db_set_clr);
+
+    // Modals
+    txt("mod-ok-title", t.mod_ok_t);
+    txt("mod-ok-pdf1", t.mod_ok_pdf1); txt("mod-ok-pdf2", t.mod_ok_pdf2);
+    txt("mod-ok-dash1", t.mod_ok_d1); txt("mod-ok-dash2", t.mod_ok_d2);
+    txt("mod-ok-wa1", t.mod_ok_w1); txt("mod-ok-wa2", t.mod_ok_w2);
+    txt("mod-ok-resend", t.mod_resend); txt("mod-ok-close", t.mod_close);
+    txt("mod-od-msg", t.mod_od_msg); txt("mod-od-close", t.mod_close);
+    txt("mod-lg-sub", t.mod_lg_sub); txt("mod-lg-lbl-pw", t.mod_lg_pw); txt("lBtn", "<i class='fas fa-unlock'></i> " + t.mod_lg_btn); txt("mod-lg-cancel", t.mod_lg_can);
+
+    // Receipt (Hidden print area)
+    txt("rcpt-title", t.rcpt_tit); txt("rcpt-lbl-client", t.rcpt_cli); txt("rcpt-lbl-phone", t.rcpt_ph);
+    txt("rcpt-lbl-loc", t.rcpt_loc); txt("rcpt-lbl-urg", t.rcpt_urg); txt("rcpt-lbl-bud", t.rcpt_bud);
+    txt("rcpt-lbl-items", t.rcpt_it); txt("rcpt-thank", t.rcpt_thank);
+
+    // Footer
+    txt("ft-cp", t.ft_cp);
   }
 
   /* ── PHOTO UPLOAD ── */
@@ -829,14 +1423,14 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
     orders.unshift(order);
     sOrders(orders);
 
-    // ── ACTION 1: Save to dashboard (localStorage) ─────────────────────────
-    // Already done above (orders.unshift + sOrders)
-
     // ── ACTION 2: Auto-download PDF receipt ─────────────────────────────────
     try {
       var jsPDF = window.jspdf.jsPDF;
       var doc = new jsPDF({ unit: "mm", format: "a4" });
       var lm = 20, rm = 190, y = 20;
+      
+      // Get current language for receipt headings
+      var t = LANG[el("langSel").value] || LANG.en;
 
       // Header
       doc.setFont("helvetica", "bold");
@@ -847,7 +1441,7 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
       doc.setTextColor(100, 116, 139);
       doc.setFont("helvetica", "normal");
       y += 7;
-      doc.text("Zanzibar Personal Shopping Service", lm, y);
+      doc.text(t.rcpt_tit, lm, y);
       y += 5;
       doc.setDrawColor(0, 119, 182);
       doc.setLineWidth(0.5);
@@ -875,11 +1469,11 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
 
       // Client details
       var fields = [
-        ["Client Name", name],
-        ["WhatsApp", phone],
-        ["Delivery Location", loc],
-        ["Urgency", urg],
-        ["Budget", bud || "Not specified"]
+        [t.rcpt_cli, name],
+        [t.rcpt_ph, phone],
+        [t.rcpt_loc, loc],
+        [t.rcpt_urg, urg],
+        [t.rcpt_bud, bud || "Not specified"]
       ];
       fields.forEach(function(f) {
         doc.setFont("helvetica", "bold");
@@ -905,7 +1499,7 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
       doc.setFont("helvetica", "bold");
       doc.setFontSize(10);
       doc.setTextColor(0, 119, 182);
-      doc.text("Shopping List:", lm, y + 5);
+      doc.text(t.rcpt_it + ":", lm, y + 5);
       y += 10;
       doc.setFont("helvetica", "normal");
       doc.setTextColor(30, 30, 30);
@@ -936,7 +1530,7 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
       doc.setFont("helvetica", "normal");
       doc.setFontSize(8.5);
       doc.setTextColor(100, 116, 139);
-      doc.text("Thank you for using JAMBO+!", 105, footY, { align: "center" });
+      doc.text(t.rcpt_thank, 105, footY, { align: "center" });
       footY += 5;
       doc.text("+255 778 714 307  |  info@jambo-plus.store  |  @jambo-plus (IG)  |  Mandibotek (FB)", 105, footY, { align: "center" });
 
@@ -985,6 +1579,8 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
     if (!rEl) { alert("Please select a rating."); return; }
     if (!comment) { alert("Please write a comment."); return; }
     var revs = gRevs();
+    var t = LANG[el("langSel").value] || LANG.en;
+    
     revs.unshift({ id: Date.now(), name: name, rating: parseInt(rEl.value), comment: comment, date: new Date().toLocaleDateString("en-GB") });
     sRevs(revs);
     el("rNm").value = ""; el("rCm").value = "";
@@ -999,7 +1595,8 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
     if (!container) return;
     container.innerHTML = "";
     if (!revs.length) {
-      container.innerHTML = "<p style='text-align:center;color:var(--gr);padding:28px'>No reviews yet — be first!</p>";
+      var t = LANG[el("langSel").value] || LANG.en;
+      container.innerHTML = "<p style='text-align:center;color:var(--gr);padding:28px'>"+t.rev_none+"</p>";
       return;
     }
     revs.forEach(function(rv) {
@@ -1017,6 +1614,8 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
   function trackOrder() {
     var id = val("tIn").toUpperCase();
     var box = el("tRes");
+    var t = LANG[el("langSel").value] || LANG.en;
+    
     box.style.display = "block";
     if (!id) { box.style.cssText = "display:block;background:#fee2e2;color:#991b1b;border-radius:10px;padding:14px;font-weight:600"; box.innerHTML = "Please enter an Order ID."; return; }
     var found = null;
@@ -1026,10 +1625,10 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
     var tc = { Pending:"#92400e", Processing:"#1e40af", Delivered:"#065f46", Cancelled:"#991b1b" };
     if (found) {
       box.style.cssText = "display:block;background:" + (sc[found.status] || "#e0f7fa") + ";color:" + (tc[found.status] || "#025a8a") + ";border-radius:10px;padding:16px;font-weight:600";
-      box.innerHTML = "<div style='font-size:1.08rem;margin-bottom:5px'><i class='fas fa-check-circle'></i> Order Found</div>Status: <b>" + found.status + "</b><br>Client: " + esc(found.name) + "<br><small style='opacity:.65'>" + found.date + "</small>";
+      box.innerHTML = "<div style='font-size:1.08rem;margin-bottom:5px'><i class='fas fa-check-circle'></i> " + t.track_found + "</div>Status: <b>" + found.status + "</b><br>Client: " + esc(found.name) + "<br><small style='opacity:.65'>" + found.date + "</small>";
     } else {
       box.style.cssText = "display:block;background:#fee2e2;color:#991b1b;border-radius:10px;padding:14px;font-weight:600";
-      box.innerHTML = "<i class='fas fa-times-circle'></i> Order not found. Check your receipt for the correct ID.";
+      box.innerHTML = "<i class='fas fa-times-circle'></i> " + t.track_not;
     }
   }
 
@@ -1088,10 +1687,10 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
     el("k-del").innerText = bs.Delivered;
     el("k-can").innerText = bs.Cancelled;
     el("k-rev").innerText = revs.length;
-    el("updTs").innerText = "Updated: " + new Date().toLocaleTimeString();
     var today = new Date().toLocaleDateString("en-GB");
     var tc = 0;
     orders.forEach(function(o) { if (o.date === today) tc++; });
+    var t = LANG[el("langSel").value] || LANG.en;
     el("k-tod").innerHTML = tc ? "<span class='up'><i class='fas fa-arrow-up'></i> " + tc + " today</span>" : "<span>0 today</span>";
     var ob = el("oBadge");
     ob.innerText = bs.Pending || "";
@@ -1166,19 +1765,20 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
   function openOrderDetail(id) {
     var orders = gOrders();
     var o = null;
+    var t = LANG[el("langSel").value] || LANG.en;
     for (var i = 0; i < orders.length; i++) { if (orders[i].id === id) { o = orders[i]; break; } }
     if (!o) return;
     el("od-id").innerText = "Order " + o.id;
     el("od-dt").innerText = "Placed: " + o.date;
     el("od-wa").onclick = function() { window.open("https://wa.me/" + o.phone.replace(/\D/g,""), "_blank"); };
     el("od-body").innerHTML =
-      "<div class='odf'><label>Client</label><p>" + esc(o.name) + "</p></div>" +
-      "<div class='odf'><label>Phone</label><p>" + esc(o.phone) + "</p></div>" +
-      "<div class='odf'><label>Location</label><p>" + esc(o.loc) + "</p></div>" +
-      "<div class='odf'><label>Urgency</label><p>" + esc(o.urg) + "</p></div>" +
-      "<div class='odf'><label>Budget</label><p>" + (o.bud || "Not specified") + "</p></div>" +
+      "<div class='odf'><label>" + t.db_th_cl + "</label><p>" + esc(o.name) + "</p></div>" +
+      "<div class='odf'><label>" + t.db_th_ph + "</label><p>" + esc(o.phone) + "</p></div>" +
+      "<div class='odf'><label>" + t.db_th_lo + "</label><p>" + esc(o.loc) + "</p></div>" +
+      "<div class='odf'><label>" + t.rcpt_urg + "</label><p>" + esc(o.urg) + "</p></div>" +
+      "<div class='odf'><label>" + t.rcpt_bud + "</label><p>" + (o.bud || "Not specified") + "</p></div>" +
       "<div class='odf'><label>Status</label><p>" + sBadge(o.status) + "</p></div>" +
-      "<div class='odf' style='grid-column:span 2'><label>Shopping List</label><p style='white-space:pre-wrap'>" + esc(o.items) + "</p></div>" +
+      "<div class='odf' style='grid-column:span 2'><label>" + t.rcpt_it + "</label><p style='white-space:pre-wrap'>" + esc(o.items) + "</p></div>" +
       (o.photos && o.photos.length ? (function() {
         var ph = "<div class='odf ophv'><label>Product Photos (" + o.photos.length + ")</label><div style='display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-top:8px'>";
         o.photos.forEach(function(p) { ph += "<img src='" + p.data + "' style='width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;border:2px solid var(--lt)'>"; });
@@ -1231,6 +1831,7 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
     var nw = el("newP").value;
     var cf = el("cfmP").value;
     var ali = el("pAli");
+    var t = LANG[el("langSel").value] || LANG.en;
     function show(msg, ok) {
       ali.className = "ali " + (ok ? "ok" : "er");
       ali.innerText = msg;
@@ -1285,7 +1886,10 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
   document.addEventListener("DOMContentLoaded", function() {
     if (!localStorage.getItem("jp_pw")) localStorage.setItem("jp_pw", DP);
 
-    // Language
+    // Initialize Language
+    changeLang();
+
+    // Language change listener
     el("langSel").addEventListener("change", changeLang);
 
     // Login
@@ -1341,7 +1945,6 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
   });
 
 })();
-
 </script>
 </body>
 </html>
