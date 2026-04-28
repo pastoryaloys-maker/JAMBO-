@@ -9,7 +9,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
-
 :root{
   --pr:#0077b6;--pd:#025a8a;--pl:#e0f4ff;
   --ac:#ffb703;--ad:#e0a100;
@@ -49,7 +48,7 @@ header{background:rgba(255,255,255,.97);backdrop-filter:blur(12px);position:stic
 
 .ocard{background:#fff;border-radius:var(--r);box-shadow:0 18px 56px rgba(0,0,0,.09);padding:38px;max-width:900px;margin:0 auto;border:1px solid #e8f0fe;}
 .fg{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
-.fi{} 
+.fi{}
 .fi label{display:block;margin-bottom:7px;font-weight:600;color:var(--dk);font-size:.87rem;}
 .req{color:var(--rd);}
 .fc{width:100%;padding:12px 15px;border:2px solid var(--lt);border-radius:9px;font-family:inherit;font-size:.94rem;transition:.22s;outline:none;background:#fafcff;color:var(--tx);}
@@ -59,15 +58,9 @@ textarea.fc{resize:vertical;min-height:155px;line-height:1.6;}
 .fact{margin-top:26px;padding-top:20px;border-top:1px solid var(--lt);display:flex;justify-content:flex-end;align-items:center;gap:13px;}
 .fn{flex:1;font-size:.82rem;color:var(--gr);}
 
-/* Photo upload */
 .pu-box{border:2px dashed var(--lt);border-radius:10px;padding:22px;text-align:center;cursor:pointer;transition:.22s;background:#fafcff;}
 .pu-box:hover,.pu-box.drag{border-color:var(--pr);background:var(--pl);}
 .pu-box.ok{border-color:var(--gn);background:#f0fdf4;border-style:solid;}
-.pu-success{margin-top:12px;display:none;background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:12px 16px;display:flex;align-items:center;gap:10px;}
-.pu-success img{width:60px;height:60px;object-fit:cover;border-radius:6px;border:2px solid #86efac;}
-.pu-success .pu-info{flex:1;text-align:left;}
-.pu-success .pu-info p{font-weight:600;color:#065f46;font-size:.88rem;}
-.pu-success .pu-info small{color:#4ade80;font-size:.78rem;}
 .pu-rm{background:none;border:none;color:var(--rd);cursor:pointer;font-size:.82rem;font-family:inherit;display:flex;align-items:center;gap:4px;margin-top:4px;}
 .pu-thumb-wrap{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:1;border:2px solid #86efac;background:#f0fdf4;}
 .pu-thumb-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
@@ -195,6 +188,7 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
 .odf p{font-size:.91rem;color:var(--dk);font-weight:500;}
 .ophv{grid-column:span 2;text-align:center;}
 
+.badge{display:inline-flex;align-items:padding:3px 11px;border-radius:18px;font-size:.77rem;font-weight:600;}
 .badge{display:inline-flex;align-items:center;padding:3px 11px;border-radius:18px;font-size:.77rem;font-weight:600;}
 .bp2{background:#fef3c7;color:#92400e;}
 .bc{background:#dbeafe;color:#1e40af;}
@@ -247,39 +241,39 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
 
 <div id="rcpt">
   <div class="rh2"><p style="font-size:18pt;font-weight:800;font-family:Poppins,sans-serif">JAMBO+</p>
-  <p id="rcpt-title">Zanzibar Personal Shopping Service</p>
+  <p>Zanzibar Personal Shopping Service</p>
   <p style="margin-top:6px">Order: <b><span id="r-id"></span></b> &nbsp;|&nbsp; Date: <span id="r-dt"></span></p></div>
-  <div class="rr2"><b id="rcpt-lbl-client">Client:</b><span id="r-nm"></span></div>
-  <div class="rr2"><b id="rcpt-lbl-phone">Phone:</b><span id="r-ph"></span></div>
-  <div class="rr2"><b id="rcpt-lbl-loc">Location:</b><span id="r-lc"></span></div>
-  <div class="rr2"><b id="rcpt-lbl-urg">Urgency:</b><span id="r-ur"></span></div>
-  <div class="rr2"><b id="rcpt-lbl-bud">Budget:</b><span id="r-bu"></span></div>
-  <div class="rd3"><p style="font-weight:700;margin-bottom:5px" id="rcpt-lbl-items">Shopping List:</p><p id="r-it" style="white-space:pre-wrap"></p></div>
+  <div class="rr2"><b>Client:</b><span id="r-nm"></span></div>
+  <div class="rr2"><b>Phone:</b><span id="r-ph"></span></div>
+  <div class="rr2"><b>Location:</b><span id="r-lc"></span></div>
+  <div class="rr2"><b>Urgency:</b><span id="r-ur"></span></div>
+  <div class="rr2"><b>Budget:</b><span id="r-bu"></span></div>
+  <div class="rd3"><p style="font-weight:700;margin-bottom:5px">Shopping List:</p><p id="r-it" style="white-space:pre-wrap"></p></div>
   <p id="r-pn" style="display:none;font-size:10pt;color:#555;margin-top:7px"></p>
-  <div class="rf2"><p id="rcpt-thank">Thank you for using JAMBO+!</p><p>+255 778 714 307 | info@jambo-plus.store</p><p>@jambo-plus (IG) | Mandibotek (FB)</p></div>
+  <div class="rf2"><p>Thank you for using JAMBO+!</p><p>+255 778 714 307 | info@jambo-plus.store</p><p>@jambo-plus (IG) | Mandibotek (FB)</p></div>
 </div>
 
 <!-- Success Modal -->
 <div id="okMod" class="mo">
   <div class="mb">
     <i class="fas fa-check-circle mi"></i>
-    <h3 id="mod-ok-title" style="font-family:Poppins,sans-serif;font-size:1.28rem;margin-bottom:10px">Order Confirmed!</h3>
+    <h3 style="font-family:Poppins,sans-serif;font-size:1.28rem;margin-bottom:10px" data-i18n="mod_ok_title">Order Confirmed!</h3>
     <div style="text-align:left;background:#f8fafc;border-radius:10px;padding:14px;margin-bottom:16px">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
         <i class="fas fa-file-pdf" style="color:#e63946;font-size:1.2rem;width:22px"></i>
-        <div><p id="mod-ok-pdf1" style="font-weight:600;font-size:.88rem;color:#065f46">Receipt downloading...</p><p id="mod-ok-pdf2" style="font-size:.78rem;color:var(--gr)">Check your downloads folder</p></div>
+        <div><p style="font-weight:600;font-size:.88rem;color:#065f46" data-i18n="mod_ok_pdf">Receipt downloading...</p><p style="font-size:.78rem;color:var(--gr)" data-i18n="mod_ok_pdf2">Check your downloads folder</p></div>
       </div>
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
         <i class="fas fa-tachometer-alt" style="color:var(--pr);font-size:1.2rem;width:22px"></i>
-        <div><p id="mod-ok-dash1" style="font-weight:600;font-size:.88rem;color:#065f46">Order saved to dashboard</p><p id="mod-ok-dash2" style="font-size:.78rem;color:var(--gr)">Visible in your owner panel</p></div>
+        <div><p style="font-weight:600;font-size:.88rem;color:var(--dk)" data-i18n="mod_ok_dash">Order saved to dashboard</p><p style="font-size:.78rem;color:var(--gr)" data-i18n="mod_ok_dash2">Visible in your owner panel</p></div>
       </div>
       <div style="display:flex;align-items:center;gap:10px">
         <i class="fab fa-whatsapp" style="color:var(--wa);font-size:1.2rem;width:22px"></i>
-        <div><p id="mod-ok-wa1" style="font-weight:600;font-size:.88rem;color:#065f46">WhatsApp opened</p><p id="mod-ok-wa2" style="font-size:.78rem;color:var(--gr)">Send the pre-filled message to complete</p></div>
+        <div><p style="font-weight:600;font-size:.88rem;color:var(--dk)" data-i18n="mod_ok_wa">WhatsApp opened</p><p style="font-size:.78rem;color:var(--gr)" data-i18n="mod_ok_wa2">Send the pre-filled message to complete</p></div>
       </div>
     </div>
-    <a id="waLnk" href="#" target="_blank" class="btn bw" style="width:100%"><i class="fab fa-whatsapp"></i> <span id="mod-ok-resend">Resend WhatsApp</span></a>
-    <button class="btn bg" onclick="closeMod('okMod')" id="mod-ok-close" style="margin-top:9px;width:100%">Close</button>
+    <a id="waLnk" href="#" target="_blank" class="btn bw" style="width:100%"><i class="fab fa-whatsapp"></i> <span data-i18n="mod_ok_resend">Resend WhatsApp</span></a>
+    <button class="btn bg" onclick="closeMod('okMod')" style="margin-top:9px;width:100%" data-i18n="btn_close">Close</button>
   </div>
 </div>
 
@@ -292,8 +286,8 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
     </div>
     <div class="odg" id="od-body"></div>
     <div style="margin-top:18px;display:flex;gap:9px;justify-content:flex-end">
-      <button class="btn bw bsm" id="od-wa"><i class="fab fa-whatsapp"></i> <span id="mod-od-msg">Message</span></button>
-      <button class="btn bg bsm" id="mod-od-close" onclick="closeMod('odMod')">Close</button>
+      <button class="btn bw bsm" id="od-wa"><i class="fab fa-whatsapp"></i> <span data-i18n="btn_message">Message</span></button>
+      <button class="btn bg bsm" onclick="closeMod('odMod')" data-i18n="btn_close">Close</button>
     </div>
   </div>
 </div>
@@ -302,16 +296,17 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
 <div id="lgMod" class="mo">
   <div class="mb" style="max-width:340px">
     <div class="logo" style="justify-content:center;font-size:1.35rem;margin-bottom:5px"><i class="fas fa-shopping-bag"></i> JAMBO<span>+</span></div>
-    <p id="mod-lg-sub" style="color:var(--gr);font-size:.86rem;margin-bottom:18px">Owner Dashboard</p>
+    <p style="color:var(--gr);font-size:.86rem;margin-bottom:18px" data-i18n="lbl_dash">Owner Dashboard</p>
     <div style="text-align:left;margin-bottom:13px">
-      <label id="mod-lg-lbl-pw" style="font-size:.84rem;font-weight:600;margin-bottom:5px;display:block">Password</label>
-      <input type="password" id="lPw" class="fc" placeholder="Enter password">
+      <label style="font-size:.84rem;font-weight:600;margin-bottom:5px;display:block" data-i18n="lbl_password">Password</label>
+      <input type="password" id="lPw" class="fc" data-i18n-ph="ph_password">
     </div>
-    <div id="lErr" style="display:none;background:#fee2e2;color:#991b1b;padding:8px 11px;border-radius:7px;font-size:.82rem;margin-bottom:11px">Wrong password. Try again.</div>
-    <button class="btn bp" id="lBtn" style="width:100%"><i class="fas fa-unlock"></i> <span id="mod-lg-btn">Login</span></button>
-    <button class="btn bg" id="mod-lg-cancel" style="width:100%;margin-top:9px" onclick="closeMod('lgMod')">Cancel</button>
+    <div id="lErr" style="display:none;background:#fee2e2;color:#991b1b;padding:8px 11px;border-radius:7px;font-size:.82rem;margin-bottom:11px" data-i18n="lbl_wrong_pw">Wrong password. Try again.</div>
+    <button class="btn bp" style="width:100%" id="lBtn"><i class="fas fa-unlock"></i> <span data-i18n="nav_login">Login</span></button>
+    <button class="btn bg" style="width:100%;margin-top:9px" onclick="closeMod('lgMod')" data-i18n="btn_cancel">Cancel</button>
   </div>
 </div>
+
 <div id="pub">
 
 <header>
@@ -319,24 +314,24 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
     <div class="hbar">
       <div class="logo"><i class="fas fa-shopping-bag"></i> JAMBO<span>+</span></div>
       <ul class="nl">
-        <li><a href="#orderf" id="nl-order">Place Order</a></li>
-        <li><a href="#policy" id="nl-policy">Policy</a></li>
-        <li><a href="#tracker" id="nl-track">Track Order</a></li>
-        <li><a href="#reviews" id="nl-rev">Reviews</a></li>
+        <li><a href="#orderf" id="nl-order" data-i18n="nav_order">Place Order</a></li>
+        <li><a href="#policy" id="nl-policy" data-i18n="nav_policy">Policy</a></li>
+        <li><a href="#tracker" id="nl-track" data-i18n="nav_track">Track Order</a></li>
+        <li><a href="#reviews" id="nl-rev" data-i18n="nav_rev">Reviews</a></li>
       </ul>
       <div style="display:flex;gap:9px;align-items:center">
         <select class="lsel" id="langSel">
           <option value="en">English</option>
           <option value="sw">Kiswahili</option>
-          <option value="fr">Francais</option>
+          <option value="fr">Français</option>
           <option value="de">Deutsch</option>
-          <option value="es">Espanol</option>
+          <option value="es">Español</option>
           <option value="it">Italiano</option>
           <option value="zh">中文</option>
           <option value="ru">Русский</option>
-          <option value="pt">Portugues</option>
+          <option value="pt">Português</option>
         </select>
-        <button class="btn bp" id="loginBtn" style="padding:8px 17px;font-size:.87rem"><i class="fas fa-lock"></i> <span id="loginBtnTxt">Login</span></button>
+        <button class="btn bp" id="loginBtn" style="padding:8px 17px;font-size:.87rem"><i class="fas fa-lock"></i> <span id="loginBtnTxt" data-i18n="nav_login">Login</span></button>
       </div>
     </div>
   </div>
@@ -351,58 +346,58 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
     <div class="ocard">
       <div style="text-align:center;margin-bottom:26px">
         <span style="display:inline-flex;align-items:center;gap:7px;background:var(--pl);color:var(--pr);padding:7px 18px;border-radius:50px;font-size:.87rem;font-weight:600">
-          <i class="fab fa-whatsapp"></i> <span id="form-header-wa">Order via WhatsApp</span>
+          <i class="fab fa-whatsapp"></i> <span data-i18n="badge_wa">Order via WhatsApp</span>
         </span>
       </div>
       <form id="oform">
         <div class="fg">
           <div class="fi">
-            <label id="lbl-name">Full Name <span class="req">*</span></label>
-            <input type="text" id="cNm" class="fc" placeholder="e.g. John Doe" required>
+            <label><span data-i18n="lbl_name">Full Name</span> <span class="req">*</span></label>
+            <input type="text" id="cNm" class="fc" data-i18n-ph="ph_name" required>
           </div>
           <div class="fi">
-            <label id="lbl-phone">WhatsApp Number <span class="req">*</span></label>
+            <label><span data-i18n="lbl_phone">WhatsApp Number</span> <span class="req">*</span></label>
             <input type="tel" id="cPh" class="fc" placeholder="+255..." required>
           </div>
           <div class="fi fw">
-            <label id="lbl-loc">Delivery Location / Hotel <span class="req">*</span></label>
-            <input type="text" id="cLc" class="fc" placeholder="e.g. Serena Hotel, Room 204" required>
+            <label><span data-i18n="lbl_loc">Delivery Location / Hotel</span> <span class="req">*</span></label>
+            <input type="text" id="cLc" class="fc" data-i18n-ph="ph_loc" required>
           </div>
           <div class="fi">
-            <label id="lbl-urg">When do you need it?</label>
+            <label data-i18n="lbl_urgency">When do you need it?</label>
             <select id="cUr" class="fc">
-              <option value="ASAP">As Soon As Possible</option>
-              <option value="Today">Later Today</option>
-              <option value="Tomorrow">Tomorrow</option>
-              <option value="This Week">Later This Week</option>
+              <option value="ASAP" data-i18n-opt="urg_asap">As Soon As Possible</option>
+              <option value="Today" data-i18n-opt="urg_today">Later Today</option>
+              <option value="Tomorrow" data-i18n-opt="urg_tomorrow">Tomorrow</option>
+              <option value="This Week" data-i18n-opt="urg_week">Later This Week</option>
             </select>
           </div>
           <div class="fi">
-            <label id="lbl-budget">Estimated Budget (Optional)</label>
-            <input type="text" id="cBu" class="fc" placeholder="e.g. 50,000 TZS">
+            <label data-i18n="lbl_budget">Estimated Budget (Optional)</label>
+            <input type="text" id="cBu" class="fc" data-i18n-ph="ph_budget">
           </div>
           <div class="fi fw">
-            <label id="lbl-items">What do you want us to buy? <span class="req">*</span></label>
-            <p id="lbl-items-sub" style="font-size:.79rem;color:var(--gr);margin-bottom:6px">Be specific — brand, size, color, quantity.</p>
-            <textarea id="cIt" class="fc" placeholder="Example:&#10;2x Coke 500ml&#10;1x AA batteries (Duracell)&#10;Sunscreen SPF50" required></textarea>
+            <label><span data-i18n="lbl_items">What do you want us to buy?</span> <span class="req">*</span></label>
+            <p style="font-size:.79rem;color:var(--gr);margin-bottom:6px" data-i18n="lbl_items_hint">Be specific — brand, size, color, quantity.</p>
+            <textarea id="cIt" class="fc" data-i18n-ph="ph_items" required></textarea>
           </div>
           <div class="fi fw">
-            <label id="lbl-photo">
+            <label>
               <i class="fas fa-camera" style="color:var(--pr);margin-right:5px"></i>
-              Product Photo <span id="lbl-photo-opt" style="color:var(--gr);font-weight:400;font-size:.84rem">(Optional — helps us find the exact item)</span>
+              <span data-i18n="lbl_photo">Product Photo</span> <span style="color:var(--gr);font-weight:400;font-size:.84rem" data-i18n="lbl_photo_hint">(Optional — helps us find the exact item)</span>
             </label>
             <div class="pu-box" id="puBox">
               <input type="file" id="pFile" accept="image/*" multiple style="display:none">
               <i class="fas fa-images" style="font-size:1.6rem;color:var(--gr);margin-bottom:8px;display:block"></i>
-              <p id="pu-tap" style="color:var(--gr);font-size:.87rem;font-weight:600">Tap to upload product photos</p>
-              <p id="pu-limit" style="color:#cbd5e1;font-size:.76rem;margin-top:4px">Up to 10 images &bull; JPG / PNG &bull; max 5MB each</p>
+              <p style="color:var(--gr);font-size:.87rem;font-weight:600" data-i18n="lbl_photo_tap">Tap to upload product photos</p>
+              <p style="color:#cbd5e1;font-size:.76rem;margin-top:4px" data-i18n="lbl_photo_max">Up to 10 images &bull; JPG / PNG &bull; max 5MB each</p>
             </div>
             <div id="puGrid" style="display:none;margin-top:12px">
               <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-                <p id="pu-ready" style="font-size:.85rem;font-weight:600;color:var(--gn)"><i class="fas fa-check-circle"></i> <span id="puCount">0</span> photo(s) ready</p>
+                <p style="font-size:.85rem;font-weight:600;color:var(--gn)"><i class="fas fa-check-circle"></i> <span id="puCount">0</span> <span data-i18n="lbl_photos_ready">photo(s) ready</span></p>
                 <div style="display:flex;gap:8px;align-items:center">
-                  <button type="button" id="puAddMore" class="pu-rm" style="color:var(--pr)"><i class="fas fa-plus-circle"></i> <span id="pu-add-more-txt">Add more</span></button>
-                  <button type="button" id="puClearAll" class="pu-rm"><i class="fas fa-times-circle"></i> <span id="pu-clear-txt">Clear all</span></button>
+                  <button type="button" id="puAddMore" class="pu-rm" style="color:var(--pr)"><i class="fas fa-plus-circle"></i> <span data-i18n="btn_add_more">Add more</span></button>
+                  <button type="button" id="puClearAll" class="pu-rm"><i class="fas fa-times-circle"></i> <span data-i18n="btn_clear_all">Clear all</span></button>
                 </div>
               </div>
               <div id="puThumbs" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:8px"></div>
@@ -410,9 +405,9 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
           </div>
         </div>
         <div class="fact">
-          <p id="form-terms" class="fn"><i class="fas fa-shield-alt" style="color:var(--pr)"></i> By confirming you agree to our service terms.</p>
+          <p class="fn"><i class="fas fa-shield-alt" style="color:var(--pr)"></i> <span data-i18n="form_terms">By confirming you agree to our service terms.</span></p>
           <button type="button" class="btn bw" id="submitBtn" style="padding:13px 30px">
-            <i class="fab fa-whatsapp"></i> <span id="submitTxt">Confirm Order</span>
+            <i class="fab fa-whatsapp"></i> <span id="submitTxt" data-i18n="btn_submit">Confirm Order</span>
           </button>
         </div>
       </form>
@@ -422,32 +417,35 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
 
 <section id="policy" class="psec">
   <div class="w">
-    <div class="stitle"><h2 id="pol-title">Service Policy &amp; Guidelines</h2><p id="pol-sub">Everything you need to know before ordering.</p></div>
+    <div class="stitle">
+      <h2 data-i18n="pol_title">Service Policy &amp; Guidelines</h2>
+      <p data-i18n="pol_sub">Everything you need to know before ordering.</p>
+    </div>
     <div class="pgrid">
       <div class="pc">
-        <h3><i class="fas fa-users" style="color:var(--pr)"></i> <span id="pol-who-title">Who We Serve</span></h3>
+        <h3><i class="fas fa-users" style="color:var(--pr)"></i> <span data-i18n="pol_serve_h">Who We Serve</span></h3>
         <ul>
-          <li><i class="fas fa-check"></i><span id="pol-who-li1"><b>Tourists:</b> Souvenirs, essentials, local goods at fair prices.</span></li>
-          <li><i class="fas fa-check"></i><span id="pol-who-li2"><b>Locals:</b> Errands for busy families and professionals.</span></li>
-          <li><i class="fas fa-check"></i><span id="pol-who-li3"><b>Fees:</b> Item cost + service fee + delivery.</span></li>
+          <li><i class="fas fa-check"></i><span data-i18n-html="pol_serve_1"><b>Tourists:</b> Souvenirs, essentials, local goods at fair prices.</span></li>
+          <li><i class="fas fa-check"></i><span data-i18n-html="pol_serve_2"><b>Locals:</b> Errands for busy families and professionals.</span></li>
+          <li><i class="fas fa-check"></i><span data-i18n-html="pol_serve_3"><b>Fees:</b> Item cost + service fee + delivery.</span></li>
         </ul>
       </div>
       <div class="pc dn">
-        <h3 style="color:var(--rd)" id="pol-not-title"><i class="fas fa-ban"></i> We Do NOT Buy</h3>
+        <h3 style="color:var(--rd)"><i class="fas fa-ban"></i> <span data-i18n="pol_dont_h">We Do NOT Buy</span></h3>
         <ul>
-          <li><i class="fas fa-times-circle"></i><span id="pol-not-li1"><b>Medicine</b> — buy personally for safety.</span></li>
-          <li><i class="fas fa-times-circle"></i><span id="pol-not-li2"><b>Alcohol</b> — not handled.</span></li>
-          <li><i class="fas fa-times-circle"></i><span id="pol-not-li3"><b>Illegal products</b> — strictly refused.</span></li>
-          <li><i class="fas fa-times-circle"></i><span id="pol-not-li4"><b>Large electronics</b> (TVs, fridges) — small ones fine.</span></li>
+          <li><i class="fas fa-times-circle"></i><span data-i18n-html="pol_dont_1"><b>Medicine</b> — buy personally for safety.</span></li>
+          <li><i class="fas fa-times-circle"></i><span data-i18n-html="pol_dont_2"><b>Alcohol</b> — not handled.</span></li>
+          <li><i class="fas fa-times-circle"></i><span data-i18n-html="pol_dont_3"><b>Illegal products</b> — strictly refused.</span></li>
+          <li><i class="fas fa-times-circle"></i><span data-i18n-html="pol_dont_4"><b>Large electronics</b> (TVs, fridges) — small ones fine.</span></li>
         </ul>
       </div>
       <div class="pc">
-        <h3><i class="fas fa-lightbulb" style="color:var(--ac)"></i> <span id="pol-tip-title">Essential Tips</span></h3>
+        <h3><i class="fas fa-lightbulb" style="color:var(--ac)"></i> <span data-i18n="pol_tips_h">Essential Tips</span></h3>
         <ul>
-          <li><i class="fas fa-star"></i><span id="pol-tip-li1"><b>Be specific</b> — exact brands, sizes, colors.</span></li>
-          <li><i class="fas fa-star"></i><span id="pol-tip-li2"><b>Payment:</b> M-Pesa, Tigo Pesa, Cash.</span></li>
-          <li><i class="fas fa-star"></i><span id="pol-tip-li3"><b>Min order:</b> 50,000 TZS. Below = 5,000 TZS fee.</span></li>
-          <li><i class="fas fa-star"></i><span id="pol-tip-li4"><b>Receipt:</b> Reference only — your order gets delivered.</span></li>
+          <li><i class="fas fa-star"></i><span data-i18n-html="pol_tip_1"><b>Be specific</b> — exact brands, sizes, colors.</span></li>
+          <li><i class="fas fa-star"></i><span data-i18n-html="pol_tip_2"><b>Payment:</b> M-Pesa, Tigo Pesa, Cash.</span></li>
+          <li><i class="fas fa-star"></i><span data-i18n-html="pol_tip_3"><b>Min order:</b> 50,000 TZS. Below = 5,000 TZS fee.</span></li>
+          <li><i class="fas fa-star"></i><span data-i18n-html="pol_tip_4"><b>Receipt:</b> Reference only — your order gets delivered.</span></li>
         </ul>
       </div>
     </div>
@@ -456,12 +454,15 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
 
 <section id="tracker" class="tsec">
   <div class="w">
-    <div class="stitle"><h2 id="track-title">Live Order Tracker</h2><p id="track-sub">Enter your Order ID from the receipt to check status.</p></div>
+    <div class="stitle">
+      <h2 data-i18n="track_title">Live Order Tracker</h2>
+      <p data-i18n="track_sub">Enter your Order ID from the receipt to check status.</p>
+    </div>
     <div class="tbox">
       <i class="fas fa-map-marked-alt" style="font-size:2rem;color:var(--pr);display:block;margin-bottom:16px"></i>
       <div style="display:flex;gap:9px;justify-content:center;flex-wrap:wrap">
-        <input type="text" id="tIn" class="fc" style="max-width:230px" placeholder="e.g. ORD-1234">
-        <button class="btn bp" id="tBtn"><i class="fas fa-search"></i> <span id="track-btn">Track</span></button>
+        <input type="text" id="tIn" class="fc" style="max-width:230px" data-i18n-ph="track_ph">
+        <button class="btn bp" id="tBtn"><i class="fas fa-search"></i> <span data-i18n="track_btn">Track</span></button>
       </div>
       <div id="tRes" class="tres"></div>
     </div>
@@ -470,17 +471,20 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
 
 <section id="reviews" class="revsec">
   <div class="w">
-    <div class="stitle"><h2 id="rev-title">Client Testimonies</h2><p id="rev-sub">Real feedback from real customers.</p></div>
+    <div class="stitle">
+      <h2 data-i18n="rev_title">Client Testimonies</h2>
+      <p data-i18n="rev_sub">Real feedback from real customers.</p>
+    </div>
     <div class="rcont">
       <div class="rfc">
-        <h3 id="rev-form-title" style="font-family:Poppins,sans-serif;color:var(--pr);margin-bottom:18px">Leave a Review</h3>
+        <h3 style="font-family:Poppins,sans-serif;color:var(--pr);margin-bottom:18px" data-i18n="revf_heading">Leave a Review</h3>
         <form id="revForm">
           <div style="margin-bottom:14px">
-            <label id="rev-lbl-name" style="font-size:.86rem;font-weight:600;color:var(--dk);margin-bottom:5px;display:block">Your Name</label>
+            <label style="font-size:.86rem;font-weight:600;color:var(--dk);margin-bottom:5px;display:block" data-i18n="revf_name">Your Name</label>
             <input type="text" id="rNm" class="fc" required>
           </div>
           <div style="margin-bottom:14px">
-            <label id="rev-lbl-rate" style="font-size:.86rem;font-weight:600;color:var(--dk);margin-bottom:7px;display:block">Rating</label>
+            <label style="font-size:.86rem;font-weight:600;color:var(--dk);margin-bottom:7px;display:block" data-i18n="revf_rating">Rating</label>
             <div class="stars">
               <input type="radio" id="s5" name="rt" value="5" required><label for="s5">&#9733;</label>
               <input type="radio" id="s4" name="rt" value="4"><label for="s4">&#9733;</label>
@@ -490,10 +494,10 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
             </div>
           </div>
           <div style="margin-bottom:14px">
-            <label id="rev-lbl-com" style="font-size:.86rem;font-weight:600;color:var(--dk);margin-bottom:5px;display:block">Comment</label>
+            <label style="font-size:.86rem;font-weight:600;color:var(--dk);margin-bottom:5px;display:block" data-i18n="revf_comment">Comment</label>
             <textarea id="rCm" class="fc" style="min-height:88px" required></textarea>
           </div>
-          <button type="button" class="btn ba" id="revBtn" style="width:100%">Post Review</button>
+          <button type="button" class="btn ba" style="width:100%" id="revBtn" data-i18n="btn_rev">Post Review</button>
         </form>
       </div>
       <div class="rl" id="revList"></div>
@@ -504,7 +508,7 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
 <footer>
   <div class="w">
     <div class="flogo"><i class="fas fa-shopping-bag" style="color:var(--ac)"></i> JAMBO<span>+</span></div>
-    <p id="ft-tag" style="opacity:.5;font-size:.87rem;margin-bottom:22px">Zanzibar Personal Shopping Service</p>
+    <p style="opacity:.5;font-size:.87rem;margin-bottom:22px" data-i18n="footer_tagline">Zanzibar Personal Shopping Service</p>
     <div class="soc">
       <a href="https://wa.me/255778714307" target="_blank" rel="noopener" class="wa"><i class="fab fa-whatsapp"></i></a>
       <a href="https://www.instagram.com/jambo-plus" target="_blank" rel="noopener" class="ig"><i class="fab fa-instagram"></i></a>
@@ -514,7 +518,7 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
       <a href="tel:+255778714307"><i class="fas fa-phone"></i> +255 778 714 307</a>
       <a href="mailto:info@jambo-plus.store"><i class="fas fa-envelope"></i> info@jambo-plus.store</a>
     </div>
-    <p class="fcp" id="ft-cp">&copy; 2024 JAMBO+ Zanzibar. All rights reserved.</p>
+    <p class="fcp">&copy; 2024 JAMBO+ Zanzibar. <span data-i18n="footer_copy">All rights reserved.</span></p>
   </div>
 </footer>
 </div>
@@ -523,84 +527,83 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
   <aside class="sb">
     <div class="sl"><i class="fas fa-shopping-bag" style="color:var(--ac)"></i><span>JAMBO+</span></div>
     <nav>
-      <div class="ni act" data-t="analytics"><i class="fas fa-chart-line"></i><span id="db-nav-ana"> Analytics</span></div>
-      <div class="ni" data-t="orders"><i class="fas fa-inbox"></i><span id="db-nav-ord"> Orders</span><span id="oBadge" style="margin-left:auto;background:var(--rd);color:#fff;border-radius:11px;padding:1px 7px;font-size:.71rem;display:none"></span></div>
-      <div class="ni" data-t="reviews"><i class="fas fa-star"></i><span id="db-nav-rev"> Reviews</span></div>
+      <div class="ni act" data-t="analytics"><i class="fas fa-chart-line"></i><span> Analytics</span></div>
+      <div class="ni" data-t="orders"><i class="fas fa-inbox"></i><span> Orders</span><span id="oBadge" style="margin-left:auto;background:var(--rd);color:#fff;border-radius:11px;padding:1px 7px;font-size:.71rem;display:none"></span></div>
+      <div class="ni" data-t="reviews"><i class="fas fa-star"></i><span> Reviews</span></div>
       <hr class="sdiv">
-      <div class="ni" data-t="settings"><i class="fas fa-cog"></i><span id="db-nav-set"> Settings</span></div>
+      <div class="ni" data-t="settings"><i class="fas fa-cog"></i><span> Settings</span></div>
       <div class="ssp"></div>
-      <div class="ni dn2" id="logoutBtn"><i class="fas fa-sign-out-alt"></i><span id="db-nav-out">Logout</span></div>
+      <div class="ni dn2" id="logoutBtn"><i class="fas fa-sign-out-alt"></i><span> Logout</span></div>
     </nav>
   </aside>
   <main class="dm">
-
     <div id="tab-analytics">
       <div class="dh">
-        <div><h1 id="db-ana-title">Live Analytics</h1><p id="updTs"></p></div>
-        <button class="btn bg bsm" id="refBtn"><i class="fas fa-sync-alt"></i> <span id="db-btn-ref">Refresh</span></button>
+        <div><h1>Live Analytics</h1><p id="updTs"></p></div>
+        <button class="btn bg bsm" id="refBtn"><i class="fas fa-sync-alt"></i> Refresh</button>
       </div>
       <div class="kg">
-        <div class="kc bl"><div class="kl" id="db-k-tot">Total Orders</div><div class="kv" id="k-tot">0</div><i class="fas fa-shopping-bag ki"></i><div class="kch" id="k-tod"></div></div>
-        <div class="kc or"><div class="kl" id="db-k-pnd">Pending</div><div class="kv" id="k-pnd">0</div><i class="fas fa-clock ki"></i></div>
-        <div class="kc bl" style="--pr:#3b82f6"><div class="kl" id="db-k-prc">Processing</div><div class="kv" id="k-prc">0</div><i class="fas fa-spinner ki"></i></div>
-        <div class="kc gn"><div class="kl" id="db-k-del">Delivered</div><div class="kv" id="k-del">0</div><i class="fas fa-check-circle ki"></i></div>
-        <div class="kc rd"><div class="kl" id="db-k-can">Cancelled</div><div class="kv" id="k-can">0</div><i class="fas fa-times-circle ki"></i></div>
-        <div class="kc tc"><div class="kl" id="db-k-rev">Reviews</div><div class="kv" id="k-rev">0</div><i class="fas fa-star ki"></i><div class="kch" id="k-avg"></div></div>
+        <div class="kc bl"><div class="kl">Total Orders</div><div class="kv" id="k-tot">0</div><i class="fas fa-shopping-bag ki"></i><div class="kch" id="k-tod"></div></div>
+        <div class="kc or"><div class="kl">Pending</div><div class="kv" id="k-pnd">0</div><i class="fas fa-clock ki"></i></div>
+        <div class="kc bl" style="--pr:#3b82f6"><div class="kl">Processing</div><div class="kv" id="k-prc">0</div><i class="fas fa-spinner ki"></i></div>
+        <div class="kc gn"><div class="kl">Delivered</div><div class="kv" id="k-del">0</div><i class="fas fa-check-circle ki"></i></div>
+        <div class="kc rd"><div class="kl">Cancelled</div><div class="kv" id="k-can">0</div><i class="fas fa-times-circle ki"></i></div>
+        <div class="kc tc"><div class="kl">Reviews</div><div class="kv" id="k-rev">0</div><i class="fas fa-star ki"></i><div class="kch" id="k-avg"></div></div>
       </div>
       <div class="cg">
-        <div class="cc"><h3 id="db-ch-7d"><i class="fas fa-chart-bar"></i> Orders Last 7 Days</h3><div class="cw"><canvas id="ch1"></canvas></div></div>
-        <div class="cc"><h3 id="db-ch-st"><i class="fas fa-chart-pie"></i> By Status</h3><div class="cw"><canvas id="ch2"></canvas></div></div>
+        <div class="cc"><h3><i class="fas fa-chart-bar"></i> Orders Last 7 Days</h3><div class="cw"><canvas id="ch1"></canvas></div></div>
+        <div class="cc"><h3><i class="fas fa-chart-pie"></i> By Status</h3><div class="cw"><canvas id="ch2"></canvas></div></div>
       </div>
       <div class="cg">
-        <div class="cc"><h3 id="db-ch-ur"><i class="fas fa-bolt"></i> By Urgency</h3><div class="cw"><canvas id="ch3"></canvas></div></div>
-        <div class="cc"><h3 id="db-ch-rt"><i class="fas fa-star"></i> Ratings</h3><div class="cw"><canvas id="ch4"></canvas></div></div>
+        <div class="cc"><h3><i class="fas fa-bolt"></i> By Urgency</h3><div class="cw"><canvas id="ch3"></canvas></div></div>
+        <div class="cc"><h3><i class="fas fa-star"></i> Ratings</h3><div class="cw"><canvas id="ch4"></canvas></div></div>
       </div>
       <div class="dc">
-        <div class="dch"><h3 id="db-rc-title"><i class="fas fa-clock"></i> Recent Orders</h3><button class="btn bg bsm" id="viewAllBtn" id="db-btn-viewall">View All</button></div>
-        <div style="overflow-x:auto"><table class="dt"><thead><tr><th id="db-th-id">ID</th><th id="db-th-cli">Client</th><th id="db-th-itm">Items</th><th id="db-th-loc">Location</th><th id="db-th-st">Status</th></tr></thead><tbody id="recTb"></tbody></table></div>
+        <div class="dch"><h3><i class="fas fa-clock"></i> Recent Orders</h3><button class="btn bg bsm" id="viewAllBtn">View All</button></div>
+        <div style="overflow-x:auto"><table class="dt"><thead><tr><th>ID</th><th>Client</th><th>Items</th><th>Location</th><th>Status</th></tr></thead><tbody id="recTb"></tbody></table></div>
       </div>
     </div>
 
     <div id="tab-orders" class="gone">
       <div class="dh">
-        <div><h1 id="db-ord-title">All Orders</h1><p id="db-ord-sub">Click a row to view details. Change status inline.</p></div>
+        <div><h1>All Orders</h1><p>Click a row to view details. Change status inline.</p></div>
         <div style="display:flex;gap:9px;flex-wrap:wrap;align-items:center">
           <select id="fSt" class="fc" style="width:145px;padding:8px 11px;font-size:.84rem"><option value="">All Statuses</option><option>Pending</option><option>Processing</option><option>Delivered</option><option>Cancelled</option></select>
-          <input type="text" id="fSr" class="fc" id="db-ord-srch" placeholder="Search..." style="width:175px;padding:8px 11px;font-size:.84rem">
+          <input type="text" id="fSr" class="fc" placeholder="Search..." style="width:175px;padding:8px 11px;font-size:.84rem">
         </div>
       </div>
       <div class="dc">
-        <div style="overflow-x:auto"><table class="dt"><thead><tr><th id="db-od-th-dt">Date/ID</th><th id="db-od-th-cl">Client</th><th id="db-od-th-ph">Phone</th><th id="db-od-th-it">Items</th><th id="db-od-th-lo">Location</th><th id="db-od-th-pho">Photo</th><th id="db-od-th-st">Status</th></tr></thead><tbody id="ordTb"></tbody></table></div>
+        <div style="overflow-x:auto"><table class="dt"><thead><tr><th>Date/ID</th><th>Client</th><th>Phone</th><th>Items</th><th>Location</th><th>Photo</th><th>Status</th></tr></thead><tbody id="ordTb"></tbody></table></div>
       </div>
     </div>
 
     <div id="tab-reviews" class="gone">
-      <div class="dh"><div><h1 id="db-rev-title">Manage Reviews</h1><p id="db-rev-sub">Delete fake or inappropriate reviews.</p></div></div>
+      <div class="dh"><div><h1>Manage Reviews</h1><p>Delete fake or inappropriate reviews.</p></div></div>
       <div class="dc">
-        <div style="overflow-x:auto"><table class="dt"><thead><tr><th id="db-rv-th-dt">Date</th><th id="db-rv-th-nm">Name</th><th id="db-rv-th-rt">Rating</th><th id="db-rv-th-cm">Comment</th><th id="db-rv-th-dl">Delete</th></tr></thead><tbody id="revTb"></tbody></table></div>
+        <div style="overflow-x:auto"><table class="dt"><thead><tr><th>Date</th><th>Name</th><th>Rating</th><th>Comment</th><th>Delete</th></tr></thead><tbody id="revTb"></tbody></table></div>
       </div>
     </div>
 
     <div id="tab-settings" class="gone">
-      <div class="dh"><div><h1 id="db-set-title">Settings</h1><p id="db-set-sub">Manage your password and data.</p></div></div>
+      <div class="dh"><div><h1>Settings</h1><p>Manage your password and data.</p></div></div>
       <div class="ssg">
         <div class="sc2">
-          <h3 id="db-set-pw-t"><i class="fas fa-key" style="color:var(--pr)"></i> Change Password</h3>
-          <p id="db-set-pw-s">Update your dashboard login password at any time.</p>
-          <div class="fi2"><label id="db-set-lb-cur">Current Password</label><input type="password" id="curP" class="fc" placeholder="Current password"></div>
+          <h3><i class="fas fa-key" style="color:var(--pr)"></i> Change Password</h3>
+          <p>Update your dashboard login password at any time.</p>
+          <div class="fi2"><label>Current Password</label><input type="password" id="curP" class="fc" placeholder="Current password"></div>
           <div class="fi2">
-            <label id="db-set-lb-new">New Password</label>
+            <label>New Password</label>
             <input type="password" id="newP" class="fc" placeholder="Min 6 characters">
             <div class="stb"><div class="stf" id="stFil" style="width:0"></div></div>
             <p id="stTxt" style="font-size:.77rem;color:var(--gr);margin-top:3px"></p>
           </div>
-          <div class="fi2"><label id="db-set-lb-cfm">Confirm New Password</label><input type="password" id="cfmP" class="fc" placeholder="Repeat new password"></div>
+          <div class="fi2"><label>Confirm New Password</label><input type="password" id="cfmP" class="fc" placeholder="Repeat new password"></div>
           <div id="pAli" class="ali"></div>
-          <button class="btn bp" id="savePwBtn" style="width:100%;margin-top:5px"><i class="fas fa-save"></i> <span id="db-set-btn-up">Update Password</span></button>
+          <button class="btn bp" id="savePwBtn" style="width:100%;margin-top:5px"><i class="fas fa-save"></i> Update Password</button>
         </div>
         <div class="sc2">
-          <h3 id="db-set-inf-t"><i class="fas fa-store" style="color:var(--ac)"></i> Business Info</h3>
-          <p id="db-set-inf-s">Contact details shown on receipts and website.</p>
+          <h3><i class="fas fa-store" style="color:var(--ac)"></i> Business Info</h3>
+          <p>Contact details shown on receipts and website.</p>
           <div style="background:var(--bg);border-radius:9px;padding:14px;display:grid;gap:11px">
             <div style="display:flex;align-items:center;gap:9px;font-size:.88rem"><i class="fab fa-whatsapp" style="color:var(--wa);width:20px"></i>+255 778 714 307</div>
             <div style="display:flex;align-items:center;gap:9px;font-size:.88rem"><i class="fas fa-envelope" style="color:var(--pr);width:20px"></i>info@jambo-plus.store</div>
@@ -608,53 +611,466 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
             <div style="display:flex;align-items:center;gap:9px;font-size:.88rem"><i class="fab fa-facebook" style="color:#1877F2;width:20px"></i>Mandibotek</div>
           </div>
           <div style="margin-top:18px;padding:14px;background:#fffbeb;border-radius:9px;border-left:4px solid var(--ac)">
-            <p id="db-set-sto-t" style="font-size:.84rem;font-weight:600"><i class="fas fa-database" style="color:var(--ac)"></i> Storage</p>
-            <p id="db-set-sto-s" style="font-size:.8rem;color:var(--gr);margin-top:3px">All data stored in your browser locally. Persists until cleared.</p>
+            <p style="font-size:.84rem;font-weight:600"><i class="fas fa-database" style="color:var(--ac)"></i> Storage</p>
+            <p style="font-size:.8rem;color:var(--gr);margin-top:3px">All data stored in your browser locally. Persists until cleared.</p>
           </div>
-          <button class="btn bd" id="clearBtn" style="width:100%;margin-top:14px"><i class="fas fa-trash-alt"></i> <span id="db-set-btn-clr">Clear All Data</span></button>
+          <button class="btn bd" id="clearBtn" style="width:100%;margin-top:14px"><i class="fas fa-trash-alt"></i> Clear All Data</button>
         </div>
       </div>
     </div>
-
   </main>
 </div>
 
 <script>
-
 (function() {
   var WA = "255778714307";
   var DP = "admin";
   var chts = {};
-  var photos = []; 
+  var photos = [];
+  var curLang = "en"; // track active language
 
+  // ── TRANSLATIONS ────────────────────────────────────────────────────────────
+  var LANG = {
+    en: {
+      nav_order:"Place Order", nav_policy:"Policy", nav_track:"Track Order", nav_rev:"Reviews", nav_login:"Login",
+      hero_title:"Your Personal Shopper<br>in <em>Zanzibar</em>",
+      hero_sub:"Fill the form below — we find it, bargain for you, and deliver to your door.",
+      badge_wa:"Order via WhatsApp",
+      lbl_name:"Full Name", lbl_phone:"WhatsApp Number", lbl_loc:"Delivery Location / Hotel",
+      lbl_urgency:"When do you need it?", lbl_budget:"Estimated Budget (Optional)",
+      lbl_items:"What do you want us to buy?", lbl_items_hint:"Be specific — brand, size, color, quantity.",
+      lbl_photo:"Product Photo", lbl_photo_hint:"(Optional — helps us find the exact item)",
+      lbl_photo_tap:"Tap to upload product photos", lbl_photo_max:"Up to 10 images \u2022 JPG / PNG \u2022 max 5MB each",
+      lbl_photos_ready:"photo(s) ready", btn_add_more:"Add more", btn_clear_all:"Clear all",
+      form_terms:"By confirming you agree to our service terms.", btn_submit:"Confirm Order",
+      ph_name:"e.g. John Doe", ph_loc:"e.g. Serena Hotel, Room 204",
+      ph_budget:"e.g. 50,000 TZS",
+      ph_items:"Example:\n2x Coke 500ml\n1x AA batteries (Duracell)\nSunscreen SPF50",
+      urg_asap:"As Soon As Possible", urg_today:"Later Today", urg_tomorrow:"Tomorrow", urg_week:"Later This Week",
+      pol_title:"Service Policy & Guidelines", pol_sub:"Everything you need to know before ordering.",
+      pol_serve_h:"Who We Serve",
+      pol_serve_1:"<b>Tourists:</b> Souvenirs, essentials, local goods at fair prices.",
+      pol_serve_2:"<b>Locals:</b> Errands for busy families and professionals.",
+      pol_serve_3:"<b>Fees:</b> Item cost + service fee + delivery.",
+      pol_dont_h:"We Do NOT Buy",
+      pol_dont_1:"<b>Medicine</b> — buy personally for safety.",
+      pol_dont_2:"<b>Alcohol</b> — not handled.",
+      pol_dont_3:"<b>Illegal products</b> — strictly refused.",
+      pol_dont_4:"<b>Large electronics</b> (TVs, fridges) — small ones fine.",
+      pol_tips_h:"Essential Tips",
+      pol_tip_1:"<b>Be specific</b> — exact brands, sizes, colors.",
+      pol_tip_2:"<b>Payment:</b> M-Pesa, Tigo Pesa, Cash.",
+      pol_tip_3:"<b>Min order:</b> 50,000 TZS. Below = 5,000 TZS fee.",
+      pol_tip_4:"<b>Receipt:</b> Reference only — your order gets delivered.",
+      track_title:"Live Order Tracker", track_sub:"Enter your Order ID from the receipt to check status.",
+      track_ph:"e.g. ORD-1234", track_btn:"Track",
+      track_found:"Order Found", track_status:"Status", track_client:"Client",
+      track_notfound:"Order not found. Check your receipt for the correct ID.",
+      rev_title:"Client Testimonies", rev_sub:"Real feedback from real customers.",
+      revf_heading:"Leave a Review", revf_name:"Your Name", revf_rating:"Rating", revf_comment:"Comment",
+      btn_rev:"Post Review", rev_empty:"No reviews yet — be first!",
+      footer_tagline:"Zanzibar Personal Shopping Service", footer_copy:"All rights reserved.",
+      mod_ok_title:"Order Confirmed!", mod_ok_pdf:"Receipt downloading...", mod_ok_pdf2:"Check your downloads folder",
+      mod_ok_dash:"Order saved to dashboard", mod_ok_dash2:"Visible in your owner panel",
+      mod_ok_wa:"WhatsApp opened", mod_ok_wa2:"Send the pre-filled message to complete",
+      mod_ok_resend:"Resend WhatsApp",
+      lbl_dash:"Owner Dashboard", lbl_password:"Password", ph_password:"Enter password",
+      lbl_wrong_pw:"Wrong password. Try again.", btn_close:"Close", btn_cancel:"Cancel", btn_message:"Message"
+    },
+
+    sw: {
+      nav_order:"Weka Oda", nav_policy:"Sera", nav_track:"Fuatilia Oda", nav_rev:"Maoni", nav_login:"Ingia",
+      hero_title:"Mnunuzi Wako Binafsi<br>huko <em>Zanzibar</em>",
+      hero_sub:"Jaza fomu hapa — tutafuta, tutapunguza bei na tukuletee mlangoni.",
+      badge_wa:"Oda kupitia WhatsApp",
+      lbl_name:"Jina Kamili", lbl_phone:"Nambari ya WhatsApp", lbl_loc:"Mahali pa Kuletea / Hoteli",
+      lbl_urgency:"Unahitaji lini?", lbl_budget:"Bajeti Takriban (Hiari)",
+      lbl_items:"Unataka tununue nini?", lbl_items_hint:"Kuwa wazi — chapa, ukubwa, rangi, idadi.",
+      lbl_photo:"Picha ya Bidhaa", lbl_photo_hint:"(Hiari — inasaidia kupata bidhaa sahihi)",
+      lbl_photo_tap:"Gusa kupakia picha za bidhaa", lbl_photo_max:"Hadi picha 10 \u2022 JPG / PNG \u2022 max 5MB kila moja",
+      lbl_photos_ready:"picha ziko tayari", btn_add_more:"Ongeza zaidi", btn_clear_all:"Futa zote",
+      form_terms:"Kwa kuthibitisha unakubaliana na masharti yetu.", btn_submit:"Thibitisha Oda",
+      ph_name:"mfano: Juma Hamisi", ph_loc:"mfano: Hoteli ya Serena, Chumba 204",
+      ph_budget:"mfano: 50,000 TZS",
+      ph_items:"Mfano:\n2x Coke 500ml\n1x Betri AA (Duracell)\nKrimu ya jua SPF50",
+      urg_asap:"Haraka Iwezekanavyo", urg_today:"Leo Baadaye", urg_tomorrow:"Kesho", urg_week:"Wiki Hii Baadaye",
+      pol_title:"Sera na Mwongozo wa Huduma", pol_sub:"Kila kitu unachohitaji kujua kabla ya kuagiza.",
+      pol_serve_h:"Tunaohudumia",
+      pol_serve_1:"<b>Watalii:</b> Zawadi, mahitaji, bidhaa za ndani kwa bei nzuri.",
+      pol_serve_2:"<b>Wenyeji:</b> Kazi za familia na wataalamu walioshughulika.",
+      pol_serve_3:"<b>Ada:</b> Gharama ya bidhaa + ada ya huduma + usafirishaji.",
+      pol_dont_h:"HATUAGIZI",
+      pol_dont_1:"<b>Dawa</b> — nunua mwenyewe kwa usalama.",
+      pol_dont_2:"<b>Pombe</b> — haishughulikiwa.",
+      pol_dont_3:"<b>Bidhaa haramu</b> — zimekatazwa kabisa.",
+      pol_dont_4:"<b>Vifaa vikubwa vya umeme</b> (TV, friji) — vidogo ni sawa.",
+      pol_tips_h:"Vidokezo Muhimu",
+      pol_tip_1:"<b>Kuwa wazi</b> — chapa sahihi, ukubwa, rangi.",
+      pol_tip_2:"<b>Malipo:</b> M-Pesa, Tigo Pesa, Taslimu.",
+      pol_tip_3:"<b>Agizo la chini:</b> TZS 50,000. Chini = ada TZS 5,000.",
+      pol_tip_4:"<b>Risiti:</b> Kumbukumbu tu — oda yako itawasilishwa.",
+      track_title:"Fuatilia Oda Moja kwa Moja", track_sub:"Weka Nambari ya Oda kutoka risiti kukagua hali.",
+      track_ph:"mfano: ORD-1234", track_btn:"Fuatilia",
+      track_found:"Oda Imepatikana", track_status:"Hali", track_client:"Mteja",
+      track_notfound:"Oda haijapatikana. Angalia risiti yako kwa nambari sahihi.",
+      rev_title:"Maoni ya Wateja", rev_sub:"Maoni halisi kutoka kwa wateja halisi.",
+      revf_heading:"Acha Maoni", revf_name:"Jina Lako", revf_rating:"Kiwango", revf_comment:"Maoni",
+      btn_rev:"Tuma Maoni", rev_empty:"Hakuna maoni bado — kuwa wa kwanza!",
+      footer_tagline:"Huduma ya Ununuzi Binafsi Zanzibar", footer_copy:"Haki zote zimehifadhiwa.",
+      mod_ok_title:"Oda Imethibitishwa!", mod_ok_pdf:"Risiti inashuka...", mod_ok_pdf2:"Angalia folda ya upakuaji",
+      mod_ok_dash:"Oda imehifadhiwa kwenye dashibodi", mod_ok_dash2:"Inaonekana kwenye paneli yako",
+      mod_ok_wa:"WhatsApp imefunguliwa", mod_ok_wa2:"Tuma ujumbe uliojazwa awali kukamilisha",
+      mod_ok_resend:"Tuma WhatsApp Tena",
+      lbl_dash:"Dashibodi ya Mmiliki", lbl_password:"Nywila", ph_password:"Ingiza nywila",
+      lbl_wrong_pw:"Nywila si sahihi. Jaribu tena.", btn_close:"Funga", btn_cancel:"Ghairi", btn_message:"Tuma ujumbe"
+    },
+
+    fr: {
+      nav_order:"Commander", nav_policy:"Politique", nav_track:"Suivre", nav_rev:"Avis", nav_login:"Connexion",
+      hero_title:"Votre Personal Shopper<br>à <em>Zanzibar</em>",
+      hero_sub:"Remplissez le formulaire — nous trouvons, négocions et livrons à votre porte.",
+      badge_wa:"Commander via WhatsApp",
+      lbl_name:"Nom complet", lbl_phone:"Numéro WhatsApp", lbl_loc:"Lieu de livraison / Hôtel",
+      lbl_urgency:"Quand en avez-vous besoin?", lbl_budget:"Budget estimé (Optionnel)",
+      lbl_items:"Que voulez-vous que nous achetions?", lbl_items_hint:"Soyez précis — marque, taille, couleur, quantité.",
+      lbl_photo:"Photo du produit", lbl_photo_hint:"(Optionnel — aide à trouver l'article exact)",
+      lbl_photo_tap:"Appuyez pour télécharger des photos", lbl_photo_max:"Jusqu'à 10 images \u2022 JPG / PNG \u2022 max 5MB chacune",
+      lbl_photos_ready:"photo(s) prête(s)", btn_add_more:"Ajouter", btn_clear_all:"Tout effacer",
+      form_terms:"En confirmant, vous acceptez nos conditions de service.", btn_submit:"Confirmer la commande",
+      ph_name:"ex. Jean Dupont", ph_loc:"ex. Hôtel Serena, Chambre 204",
+      ph_budget:"ex. 50 000 TZS",
+      ph_items:"Exemple:\n2x Coca 500ml\n1x Piles AA (Duracell)\nCrème solaire SPF50",
+      urg_asap:"Dès que possible", urg_today:"Plus tard aujourd'hui", urg_tomorrow:"Demain", urg_week:"Cette semaine",
+      pol_title:"Politique et directives du service", pol_sub:"Tout ce que vous devez savoir avant de commander.",
+      pol_serve_h:"Qui nous servons",
+      pol_serve_1:"<b>Touristes:</b> Souvenirs, essentiels, produits locaux à prix équitables.",
+      pol_serve_2:"<b>Locaux:</b> Courses pour familles et professionnels occupés.",
+      pol_serve_3:"<b>Frais:</b> Coût + frais de service + livraison.",
+      pol_dont_h:"Nous N'achetons PAS",
+      pol_dont_1:"<b>Médicaments</b> — achetez personnellement pour votre sécurité.",
+      pol_dont_2:"<b>Alcool</b> — non géré.",
+      pol_dont_3:"<b>Produits illégaux</b> — strictement refusés.",
+      pol_dont_4:"<b>Grands appareils</b> (TV, frigos) — petits OK.",
+      pol_tips_h:"Conseils essentiels",
+      pol_tip_1:"<b>Soyez précis</b> — marques, tailles, couleurs exactes.",
+      pol_tip_2:"<b>Paiement:</b> M-Pesa, Tigo Pesa, Espèces.",
+      pol_tip_3:"<b>Commande min:</b> 50 000 TZS. En dessous = 5 000 TZS.",
+      pol_tip_4:"<b>Reçu:</b> Référence seulement — votre commande sera livrée.",
+      track_title:"Suivi de commande en direct", track_sub:"Entrez votre ID de commande du reçu pour vérifier le statut.",
+      track_ph:"ex. ORD-1234", track_btn:"Suivre",
+      track_found:"Commande trouvée", track_status:"Statut", track_client:"Client",
+      track_notfound:"Commande introuvable. Vérifiez votre reçu.",
+      rev_title:"Témoignages clients", rev_sub:"Vrais avis de vrais clients.",
+      revf_heading:"Laisser un avis", revf_name:"Votre nom", revf_rating:"Note", revf_comment:"Commentaire",
+      btn_rev:"Publier un avis", rev_empty:"Pas encore d'avis — soyez le premier!",
+      footer_tagline:"Service de shopping personnel à Zanzibar", footer_copy:"Tous droits réservés.",
+      mod_ok_title:"Commande confirmée!", mod_ok_pdf:"Reçu en téléchargement...", mod_ok_pdf2:"Vérifiez votre dossier téléchargements",
+      mod_ok_dash:"Commande enregistrée", mod_ok_dash2:"Visible dans votre panneau",
+      mod_ok_wa:"WhatsApp ouvert", mod_ok_wa2:"Envoyez le message pré-rempli pour finaliser",
+      mod_ok_resend:"Renvoyer WhatsApp",
+      lbl_dash:"Tableau de bord propriétaire", lbl_password:"Mot de passe", ph_password:"Entrez le mot de passe",
+      lbl_wrong_pw:"Mot de passe incorrect. Réessayez.", btn_close:"Fermer", btn_cancel:"Annuler", btn_message:"Message"
+    },
+
+    de: {
+      nav_order:"Bestellen", nav_policy:"Richtlinien", nav_track:"Verfolgen", nav_rev:"Bewertungen", nav_login:"Anmelden",
+      hero_title:"Ihr persönlicher Einkäufer<br>in <em>Sansibar</em>",
+      hero_sub:"Formular ausfüllen — wir finden, handeln und liefern an Ihre Tür.",
+      badge_wa:"Via WhatsApp bestellen",
+      lbl_name:"Vollständiger Name", lbl_phone:"WhatsApp-Nummer", lbl_loc:"Lieferadresse / Hotel",
+      lbl_urgency:"Wann benötigen Sie es?", lbl_budget:"Geschätztes Budget (Optional)",
+      lbl_items:"Was sollen wir kaufen?", lbl_items_hint:"Genau angeben — Marke, Größe, Farbe, Menge.",
+      lbl_photo:"Produktfoto", lbl_photo_hint:"(Optional — hilft uns, den genauen Artikel zu finden)",
+      lbl_photo_tap:"Tippen um Produktfotos hochzuladen", lbl_photo_max:"Bis zu 10 Bilder \u2022 JPG / PNG \u2022 max. 5MB pro Bild",
+      lbl_photos_ready:"Foto(s) bereit", btn_add_more:"Hinzufügen", btn_clear_all:"Alle löschen",
+      form_terms:"Mit der Bestätigung stimmen Sie unseren Bedingungen zu.", btn_submit:"Bestellung bestätigen",
+      ph_name:"z.B. Max Mustermann", ph_loc:"z.B. Hotel Serena, Zimmer 204",
+      ph_budget:"z.B. 50.000 TZS",
+      ph_items:"Beispiel:\n2x Cola 500ml\n1x AA-Batterien (Duracell)\nSonnencreme LSF50",
+      urg_asap:"So schnell wie möglich", urg_today:"Noch heute", urg_tomorrow:"Morgen", urg_week:"Diese Woche",
+      pol_title:"Servicerichtlinien & Hinweise", pol_sub:"Alles, was Sie vor der Bestellung wissen müssen.",
+      pol_serve_h:"Wen wir bedienen",
+      pol_serve_1:"<b>Touristen:</b> Souvenirs, Grundbedarf, lokale Waren.",
+      pol_serve_2:"<b>Einheimische:</b> Besorgungen für beschäftigte Familien.",
+      pol_serve_3:"<b>Gebühren:</b> Preis + Servicegebühr + Lieferung.",
+      pol_dont_h:"Was wir NICHT kaufen",
+      pol_dont_1:"<b>Medikamente</b> — kaufen Sie selbst.",
+      pol_dont_2:"<b>Alkohol</b> — wird nicht bearbeitet.",
+      pol_dont_3:"<b>Illegale Produkte</b> — strikt abgelehnt.",
+      pol_dont_4:"<b>Große Elektronik</b> (TV, Kühlschränke) — Kleines OK.",
+      pol_tips_h:"Wichtige Hinweise",
+      pol_tip_1:"<b>Genau angeben</b> — Marke, Größe, Farbe.",
+      pol_tip_2:"<b>Zahlung:</b> M-Pesa, Tigo Pesa, Bargeld.",
+      pol_tip_3:"<b>Mindestbestellung:</b> 50.000 TZS. Darunter = 5.000 TZS.",
+      pol_tip_4:"<b>Quittung:</b> Nur Referenz — Ihre Bestellung wird geliefert.",
+      track_title:"Live-Bestellverfolgung", track_sub:"Bestellnummer aus der Quittung eingeben.",
+      track_ph:"z.B. ORD-1234", track_btn:"Verfolgen",
+      track_found:"Bestellung gefunden", track_status:"Status", track_client:"Kunde",
+      track_notfound:"Bestellung nicht gefunden. Überprüfen Sie Ihre Quittung.",
+      rev_title:"Kundenstimmen", rev_sub:"Echtes Feedback von echten Kunden.",
+      revf_heading:"Bewertung abgeben", revf_name:"Ihr Name", revf_rating:"Bewertung", revf_comment:"Kommentar",
+      btn_rev:"Bewertung abgeben", rev_empty:"Noch keine Bewertungen — seien Sie der Erste!",
+      footer_tagline:"Persönlicher Einkaufsservice Sansibar", footer_copy:"Alle Rechte vorbehalten.",
+      mod_ok_title:"Bestellung bestätigt!", mod_ok_pdf:"Quittung wird heruntergeladen...", mod_ok_pdf2:"Prüfen Sie Ihren Download-Ordner",
+      mod_ok_dash:"Bestellung im Dashboard gespeichert", mod_ok_dash2:"Im Besitzerpanel sichtbar",
+      mod_ok_wa:"WhatsApp geöffnet", mod_ok_wa2:"Senden Sie die vorgefertigte Nachricht",
+      mod_ok_resend:"WhatsApp erneut senden",
+      lbl_dash:"Besitzer-Dashboard", lbl_password:"Passwort", ph_password:"Passwort eingeben",
+      lbl_wrong_pw:"Falsches Passwort. Erneut versuchen.", btn_close:"Schließen", btn_cancel:"Abbrechen", btn_message:"Nachricht"
+    },
+
+    es: {
+      nav_order:"Pedir", nav_policy:"Política", nav_track:"Rastrear", nav_rev:"Reseñas", nav_login:"Entrar",
+      hero_title:"Tu comprador personal<br>en <em>Zanzíbar</em>",
+      hero_sub:"Rellena el formulario — encontramos, negociamos y entregamos en tu puerta.",
+      badge_wa:"Pedir por WhatsApp",
+      lbl_name:"Nombre completo", lbl_phone:"Número de WhatsApp", lbl_loc:"Lugar de entrega / Hotel",
+      lbl_urgency:"¿Cuándo lo necesita?", lbl_budget:"Presupuesto estimado (Opcional)",
+      lbl_items:"¿Qué quiere que compremos?", lbl_items_hint:"Sea específico — marca, talla, color, cantidad.",
+      lbl_photo:"Foto del producto", lbl_photo_hint:"(Opcional — ayuda a encontrar el artículo exacto)",
+      lbl_photo_tap:"Toca para subir fotos del producto", lbl_photo_max:"Hasta 10 imágenes \u2022 JPG / PNG \u2022 máx. 5MB cada una",
+      lbl_photos_ready:"foto(s) lista(s)", btn_add_more:"Añadir más", btn_clear_all:"Borrar todo",
+      form_terms:"Al confirmar, acepta nuestros términos de servicio.", btn_submit:"Confirmar pedido",
+      ph_name:"ej. Juan García", ph_loc:"ej. Hotel Serena, Habitación 204",
+      ph_budget:"ej. 50.000 TZS",
+      ph_items:"Ejemplo:\n2x Coca-Cola 500ml\n1x Pilas AA (Duracell)\nProtector solar SPF50",
+      urg_asap:"Lo antes posible", urg_today:"Hoy más tarde", urg_tomorrow:"Mañana", urg_week:"Esta semana",
+      pol_title:"Política y directrices del servicio", pol_sub:"Todo lo que necesita saber antes de pedir.",
+      pol_serve_h:"A quiénes servimos",
+      pol_serve_1:"<b>Turistas:</b> Souvenirs, artículos esenciales, productos locales.",
+      pol_serve_2:"<b>Locales:</b> Recados para familias y profesionales.",
+      pol_serve_3:"<b>Tarifas:</b> Coste + tarifa de servicio + entrega.",
+      pol_dont_h:"Lo que NO compramos",
+      pol_dont_1:"<b>Medicamentos</b> — cómprelos personalmente.",
+      pol_dont_2:"<b>Alcohol</b> — no gestionado.",
+      pol_dont_3:"<b>Productos ilegales</b> — estrictamente rechazados.",
+      pol_dont_4:"<b>Electrónica grande</b> (TV, neveras) — pequeños OK.",
+      pol_tips_h:"Consejos esenciales",
+      pol_tip_1:"<b>Sea específico</b> — marcas, tallas, colores exactos.",
+      pol_tip_2:"<b>Pago:</b> M-Pesa, Tigo Pesa, Efectivo.",
+      pol_tip_3:"<b>Pedido mínimo:</b> 50.000 TZS. Por debajo = 5.000 TZS.",
+      pol_tip_4:"<b>Recibo:</b> Solo referencia — su pedido será entregado.",
+      track_title:"Rastreador de pedidos en vivo", track_sub:"Ingrese su ID de pedido del recibo para verificar el estado.",
+      track_ph:"ej. ORD-1234", track_btn:"Rastrear",
+      track_found:"Pedido encontrado", track_status:"Estado", track_client:"Cliente",
+      track_notfound:"Pedido no encontrado. Revise su recibo.",
+      rev_title:"Testimonios de clientes", rev_sub:"Comentarios reales de clientes reales.",
+      revf_heading:"Dejar una reseña", revf_name:"Su nombre", revf_rating:"Valoración", revf_comment:"Comentario",
+      btn_rev:"Publicar reseña", rev_empty:"Aún no hay reseñas — ¡sea el primero!",
+      footer_tagline:"Servicio de compras personal en Zanzíbar", footer_copy:"Todos los derechos reservados.",
+      mod_ok_title:"¡Pedido confirmado!", mod_ok_pdf:"Descargando recibo...", mod_ok_pdf2:"Revise su carpeta de descargas",
+      mod_ok_dash:"Pedido guardado en el panel", mod_ok_dash2:"Visible en su panel de propietario",
+      mod_ok_wa:"WhatsApp abierto", mod_ok_wa2:"Envíe el mensaje pre-rellenado para completar",
+      mod_ok_resend:"Reenviar WhatsApp",
+      lbl_dash:"Panel del propietario", lbl_password:"Contraseña", ph_password:"Ingrese la contraseña",
+      lbl_wrong_pw:"Contraseña incorrecta. Inténtelo de nuevo.", btn_close:"Cerrar", btn_cancel:"Cancelar", btn_message:"Mensaje"
+    },
+
+    it: {
+      nav_order:"Ordina", nav_policy:"Politica", nav_track:"Traccia", nav_rev:"Recensioni", nav_login:"Accedi",
+      hero_title:"Il tuo personal shopper<br>a <em>Zanzibar</em>",
+      hero_sub:"Compila il modulo — troviamo, trattiamo e consegniamo a domicilio.",
+      badge_wa:"Ordina via WhatsApp",
+      lbl_name:"Nome completo", lbl_phone:"Numero WhatsApp", lbl_loc:"Luogo di consegna / Hotel",
+      lbl_urgency:"Quando ne ha bisogno?", lbl_budget:"Budget stimato (Opzionale)",
+      lbl_items:"Cosa vuole che compriamo?", lbl_items_hint:"Sia specifico — marca, taglia, colore, quantità.",
+      lbl_photo:"Foto del prodotto", lbl_photo_hint:"(Opzionale — aiuta a trovare l'articolo esatto)",
+      lbl_photo_tap:"Tocca per caricare foto del prodotto", lbl_photo_max:"Fino a 10 immagini \u2022 JPG / PNG \u2022 max 5MB ciascuna",
+      lbl_photos_ready:"foto pronte", btn_add_more:"Aggiungi", btn_clear_all:"Cancella tutto",
+      form_terms:"Confermando, accetti i nostri termini di servizio.", btn_submit:"Conferma ordine",
+      ph_name:"es. Mario Rossi", ph_loc:"es. Hotel Serena, Camera 204",
+      ph_budget:"es. 50.000 TZS",
+      ph_items:"Esempio:\n2x Coca-Cola 500ml\n1x Batterie AA (Duracell)\nCrema solare SPF50",
+      urg_asap:"Il prima possibile", urg_today:"Più tardi oggi", urg_tomorrow:"Domani", urg_week:"Questa settimana",
+      pol_title:"Politica e linee guida del servizio", pol_sub:"Tutto ciò che devi sapere prima di ordinare.",
+      pol_serve_h:"Chi serviamo",
+      pol_serve_1:"<b>Turisti:</b> Souvenir, articoli essenziali, prodotti locali.",
+      pol_serve_2:"<b>Locali:</b> Commissioni per famiglie e professionisti.",
+      pol_serve_3:"<b>Tariffe:</b> Costo + commissione + consegna.",
+      pol_dont_h:"Cosa NON compriamo",
+      pol_dont_1:"<b>Medicinali</b> — acquistali personalmente.",
+      pol_dont_2:"<b>Alcolici</b> — non gestiti.",
+      pol_dont_3:"<b>Prodotti illegali</b> — rigorosamente rifiutati.",
+      pol_dont_4:"<b>Elettronica grande</b> (TV, frigo) — piccoli OK.",
+      pol_tips_h:"Consigli essenziali",
+      pol_tip_1:"<b>Sii specifico</b> — marca, taglia, colore esatti.",
+      pol_tip_2:"<b>Pagamento:</b> M-Pesa, Tigo Pesa, Contanti.",
+      pol_tip_3:"<b>Ordine minimo:</b> 50.000 TZS. Sotto = 5.000 TZS.",
+      pol_tip_4:"<b>Ricevuta:</b> Solo riferimento — il tuo ordine verrà consegnato.",
+      track_title:"Tracciamento ordine in tempo reale", track_sub:"Inserisci il tuo ID ordine dalla ricevuta.",
+      track_ph:"es. ORD-1234", track_btn:"Traccia",
+      track_found:"Ordine trovato", track_status:"Stato", track_client:"Cliente",
+      track_notfound:"Ordine non trovato. Controlla la tua ricevuta.",
+      rev_title:"Testimonianze clienti", rev_sub:"Feedback reale da clienti reali.",
+      revf_heading:"Lascia una recensione", revf_name:"Il tuo nome", revf_rating:"Valutazione", revf_comment:"Commento",
+      btn_rev:"Pubblica recensione", rev_empty:"Ancora nessuna recensione — sii il primo!",
+      footer_tagline:"Servizio di shopping personale a Zanzibar", footer_copy:"Tutti i diritti riservati.",
+      mod_ok_title:"Ordine confermato!", mod_ok_pdf:"Ricevuta in download...", mod_ok_pdf2:"Controlla la cartella download",
+      mod_ok_dash:"Ordine salvato nella dashboard", mod_ok_dash2:"Visibile nel pannello proprietario",
+      mod_ok_wa:"WhatsApp aperto", mod_ok_wa2:"Invia il messaggio precompilato per completare",
+      mod_ok_resend:"Reinvia WhatsApp",
+      lbl_dash:"Dashboard proprietario", lbl_password:"Password", ph_password:"Inserisci la password",
+      lbl_wrong_pw:"Password errata. Riprova.", btn_close:"Chiudi", btn_cancel:"Annulla", btn_message:"Messaggio"
+    },
+
+    zh: {
+      nav_order:"下订单", nav_policy:"政策", nav_track:"追踪订单", nav_rev:"评价", nav_login:"登录",
+      hero_title:"您在<em>桑给巴尔</em><br>的私人购物助手",
+      hero_sub:"填写表格 — 我们为您寻找商品、砍价，并送货上门。",
+      badge_wa:"通过WhatsApp下单",
+      lbl_name:"全名", lbl_phone:"WhatsApp号码", lbl_loc:"送货地址 / 酒店",
+      lbl_urgency:"何时需要？", lbl_budget:"预算（可选）",
+      lbl_items:"您需要我们购买什么？", lbl_items_hint:"请具体说明 — 品牌、尺寸、颜色、数量。",
+      lbl_photo:"商品照片", lbl_photo_hint:"（可选 — 帮助我们找到确切商品）",
+      lbl_photo_tap:"点击上传商品照片", lbl_photo_max:"最多10张图片 \u2022 JPG / PNG \u2022 每张最大5MB",
+      lbl_photos_ready:"张照片已准备好", btn_add_more:"添加更多", btn_clear_all:"全部清除",
+      form_terms:"确认即表示您同意我们的服务条款。", btn_submit:"确认订单",
+      ph_name:"例：张伟", ph_loc:"例：塞雷纳酒店，204房间",
+      ph_budget:"例：50,000 TZS",
+      ph_items:"示例：\n2x 可乐 500ml\n1x AA电池（Duracell）\nSPF50防晒霜",
+      urg_asap:"尽快", urg_today:"今天晚些时候", urg_tomorrow:"明天", urg_week:"本周内",
+      pol_title:"服务政策与指南", pol_sub:"下单前您需要了解的一切。",
+      pol_serve_h:"我们的服务对象",
+      pol_serve_1:"<b>游客：</b>纪念品、日用品、本地商品，价格公道。",
+      pol_serve_2:"<b>本地人：</b>为繁忙的家庭和专业人士代办跑腿。",
+      pol_serve_3:"<b>费用：</b>商品费 + 服务费 + 配送费。",
+      pol_dont_h:"我们不购买的物品",
+      pol_dont_1:"<b>药品</b> — 请亲自购买以确保安全。",
+      pol_dont_2:"<b>酒精饮料</b> — 不受理。",
+      pol_dont_3:"<b>违禁品</b> — 严格拒绝。",
+      pol_dont_4:"<b>大型电子产品</b>（电视、冰箱）— 小型可以。",
+      pol_tips_h:"重要提示",
+      pol_tip_1:"<b>请具体说明</b> — 确切品牌、尺寸、颜色。",
+      pol_tip_2:"<b>付款方式：</b>M-Pesa、Tigo Pesa、现金。",
+      pol_tip_3:"<b>最低订单：</b>50,000 TZS。低于此额 = 5,000 TZS手续费。",
+      pol_tip_4:"<b>收据：</b>仅供参考 — 您的订单将被配送。",
+      track_title:"实时订单追踪", track_sub:"输入收据上的订单编号以查看状态。",
+      track_ph:"例：ORD-1234", track_btn:"追踪",
+      track_found:"已找到订单", track_status:"状态", track_client:"客户",
+      track_notfound:"未找到订单。请检查收据上的正确编号。",
+      rev_title:"客户评价", rev_sub:"来自真实客户的真实反馈。",
+      revf_heading:"发表评价", revf_name:"您的姓名", revf_rating:"评分", revf_comment:"评论",
+      btn_rev:"发布评价", rev_empty:"暂无评价 — 成为第一个！",
+      footer_tagline:"桑给巴尔私人购物服务", footer_copy:"版权所有。",
+      mod_ok_title:"订单已确认！", mod_ok_pdf:"收据下载中...", mod_ok_pdf2:"请检查您的下载文件夹",
+      mod_ok_dash:"订单已保存至控制面板", mod_ok_dash2:"可在您的管理面板中查看",
+      mod_ok_wa:"WhatsApp已打开", mod_ok_wa2:"发送预填消息以完成订单",
+      mod_ok_resend:"重新发送WhatsApp",
+      lbl_dash:"管理员控制面板", lbl_password:"密码", ph_password:"请输入密码",
+      lbl_wrong_pw:"密码错误，请重试。", btn_close:"关闭", btn_cancel:"取消", btn_message:"发消息"
+    },
+
+    ru: {
+      nav_order:"Заказать", nav_policy:"Политика", nav_track:"Отследить", nav_rev:"Отзывы", nav_login:"Войти",
+      hero_title:"Ваш личный шопер<br>на <em>Занзибаре</em>",
+      hero_sub:"Заполните форму — мы найдём, поторгуемся и доставим к вашей двери.",
+      badge_wa:"Заказать через WhatsApp",
+      lbl_name:"Полное имя", lbl_phone:"Номер WhatsApp", lbl_loc:"Адрес доставки / Отель",
+      lbl_urgency:"Когда нужно?", lbl_budget:"Примерный бюджет (необязательно)",
+      lbl_items:"Что нужно купить?", lbl_items_hint:"Укажите точно — бренд, размер, цвет, количество.",
+      lbl_photo:"Фото товара", lbl_photo_hint:"(Необязательно — поможет найти нужный товар)",
+      lbl_photo_tap:"Нажмите для загрузки фото товара", lbl_photo_max:"До 10 изображений \u2022 JPG / PNG \u2022 макс. 5MB каждое",
+      lbl_photos_ready:"фото готово(-ы)", btn_add_more:"Добавить", btn_clear_all:"Очистить всё",
+      form_terms:"Подтверждая заказ, вы принимаете условия сервиса.", btn_submit:"Подтвердить заказ",
+      ph_name:"напр. Иван Иванов", ph_loc:"напр. Отель Серена, номер 204",
+      ph_budget:"напр. 50 000 TZS",
+      ph_items:"Пример:\n2x Кола 500мл\n1x Батарейки АА (Duracell)\nСолнцезащитный крем SPF50",
+      urg_asap:"Как можно скорее", urg_today:"Сегодня позже", urg_tomorrow:"Завтра", urg_week:"На этой неделе",
+      pol_title:"Политика и правила сервиса", pol_sub:"Всё, что нужно знать перед заказом.",
+      pol_serve_h:"Кого мы обслуживаем",
+      pol_serve_1:"<b>Туристы:</b> Сувениры, товары первой необходимости, местные продукты.",
+      pol_serve_2:"<b>Местные:</b> Поручения для занятых семей и специалистов.",
+      pol_serve_3:"<b>Стоимость:</b> Цена + сервисный сбор + доставка.",
+      pol_dont_h:"Что мы НЕ покупаем",
+      pol_dont_1:"<b>Лекарства</b> — покупайте лично для безопасности.",
+      pol_dont_2:"<b>Алкоголь</b> — не обрабатывается.",
+      pol_dont_3:"<b>Незаконные товары</b> — строго отказываем.",
+      pol_dont_4:"<b>Крупная электроника</b> (TV, холодильники) — мелкая OK.",
+      pol_tips_h:"Важные советы",
+      pol_tip_1:"<b>Будьте конкретны</b> — точный бренд, размер, цвет.",
+      pol_tip_2:"<b>Оплата:</b> M-Pesa, Tigo Pesa, Наличные.",
+      pol_tip_3:"<b>Мин. заказ:</b> 50 000 TZS. Ниже = 5 000 TZS сбор.",
+      pol_tip_4:"<b>Чек:</b> Только для справки — ваш заказ будет доставлен.",
+      track_title:"Отслеживание заказа в реальном времени", track_sub:"Введите ID заказа из чека для проверки статуса.",
+      track_ph:"напр. ORD-1234", track_btn:"Отследить",
+      track_found:"Заказ найден", track_status:"Статус", track_client:"Клиент",
+      track_notfound:"Заказ не найден. Проверьте номер в вашем чеке.",
+      rev_title:"Отзывы клиентов", rev_sub:"Настоящие отзывы от настоящих клиентов.",
+      revf_heading:"Оставить отзыв", revf_name:"Ваше имя", revf_rating:"Оценка", revf_comment:"Комментарий",
+      btn_rev:"Опубликовать отзыв", rev_empty:"Отзывов пока нет — будьте первым!",
+      footer_tagline:"Сервис личного шопинга на Занзибаре", footer_copy:"Все права защищены.",
+      mod_ok_title:"Заказ подтверждён!", mod_ok_pdf:"Чек загружается...", mod_ok_pdf2:"Проверьте папку загрузок",
+      mod_ok_dash:"Заказ сохранён в панели", mod_ok_dash2:"Виден в панели владельца",
+      mod_ok_wa:"WhatsApp открыт", mod_ok_wa2:"Отправьте заполненное сообщение для завершения",
+      mod_ok_resend:"Переслать в WhatsApp",
+      lbl_dash:"Панель владельца", lbl_password:"Пароль", ph_password:"Введите пароль",
+      lbl_wrong_pw:"Неверный пароль. Попробуйте ещё раз.", btn_close:"Закрыть", btn_cancel:"Отмена", btn_message:"Написать"
+    },
+
+    pt: {
+      nav_order:"Pedir", nav_policy:"Política", nav_track:"Rastrear", nav_rev:"Avaliações", nav_login:"Entrar",
+      hero_title:"O seu comprador pessoal<br>em <em>Zanzibar</em>",
+      hero_sub:"Preencha o formulário — encontramos, negociamos e entregamos na sua porta.",
+      badge_wa:"Pedir pelo WhatsApp",
+      lbl_name:"Nome completo", lbl_phone:"Número do WhatsApp", lbl_loc:"Local de entrega / Hotel",
+      lbl_urgency:"Quando precisa?", lbl_budget:"Orçamento estimado (Opcional)",
+      lbl_items:"O que quer que compremos?", lbl_items_hint:"Seja específico — marca, tamanho, cor, quantidade.",
+      lbl_photo:"Foto do produto", lbl_photo_hint:"(Opcional — ajuda a encontrar o artigo exacto)",
+      lbl_photo_tap:"Toque para carregar fotos do produto", lbl_photo_max:"Até 10 imagens \u2022 JPG / PNG \u2022 máx. 5MB cada",
+      lbl_photos_ready:"foto(s) pronta(s)", btn_add_more:"Adicionar", btn_clear_all:"Limpar tudo",
+      form_terms:"Ao confirmar, concorda com os nossos termos de serviço.", btn_submit:"Confirmar pedido",
+      ph_name:"ex. João Silva", ph_loc:"ex. Hotel Serena, Quarto 204",
+      ph_budget:"ex. 50.000 TZS",
+      ph_items:"Exemplo:\n2x Coca-Cola 500ml\n1x Pilhas AA (Duracell)\nProtetor solar SPF50",
+      urg_asap:"O mais rápido possível", urg_today:"Mais tarde hoje", urg_tomorrow:"Amanhã", urg_week:"Esta semana",
+      pol_title:"Política e directrizes do serviço", pol_sub:"Tudo o que precisa de saber antes de encomendar.",
+      pol_serve_h:"A quem servimos",
+      pol_serve_1:"<b>Turistas:</b> Lembranças, essenciais, produtos locais a preços justos.",
+      pol_serve_2:"<b>Locais:</b> Recados para famílias e profissionais ocupados.",
+      pol_serve_3:"<b>Taxas:</b> Custo + taxa de serviço + entrega.",
+      pol_dont_h:"O que NÃO compramos",
+      pol_dont_1:"<b>Medicamentos</b> — compre pessoalmente por segurança.",
+      pol_dont_2:"<b>Álcool</b> — não é tratado.",
+      pol_dont_3:"<b>Produtos ilegais</b> — estritamente recusados.",
+      pol_dont_4:"<b>Electrónica grande</b> (TVs, frigoríficos) — pequenos OK.",
+      pol_tips_h:"Dicas essenciais",
+      pol_tip_1:"<b>Seja específico</b> — marcas, tamanhos, cores exactos.",
+      pol_tip_2:"<b>Pagamento:</b> M-Pesa, Tigo Pesa, Dinheiro.",
+      pol_tip_3:"<b>Pedido mínimo:</b> 50.000 TZS. Abaixo = 5.000 TZS.",
+      pol_tip_4:"<b>Recibo:</b> Apenas referência — o seu pedido será entregue.",
+      track_title:"Rastreamento de pedidos ao vivo", track_sub:"Insira o seu ID de pedido do recibo para verificar o estado.",
+      track_ph:"ex. ORD-1234", track_btn:"Rastrear",
+      track_found:"Pedido encontrado", track_status:"Estado", track_client:"Cliente",
+      track_notfound:"Pedido não encontrado. Verifique o seu recibo.",
+      rev_title:"Testemunhos de clientes", rev_sub:"Feedback real de clientes reais.",
+      revf_heading:"Deixar uma avaliação", revf_name:"O seu nome", revf_rating:"Avaliação", revf_comment:"Comentário",
+      btn_rev:"Publicar avaliação", rev_empty:"Sem avaliações ainda — seja o primeiro!",
+      footer_tagline:"Serviço de compras pessoal em Zanzibar", footer_copy:"Todos os direitos reservados.",
+      mod_ok_title:"Pedido confirmado!", mod_ok_pdf:"Recibo a descarregar...", mod_ok_pdf2:"Verifique a sua pasta de transferências",
+      mod_ok_dash:"Pedido guardado no painel", mod_ok_dash2:"Visível no seu painel de proprietário",
+      mod_ok_wa:"WhatsApp aberto", mod_ok_wa2:"Envie a mensagem pré-preenchida para concluir",
+      mod_ok_resend:"Reenviar WhatsApp",
+      lbl_dash:"Painel do proprietário", lbl_password:"Palavra-passe", ph_password:"Insira a palavra-passe",
+      lbl_wrong_pw:"Palavra-passe incorrecta. Tente novamente.", btn_close:"Fechar", btn_cancel:"Cancelar", btn_message:"Mensagem"
+    }
+  };
+
+  // ── HELPERS ────────────────────────────────────────────────────────────────
   function gPass() { return localStorage.getItem("jp_pw") || DP; }
   function gOrders() { try { return JSON.parse(localStorage.getItem("jp_ord") || "[]"); } catch(e) { return []; } }
   function sOrders(o) { localStorage.setItem("jp_ord", JSON.stringify(o)); }
   function gRevs() { try { return JSON.parse(localStorage.getItem("jp_rev") || "[]"); } catch(e) { return []; } }
   function sRevs(r) { localStorage.setItem("jp_rev", JSON.stringify(r)); }
-
-  function esc(s) {
-    return String(s)
-      .replace(/&/g,"&amp;")
-      .replace(/</g,"&lt;")
-      .replace(/>/g,"&gt;")
-      .replace(/"/g,"&quot;");
-  }
-
+  function esc(s) { return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
   function el(id) { return document.getElementById(id); }
   function val(id) { return el(id) ? el(id).value.trim() : ""; }
+  function t(key) { return (LANG[curLang] || LANG.en)[key] || (LANG.en[key] || key); }
 
-  /* ── MODALS ── */
-  function openMod(id) {
-    var m = el(id);
-    if (m) m.classList.add("on");
-  }
-  window.closeMod = function(id) {
-    var m = el(id);
-    if (m) m.classList.remove("on");
-  };
+  // ── MODALS ─────────────────────────────────────────────────────────────────
+  function openMod(id) { var m = el(id); if (m) m.classList.add("on"); }
+  window.closeMod = function(id) { var m = el(id); if (m) m.classList.remove("on"); };
 
-  /* ── STATUS helpers ── */
+  // ── STATUS helpers ─────────────────────────────────────────────────────────
   function sBadge(s) {
     var map = { Pending:"bp2", Processing:"bc", Delivered:"bd2", Cancelled:"bx" };
     return '<span class="badge ' + (map[s] || "bp2") + '">' + s + "</span>";
@@ -664,655 +1080,52 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
     return map[s] || "sp2";
   }
 
-  /* ── LANGUAGE DICTIONARY ── */
-  var LANG = {
-    en: {
-      nav_order:"Place Order", nav_policy:"Policy", nav_track:"Track Order", nav_rev:"Reviews", login:"Login",
-      hero_title:"Your Personal Shopper in Zanzibar",
-      hero_sub:"Fill the form below — we find it, bargain for you, and deliver to your door.",
-      form_wa:"Order via WhatsApp",
-      lbl_name:"Full Name", ph_name:"e.g. John Doe",
-      lbl_phone:"WhatsApp Number", ph_phone:"+255...",
-      lbl_loc:"Delivery Location / Hotel", ph_loc:"e.g. Serena Hotel, Room 204",
-      lbl_urg:"When do you need it?",
-      lbl_budget:"Estimated Budget (Optional)", ph_budget:"e.g. 50,000 TZS",
-      lbl_items:"What do you want us to buy?", lbl_items_sub:"Be specific — brand, size, color, quantity.",
-      ph_items:"Example:\n2x Coke 500ml\n1x AA batteries (Duracell)\nSunscreen SPF50",
-      lbl_photo:"Product Photo", lbl_photo_opt:"(Optional — helps us find the exact item)",
-      pu_tap:"Tap to upload product photos", pu_limit:"Up to 10 images • JPG / PNG • max 5MB each",
-      pu_ready:"photo(s) ready", pu_add:"Add more", pu_clear:"Clear all",
-      form_terms:"By confirming you agree to our service terms.", confirm:"Confirm Order",
-      
-      pol_title:"Service Policy & Guidelines", pol_sub:"Everything you need to know before ordering.",
-      pol_who:"Who We Serve", pol_who1:"Tourists: Souvenirs, essentials, local goods at fair prices.",
-      pol_who2:"Locals: Errands for busy families and professionals.", pol_who3:"Fees: Item cost + service fee + delivery.",
-      pol_not:"We Do NOT Buy", pol_not1:"Medicine — buy personally for safety.", pol_not2:"Alcohol — not handled.",
-      pol_not3:"Illegal products — strictly refused.", pol_not4:"Large electronics (TVs, fridges) — small ones fine.",
-      pol_tip:"Essential Tips", pol_tip1:"Be specific — exact brands, sizes, colors.", pol_tip2:"Payment: M-Pesa, Tigo Pesa, Cash.",
-      pol_tip3:"Min order: 50,000 TZS. Below = 5,000 TZS fee.", pol_tip4:"Receipt: Reference only — your order gets delivered.",
-
-      track_title:"Live Order Tracker", track_sub:"Enter your Order ID from the receipt to check status.",
-      ph_track:"e.g. ORD-1234", btn_track:"Track",
-      track_found:"Order Found", track_not:"Order not found. Check your receipt for the correct ID.",
-      
-      rev_title:"Client Testimonies", rev_sub:"Real feedback from real customers.",
-      rev_leave:"Leave a Review", rev_lbl_name:"Your Name", rev_lbl_rate:"Rating", rev_lbl_com:"Comment",
-      rev_post:"Post Review", rev_none:"No reviews yet — be the first!",
-
-      db_ana:"Analytics", db_ord:"Orders", db_rev:"Reviews", db_set:"Settings", db_out:"Logout",
-      db_tit_ana:"Live Analytics", db_btn_ref:"Refresh",
-      db_k_tot:"Total Orders", db_k_pnd:"Pending", db_k_prc:"Processing", db_k_del:"Delivered", db_k_can:"Cancelled", db_k_rev:"Reviews",
-      db_ch_7d:"Orders Last 7 Days", db_ch_st:"By Status", db_ch_ur:"By Urgency", db_ch_rt:"Ratings",
-      db_rc:"Recent Orders", db_view:"View All",
-      db_th_id:"ID", db_th_cli:"Client", db_th_itm:"Items", db_th_loc:"Location", db_th_st:"Status",
-      
-      db_tit_ord:"All Orders", db_sub_ord:"Click a row to view details. Change status inline.",
-      db_all_st:"All Statuses", db_search:"Search...",
-      db_th_dt:"Date/ID", db_th_cl:"Client", db_th_ph:"Phone", db_th_it:"Items", db_th_lo:"Location", db_th_phot:"Photo",
-      
-      db_tit_rev:"Manage Reviews", db_sub_rev:"Delete fake or inappropriate reviews.",
-      db_th_dt:"Date", db_th_nm:"Name", db_th_rt:"Rating", db_th_cm:"Comment", db_th_dl:"Delete",
-      
-      db_tit_set:"Settings", db_sub_set:"Manage your password and data.",
-      db_set_pw:"Change Password", db_set_pw_s:"Update your dashboard login password at any time.",
-      db_set_cur:"Current Password", db_set_new:"New Password", db_set_cfm:"Confirm New Password", db_set_upd:"Update Password",
-      db_set_bi:"Business Info", db_set_bi_s:"Contact details shown on receipts and website.",
-      db_set_sto:"Storage", db_set_sto_s:"All data stored in your browser locally. Persists until cleared.", db_set_clr:"Clear All Data",
-
-      mod_ok_t:"Order Confirmed!", mod_ok_pdf1:"Receipt downloading...", mod_ok_pdf2:"Check your downloads folder",
-      mod_ok_d1:"Order saved to dashboard", mod_ok_d2:"Visible in your owner panel", mod_ok_w1:"WhatsApp opened", mod_ok_w2:"Send the pre-filled message to complete",
-      mod_resend:"Resend WhatsApp", mod_close:"Close",
-      mod_od_msg:"Message",
-      mod_lg_sub:"Owner Dashboard", mod_lg_pw:"Password", mod_lg_btn:"Login", mod_lg_can:"Cancel",
-
-      rcpt_tit:"Zanzibar Personal Shopping Service", rcpt_cli:"Client:", rcpt_ph:"Phone:", rcpt_loc:"Location:", rcpt_urg:"Urgency:", rcpt_bud:"Budget:", rcpt_it:"Shopping List:",
-      rcpt_thank:"Thank you for using JAMBO+!", ft_cp:"© 2024 JAMBO+ Zanzibar. All rights reserved."
-    },
-    sw: {
-      nav_order:"Weka Oda", nav_policy:"Sera", nav_track:"Fuatilia Oda", nav_rev:"Maoni", login:"Ingia",
-      hero_title:"Mnunuzi Wako Binafsi Zanzibar",
-      hero_sub:"Jaza fomu hapa. Tutafuta, tutapunguza bei na tukuletea mlangoni.",
-      form_wa:"Agiza kupitia WhatsApp",
-      lbl_name:"Jina Kamili", ph_name:"mf. Juma Ali",
-      lbl_phone:"Namba ya WhatsApp", ph_phone:"+255...",
-      lbl_loc:"Mahali pa Kufikia / Hoteli", ph_loc:"mf. Hoteli ya Serena, Chumba 204",
-      lbl_urg:"Unahitaji lini?",
-      lbl_budget:"Bajeti Yakadiriva (Hiari)", ph_budget:"mf. 50,000 TZS",
-      lbl_items:"Unataka tununue nini?", lbl_items_sub:"Jiweke wazi — chapa, ukubwa, rangi, idadi.",
-      ph_items:"Mfano:\n2x Coke 500ml\n1x Betri za AA (Duracell)\nSunscreen SPF50",
-      lbl_photo:"Picha ya Bidhaa", lbl_photo_opt:"(Hiari — inatusaidia kupata bidhaa sahihi)",
-      pu_tap:"Gusa kupakia picha", pu_limit:"Picha 10 zaidi • JPG / PNG • ukubwa wa 5MB kila moja",
-      pu_ready:"picha ziko tayari", pu_add:"Ongeza zaidi", pu_clear:"Futa zote",
-      form_terms:"Kwa kuthibitisha unakubaliana na masharti yetu ya huduma.", confirm:"Thibitisha Oda",
-
-      pol_title:"Sera na Mwongozo wa Huduma", pol_sub:"Yote unayohitaji kujua kabla ya kuagiza.",
-      pol_who:"Tuhudumia Nani", pol_who1:"Watalii: Sokoni, mahitaji muhimu, bidhaa za kienyeji kwa bei ya haki.",
-      pol_who2:"Wenyeji: Huduma za kusafirisha kwa familia na wataalamu wasio na wa sana.", pol_who3:"Ada: Gharama ya bidhaa + ada ya huduma + usafirishaji.",
-      pol_not:"Hatununui", pol_not1:"Dawa — nunua mwenyewe kwa usalama.", pol_not2:"Kileo — hatuhudumii.",
-      pol_not3:"Bidhaa haramu — hatukubali.", pol_not4:"Vifaa vikubwa vya umeme (TV, friji) — vidogo poa.",
-      pol_tip:"Mbinu Muhimu", pol_tip1:"Jiweke wazi — chapa sahihi, ukubwa, rangi.", pol_tip2:"Malipo: M-Pesa, Tigo Pesa, Pesa taslimu.",
-      pol_tip3:"Oda ya chini: 50,000 TZS. Chini ya hiyo = ada ya 5,000 TZS.", pol_tip4:"Risiti: Rejea tu — oda yako inafikishwa.",
-
-      track_title:"Kifuatizi cha Oda moja kwa moja", track_sub:"Ingiza ID ya Oda kutoka kwenye risiti ili kuangalia hali.",
-      ph_track:"mf. ORD-1234", btn_track:"Fuatilia",
-      track_found:"Oda Imepatikana", track_not:"Oda haipatikani. Angalia risiti yako kwa ID sahihi.",
-
-      rev_title:"Ushuhuda wa Wateja", rev_sub:"Maoni ya kweli kutoka kwa wateja halisi.",
-      rev_leave:"Andika Maoni", rev_lbl_name:"Jina Lako", rev_lbl_rate:"Kadirio", rev_lbl_com:"Maoni",
-      rev_post:"Tuma Maoni", rev_none:"Hakuna maoni bado — kuwa wa kwanza!",
-
-      db_ana:"Uchambuzi", db_ord:"Oda", db_rev:"Maoni", db_set:"Mipangilio", db_out:"Ondoka",
-      db_tit_ana:"Uchambuzi wa Moja kwa Moja", db_btn_ref:"Sasisha",
-      db_k_tot:"Jumla ya Oda", db_k_pnd:"Inasubiri", db_k_prc:"Inashughulikiwa", db_k_del:"Imefikishwa", db_k_can:"Imefutwa", db_k_rev:"Maoni",
-      db_ch_7d:"Oda za Siku 7 Zilizopita", db_ch_st:"Kwa Hali", db_ch_ur:"Kwa Haraka", db_ch_rt:"Kadirio",
-      db_rc:"Oda za Hivi Karibuni", db_view:"Ona Zote",
-      db_th_id:"ID", db_th_cli:"Mteja", db_th_itm:"Vitu", db_th_loc:"Mahali", db_th_st:"Hali",
-
-      db_tit_ord:"Oda Zote", db_sub_ord:"Bofya mstari kuona maelezo. Badilisha hali ndani ya mstari.",
-      db_all_st:"Hali Zote", db_search:"Tafuta...",
-      db_th_dt:"Tarehe/ID", db_th_cl:"Mteja", db_th_ph:"Simu", db_th_it:"Vitu", db_th_lo:"Mahali", db_th_phot:"Picha",
-
-      db_tit_rev:"Dhibiti Maoni", db_sub_rev:"Futa maoni ya kuw au ya kashfa.",
-      db_th_dt:"Tarehe", db_th_nm:"Jina", db_th_rt:"Kadirio", db_th_cm:"Maoni", db_th_dl:"Futa",
-
-      db_tit_set:"Mipangilio", db_sub_set:"Dhibiti nywila na data yako.",
-      db_set_pw:"Badilisha Nywila", db_set_pw_s:"Sasisha nywila yako kuingia kwenye dashboard wakati wowote.",
-      db_set_cur:"Nywila ya Sasa", db_set_new:"Nywila Mpya", db_set_cfm:"Thibitisha Nywila Mpya", db_set_upd:"Sasisha Nywila",
-      db_set_bi:"Maelezo ya Biashara", db_set_bi_s:"Maelezo ya mawasiliano yanaonekana kwenye risiti na tovuti.",
-      db_set_sto:"Hifadhi", db_set_sto_s:"Data yote imehifadhiwa kwenye browser yako. Inabaki hadi ifutwe.", db_set_clr:"Futa Data Yote",
-
-      mod_ok_t:"Oda Imedhibitishwa!", mod_ok_pdf1:"Risiti inapakua...", mod_ok_pdf2:"Angalia folda yako za downloads",
-      mod_ok_d1:"Oda imehifadhiwa kwenye dashboard", mod_ok_d2:"Inaonekana kwenye paneli yako", mod_ok_w1:"WhatsApp imefunguliwa", mod_ok_w2:"Tuma ujumbe ulioandaliwa ukamilishe",
-      mod_resend:"Tuma WhatsApp upya", mod_close:"Funga",
-      mod_od_msg:"Ujumbe",
-      mod_lg_sub:"Dashboard ya Mwenza", mod_lg_pw:"Nywila", mod_lg_btn:"Ingia", mod_lg_can:"Ghairi",
-
-      rcpt_tit:"Huduma ya Ununuzi wa Kibinafsi Zanzibar", rcpt_cli:"Mteja:", rcpt_ph:"Simu:", rcpt_loc:"Mahali:", rcpt_urg:"Haraka:", rcpt_bud:"Bajeti:", rcpt_it:"Orodha ya Manunuzi:",
-      rcpt_thank:"Asante kwa kutumia JAMBO+!", ft_cp:"© 2024 JAMBO+ Zanzibar. Haki zote zimehifadhiwa."
-    },
-    fr: {
-      nav_order:"Commander", nav_policy:"Politique", nav_track:"Suivre", nav_rev:"Avis", login:"Connexion",
-      hero_title:"Votre Personal Shopper a Zanzibar",
-      hero_sub:"Remplissez le formulaire — nous trouvons, negocions et livrons.",
-      form_wa:"Commander via WhatsApp",
-      lbl_name:"Nom complet", ph_name:"ex. Jean Dupont",
-      lbl_phone:"Numéro WhatsApp", ph_phone:"+255...",
-      lbl_loc:"Lieu de livraison / Hôtel", ph_loc:"ex. Hôtel Serena, Chambre 204",
-      lbl_urg:"Quand en avez-vous besoin ?", lbl_budget:"Budget estimatif (Optionnel)", ph_budget:"ex. 50,000 TZS",
-      lbl_items:"Que voulez-vous que nous achetions ?", lbl_items_sub:"Soyez précis — marque, taille, couleur, quantité.",
-      ph_items:"Exemple:\n2x Coca 500ml\n1x Piles AA (Duracell)\nCrème solaire SPF50",
-      lbl_photo:"Photo du produit", lbl_photo_opt:"(Optionnel — nous aide à trouver l'article exact)",
-      pu_tap:"Touchez pour télécharger des photos", pu_limit:"Jusqu'à 10 images • JPG / PNG • max 5MB chacune",
-      pu_ready:"photo(s) prête(s)", pu_add:"Ajouter plus", pu_clear:"Tout effacer",
-      form_terms:"En confirmant, vous acceptez nos conditions de service.", confirm:"Confirmer la commande",
-      
-      pol_title:"Politique de service et directives", pol_sub:"Tout ce que vous devez savoir avant de commander.",
-      pol_who:"Qui nous servons", pol_who1:"Touristes : Souvenirs, essentiels, produits locaux à prix justes.",
-      pol_who2:"Locaux : Courses pour les familles et professionnels occupés.", pol_who3:"Frais : Coût de l'article + frais de service + livraison.",
-      pol_not:"Nous n'achetons PAS", pol_not1:"Médicaments — achetez personnellement pour sécurité.", pol_not2:"Alcool — non géré.",
-      pol_not3:"Produits illégaux — strictement refusé.", pol_not4:"Gros électroménager (TV, frigos) — les petits c'est bon.",
-      pol_tip:"Conseils essentiels", pol_tip1:"Soyez précis — marques exactes, tailles, couleurs.", pol_tip2:"Paiement : M-Pesa, Tigo Pesa, Espèces.",
-      pol_tip3:"Min. commande : 50,000 TZS. Moins = frais de 5,000 TZS.", pol_tip4:"Reçu : Référence seulement — votre commande est livrée.",
-
-      track_title:"Suivi de commande en direct", track_sub:"Entrez votre ID de commande sur le reçu pour vérifier le statut.",
-      ph_track:"ex. ORD-1234", btn_track:"Suivre",
-      track_found:"Commande trouvée", track_not:"Commande non trouvée. Vérifiez votre reçu pour le bon ID.",
-      
-      rev_title:"Témoignages clients", rev_sub:"De vrais avis de vrais clients.",
-      rev_leave:"Laisser un avis", rev_lbl_name:"Votre nom", rev_lbl_rate:"Note", rev_lbl_com:"Commentaire",
-      rev_post:"Publier l'avis", rev_none:"Aucun avis pour l'instant — soyez le premier !",
-
-      db_ana:"Analytique", db_ord:"Commandes", db_rev:"Avis", db_set:"Paramètres", db_out:"Déconnexion",
-      db_tit_ana:"Analytique en direct", db_btn_ref:"Actualiser",
-      db_k_tot:"Total Commandes", db_k_pnd:"En attente", db_k_prc:"En cours", db_k_del:"Livrée", db_k_can:"Annulée", db_k_rev:"Avis",
-      db_ch_7d:"Commandes des 7 derniers jours", db_ch_st:"Par statut", db_ch_ur:"Par urgence", db_ch_rt:"Notes",
-      db_rc:"Commandes récentes", db_view:"Voir tout",
-      db_th_id:"ID", db_th_cli:"Client", db_th_itm:"Articles", db_th_loc:"Lieu", db_th_st:"Statut",
-
-      db_tit_ord:"Toutes les commandes", db_sub_ord:"Cliquez sur une ligne pour voir les détails. Changer le statut en ligne.",
-      db_all_st:"Tous statuts", db_search:"Rechercher...",
-      db_th_dt:"Date/ID", db_th_cl:"Client", db_th_ph:"Tél", db_th_it:"Articles", db_th_lo:"Lieu", db_th_phot:"Photo",
-
-      db_tit_rev:"Gérer les avis", db_sub_rev:"Supprimer les faux ou inappropriés.",
-      db_th_dt:"Date", db_th_nm:"Nom", db_th_rt:"Note", db_th_cm:"Commentaire", db_th_dl:"Supprimer",
-
-      db_tit_set:"Paramètres", db_sub_set:"Gérez votre mot de passe et vos données.",
-      db_set_pw:"Changer le mot de passe", db_set_pw_s:"Mettez à jour votre mot de passe de connexion à tout moment.",
-      db_set_cur:"Mot de passe actuel", db_set_new:"Nouveau mot de passe", db_set_cfm:"Confirmer le nouveau mot de passe", db_set_upd:"Mettre à jour",
-      db_set_bi:"Infos entreprise", db_set_bi_s:"Détails de contact affichés sur les reçus et le site.",
-      db_set_sto:"Stockage", db_set_sto_s:"Toutes les données stockées localement. Persiste jusqu'à effacement.", db_set_clr:"Effacer tout",
-
-      mod_ok_t:"Commande confirmée !", mod_ok_pdf1:"Téléchargement du reçu...", mod_ok_pdf2:"Vérifiez votre dossier de téléchargement",
-      mod_ok_d1:"Commande sauvegardée sur le tableau de bord", mod_ok_d2:"Visible dans votre panneau", mod_ok_w1:"WhatsApp ouvert", mod_ok_w2:"Envoyez le message pré-rempli pour finaliser",
-      mod_resend:"Renvoyer WhatsApp", mod_close:"Fermer",
-      mod_od_msg:"Message",
-      mod_lg_sub:"Tableau de bord propriétaire", mod_lg_pw:"Mot de passe", mod_lg_btn:"Connexion", mod_lg_can:"Annuler",
-
-      rcpt_tit:"Service de shopping personnel Zanzibar", rcpt_cli:"Client:", rcpt_ph:"Tél:", rcpt_loc:"Lieu:", rcpt_urg:"Urgence:", rcpt_bud:"Budget:", rcpt_it:"Liste de courses:",
-      rcpt_thank:"Merci d'utiliser JAMBO+ !", ft_cp:"© 2024 JAMBO+ Zanzibar. Tous droits réservés."
-    },
-    de: {
-      nav_order:"Bestellen", nav_policy:"Richtlinien", nav_track:"Verfolgen", nav_rev:"Bewertungen", login:"Anmelden",
-      hero_title:"Ihr persönlicher Einkäufer in Sansibar",
-      hero_sub:"Formular ausfüllen — wir finden, handeln und liefern.",
-      form_wa:"Über WhatsApp bestellen",
-      lbl_name:"Vollständiger Name", ph_name:"z.B. Hans Müller",
-      lbl_phone:"WhatsApp Nummer", ph_phone:"+255...",
-      lbl_loc:"Lieferort / Hotel", ph_loc:"z.B. Serena Hotel, Zimmer 204",
-      lbl_urg:"Wann brauchen Sie es?", lbl_budget:"Geschätztes Budget (Optional)", ph_budget:"z.B. 50.000 TZS",
-      lbl_items:"Was sollen wir kaufen?", lbl_items_sub:"Seien Sie spezifisch — Marke, Größe, Farbe, Menge.",
-      ph_items:"Beispiel:\n2x Coke 500ml\n1x AA Batterien (Duracell)\nSonnencreme SPF50",
-      lbl_photo:"Produktfoto", lbl_photo_opt:"(Optional — hilft uns, das genaue Produkt zu finden)",
-      pu_tap:"Tippen Sie zum Hochladen von Fotos", pu_limit:"Bis zu 10 Bilder • JPG / PNG • max 5MB jedes",
-      pu_ready:"Foto(s) bereit", pu_add:"Mehr hinzufügen", pu_clear:"Alles löschen",
-      form_terms:"Durch Bestätigung stimmen Sie unseren Nutzungsbedingungen zu.", confirm:"Bestellung bestätigen",
-      
-      pol_title:"Service-Richtlinien & Leitfaden", pol_sub:"Alles was Sie vor der Bestellung wissen müssen.",
-      pol_who:"Wir bedienen", pol_who1:"Touristen: Souvenirs, Essentials, lokale Waren zu fairen Preisen.",
-      pol_who2:"Einheimische: Besorgungen für vielbeschäftigte Familien.", pol_who3:"Gebühren: Artikelpreis + Servicegebühr + Lieferung.",
-      pol_not:"Wir kaufen NICHT", pol_not1:"Medikamente — kaufen Sie diese persönlich aus Sicherheitsgründen.", pol_not2:"Alkohol — wird nicht gehandhabt.",
-      pol_not3:"Illegale Produkte — strikt abgelehnt.", pol_not4:"Große Elektronik (TVs, Kühlschränke) — Kleine ist okay.",
-      pol_tip:"Wichtige Tipps", pol_tip1:"Seien Sie spezifisch — genaue Marken, Größen, Farben.", pol_tip2:"Zahlung: M-Pesa, Tigo Pesa, Bargeld.",
-      pol_tip3:"Mindestbestellung: 50.000 TZS. Darunter = 5.000 TZS Gebühr.", pol_tip4:"Beleg: Nur Referenz — Ihre Bestellung wird geliefert.",
-
-      track_title:"Live-Bestellungs-Tracker", track_sub:"Geben Sie Ihre Bestell-ID vom Beleg ein, um den Status zu prüfen.",
-      ph_track:"z.B. ORD-1234", btn_track:"Verfolgen",
-      track_found:"Bestellung gefunden", track_not:"Bestellung nicht gefunden. Überprüfen Sie Ihren Beleg auf die korrekte ID.",
-      
-      rev_title:"Kundenreferenzen", rev_sub:"Echtes Feedback von echten Kunden.",
-      rev_leave:"Bewertung hinterlassen", rev_lbl_name:"Ihr Name", rev_lbl_rate:"Bewertung", rev_lbl_com:"Kommentar",
-      rev_post:"Bewertung posten", rev_none:"Noch keine Bewertungen — seien Sie der Erste !",
-
-      db_ana:"Analytik", db_ord:"Bestellungen", db_rev:"Bewertungen", db_set:"Einstellungen", db_out:"Abmelden",
-      db_tit_ana:"Live-Analytik", db_btn_ref:"Aktualisieren",
-      db_k_tot:"Alle Bestellungen", db_k_pnd:"Ausstehend", db_k_prc:"In Bearbeitung", db_k_del:"Geliefert", db_k_can:"Storniert", db_k_rev:"Bewertungen",
-      db_ch_7d:"Bestellungen letzte 7 Tage", db_ch_st:"Nach Status", db_ch_ur:"Nach Dringlichkeit", db_ch_rt:"Bewertungen",
-      db_rc:"Neueste Bestellungen", db_view:"Alle anzeigen",
-      db_th_id:"ID", db_th_cli:"Kunde", db_th_itm:"Artikel", db_th_loc:"Ort", db_th_st:"Status",
-
-      db_tit_ord:"Alle Bestellungen", db_sub_ord:"Klicken Sie auf eine Zeile für Details. Status direkt ändern.",
-      db_all_st:"Alle Status", db_search:"Suchen...",
-      db_th_dt:"Datum/ID", db_th_cl:"Kunde", db_th_ph:"Telefon", db_th_it:"Artikel", db_th_lo:"Ort", db_th_phot:"Foto",
-
-      db_tit_rev:"Bewertungen verwalten", db_sub_rev:"Löschen Sie gefälschte oder unangemessene Bewertungen.",
-      db_th_dt:"Datum", db_th_nm:"Name", db_th_rt:"Bewertung", db_th_cm:"Kommentar", db_th_dl:"Löschen",
-
-      db_tit_set:"Einstellungen", db_sub_set:"Verwalten Sie Ihr Passwort und Ihre Daten.",
-      db_set_pw:"Passwort ändern", db_set_pw_s:"Aktualisieren Sie Ihr Dashboard-Passwort jederzeit.",
-      db_set_cur:"Aktuelles Passwort", db_set_new:"Neues Passwort", db_set_cfm:"Neues Passwort bestätigen", db_set_upd:"Passwort aktualisieren",
-      db_set_bi:"Geschäftsinformationen", db_set_bi_s:"Kontaktdaten auf Belegen und Webseite.",
-      db_set_sto:"Speicher", db_set_sto_s:"Alle Daten lokal gespeichert. Verbleiben bis zum Löschen.", db_set_clr:"Alles löschen",
-
-      mod_ok_t:"Bestellung bestätigt!", mod_ok_pdf1:"Beleg wird heruntergeladen...", mod_ok_pdf2:"Prüfen Sie Ihren Download-Ordner",
-      mod_ok_d1:"Bestellung im Dashboard gespeichert", mod_ok_d2:"Sichtbar in Ihrem Eigentümer-Bereich", mod_ok_w1:"WhatsApp geöffnet", mod_ok_w2:"Senden Sie die vor ausgefüllte Nachricht zum Abschluss",
-      mod_resend:"WhatsApp erneut senden", mod_close:"Schließen",
-      mod_od_msg:"Nachricht",
-      mod_lg_sub:"Eigentümer-Dashboard", mod_lg_pw:"Passwort", mod_lg_btn:"Anmelden", mod_lg_can:"Abbrechen",
-
-      rcpt_tit:"Sansibar Personal Shopping Service", rcpt_cli:"Kunde:", rcpt_ph:"Telefon:", rcpt_loc:"Ort:", rcpt_urg:"Dringlichkeit:", rcpt_bud:"Budget:", rcpt_it:"Einkaufsliste:",
-      rcpt_thank:"Danke, dass Sie JAMBO+ nutzen!", ft_cp:"© 2024 JAMBO+ Sansibar. Alle Rechte vorbehalten."
-    },
-    es: {
-      nav_order:"Pedir", nav_policy:"Política", nav_track:"Rastrear", nav_rev:"Reseñas", login:"Entrar",
-      hero_title:"Tu comprador personal en Zanzibar",
-      hero_sub:"Rellena el formulario — encontramos, negociamos y entregamos.",
-      form_wa:"Pedir vía WhatsApp",
-      lbl_name:"Nombre completo", ph_name:"ej. Juan Pérez",
-      lbl_phone:"Número WhatsApp", ph_phone:"+255...",
-      lbl_loc:"Ubicación de entrega / Hotel", ph_loc:"ej. Hotel Serena, Habitación 204",
-      lbl_urg:"¿Cuándo lo necesitas?", lbl_budget:"Presupuesto estimado (Opcional)", ph_budget:"ej. 50,000 TZS",
-      lbl_items:"¿Qué quieres que compremos?", lbl_items_sub:"Sé específico — marca, talla, color, cantidad.",
-      ph_items:"Ejemplo:\n2x Coca 500ml\n1x Pilas AA (Duracell)\nProtector solar SPF50",
-      lbl_photo:"Foto del producto", lbl_photo_opt:"(Opcional — nos ayuda a encontrar el artículo exacto)",
-      pu_tap:"Toca para subir fotos", pu_limit:"Hasta 10 imágenes • JPG / PNG • max 5MB cada una",
-      pu_ready:"foto(s) lista(s)", pu_add:"Añadir más", pu_clear:"Borrar todo",
-      form_terms:"Al confirmar aceptas nuestros términos de servicio.", confirm:"Confirmar pedido",
-      
-      pol_title:"Política y Directrices de Servicio", pol_sub:"Todo lo que necesitas saber antes de pedir.",
-      pol_who:"A quién servimos", pol_who1:"Turistas: Recuerdos, esenciales, bienes locales a precios justos.",
-      pol_who2:"Locales: Recados para familias y profesionales ocupados.", pol_who3:"Tarifas: Costo del artículo + tarifa de servicio + entrega.",
-      pol_not:"NO compramos", pol_not1:"Medicinas — compra personalmente por seguridad.", pol_not2:"Alcohol — no se maneja.",
-      pol_not3:"Productos ilegales — estrictamente rechazado.", pol_not4:"Electrónica grande (TVs, neveras) — lo pequeño está bien.",
-      pol_tip:"Consejos esenciales", pol_tip1:"Sé específico — marcas exactas, tallas, colores.", pol_tip2:"Pago: M-Pesa, Tigo Pesa, Efectivo.",
-      pol_tip3:"Pedido mínimo: 50,000 TZS. Menos = tarifa de 5,000 TZS.", pol_tip4:"Recibo: Solo referencia — tu pedido es entregado.",
-
-      track_title:"Rastreador de Pedidos en Vivo", track_sub:"Ingresa tu ID de pedido del recibo para verificar el estado.",
-      ph_track:"ej. ORD-1234", btn_track:"Rastrear",
-      track_found:"Pedido encontrado", track_not:"Pedido no encontrado. Verifica tu recibo para el ID correcto.",
-      
-      rev_title:"Testimonios de Clientes", rev_sub:"Comentarios reales de clientes reales.",
-      rev_leave:"Dejar una reseña", rev_lbl_name:"Tu nombre", rev_lbl_rate:"Calificación", rev_lbl_com:"Comentario",
-      rev_post:"Publicar reseña", rev_none:"Aún no hay reseñas — ¡sé el primero !",
-
-      db_ana:"Analíticas", db_ord:"Pedidos", db_rev:"Reseñas", db_set:"Ajustes", db_out:"Salir",
-      db_tit_ana:"Analíticas en vivo", db_btn_ref:"Actualizar",
-      db_k_tot:"Pedidos totales", db_k_pnd:"Pendiente", db_k_prc:"Procesando", db_k_del:"Entregado", db_k_can:"Cancelado", db_k_rev:"Reseñas",
-      db_ch_7d:"Pedidos últimos 7 días", db_ch_st:"Por estado", db_ch_ur:"Por urgencia", db_ch_rt:"Calificaciones",
-      db_rc:"Pedidos recientes", db_view:"Ver todo",
-      db_th_id:"ID", db_th_cli:"Cliente", db_th_itm:"Artículos", db_th_loc:"Ubicación", db_th_st:"Estado",
-
-      db_tit_ord:"Todos los pedidos", db_sub_ord:"Haz clic en una fila para ver detalles. Cambia el estado en línea.",
-      db_all_st:"Todos los estados", db_search:"Buscar...",
-      db_th_dt:"Fecha/ID", db_th_cl:"Cliente", db_th_ph:"Teléfono", db_th_it:"Artículos", db_th_lo:"Ubicación", db_th_phot:"Foto",
-
-      db_tit_rev:"Gestionar reseñas", db_sub_rev:"Elimina reseñas falsas o inapropiadas.",
-      db_th_dt:"Fecha", db_th_nm:"Nombre", db_th_rt:"Calificación", db_th_cm:"Comentario", db_th_dl:"Eliminar",
-
-      db_tit_set:"Ajustes", db_sub_set:"Gestiona tu contraseña y datos.",
-      db_set_pw:"Cambiar contraseña", db_set_pw_s:"Actualiza tu contraseña de panel en cualquier momento.",
-      db_set_cur:"Contraseña actual", db_set_new:"Nueva contraseña", db_set_cfm:"Confirmar nueva contraseña", db_set_upd:"Actualizar contraseña",
-      db_set_bi:"Info del negocio", db_set_bi_s:"Detalles de contacto mostrados en recibos y web.",
-      db_set_sto:"Almacenamiento", db_set_sto_s:"Todos los datos se guardan localmente. Persisten hasta que se borren.", db_set_clr:"Borrar todo",
-
-      mod_ok_t:"¡Pedido confirmado!", mod_ok_pdf1:"Descargando recibo...", mod_ok_pdf2:"Revisa tu carpeta de descargas",
-      mod_ok_d1:"Pedido guardado en el panel", mod_ok_d2:"Visible en tu panel de dueño", mod_ok_w1:"WhatsApp abierto", mod_ok_w2:"Envía el mensaje prellenado para completar",
-      mod_resend:"Reenviar WhatsApp", mod_close:"Cerrar",
-      mod_od_msg:"Mensaje",
-      mod_lg_sub:"Panel de Dueño", mod_lg_pw:"Contraseña", mod_lg_btn:"Entrar", mod_lg_can:"Cancelar",
-
-      rcpt_tit:"Servicio de Compras Personal Zanzíbar", rcpt_cli:"Cliente:", rcpt_ph:"Tel:", rcpt_loc:"Ubicación:", rcpt_urg:"Urgencia:", rcpt_bud:"Presupuesto:", rcpt_it:"Lista de compras:",
-      rcpt_thank:"¡Gracias por usar JAMBO+ !", ft_cp:"© 2024 JAMBO+ Zanzíbar. Todos los derechos reservados."
-    },
-    it: {
-      nav_order:"Ordina", nav_policy:"Politica", nav_track:"Traccia", nav_rev:"Recensioni", login:"Accedi",
-      hero_title:"Il tuo personal shopper a Zanzibar",
-      hero_sub:"Compila il modulo — troviamo, trattiamo e consegniamo.",
-      form_wa:"Ordina via WhatsApp",
-      lbl_name:"Nome completo", ph_name:"es. Mario Rossi",
-      lbl_phone:"Numero WhatsApp", ph_phone:"+255...",
-      lbl_loc:"Luogo di consegna / Hotel", ph_loc:"es. Hotel Serena, Camera 204",
-      lbl_urg:"Quando ti serve?", lbl_budget:"Budget stimato (Opzionale)", ph_budget:"es. 50,000 TZS",
-      lbl_items:"Cosa vuoi che compriamo?", lbl_items_sub:"Sii specifico — marca, taglia, colore, quantità.",
-      ph_items:"Esempio:\n2x Coke 500ml\n1x Pile AA (Duracell)\nCrema solare SPF50",
-      lbl_photo:"Foto del prodotto", lbl_photo_opt:"(Opzionale — ci aiuta a trovare l'articolo esatto)",
-      pu_tap:"Tocca per caricare foto", pu_limit:"Fino a 10 immagini • JPG / PNG • max 5MB ciascuna",
-      pu_ready:"foto pronte", pu_add:"Aggiungi altro", pu_clear:"Cancella tutto",
-      form_terms:"Confermando accetti i nostri termini di servizio.", confirm:"Conferma ordine",
-      
-      pol_title:"Politica e Linee Guida del Servizio", pol_sub:"Tutto ciò che devi sapere prima di ordinare.",
-      pol_who:"Chi serviamo", pol_who1:"Turisti: Souvenir, essenziali, beni locali a prezzi equi.",
-      pol_who2:"Locali: Commissioni per famiglie e professionisti impegnati.", pol_who3:"Tariffe: Costo articolo + tariffe servizio + consegna.",
-      pol_not:"NON compriamo", pol_not1:"Medicine — acquista personalmente per sicurezza.", pol_not2:"Alcolici — non gestiti.",
-      pol_not3:"Prodotti illegali — severamente rifiutati.", pol_not4:"Elettrodomestici grandi (TV, frigo) — quelli piccoli vanno bene.",
-      pol_tip:"Consigli essenziali", pol_tip1:"Sii specifico — marchi esatti, taglie, colori.", pol_tip2:"Pagamento: M-Pesa, Tigo Pesa, Contanti.",
-      pol_tip3:"Ordine minimo: 50,000 TZS. Sotto = tariffa 5,000 TZS.", pol_tip4:"Ricevuta: Solo riferimento — il tuo ordine viene consegnato.",
-
-      track_title:"Tracciamento Ordini Live", track_sub:"Inserisci l'ID dell'ordine dalla ricevuta per controllare lo stato.",
-      ph_track:"es. ORD-1234", btn_track:"Traccia",
-      track_found:"Ordine trovato", track_not:"Ordine non trovato. Controlla la ricevuta per l'ID corretto.",
-      
-      rev_title:"Testimonianze dei Clienti", rev_sub:"Feedback reale da clienti reali.",
-      rev_leave:"Lascia una recensione", rev_lbl_name:"Il tuo nome", rev_lbl_rate:"Valutazione", rev_lbl_com:"Commento",
-      rev_post:"Pubblica recensione", rev_none:"Nessuna recensione ancora — sii il primo !",
-
-      db_ana:"Analitica", db_ord:"Ordini", db_rev:"Recensioni", db_set:"Impostazioni", db_out:"Esci",
-      db_tit_ana:"Analitica Live", db_btn_ref:"Aggiorna",
-      db_k_tot:"Ordini totali", db_k_pnd:"In attesa", db_k_prc:"In elaborazione", db_k_del:"Consegnato", db_k_can:"Annullato", db_k_rev:"Recensioni",
-      db_ch_7d:"Ordini ultimi 7 giorni", db_ch_st:"Per stato", db_ch_ur:"Per urgenza", db_ch_rt:"Valutazioni",
-      db_rc:"Ordini recenti", db_view:"Vedi tutto",
-      db_th_id:"ID", db_th_cli:"Cliente", db_th_itm:"Articoli", db_th_loc:"Luogo", db_th_st:"Stato",
-
-      db_tit_ord:"Tutti gli ordini", db_sub_ord:"Clicca una riga per vedere i dettagli. Cambia stato in linea.",
-      db_all_st:"Tutti gli stati", db_search:"Cerca...",
-      db_th_dt:"Data/ID", db_th_cl:"Cliente", db_th_ph:"Tel", db_th_it:"Articoli", db_th_lo:"Luogo", db_th_phot:"Foto",
-
-      db_tit_rev:"Gestisci recensioni", db_sub_rev:"Elimina recensioni false o inappropriate.",
-      db_th_dt:"Data", db_th_nm:"Nome", db_th_rt:"Valutazione", db_th_cm:"Commento", db_th_dl:"Elimina",
-
-      db_tit_set:"Impostazioni", db_sub_set:"Gestisci la tua password e i dati.",
-      db_set_pw:"Cambia password", db_set_pw_s:"Aggiorna la password del dashboard in qualsiasi momento.",
-      db_set_cur:"Password attuale", db_set_new:"Nuova password", db_set_cfm:"Conferma nuova password", db_set_upd:"Aggiorna password",
-      db_set_bi:"Info Business", db_set_bi_s:"Dettagli contatto mostrati su ricevute e sito.",
-      db_set_sto:"Archiviazione", db_set_sto_s:"Tutti i dati salvati localmente. Persistono fino alla cancellazione.", db_set_clr:"Cancella tutto",
-
-      mod_ok_t:"Ordine confermato!", mod_ok_pdf1:"Ricevuta in download...", mod_ok_pdf2:"Controlla la tua cartella download",
-      mod_ok_d1:"Ordine salvato nel dashboard", mod_ok_d2:"Visibile nel tuo pannello proprietario", mod_ok_w1:"WhatsApp aperto", mod_ok_w2:"Invia il messaggio precompilato per completare",
-      mod_resend:"Invia di nuovo WhatsApp", mod_close:"Chiudi",
-      mod_od_msg:"Messaggio",
-      mod_lg_sub:"Dashboard Proprietario", mod_lg_pw:"Password", mod_lg_btn:"Accedi", mod_lg_can:"Annulla",
-
-      rcpt_tit:"Servizio Shopping Personale Zanzibar", rcpt_cli:"Cliente:", rcpt_ph:"Tel:", rcpt_loc:"Luogo:", rcpt_urg:"Urgenza:", rcpt_bud:"Budget:", rcpt_it:"Lista della spesa:",
-      rcpt_thank:"Grazie per aver usato JAMBO+!", ft_cp:"© 2024 JAMBO+ Zanzibar. Tutti i diritti riservati."
-    },
-    zh: {
-      nav_order:"下订单", nav_policy:"政策", nav_track:"追踪", nav_rev:"评价", login:"登录",
-      hero_title:"您在桑给巴尔的私人购物助手",
-      hero_sub:"填写表格 — 我们找到、砍价并送货上门。",
-      form_wa:"通过 WhatsApp 订购",
-      lbl_name:"全名", ph_name:"例如：张三",
-      lbl_phone:"WhatsApp 号码", ph_phone:"+255...",
-      lbl_loc:"送货地点 / 酒店", ph_loc:"例如：Serena 酒店，204 房",
-      lbl_urg:"您什么时候需要？", lbl_budget:"预估预算（可选）", ph_budget:"例如：50,000 TZS",
-      lbl_items:"您想让我们买什么？", lbl_items_sub:"请具体说明 — 品牌、尺寸、颜色、数量。",
-      ph_items:"例子:\n2x 可乐 500ml\n1x AA 电池 (Duracell)\n防晒霜 SPF50",
-      lbl_photo:"产品照片", lbl_photo_opt:"（可选 — 帮助我们找到确切的商品）",
-      pu_tap:"点击上传产品照片", pu_limit:"最多 10 张图片 • JPG / PNG • 每张最大 5MB",
-      pu_ready:"张照片准备就绪", pu_add:"添加更多", pu_clear:"清除全部",
-      form_terms:"确认即表示您同意我们的服务条款。", confirm:"确认订单",
-
-      pol_title:"服务政策与指南", pol_sub:"下单前您需要了解的一切。",
-      pol_who:"我们为谁服务", pol_who1:"游客：纪念品、必需品、本地商品，价格公道。",
-      pol_who2:"当地人：为忙碌的家庭和专业人士跑腿。", pol_who3:"费用：商品费用 + 服务费 + 送货费。",
-      pol_not:"我们不购买", pol_not1:"药品 — 为了安全请自行购买。", pol_not2:"酒精 — 不处理。",
-      pol_not3:"非法产品 — 严格拒绝。", pol_not4:"大型电子产品（电视、冰箱） — 小型的可以。",
-      pol_tip:"重要提示", pol_tip1:"具体说明 — 确切的品牌、尺寸、颜色。", pol_tip2:"付款：M-Pesa, Tigo Pesa, 现金。",
-      pol_tip3:"最低订单：50,000 TZS。以下 = 5,000 TZS 费用。", pol_tip4:"收据：仅供参考 — 您的订单会送达。",
-
-      track_title:"实时订单追踪器", track_sub:"输入收据上的订单 ID 以检查状态。",
-      ph_track:"例如：ORD-1234", btn_track:"追踪",
-      track_found:"找到订单", track_not:"未找到订单。请检查您的收据以获取正确的 ID。",
-
-      rev_title:"客户见证", rev_sub:"真实客户的真实反馈。",
-      rev_leave:"发表评论", rev_lbl_name:"您的名字", rev_lbl_rate:"评分", rev_lbl_com:"评论",
-      rev_post:"发布评论", rev_none:"暂无评论 — 做第一个！",
-
-      db_ana:"分析", db_ord:"订单", db_rev:"评论", db_set:"设置", db_out:"登出",
-      db_tit_ana:"实时分析", db_btn_ref:"刷新",
-      db_k_tot:"总订单", db_k_pnd:"待处理", db_k_prc:"处理中", db_k_del:"已送达", db_k_can:"已取消", db_k_rev:"评论",
-      db_ch_7d:"过去 7 天的订单", db_ch_st:"按状态", db_ch_ur:"按紧急程度", db_ch_rt:"评分",
-      db_rc:"最近订单", db_view:"查看全部",
-      db_th_id:"ID", db_th_cli:"客户", db_th_itm:"商品", db_th_loc:"地点", db_th_st:"状态",
-
-      db_tit_ord:"所有订单", db_sub_ord:"点击一行查看详情。在线更改状态。",
-      db_all_st:"所有状态", db_search:"搜索...",
-      db_th_dt:"日期/ID", db_th_cl:"客户", db_th_ph:"电话", db_th_it:"商品", db_th_lo:"地点", db_th_phot:"照片",
-
-      db_tit_rev:"管理评论", db_sub_rev:"删除虚假或不当的评论。",
-      db_th_dt:"日期", db_th_nm:"姓名", db_th_rt:"评分", db_th_cm:"评论", db_th_dl:"删除",
-
-      db_tit_set:"设置", db_sub_set:"管理您的密码和数据。",
-      db_set_pw:"更改密码", db_set_pw_s:"随时更新您的仪表板登录密码。",
-      db_set_cur:"当前密码", db_set_new:"新密码", db_set_cfm:"确认新密码", db_set_upd:"更新密码",
-      db_set_bi:"商户信息", db_set_bi_s:"显示在收据和网站上的联系方式。",
-      db_set_sto:"存储", db_set_sto_s:"所有数据均存储在您的浏览器中本地。持续存在直到被清除。", db_set_clr:"清除所有数据",
-
-      mod_ok_t:"订单已确认！", mod_ok_pdf1:"正在下载收据...", mod_ok_pdf2:"检查您的下载文件夹",
-      mod_ok_d1:"订单已保存到仪表板", mod_ok_d2:"在您的所有者面板中可见", mod_ok_w1:"WhatsApp 已打开", mod_ok_w2:"发送预填写的消息以完成",
-      mod_resend:"重新发送 WhatsApp", mod_close:"关闭",
-      mod_od_msg:"信息",
-      mod_lg_sub:"所有者仪表板", mod_lg_pw:"密码", mod_lg_btn:"登录", mod_lg_can:"取消",
-
-      rcpt_tit:"桑给巴尔个人购物服务", rcpt_cli:"客户:", rcpt_ph:"电话:", rcpt_loc:"地点:", rcpt_urg:"紧急程度:", rcpt_bud:"预算:", rcpt_it:"购物清单:",
-      rcpt_thank:"感谢您使用 JAMBO+！", ft_cp:"© 2024 JAMBO+ 桑给巴尔。保留所有权利。"
-    },
-    ru: {
-      nav_order:"Заказать", nav_policy:"Политика", nav_track:"Отслежить", nav_rev:"Отзывы", login:"Войти",
-      hero_title:"Ваш личный шоппер на Занзибаре",
-      hero_sub:"Заполните форму — мы найдем, поторгуемся и доставим.",
-      form_wa:"Заказать через WhatsApp",
-      lbl_name:"Полное имя", ph_name:"напр. Иван Иванов",
-      lbl_phone:"Номер WhatsApp", ph_phone:"+255...",
-      lbl_loc:"Место доставки / Отель", ph_loc:"напр. Отель Serena, Комната 204",
-      lbl_urg:"Когда вам это нужно?", lbl_budget:"Примерный бюджет (Опционально)", ph_budget:"напр. 50,000 TZS",
-      lbl_items:"Что вы хотите, чтобы мы купили?", lbl_items_sub:"Будьте конкретны — бренд, размер, цвет, количество.",
-      ph_items:"Пример:\n2x Кока-кола 500мл\n1x Батарейки AA (Duracell)\nСолнцезащитный крем SPF50",
-      lbl_photo:"Фото продукта", lbl_photo_opt:"(Опционально — помогает нам найти точный товар)",
-      pu_tap:"Нажмите, чтобы загрузить фото", pu_limit:"До 10 изображений • JPG / PNG • максимум 5МБ каждое",
-      pu_ready:"фото готово", pu_add:"Добавить еще", pu_clear:"Очистить все",
-      form_terms:"Подтверждая, вы соглашаетесь с нашими условиями обслуживания.", confirm:"Подтвердить заказ",
-
-      pol_title:"Политика и правила обслуживания", pol_sub:"Все, что вам нужно знать перед заказом.",
-      pol_who:"Кому мы служим", pol_who1:"Туристы: Сувениры, необходимое, местные товары по честным ценам.",
-      pol_who2:"Местные жители: Поручения для занятых семей и профессионалов.", pol_who3:"Сборы: Стоимость товара + плата за сервис + доставка.",
-      pol_not:"Мы НЕ покупаем", pol_not1:"Лекарства — покупайте лично для безопасности.", pol_not2:"Алкоголь — не обрабатывается.",
-      pol_not3:"Нелегальные продукты — строго отказано.", pol_not4:"Крупная электроника (ТВ, холодильники) — мелкую можно.",
-      pol_tip:"Основные советы", pol_tip1:"Будьте конкретны — точные бренды, размеры, цвета.", pol_tip2:"Оплата: M-Pesa, Tigo Pesa, Наличные.",
-      pol_tip3:"Мин. заказ: 50,000 TZS. Меньше = сбор 5,000 TZS.", pol_tip4:"Чек: Только ссылка — ваш заказ будет доставлен.",
-
-      track_title:"Отслеживание заказов в реальном времени", track_sub:"Введите ID заказа из чека, чтобы проверить статус.",
-      ph_track:"напр. ORD-1234", btn_track:"Отследить",
-      track_found:"Заказ найден", track_not:"Заказ не найден. Проверьте чек на наличие правильного ID.",
-
-      rev_title:"Отзывы клиентов", rev_sub:"Реальные отзывы реальных клиентов.",
-      rev_leave:"Оставить отзыв", rev_lbl_name:"Ваше имя", rev_lbl_rate:"Рейтинг", rev_lbl_com:"Комментарий",
-      rev_post:"Отправить отзыв", rev_none:"Отзывов пока нет — будьте первым !",
-
-      db_ana:"Аналитика", db_ord:"Заказы", db_rev:"Отзывы", db_set:"Настройки", db_out:"Выйти",
-      db_tit_ana:"Аналитика в реальном времени", db_btn_ref:"Обновить",
-      db_k_tot:"Всего заказов", db_k_pnd:"В ожидании", db_k_prc:"В процессе", db_k_del:"Доставлено", db_k_can:"Отменено", db_k_rev:"Отзывы",
-      db_ch_7d:"Заказы за последние 7 дней", db_ch_st:"По статусу", db_ch_ur:"По срочности", db_ch_rt:"Рейтинги",
-      db_rc:"Недавние заказы", db_view:"Показать все",
-      db_th_id:"ID", db_th_cli:"Клиент", db_th_itm:"Товары", db_th_loc:"Место", db_th_st:"Статус",
-
-      db_tit_ord:"Все заказы", db_sub_ord:"Нажмите на строку для деталей. Измените статус прямо здесь.",
-      db_all_st:"Все статусы", db_search:"Поиск...",
-      db_th_dt:"Дата/ID", db_th_cl:"Клиент", db_th_ph:"Тел", db_th_it:"Товары", db_th_lo:"Место", db_th_phot:"Фото",
-
-      db_tit_rev:"Управление отзывами", db_sub_rev:"Удалить поддельные или неуместные отзывы.",
-      db_th_dt:"Дата", db_th_nm:"Имя", db_th_rt:"Рейтинг", db_th_cm:"Комментарий", db_th_dl:"Удалить",
-
-      db_tit_set:"Настройки", db_sub_set:"Управляйте паролем и данными.",
-      db_set_pw:"Сменить пароль", db_set_pw_s:"Обновите пароль входа в панель управления в любое время.",
-      db_set_cur:"Текущий пароль", db_set_new:"Новый пароль", db_set_cfm:"Подтвердите новый пароль", db_set_upd:"Обновить пароль",
-      db_set_bi:"Инфо о бизнесе", db_set_bi_s:"Контактные данные, показанные в чеках и на сайте.",
-      db_set_sto:"Хранилище", db_set_sto_s:"Все данные хранятся локально в браузере. Сохраняются до очистки.", db_set_clr:"Очистить все данные",
-
-      mod_ok_t:"Заказ подтвержден!", mod_ok_pdf1:"Чек скачивается...", mod_ok_pdf2:"Проверьте папку загрузок",
-      mod_ok_d1:"Заказ сохранен в панели управления", mod_ok_d2:"Видно на вашей панели владельца", mod_ok_w1:"WhatsApp открыт", mod_ok_w2:"Отправьте предварительно заполненное сообщение для завершения",
-      mod_resend:"Отправить WhatsApp снова", mod_close:"Закрыть",
-      mod_od_msg:"Сообщение",
-      mod_lg_sub:"Панель владельца", mod_lg_pw:"Пароль", mod_lg_btn:"Войти", mod_lg_can:"Отмена",
-
-      rcpt_tit:"Сервис личного шоппера Занзибар", rcpt_cli:"Клиент:", rcpt_ph:"Тел:", rcpt_loc:"Место:", rcpt_urg:"Срочность:", rcpt_bud:"Бюджет:", rcpt_it:"Список покупок:",
-      rcpt_thank:"Спасибо за использование JAMBO+!", ft_cp:"© 2024 JAMBO+ Занзибар. Все права защищены."
-    },
-    pt: {
-      nav_order:"Pedir", nav_policy:"Política", nav_track:"Rastrear", nav_rev:"Avaliações", login:"Entrar",
-      hero_title:"Seu comprador pessoal em Zanzibar",
-      hero_sub:"Preencha o formulário — encontramos, negociamos e entregamos.",
-      form_wa:"Peça via WhatsApp",
-      lbl_name:"Nome completo", ph_name:"ex. João Silva",
-      lbl_phone:"Número WhatsApp", ph_phone:"+255...",
-      lbl_loc:"Local de entrega / Hotel", ph_loc:"ex. Hotel Serena, Quarto 204",
-      lbl_urg:"Quando precisa?", lbl_budget:"Orçamento estimado (Opcional)", ph_budget:"ex. 50,000 TZS",
-      lbl_items:"O que quer que compremos?", lbl_items_sub:"Seja específico — marca, tamanho, cor, quantidade.",
-      ph_items:"Exemplo:\n2x Coca 500ml\n1x Pilhas AA (Duracell)\nProtetor solar SPF50",
-      lbl_photo:"Foto do produto", lbl_photo_opt:"(Opcional — ajuda-nos a encontrar o item exato)",
-      pu_tap:"Toque para enviar fotos", pu_limit:"Até 10 imagens • JPG / PNG • max 5MB cada",
-      pu_ready:"foto(s) pronta(s)", pu_add:"Adicionar mais", pu_clear:"Limpar tudo",
-      form_terms:"Ao confirmar, concorda com nossos termos de serviço.", confirm:"Confirmar pedido",
-
-      pol_title:"Política e Diretrizes de Serviço", pol_sub:"Tudo o que precisa saber antes de encomendar.",
-      pol_who:"Quem servimos", pol_who1:"Turistas: Lembranças, essenciais, bens locais a preços justos.",
-      pol_who2:"Locais: Recados para famílias e profissionais ocupados.", pol_who3:"Taxas: Custo do item + taxa de serviço + entrega.",
-      pol_not:"NÃO compramos", pol_not1:"Medicamentos — compre pessoalmente por segurança.", pol_not2:"Álcool — não manuseado.",
-      pol_not3:"Produtos ilegais — estritamente recusado.", pol_not4:"Eletrônicos grandes (TVs, geladeiras) — pequenos são ok.",
-      pol_tip:"Dicas essenciais", pol_tip1:"Seja específico — marcas exatas, tamanhos, cores.", pol_tip2:"Pagamento: M-Pesa, Tigo Pesa, Dinheiro.",
-      pol_tip3:"Pedido min: 50,000 TZS. Abaixo = taxa 5,000 TZS.", pol_tip4:"Recibo: Apenas referência — seu pedido é entregue.",
-
-      track_title:"Rastreador de Pedidos ao Vivo", track_sub:"Digite o ID do pedido no recibo para verificar o status.",
-      ph_track:"ex. ORD-1234", btn_track:"Rastrear",
-      track_found:"Pedido encontrado", track_not:"Pedido não encontrado. Verifique seu recibo para o ID correto.",
-
-      rev_title:"Depoimentos de Clientes", rev_sub:"Feedback real de clientes reais.",
-      rev_leave:"Deixar uma avaliação", rev_lbl_name:"Seu nome", rev_lbl_rate:"Classificação", rev_lbl_com:"Comentário",
-      rev_post:"Postar avaliação", rev_none:"Sem avaliações ainda — seja o primeiro !",
-
-      db_ana:"Análise", db_ord:"Pedidos", db_rev:"Avaliações", db_set:"Configurações", db_out:"Sair",
-      db_tit_ana:"Análise ao Vivo", db_btn_ref:"Atualizar",
-      db_k_tot:"Total de Pedidos", db_k_pnd:"Pendente", db_k_prc:"Processando", db_k_del:"Entregue", db_k_can:"Cancelado", db_k_rev:"Avaliações",
-      db_ch_7d:"Pedidos últimos 7 dias", db_ch_st:"Por status", db_ch_ur:"Por urgência", db_ch_rt:"Classificações",
-      db_rc:"Pedidos recentes", db_view:"Ver tudo",
-      db_th_id:"ID", db_th_cli:"Cliente", db_th_itm:"Itens", db_th_loc:"Local", db_th_st:"Status",
-
-      db_tit_ord:"Todos os Pedidos", db_sub_ord:"Clique numa linha para ver detalhes. Altere status em linha.",
-      db_all_st:"Todos os status", db_search:"Pesquisar...",
-      db_th_dt:"Data/ID", db_th_cl:"Cliente", db_th_ph:"Tel", db_th_it:"Itens", db_th_lo:"Local", db_th_phot:"Foto",
-
-      db_tit_rev:"Gerenciar avaliações", db_sub_rev:"Excluir avaliações falsas ou inadequadas.",
-      db_th_dt:"Data", db_th_nm:"Nome", db_th_rt:"Classificação", db_th_cm:"Comentário", db_th_dl:"Excluir",
-
-      db_tit_set:"Configurações", db_sub_set:"Gerencie sua senha e dados.",
-      db_set_pw:"Alterar senha", db_set_pw_s:"Atualize sua senha de login a qualquer momento.",
-      db_set_cur:"Senha atual", db_set_new:"Nova senha", db_set_cfm:"Confirmar nova senha", db_set_upd:"Atualizar senha",
-      db_set_bi:"Info Negócio", db_set_bi_s:"Detalhes de contato exibidos em recibos e site.",
-      db_set_sto:"Armazenamento", db_set_sto_s:"Todos os dados salvos localmente no navegador. Persistem até limpar.", db_set_clr:"Limpar tudo",
-
-      mod_ok_t:"Pedido confirmado!", mod_ok_pdf1:"Baixando recibo...", mod_ok_pdf2:"Verifique sua pasta de downloads",
-      mod_ok_d1:"Pedido salvo no painel", mod_ok_d2:"Visível no seu painel de proprietário", mod_ok_w1:"WhatsApp aberto", mod_ok_w2:"Envie a mensagem preenchida para concluir",
-      mod_resend:"Reenviar WhatsApp", mod_close:"Fechar",
-      mod_od_msg:"Mensagem",
-      mod_lg_sub:"Painel do Proprietário", mod_lg_pw:"Senha", mod_lg_btn:"Entrar", mod_lg_can:"Cancelar",
-
-      rcpt_tit:"Serviço de Compras Pessoais Zanzibar", rcpt_cli:"Cliente:", rcpt_ph:"Tel:", rcpt_loc:"Local:", rcpt_urg:"Urgência:", rcpt_bud:"Orçamento:", rcpt_it:"Lista de compras:",
-      rcpt_thank:"Obrigado por usar JAMBO+!", ft_cp:"© 2024 JAMBO+ Zanzibar. Todos os direitos reservados."
-    }
-  };
-
+  // ── LANGUAGE ENGINE ─────────────────────────────────────────────────────────
   function changeLang() {
-    var code = el("langSel").value;
-    var t = LANG[code] || LANG.en;
+    curLang = el("langSel").value;
+    var T = LANG[curLang] || LANG.en;
 
-    // Helper to set text
-    function txt(id, val) { var e = el(id); if(e && val) e.innerText = val; }
-    // Helper to set placeholder
-    function ph(id, val) { var e = el(id); if(e && val) e.placeholder = val; }
-    // Helper to set value (for selects/options, if we were changing them dynamically, though currently static)
-    function valSet(id, v) { var e = el(id); if(e) e.value = v; }
+    // Hero title (innerHTML — has <br> and <em>)
+    var heroEl = el("heroTitle");
+    if (heroEl) heroEl.innerHTML = T.hero_title || LANG.en.hero_title;
 
-    // Navbar
-    txt("nl-order", t.nav_order); txt("nl-policy", t.nav_policy); txt("nl-track", t.nav_track); txt("nl-rev", t.nav_rev);
-    txt("loginBtnTxt", t.login);
+    // Hero subtitle
+    var heroSub = el("heroSub");
+    if (heroSub) heroSub.innerText = T.hero_sub || LANG.en.hero_sub;
 
-    // Hero
-    txt("heroTitle", t.hero_title); txt("heroSub", t.hero_sub);
-    txt("form-header-wa", t.form_wa);
+    // Plain text elements [data-i18n]
+    document.querySelectorAll("[data-i18n]").forEach(function(e) {
+      var key = e.getAttribute("data-i18n");
+      if (T[key] !== undefined) e.innerText = T[key];
+      else if (LANG.en[key] !== undefined) e.innerText = LANG.en[key];
+    });
 
-    // Form
-    txt("lbl-name", t.lbl_name + " <span class='req'>*</span>"); ph("cNm", t.ph_name);
-    txt("lbl-phone", t.lbl_phone + " <span class='req'>*</span>"); ph("cPh", t.ph_phone);
-    txt("lbl-loc", t.lbl_loc + " <span class='req'>*</span>"); ph("cLc", t.ph_loc);
-    txt("lbl-urg", t.lbl_urg);
-    txt("lbl-budget", t.lbl_budget); ph("cBu", t.ph_budget);
-    txt("lbl-items", t.lbl_items + " <span class='req'>*</span>"); txt("lbl-items-sub", t.lbl_items_sub); ph("cIt", t.ph_items);
-    txt("lbl-photo", "<i class='fas fa-camera' style='color:var(--pr);margin-right:5px'></i>" + t.lbl_photo + " <span id='lbl-photo-opt' style='color:var(--gr);font-weight:400;font-size:.84rem'>"+t.lbl_photo_opt+"</span>");
-    txt("pu-tap", t.pu_tap); txt("pu-limit", t.pu_limit); txt("pu-add-more-txt", t.pu_add); txt("pu-clear-txt", t.pu_clear);
-    txt("form-terms", t.form_terms); txt("submitTxt", t.confirm);
+    // HTML elements [data-i18n-html] (for content with <b> tags etc.)
+    document.querySelectorAll("[data-i18n-html]").forEach(function(e) {
+      var key = e.getAttribute("data-i18n-html");
+      if (T[key] !== undefined) e.innerHTML = T[key];
+      else if (LANG.en[key] !== undefined) e.innerHTML = LANG.en[key];
+    });
 
-    // Policy
-    txt("pol-title", t.pol_title); txt("pol-sub", t.pol_sub);
-    txt("pol-who-title", t.pol_who); txt("pol-who-li1", t.pol_who1); txt("pol-who-li2", t.pol_who2); txt("pol-who-li3", t.pol_who3);
-    txt("pol-not-title", t.pol_not); txt("pol-not-li1", t.pol_not1); txt("pol-not-li2", t.pol_not2); txt("pol-not-li3", t.pol_not3); txt("pol-not-li4", t.pol_not4);
-    txt("pol-tip-title", t.pol_tip); txt("pol-tip-li1", t.pol_tip1); txt("pol-tip-li2", t.pol_tip2); txt("pol-tip-li3", t.pol_tip3); txt("pol-tip-li4", t.pol_tip4);
+    // Placeholder elements [data-i18n-ph]
+    document.querySelectorAll("[data-i18n-ph]").forEach(function(e) {
+      var key = e.getAttribute("data-i18n-ph");
+      if (T[key] !== undefined) e.placeholder = T[key];
+      else if (LANG.en[key] !== undefined) e.placeholder = LANG.en[key];
+    });
 
-    // Tracker
-    txt("track-title", t.track_title); txt("track-sub", t.track_sub); ph("tIn", t.ph_track); txt("track-btn", t.btn_track);
+    // Urgency dropdown options [data-i18n-opt]
+    document.querySelectorAll("[data-i18n-opt]").forEach(function(e) {
+      var key = e.getAttribute("data-i18n-opt");
+      if (T[key] !== undefined) e.textContent = T[key];
+      else if (LANG.en[key] !== undefined) e.textContent = LANG.en[key];
+    });
 
-    // Reviews
-    txt("rev-title", t.rev_title); txt("rev-sub", t.rev_sub);
-    txt("rev-form-title", t.rev_leave); txt("rev-lbl-name", t.rev_lbl_name); txt("rev-lbl-rate", t.rev_lbl_rate); txt("rev-lbl-com", t.rev_lbl_com); txt("revBtn", t.rev_post);
-
-    // Dashboard Nav
-    txt("db-nav-ana", t.db_ana); txt("db-nav-ord", t.db_ord); txt("db-nav-rev", t.db_rev); txt("db-nav-set", t.db_set); txt("db-nav-out", t.db_out);
-
-    // Dashboard Analytics
-    txt("db-ana-title", t.db_tit_ana); txt("refBtn", "<i class='fas fa-sync-alt'></i> " + t.db_btn_ref);
-    txt("db-k-tot", t.db_k_tot); txt("db-k-pnd", t.db_k_pnd); txt("db-k-prc", t.db_k_prc); txt("db-k-del", t.db_k_del); txt("db-k-can", t.db_k_can); txt("db-k-rev", t.db_k_rev);
-    txt("db-ch-7d", "<i class='fas fa-chart-bar'></i> " + t.db_ch_7d); txt("db-ch-st", "<i class='fas fa-chart-pie'></i> " + t.db_ch_st);
-    txt("db-ch-ur", "<i class='fas fa-bolt'></i> " + t.db_ch_ur); txt("db-ch-rt", "<i class='fas fa-star'></i> " + t.db_ch_rt);
-    txt("db-rc-title", "<i class='fas fa-clock'></i> " + t.db_rc); txt("viewAllBtn", t.db_view);
-    txt("db-th-id", t.db_th_id); txt("db-th-cli", t.db_th_cli); txt("db-th-itm", t.db_th_itm); txt("db-th-loc", t.db_th_loc); txt("db-th-st", t.db_th_st);
-
-    // Dashboard Orders
-    txt("db-ord-title", t.db_tit_ord); txt("db-ord-sub", t.db_sub_ord);
-    // Note: Select options stay same usually, but "All Statuses" could change
-    txt("db-od-th-dt", t.db_th_dt); txt("db-od-th-cl", t.db_th_cl); txt("db-od-th-ph", t.db_th_ph);
-    txt("db-od-th-it", t.db_th_it); txt("db-od-th-lo", t.db_th_lo); txt("db-od-th-pho", t.db_th_phot); txt("db-od-th-st", t.db_th_st);
-
-    // Dashboard Reviews
-    txt("db-rev-title", t.db_tit_rev); txt("db-rev-sub", t.db_sub_rev);
-    txt("db-rv-th-dt", t.db_th_dt); txt("db-rv-th-nm", t.db_th_nm); txt("db-rv-th-rt", t.db_th_rt); txt("db-rv-th-cm", t.db_th_cm); txt("db-rv-th-dl", t.db_th_dl);
-
-    // Dashboard Settings
-    txt("db-set-title", t.db_tit_set); txt("db-set-sub", t.db_sub_set);
-    txt("db-set-pw-t", "<i class='fas fa-key' style='color:var(--pr)'></i> " + t.db_set_pw); txt("db-set-pw-s", t.db_set_pw_s);
-    txt("db-set-lb-cur", t.db_set_cur); ph("curP", t.db_set_cur);
-    txt("db-set-lb-new", t.db_set_new); ph("newP", t.db_set_new);
-    txt("db-set-lb-cfm", t.db_set_cfm); ph("cfmP", t.db_set_cfm);
-    txt("savePwBtn", "<i class='fas fa-save'></i> " + t.db_set_upd);
-    txt("db-set-inf-t", "<i class='fas fa-store' style='color:var(--ac)'></i> " + t.db_set_bi); txt("db-set-inf-s", t.db_set_bi_s);
-    txt("db-set-sto-t", "<i class='fas fa-database' style='color:var(--ac)'></i> " + t.db_set_sto); txt("db-set-sto-s", t.db_set_sto_s);
-    txt("clearBtn", "<i class='fas fa-trash-alt'></i> " + t.db_set_clr);
-
-    // Modals
-    txt("mod-ok-title", t.mod_ok_t);
-    txt("mod-ok-pdf1", t.mod_ok_pdf1); txt("mod-ok-pdf2", t.mod_ok_pdf2);
-    txt("mod-ok-dash1", t.mod_ok_d1); txt("mod-ok-dash2", t.mod_ok_d2);
-    txt("mod-ok-wa1", t.mod_ok_w1); txt("mod-ok-wa2", t.mod_ok_w2);
-    txt("mod-ok-resend", t.mod_resend); txt("mod-ok-close", t.mod_close);
-    txt("mod-od-msg", t.mod_od_msg); txt("mod-od-close", t.mod_close);
-    txt("mod-lg-sub", t.mod_lg_sub); txt("mod-lg-lbl-pw", t.mod_lg_pw); txt("lBtn", "<i class='fas fa-unlock'></i> " + t.mod_lg_btn); txt("mod-lg-cancel", t.mod_lg_can);
-
-    // Receipt (Hidden print area)
-    txt("rcpt-title", t.rcpt_tit); txt("rcpt-lbl-client", t.rcpt_cli); txt("rcpt-lbl-phone", t.rcpt_ph);
-    txt("rcpt-lbl-loc", t.rcpt_loc); txt("rcpt-lbl-urg", t.rcpt_urg); txt("rcpt-lbl-bud", t.rcpt_bud);
-    txt("rcpt-lbl-items", t.rcpt_it); txt("rcpt-thank", t.rcpt_thank);
-
-    // Footer
-    txt("ft-cp", t.ft_cp);
+    // Re-render dynamic reviews with updated empty message
+    loadRevsPub();
   }
 
-  /* ── PHOTO UPLOAD ── */
+  // ── PHOTO UPLOAD ────────────────────────────────────────────────────────────
   function setupPhoto() {
     var box = el("puBox");
     var fileIn = el("pFile");
@@ -1357,7 +1170,6 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
         });
         thumbs.appendChild(wrap);
       });
-      // Add-more slot if under limit
       if (photos.length < 10) {
         var slot = document.createElement("div");
         slot.className = "pu-slot-add";
@@ -1368,42 +1180,25 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
       }
     }
 
-    // Click on box
     box.addEventListener("click", function() { if (!photos.length) { fileIn.value = ""; fileIn.click(); } });
-
-    // File input change
     fileIn.addEventListener("change", function(e) { readFiles(e.target.files); });
-
-    // Add more button
     el("puAddMore").addEventListener("click", function() { fileIn.value = ""; fileIn.click(); });
-
-    // Clear all button
     el("puClearAll").addEventListener("click", function() {
-      photos = [];
-      fileIn.value = "";
+      photos = []; fileIn.value = "";
       el("puGrid").style.display = "none";
       box.classList.remove("ok");
       el("puThumbs").innerHTML = "";
     });
-
-    // Drag and drop
     box.addEventListener("dragover", function(e) { e.preventDefault(); box.classList.add("drag"); });
     box.addEventListener("dragleave", function() { box.classList.remove("drag"); });
-    box.addEventListener("drop", function(e) {
-      e.preventDefault();
-      box.classList.remove("drag");
-      readFiles(e.dataTransfer.files);
-    });
+    box.addEventListener("drop", function(e) { e.preventDefault(); box.classList.remove("drag"); readFiles(e.dataTransfer.files); });
   }
 
-  /* ── SUBMIT ORDER ── */
+  // ── SUBMIT ORDER ────────────────────────────────────────────────────────────
   function submitOrder() {
-    var name = val("cNm");
-    var phone = val("cPh");
-    var loc = val("cLc");
+    var name = val("cNm"), phone = val("cPh"), loc = val("cLc");
     var urg = el("cUr") ? el("cUr").value : "ASAP";
-    var bud = val("cBu");
-    var items = val("cIt");
+    var bud = val("cBu"), items = val("cIt");
 
     if (!name) { alert("Please enter your name."); return; }
     if (!phone) { alert("Please enter your WhatsApp number."); return; }
@@ -1412,165 +1207,69 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
 
     var date = new Date().toLocaleDateString("en-GB");
     var ordId = "ORD-" + Math.floor(1000 + Math.random() * 9000);
-
-    var order = {
-      id: ordId, date: date, name: name, phone: phone,
-      loc: loc, urg: urg, bud: bud, items: items,
-      photos: photos.map(function(p) { return { data: p.data, name: p.name }; }),
-      status: "Pending", ts: Date.now()
-    };
+    var order = { id:ordId, date:date, name:name, phone:phone, loc:loc, urg:urg, bud:bud, items:items,
+      photos:photos.map(function(p){return{data:p.data,name:p.name};}), status:"Pending", ts:Date.now() };
     var orders = gOrders();
     orders.unshift(order);
     sOrders(orders);
 
-    // ── ACTION 2: Auto-download PDF receipt ─────────────────────────────────
+    // PDF receipt
     try {
       var jsPDF = window.jspdf.jsPDF;
-      var doc = new jsPDF({ unit: "mm", format: "a4" });
+      var doc = new jsPDF({ unit:"mm", format:"a4" });
       var lm = 20, rm = 190, y = 20;
-      
-      // Get current language for receipt headings
-      var t = LANG[el("langSel").value] || LANG.en;
-
-      // Header
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(22);
-      doc.setTextColor(0, 119, 182);
+      doc.setFont("helvetica","bold"); doc.setFontSize(22); doc.setTextColor(0,119,182);
       doc.text("JAMBO+", lm, y);
-      doc.setFontSize(10);
-      doc.setTextColor(100, 116, 139);
-      doc.setFont("helvetica", "normal");
-      y += 7;
-      doc.text(t.rcpt_tit, lm, y);
-      y += 5;
-      doc.setDrawColor(0, 119, 182);
-      doc.setLineWidth(0.5);
-      doc.line(lm, y, rm, y);
-      y += 8;
-
-      // Order ID + Date
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(11);
-      doc.setTextColor(30, 30, 30);
-      doc.text("Order Reference:", lm, y);
-      doc.setFont("helvetica", "normal");
-      doc.text(ordId, 70, y);
-      y += 7;
-      doc.setFont("helvetica", "bold");
-      doc.text("Date:", lm, y);
-      doc.setFont("helvetica", "normal");
-      doc.text(date, 70, y);
-      y += 10;
-
-      // Divider
-      doc.setDrawColor(220, 220, 220);
-      doc.line(lm, y, rm, y);
-      y += 8;
-
-      // Client details
-      var fields = [
-        [t.rcpt_cli, name],
-        [t.rcpt_ph, phone],
-        [t.rcpt_loc, loc],
-        [t.rcpt_urg, urg],
-        [t.rcpt_bud, bud || "Not specified"]
-      ];
-      fields.forEach(function(f) {
-        doc.setFont("helvetica", "bold");
-        doc.setFontSize(10);
-        doc.setTextColor(100, 116, 139);
-        doc.text(f[0] + ":", lm, y);
-        doc.setFont("helvetica", "normal");
-        doc.setTextColor(30, 30, 30);
-        doc.text(String(f[1]), 70, y);
-        y += 7;
+      doc.setFontSize(10); doc.setTextColor(100,116,139); doc.setFont("helvetica","normal");
+      y += 7; doc.text("Zanzibar Personal Shopping Service", lm, y);
+      y += 5; doc.setDrawColor(0,119,182); doc.setLineWidth(0.5); doc.line(lm, y, rm, y); y += 8;
+      doc.setFont("helvetica","bold"); doc.setFontSize(11); doc.setTextColor(30,30,30);
+      doc.text("Order Reference:", lm, y); doc.setFont("helvetica","normal"); doc.text(ordId, 70, y); y += 7;
+      doc.setFont("helvetica","bold"); doc.text("Date:", lm, y); doc.setFont("helvetica","normal"); doc.text(date, 70, y); y += 10;
+      doc.setDrawColor(220,220,220); doc.line(lm, y, rm, y); y += 8;
+      [["Client Name",name],["WhatsApp",phone],["Delivery Location",loc],["Urgency",urg],["Budget",bud||"Not specified"]].forEach(function(f){
+        doc.setFont("helvetica","bold"); doc.setFontSize(10); doc.setTextColor(100,116,139);
+        doc.text(f[0]+":", lm, y); doc.setFont("helvetica","normal"); doc.setTextColor(30,30,30);
+        doc.text(String(f[1]), 70, y); y += 7;
       });
-
-      y += 3;
-      doc.setDrawColor(220, 220, 220);
-      doc.line(lm, y, rm, y);
-      y += 8;
-
-      // Shopping list box
-      doc.setFillColor(248, 250, 252);
-      doc.setDrawColor(0, 119, 182);
-      doc.setLineWidth(0.3);
+      y += 3; doc.setDrawColor(220,220,220); doc.line(lm, y, rm, y); y += 8;
       var boxY = y;
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(10);
-      doc.setTextColor(0, 119, 182);
-      doc.text(t.rcpt_it + ":", lm, y + 5);
-      y += 10;
-      doc.setFont("helvetica", "normal");
-      doc.setTextColor(30, 30, 30);
+      doc.setFont("helvetica","bold"); doc.setFontSize(10); doc.setTextColor(0,119,182);
+      doc.text("Shopping List:", lm, y + 5); y += 10;
+      doc.setFont("helvetica","normal"); doc.setTextColor(30,30,30);
       var lines = doc.splitTextToSize(items, rm - lm - 4);
       doc.roundedRect(lm - 2, boxY, rm - lm + 4, lines.length * 5.5 + 14, 2, 2, "S");
-      lines.forEach(function(line) {
-        if (y > 270) { doc.addPage(); y = 20; }
-        doc.text(line, lm, y);
-        y += 5.5;
-      });
+      lines.forEach(function(line){ if(y>270){doc.addPage();y=20;} doc.text(line,lm,y); y+=5.5; });
       y += 8;
-
-      // Photos note
       if (photos.length) {
-        doc.setFont("helvetica", "italic");
-        doc.setFontSize(9);
-        doc.setTextColor(100, 116, 139);
-        doc.text(photos.length + " product photo(s) submitted with this order. Check your dashboard.", lm, y);
-        y += 8;
+        doc.setFont("helvetica","italic"); doc.setFontSize(9); doc.setTextColor(100,116,139);
+        doc.text(photos.length + " product photo(s) submitted. Check your dashboard.", lm, y); y += 8;
       }
-
-      // Footer
       var footY = 275;
-      doc.setDrawColor(0, 119, 182);
-      doc.setLineWidth(0.4);
-      doc.line(lm, footY, rm, footY);
-      footY += 5;
-      doc.setFont("helvetica", "normal");
-      doc.setFontSize(8.5);
-      doc.setTextColor(100, 116, 139);
-      doc.text(t.rcpt_thank, 105, footY, { align: "center" });
-      footY += 5;
-      doc.text("+255 778 714 307  |  info@jambo-plus.store  |  @jambo-plus (IG)  |  Mandibotek (FB)", 105, footY, { align: "center" });
-
+      doc.setDrawColor(0,119,182); doc.setLineWidth(0.4); doc.line(lm, footY, rm, footY); footY += 5;
+      doc.setFont("helvetica","normal"); doc.setFontSize(8.5); doc.setTextColor(100,116,139);
+      doc.text("Thank you for using JAMBO+!", 105, footY, {align:"center"}); footY += 5;
+      doc.text("+255 778 714 307  |  info@jambo-plus.store  |  @jambo-plus (IG)  |  Mandibotek (FB)", 105, footY, {align:"center"});
       doc.save("JAMBO-Receipt-" + ordId + ".pdf");
-    } catch(pdfErr) {
-      console.warn("PDF generation failed:", pdfErr);
-    }
+    } catch(pdfErr) { console.warn("PDF generation failed:", pdfErr); }
 
-    // ── ACTION 3: Open WhatsApp Business ────────────────────────────────────
-    var msgParts = [
-      "JAMBO+ NEW ORDER: " + ordId,
-      "",
-      "Client: " + name,
-      "Phone: " + phone,
-      "Location: " + loc,
-      "Urgency: " + urg,
-      "Budget: " + (bud || "Not specified"),
-      "",
-      "Items Needed:",
-      items
-    ];
+    // WhatsApp
+    var msgParts = ["JAMBO+ NEW ORDER: " + ordId,"","Client: "+name,"Phone: "+phone,"Location: "+loc,"Urgency: "+urg,"Budget: "+(bud||"Not specified"),"","Items Needed:",items];
     if (photos.length) { msgParts.push(""); msgParts.push("Note: Customer uploaded " + photos.length + " product photo(s). Check dashboard."); }
-    var msg = msgParts.join("\n");
-    var waUrl = "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg);
+    var waUrl = "https://wa.me/" + WA + "?text=" + encodeURIComponent(msgParts.join("\n"));
     window.open(waUrl, "_blank");
     el("waLnk").href = waUrl;
 
-    // Show success modal
     openMod("okMod");
-
-    // Reset form
     el("oform").reset();
     photos = [];
-    var box2 = el("puBox"); if (box2) box2.classList.remove("ok");
-    var grid2 = el("puGrid"); if (grid2) grid2.style.display = "none";
-    var fi2 = el("pFile"); if (fi2) fi2.value = "";
-    var tb2 = el("puThumbs"); if (tb2) tb2.innerHTML = "";
+    var box2 = el("puBox"); if(box2) box2.classList.remove("ok");
+    var grid2 = el("puGrid"); if(grid2) grid2.style.display="none";
+    var fi2 = el("pFile"); if(fi2) fi2.value="";
+    var tb2 = el("puThumbs"); if(tb2) tb2.innerHTML="";
   }
 
-  /* ── REVIEWS ── */
+  // ── REVIEWS ────────────────────────────────────────────────────────────────
   function submitRev() {
     var name = val("rNm");
     var rEl = document.querySelector("input[name='rt']:checked");
@@ -1579,12 +1278,10 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
     if (!rEl) { alert("Please select a rating."); return; }
     if (!comment) { alert("Please write a comment."); return; }
     var revs = gRevs();
-    var t = LANG[el("langSel").value] || LANG.en;
-    
-    revs.unshift({ id: Date.now(), name: name, rating: parseInt(rEl.value), comment: comment, date: new Date().toLocaleDateString("en-GB") });
+    revs.unshift({ id:Date.now(), name:name, rating:parseInt(rEl.value), comment:comment, date:new Date().toLocaleDateString("en-GB") });
     sRevs(revs);
-    el("rNm").value = ""; el("rCm").value = "";
-    document.querySelectorAll("input[name='rt']").forEach(function(x) { x.checked = false; });
+    el("rNm").value=""; el("rCm").value="";
+    document.querySelectorAll("input[name='rt']").forEach(function(x){x.checked=false;});
     loadRevsPub();
     alert("Thank you for your review!");
   }
@@ -1595,352 +1292,229 @@ footer{background:var(--dk);color:#fff;padding:48px 0;text-align:center;}
     if (!container) return;
     container.innerHTML = "";
     if (!revs.length) {
-      var t = LANG[el("langSel").value] || LANG.en;
-      container.innerHTML = "<p style='text-align:center;color:var(--gr);padding:28px'>"+t.rev_none+"</p>";
+      container.innerHTML = "<p style='text-align:center;color:var(--gr);padding:28px'>" + t("rev_empty") + "</p>";
       return;
     }
     revs.forEach(function(rv) {
       var d = document.createElement("div");
       d.className = "ri";
       var stars = "";
-      for (var i = 0; i < rv.rating; i++) stars += "&#9733;";
-      for (var j = rv.rating; j < 5; j++) stars += "&#9734;";
+      for (var i=0;i<rv.rating;i++) stars+="&#9733;";
+      for (var j=rv.rating;j<5;j++) stars+="&#9734;";
       d.innerHTML = "<div class='rh'><span class='ra'>" + esc(rv.name) + "</span><span class='rd2'>" + rv.date + "</span></div><div class='rs'>" + stars + "</div><p>" + esc(rv.comment) + "</p>";
       container.appendChild(d);
     });
   }
 
-  /* ── TRACKER ── */
+  // ── TRACKER ────────────────────────────────────────────────────────────────
   function trackOrder() {
     var id = val("tIn").toUpperCase();
     var box = el("tRes");
-    var t = LANG[el("langSel").value] || LANG.en;
-    
     box.style.display = "block";
-    if (!id) { box.style.cssText = "display:block;background:#fee2e2;color:#991b1b;border-radius:10px;padding:14px;font-weight:600"; box.innerHTML = "Please enter an Order ID."; return; }
+    if (!id) {
+      box.style.cssText = "display:block;background:#fee2e2;color:#991b1b;border-radius:10px;padding:14px;font-weight:600";
+      box.innerHTML = "Please enter an Order ID."; return;
+    }
     var found = null;
     var orders = gOrders();
-    for (var i = 0; i < orders.length; i++) { if (orders[i].id === id) { found = orders[i]; break; } }
-    var sc = { Pending:"#fef3c7", Processing:"#dbeafe", Delivered:"#d1fae5", Cancelled:"#fee2e2" };
-    var tc = { Pending:"#92400e", Processing:"#1e40af", Delivered:"#065f46", Cancelled:"#991b1b" };
+    for (var i=0;i<orders.length;i++) { if (orders[i].id===id){found=orders[i];break;} }
+    var sc={Pending:"#fef3c7",Processing:"#dbeafe",Delivered:"#d1fae5",Cancelled:"#fee2e2"};
+    var tc={Pending:"#92400e",Processing:"#1e40af",Delivered:"#065f46",Cancelled:"#991b1b"};
     if (found) {
-      box.style.cssText = "display:block;background:" + (sc[found.status] || "#e0f7fa") + ";color:" + (tc[found.status] || "#025a8a") + ";border-radius:10px;padding:16px;font-weight:600";
-      box.innerHTML = "<div style='font-size:1.08rem;margin-bottom:5px'><i class='fas fa-check-circle'></i> " + t.track_found + "</div>Status: <b>" + found.status + "</b><br>Client: " + esc(found.name) + "<br><small style='opacity:.65'>" + found.date + "</small>";
+      box.style.cssText = "display:block;background:"+(sc[found.status]||"#e0f7fa")+";color:"+(tc[found.status]||"#025a8a")+";border-radius:10px;padding:16px;font-weight:600";
+      box.innerHTML = "<div style='font-size:1.08rem;margin-bottom:5px'><i class='fas fa-check-circle'></i> " + t("track_found") + "</div>" + t("track_status") + ": <b>"+found.status+"</b><br>" + t("track_client") + ": "+esc(found.name)+"<br><small style='opacity:.65'>"+found.date+"</small>";
     } else {
       box.style.cssText = "display:block;background:#fee2e2;color:#991b1b;border-radius:10px;padding:14px;font-weight:600";
-      box.innerHTML = "<i class='fas fa-times-circle'></i> " + t.track_not;
+      box.innerHTML = "<i class='fas fa-times-circle'></i> " + t("track_notfound");
     }
   }
 
-  /* ── LOGIN / LOGOUT ── */
+  // ── LOGIN / LOGOUT ──────────────────────────────────────────────────────────
   function showLogin() {
-    el("lErr").style.display = "none";
-    el("lPw").value = "";
-    openMod("lgMod");
-    setTimeout(function() { el("lPw").focus(); }, 300);
+    el("lErr").style.display="none"; el("lPw").value=""; openMod("lgMod");
+    setTimeout(function(){el("lPw").focus();},300);
   }
-
   function doLogin() {
     var pw = el("lPw").value;
-    if (pw === gPass()) {
-      closeMod("lgMod");
-      el("pub").classList.add("gone");
-      el("dash").classList.remove("gone");
-      loadAnalytics();
-    } else {
-      el("lErr").style.display = "block";
-      el("lPw").value = "";
-      el("lPw").focus();
-    }
+    if (pw===gPass()) { closeMod("lgMod"); el("pub").classList.add("gone"); el("dash").classList.remove("gone"); loadAnalytics(); }
+    else { el("lErr").style.display="block"; el("lPw").value=""; el("lPw").focus(); }
   }
+  function doLogout() { el("dash").classList.add("gone"); el("pub").classList.remove("gone"); }
 
-  function doLogout() {
-    el("dash").classList.add("gone");
-    el("pub").classList.remove("gone");
-  }
-
-  /* ── DASHBOARD TABS ── */
+  // ── DASHBOARD TABS ──────────────────────────────────────────────────────────
   function switchTab(targetT) {
-    ["analytics","orders","reviews","settings"].forEach(function(t) {
-      var tab = el("tab-" + t);
-      if (tab) tab.classList.add("gone");
-    });
-    var target = el("tab-" + targetT);
-    if (target) target.classList.remove("gone");
-    document.querySelectorAll(".ni").forEach(function(n) { n.classList.remove("act"); });
-    var activeNi = document.querySelector(".ni[data-t='" + targetT + "']");
-    if (activeNi) activeNi.classList.add("act");
-    if (targetT === "orders") loadOrdersTab();
-    if (targetT === "reviews") loadRevAdmin();
-    if (targetT === "analytics") loadAnalytics();
+    ["analytics","orders","reviews","settings"].forEach(function(tt){ var tab=el("tab-"+tt); if(tab) tab.classList.add("gone"); });
+    var target = el("tab-"+targetT); if(target) target.classList.remove("gone");
+    document.querySelectorAll(".ni").forEach(function(n){n.classList.remove("act");});
+    var activeNi = document.querySelector(".ni[data-t='"+targetT+"']");
+    if(activeNi) activeNi.classList.add("act");
+    if(targetT==="orders") loadOrdersTab();
+    if(targetT==="reviews") loadRevAdmin();
+    if(targetT==="analytics") loadAnalytics();
   }
 
-  /* ── ANALYTICS ── */
+  // ── ANALYTICS ──────────────────────────────────────────────────────────────
   function loadAnalytics() {
-    var orders = gOrders();
-    var revs = gRevs();
-    var bs = { Pending:0, Processing:0, Delivered:0, Cancelled:0 };
-    orders.forEach(function(o) { if (bs[o.status] !== undefined) bs[o.status]++; });
-    el("k-tot").innerText = orders.length;
-    el("k-pnd").innerText = bs.Pending;
-    el("k-prc").innerText = bs.Processing;
-    el("k-del").innerText = bs.Delivered;
-    el("k-can").innerText = bs.Cancelled;
-    el("k-rev").innerText = revs.length;
-    var today = new Date().toLocaleDateString("en-GB");
-    var tc = 0;
-    orders.forEach(function(o) { if (o.date === today) tc++; });
-    var t = LANG[el("langSel").value] || LANG.en;
-    el("k-tod").innerHTML = tc ? "<span class='up'><i class='fas fa-arrow-up'></i> " + tc + " today</span>" : "<span>0 today</span>";
-    var ob = el("oBadge");
-    ob.innerText = bs.Pending || "";
-    ob.style.display = bs.Pending ? "" : "none";
-    if (revs.length) {
-      var sum = 0;
-      revs.forEach(function(r) { sum += r.rating; });
-      el("k-avg").innerHTML = "<span><i class='fas fa-star' style='color:var(--ac)'></i> " + (sum / revs.length).toFixed(1) + " avg</span>";
-    }
-    // Charts
-    var days = [], dc = [];
-    for (var i = 6; i >= 0; i--) {
-      var d = new Date(); d.setDate(d.getDate() - i);
-      days.push(d.toLocaleDateString("en-GB", {weekday:"short", day:"numeric"}));
-      var ds = d.toLocaleDateString("en-GB");
-      var cnt = 0;
-      orders.forEach(function(o) { if (o.date === ds) cnt++; });
-      dc.push(cnt);
-    }
-    dBar("ch1", days, dc, "Orders", "#0077b6");
-    dDo("ch2", ["Pending","Processing","Delivered","Cancelled"], [bs.Pending,bs.Processing,bs.Delivered,bs.Cancelled], ["#f59e0b","#3b82f6","#22c55e","#e63946"]);
-    var um = { ASAP:0, Today:0, Tomorrow:0, "This Week":0 };
-    orders.forEach(function(o) { if (um[o.urg] !== undefined) um[o.urg]++; });
-    dBar("ch3", Object.keys(um), Object.values(um), "Orders", "#ffb703");
-    var rm = { 5:0, 4:0, 3:0, 2:0, 1:0 };
-    revs.forEach(function(r) { rm[r.rating] = (rm[r.rating] || 0) + 1; });
-    dBar("ch4", ["5 Stars","4 Stars","3 Stars","2 Stars","1 Star"], [rm[5],rm[4],rm[3],rm[2],rm[1]], "Reviews", "#f59e0b");
-    // Recent
-    var tb = el("recTb"); tb.innerHTML = "";
-    var recent = orders.slice(0, 8);
-    if (!recent.length) { tb.innerHTML = "<tr><td colspan='5'><div class='emp'><i class='fas fa-inbox'></i><p>No orders yet.</p></div></td></tr>"; return; }
-    recent.forEach(function(o) {
-      var tr = document.createElement("tr");
-      tr.innerHTML = "<td><b>" + o.id + "</b><br><small style='color:var(--gr)'>" + o.date + "</small></td><td>" + esc(o.name) + "</td><td style='max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap'>" + esc(o.items.substring(0, 40)) + "...</td><td>" + esc(o.loc) + "</td><td>" + sBadge(o.status) + "</td>";
-      tb.appendChild(tr);
-    });
+    var orders=gOrders(), revs=gRevs();
+    var bs={Pending:0,Processing:0,Delivered:0,Cancelled:0};
+    orders.forEach(function(o){if(bs[o.status]!==undefined)bs[o.status]++;});
+    el("k-tot").innerText=orders.length; el("k-pnd").innerText=bs.Pending;
+    el("k-prc").innerText=bs.Processing; el("k-del").innerText=bs.Delivered;
+    el("k-can").innerText=bs.Cancelled; el("k-rev").innerText=revs.length;
+    el("updTs").innerText="Updated: "+new Date().toLocaleTimeString();
+    var today=new Date().toLocaleDateString("en-GB"), tc=0;
+    orders.forEach(function(o){if(o.date===today)tc++;});
+    el("k-tod").innerHTML=tc?"<span class='up'><i class='fas fa-arrow-up'></i> "+tc+" today</span>":"<span>0 today</span>";
+    var ob=el("oBadge"); ob.innerText=bs.Pending||""; ob.style.display=bs.Pending?"":"none";
+    if(revs.length){var sum=0;revs.forEach(function(r){sum+=r.rating;});el("k-avg").innerHTML="<span><i class='fas fa-star' style='color:var(--ac)'></i> "+(sum/revs.length).toFixed(1)+" avg</span>";}
+    var days=[],dc=[];
+    for(var i=6;i>=0;i--){var d=new Date();d.setDate(d.getDate()-i);days.push(d.toLocaleDateString("en-GB",{weekday:"short",day:"numeric"}));var ds=d.toLocaleDateString("en-GB"),cnt=0;orders.forEach(function(o){if(o.date===ds)cnt++;});dc.push(cnt);}
+    dBar("ch1",days,dc,"Orders","#0077b6");
+    dDo("ch2",["Pending","Processing","Delivered","Cancelled"],[bs.Pending,bs.Processing,bs.Delivered,bs.Cancelled],["#f59e0b","#3b82f6","#22c55e","#e63946"]);
+    var um={ASAP:0,Today:0,Tomorrow:0,"This Week":0};
+    orders.forEach(function(o){if(um[o.urg]!==undefined)um[o.urg]++;});
+    dBar("ch3",Object.keys(um),Object.values(um),"Orders","#ffb703");
+    var rm={5:0,4:0,3:0,2:0,1:0};
+    revs.forEach(function(r){rm[r.rating]=(rm[r.rating]||0)+1;});
+    dBar("ch4",["5 Stars","4 Stars","3 Stars","2 Stars","1 Star"],[rm[5],rm[4],rm[3],rm[2],rm[1]],"Reviews","#f59e0b");
+    var tb=el("recTb"); tb.innerHTML="";
+    var recent=orders.slice(0,8);
+    if(!recent.length){tb.innerHTML="<tr><td colspan='5'><div class='emp'><i class='fas fa-inbox'></i><p>No orders yet.</p></div></td></tr>";return;}
+    recent.forEach(function(o){var tr=document.createElement("tr");tr.innerHTML="<td><b>"+o.id+"</b><br><small style='color:var(--gr)'>"+o.date+"</small></td><td>"+esc(o.name)+"</td><td style='max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap'>"+esc(o.items.substring(0,40))+"...</td><td>"+esc(o.loc)+"</td><td>"+sBadge(o.status)+"</td>";tb.appendChild(tr);});
   }
 
-  /* ── ORDERS TAB ── */
+  // ── ORDERS TAB ─────────────────────────────────────────────────────────────
   function loadOrdersTab() {
-    var filt = (el("fSt").value || "").toLowerCase();
-    var srch = (el("fSr").value || "").toLowerCase();
-    var orders = gOrders();
-    if (filt) orders = orders.filter(function(o) { return o.status.toLowerCase() === filt; });
-    if (srch) orders = orders.filter(function(o) { return (o.name + o.id + o.phone + o.items + o.loc).toLowerCase().indexOf(srch) > -1; });
-    var tb = el("ordTb"); tb.innerHTML = "";
-    if (!orders.length) { tb.innerHTML = "<tr><td colspan='7'><div class='emp'><i class='fas fa-inbox'></i><p>No orders match.</p></div></td></tr>"; return; }
-    orders.forEach(function(o) {
-      var tr = document.createElement("tr");
-      tr.style.cursor = "pointer";
-      var sel = "<select class='ssel " + sCls(o.status) + "' data-id='" + o.id + "' onclick='event.stopPropagation()'><option" + (o.status==="Pending"?" selected":"") + ">Pending</option><option" + (o.status==="Processing"?" selected":"") + ">Processing</option><option" + (o.status==="Delivered"?" selected":"") + ">Delivered</option><option" + (o.status==="Cancelled"?" selected":"") + ">Cancelled</option></select>";
-      tr.innerHTML = "<td><b>" + o.id + "</b><br><small style='color:var(--gr)'>" + o.date + "</small></td><td>" + esc(o.name) + "</td><td><a href='https://wa.me/" + o.phone.replace(/\D/g,"") + "' target='_blank' onclick='event.stopPropagation()'>" + esc(o.phone) + " <i class='fab fa-whatsapp'></i></a></td><td style='max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap'>" + esc(o.items.substring(0,32)) + "...</td><td>" + esc(o.loc) + "</td><td style='text-align:center'>" + (o.photos && o.photos.length ? "<span style='color:var(--pr);font-weight:700;font-size:.82rem'><i class='fas fa-images'></i> " + o.photos.length + "</span>" : "<span style='color:var(--lt)'>—</span>") + "</td><td>" + sel + "</td>";
-      tr.addEventListener("click", function() { openOrderDetail(o.id); });
+    var filt=(el("fSt").value||"").toLowerCase(), srch=(el("fSr").value||"").toLowerCase();
+    var orders=gOrders();
+    if(filt) orders=orders.filter(function(o){return o.status.toLowerCase()===filt;});
+    if(srch) orders=orders.filter(function(o){return(o.name+o.id+o.phone+o.items+o.loc).toLowerCase().indexOf(srch)>-1;});
+    var tb=el("ordTb"); tb.innerHTML="";
+    if(!orders.length){tb.innerHTML="<tr><td colspan='7'><div class='emp'><i class='fas fa-inbox'></i><p>No orders match.</p></div></td></tr>";return;}
+    orders.forEach(function(o){
+      var tr=document.createElement("tr"); tr.style.cursor="pointer";
+      var sel="<select class='ssel "+sCls(o.status)+"' data-id='"+o.id+"' onclick='event.stopPropagation()'><option"+(o.status==="Pending"?" selected":"")+">Pending</option><option"+(o.status==="Processing"?" selected":"")+">Processing</option><option"+(o.status==="Delivered"?" selected":"")+">Delivered</option><option"+(o.status==="Cancelled"?" selected":"")+">Cancelled</option></select>";
+      tr.innerHTML="<td><b>"+o.id+"</b><br><small style='color:var(--gr)'>"+o.date+"</small></td><td>"+esc(o.name)+"</td><td><a href='https://wa.me/"+o.phone.replace(/\D/g,"")+"' target='_blank' onclick='event.stopPropagation()'>"+esc(o.phone)+" <i class='fab fa-whatsapp'></i></a></td><td style='max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap'>"+esc(o.items.substring(0,32))+"...</td><td>"+esc(o.loc)+"</td><td style='text-align:center'>"+(o.photos&&o.photos.length?"<span style='color:var(--pr);font-weight:700;font-size:.82rem'><i class='fas fa-images'></i> "+o.photos.length+"</span>":"<span style='color:var(--lt)'>—</span>")+"</td><td>"+sel+"</td>";
+      tr.addEventListener("click",function(){openOrderDetail(o.id);});
       tb.appendChild(tr);
     });
-    // Attach status change listeners
-    tb.querySelectorAll("select.ssel").forEach(function(s) {
-      s.addEventListener("change", function() {
-        var id = this.getAttribute("data-id");
-        var newStatus = this.value;
-        var orders2 = gOrders();
-        var idx = -1;
-        for (var i = 0; i < orders2.length; i++) { if (orders2[i].id === id) { idx = i; break; } }
-        if (idx > -1) { orders2[idx].status = newStatus; sOrders(orders2); }
-        this.className = "ssel " + sCls(newStatus);
-        loadAnalytics();
+    tb.querySelectorAll("select.ssel").forEach(function(s){
+      s.addEventListener("change",function(){
+        var id=this.getAttribute("data-id"), newStatus=this.value, orders2=gOrders(), idx=-1;
+        for(var i=0;i<orders2.length;i++){if(orders2[i].id===id){idx=i;break;}}
+        if(idx>-1){orders2[idx].status=newStatus;sOrders(orders2);}
+        this.className="ssel "+sCls(newStatus); loadAnalytics();
       });
     });
   }
 
-  /* ── ORDER DETAIL ── */
+  // ── ORDER DETAIL ────────────────────────────────────────────────────────────
   function openOrderDetail(id) {
-    var orders = gOrders();
-    var o = null;
-    var t = LANG[el("langSel").value] || LANG.en;
-    for (var i = 0; i < orders.length; i++) { if (orders[i].id === id) { o = orders[i]; break; } }
-    if (!o) return;
-    el("od-id").innerText = "Order " + o.id;
-    el("od-dt").innerText = "Placed: " + o.date;
-    el("od-wa").onclick = function() { window.open("https://wa.me/" + o.phone.replace(/\D/g,""), "_blank"); };
-    el("od-body").innerHTML =
-      "<div class='odf'><label>" + t.db_th_cl + "</label><p>" + esc(o.name) + "</p></div>" +
-      "<div class='odf'><label>" + t.db_th_ph + "</label><p>" + esc(o.phone) + "</p></div>" +
-      "<div class='odf'><label>" + t.db_th_lo + "</label><p>" + esc(o.loc) + "</p></div>" +
-      "<div class='odf'><label>" + t.rcpt_urg + "</label><p>" + esc(o.urg) + "</p></div>" +
-      "<div class='odf'><label>" + t.rcpt_bud + "</label><p>" + (o.bud || "Not specified") + "</p></div>" +
-      "<div class='odf'><label>Status</label><p>" + sBadge(o.status) + "</p></div>" +
-      "<div class='odf' style='grid-column:span 2'><label>" + t.rcpt_it + "</label><p style='white-space:pre-wrap'>" + esc(o.items) + "</p></div>" +
-      (o.photos && o.photos.length ? (function() {
-        var ph = "<div class='odf ophv'><label>Product Photos (" + o.photos.length + ")</label><div style='display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-top:8px'>";
-        o.photos.forEach(function(p) { ph += "<img src='" + p.data + "' style='width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;border:2px solid var(--lt)'>"; });
-        ph += "</div></div>"; return ph;
-      })() : "");
+    var orders=gOrders(), o=null;
+    for(var i=0;i<orders.length;i++){if(orders[i].id===id){o=orders[i];break;}}
+    if(!o) return;
+    el("od-id").innerText="Order "+o.id;
+    el("od-dt").innerText="Placed: "+o.date;
+    el("od-wa").onclick=function(){window.open("https://wa.me/"+o.phone.replace(/\D/g,""),"_blank");};
+    el("od-body").innerHTML=
+      "<div class='odf'><label>Client</label><p>"+esc(o.name)+"</p></div>"+
+      "<div class='odf'><label>Phone</label><p>"+esc(o.phone)+"</p></div>"+
+      "<div class='odf'><label>Location</label><p>"+esc(o.loc)+"</p></div>"+
+      "<div class='odf'><label>Urgency</label><p>"+esc(o.urg)+"</p></div>"+
+      "<div class='odf'><label>Budget</label><p>"+(o.bud||"Not specified")+"</p></div>"+
+      "<div class='odf'><label>Status</label><p>"+sBadge(o.status)+"</p></div>"+
+      "<div class='odf' style='grid-column:span 2'><label>Shopping List</label><p style='white-space:pre-wrap'>"+esc(o.items)+"</p></div>"+
+      (o.photos&&o.photos.length?(function(){var ph="<div class='odf ophv'><label>Product Photos ("+o.photos.length+")</label><div style='display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-top:8px'>";o.photos.forEach(function(p){ph+="<img src='"+p.data+"' style='width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;border:2px solid var(--lt)'>";});ph+="</div></div>";return ph;})():"");
     openMod("odMod");
   }
 
-  /* ── REVIEWS ADMIN ── */
+  // ── REVIEWS ADMIN ───────────────────────────────────────────────────────────
   function loadRevAdmin() {
-    var revs = gRevs();
-    var tb = el("revTb"); tb.innerHTML = "";
-    if (!revs.length) { tb.innerHTML = "<tr><td colspan='5'><div class='emp'><i class='fas fa-star'></i><p>No reviews yet.</p></div></td></tr>"; return; }
-    revs.forEach(function(rv) {
-      var tr = document.createElement("tr");
-      var stars = "";
-      for (var i = 0; i < rv.rating; i++) stars += "&#9733;";
-      tr.innerHTML = "<td>" + rv.date + "</td><td>" + esc(rv.name) + "</td><td style='color:var(--ac)'>" + stars + "</td><td>" + esc(rv.comment) + "</td><td><button class='btn bd bsm' data-rid='" + rv.id + "'><i class='fas fa-trash'></i></button></td>";
-      tr.querySelector("button").addEventListener("click", function() {
-        var rid = parseInt(this.getAttribute("data-rid"));
-        if (!confirm("Delete this review?")) return;
-        sRevs(gRevs().filter(function(r) { return r.id !== rid; }));
+    var revs=gRevs(), tb=el("revTb"); tb.innerHTML="";
+    if(!revs.length){tb.innerHTML="<tr><td colspan='5'><div class='emp'><i class='fas fa-star'></i><p>No reviews yet.</p></div></td></tr>";return;}
+    revs.forEach(function(rv){
+      var tr=document.createElement("tr"), stars="";
+      for(var i=0;i<rv.rating;i++) stars+="&#9733;";
+      tr.innerHTML="<td>"+rv.date+"</td><td>"+esc(rv.name)+"</td><td style='color:var(--ac)'>"+stars+"</td><td>"+esc(rv.comment)+"</td><td><button class='btn bd bsm' data-rid='"+rv.id+"'><i class='fas fa-trash'></i></button></td>";
+      tr.querySelector("button").addEventListener("click",function(){
+        var rid=parseInt(this.getAttribute("data-rid"));
+        if(!confirm("Delete this review?")) return;
+        sRevs(gRevs().filter(function(r){return r.id!==rid;}));
         loadRevAdmin(); loadRevsPub(); loadAnalytics();
       });
       tb.appendChild(tr);
     });
   }
 
-  /* ── PASSWORD ── */
-  function checkStrength() {
-    var p = el("newP").value;
-    var f = el("stFil"), t = el("stTxt");
-    if (!p) { f.style.width = "0"; t.innerText = ""; return; }
-    var sc = 0;
-    if (p.length >= 6) sc++;
-    if (p.length >= 10) sc++;
-    if (/[A-Z]/.test(p)) sc++;
-    if (/[0-9]/.test(p)) sc++;
-    if (/[^A-Za-z0-9]/.test(p)) sc++;
-    var labels = ["","Weak","Fair","Good","Strong","Very Strong"];
-    var colors = ["","#e63946","#f59e0b","#3b82f6","#22c55e","#16a34a"];
-    f.style.width = (sc * 20) + "%";
-    f.style.background = colors[sc] || colors[1];
-    t.innerText = labels[sc] || "";
-    t.style.color = colors[sc] || colors[1];
+  // ── PASSWORD ────────────────────────────────────────────────────────────────
+  function checkStrength(){
+    var p=el("newP").value, f=el("stFil"), tt=el("stTxt");
+    if(!p){f.style.width="0";tt.innerText="";return;}
+    var sc=0;
+    if(p.length>=6)sc++; if(p.length>=10)sc++;
+    if(/[A-Z]/.test(p))sc++; if(/[0-9]/.test(p))sc++;
+    if(/[^A-Za-z0-9]/.test(p))sc++;
+    var labels=["","Weak","Fair","Good","Strong","Very Strong"];
+    var colors=["","#e63946","#f59e0b","#3b82f6","#22c55e","#16a34a"];
+    f.style.width=(sc*20)+"%"; f.style.background=colors[sc]||colors[1];
+    tt.innerText=labels[sc]||""; tt.style.color=colors[sc]||colors[1];
   }
 
-  function changePwd() {
-    var cur = el("curP").value;
-    var nw = el("newP").value;
-    var cf = el("cfmP").value;
-    var ali = el("pAli");
-    var t = LANG[el("langSel").value] || LANG.en;
-    function show(msg, ok) {
-      ali.className = "ali " + (ok ? "ok" : "er");
-      ali.innerText = msg;
-      ali.style.display = "block";
-      setTimeout(function() { ali.style.display = "none"; }, 4000);
-    }
-    if (cur !== gPass()) { show("Current password is incorrect.", false); return; }
-    if (nw.length < 6) { show("New password must be at least 6 characters.", false); return; }
-    if (nw !== cf) { show("Passwords do not match.", false); return; }
-    localStorage.setItem("jp_pw", nw);
-    show("Password updated successfully!", true);
-    el("curP").value = ""; el("newP").value = ""; el("cfmP").value = "";
-    el("stFil").style.width = "0"; el("stTxt").innerText = "";
+  function changePwd(){
+    var cur=el("curP").value, nw=el("newP").value, cf=el("cfmP").value, ali=el("pAli");
+    function show(msg,ok){ali.className="ali "+(ok?"ok":"er");ali.innerText=msg;ali.style.display="block";setTimeout(function(){ali.style.display="none";},4000);}
+    if(cur!==gPass()){show("Current password is incorrect.",false);return;}
+    if(nw.length<6){show("New password must be at least 6 characters.",false);return;}
+    if(nw!==cf){show("Passwords do not match.",false);return;}
+    localStorage.setItem("jp_pw",nw);
+    show("Password updated successfully!",true);
+    el("curP").value="";el("newP").value="";el("cfmP").value="";
+    el("stFil").style.width="0";el("stTxt").innerText="";
   }
 
-  function clearData() {
-    if (!confirm("DELETE ALL orders and reviews permanently?")) return;
-    if (!confirm("Final warning — this cannot be undone. Continue?")) return;
+  function clearData(){
+    if(!confirm("DELETE ALL orders and reviews permanently?")) return;
+    if(!confirm("Final warning — this cannot be undone. Continue?")) return;
     localStorage.removeItem("jp_ord"); localStorage.removeItem("jp_rev");
-    loadAnalytics(); loadRevsPub();
-    alert("All data cleared.");
+    loadAnalytics(); loadRevsPub(); alert("All data cleared.");
   }
 
-  /* ── CHARTS ── */
-  function dBar(id, labels, data, label, color) {
-    var c = el(id); if (!c) return;
-    if (chts[id]) chts[id].destroy();
-    chts[id] = new Chart(c, {
-      type: "bar",
-      data: { labels: labels, datasets: [{ label: label, data: data, backgroundColor: color + "44", borderColor: color, borderWidth: 2, borderRadius: 6 }] },
-      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { stepSize: 1, color: "#94a3b8", font: { size: 10 } }, grid: { color: "#f1f5f9" } }, x: { ticks: { color: "#94a3b8", font: { size: 10 } }, grid: { display: false } } } }
-    });
+  // ── CHARTS ─────────────────────────────────────────────────────────────────
+  function dBar(id,labels,data,label,color){
+    var c=el(id); if(!c) return;
+    if(chts[id]) chts[id].destroy();
+    chts[id]=new Chart(c,{type:"bar",data:{labels:labels,datasets:[{label:label,data:data,backgroundColor:color+"44",borderColor:color,borderWidth:2,borderRadius:6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{stepSize:1,color:"#94a3b8",font:{size:10}},grid:{color:"#f1f5f9"}},x:{ticks:{color:"#94a3b8",font:{size:10}},grid:{display:false}}}}});
   }
-  function dDo(id, labels, data, colors) {
-    var c = el(id); if (!c) return;
-    if (chts[id]) chts[id].destroy();
-    var tot = data.reduce(function(a, b) { return a + b; }, 0);
-    chts[id] = new Chart(c, {
-      type: "doughnut",
-      data: { labels: labels, datasets: [{ data: data, backgroundColor: colors, borderWidth: 2, borderColor: "#fff" }] },
-      options: {
-        responsive: true, maintainAspectRatio: false, cutout: "62%",
-        plugins: {
-          legend: { position: "bottom", labels: { font: { size: 10 }, color: "#64748b", padding: 10 } },
-          tooltip: { callbacks: { label: function(ctx) { return ctx.label + ": " + ctx.parsed + (tot ? " (" + Math.round(ctx.parsed / tot * 100) + "%)" : ""); } } }
-        }
-      }
-    });
+  function dDo(id,labels,data,colors){
+    var c=el(id); if(!c) return;
+    if(chts[id]) chts[id].destroy();
+    var tot=data.reduce(function(a,b){return a+b;},0);
+    chts[id]=new Chart(c,{type:"doughnut",data:{labels:labels,datasets:[{data:data,backgroundColor:colors,borderWidth:2,borderColor:"#fff"}]},options:{responsive:true,maintainAspectRatio:false,cutout:"62%",plugins:{legend:{position:"bottom",labels:{font:{size:10},color:"#64748b",padding:10}},tooltip:{callbacks:{label:function(ctx){return ctx.label+": "+ctx.parsed+(tot?" ("+Math.round(ctx.parsed/tot*100)+"%)":"");}}}}}});
   }
 
-  /* ── WIRE UP ALL EVENTS ON DOM READY ── */
+  // ── INIT ────────────────────────────────────────────────────────────────────
   document.addEventListener("DOMContentLoaded", function() {
-    if (!localStorage.getItem("jp_pw")) localStorage.setItem("jp_pw", DP);
+    if(!localStorage.getItem("jp_pw")) localStorage.setItem("jp_pw", DP);
 
-    // Initialize Language
-    changeLang();
-
-    // Language change listener
     el("langSel").addEventListener("change", changeLang);
-
-    // Login
     el("loginBtn").addEventListener("click", showLogin);
     el("lBtn").addEventListener("click", doLogin);
-    el("lPw").addEventListener("keydown", function(e) { if (e.key === "Enter") doLogin(); });
-
-    // Logout
+    el("lPw").addEventListener("keydown", function(e){ if(e.key==="Enter") doLogin(); });
     el("logoutBtn").addEventListener("click", doLogout);
-
-    // Submit order
     el("submitBtn").addEventListener("click", submitOrder);
-
-    // Track order
     el("tBtn").addEventListener("click", trackOrder);
-    el("tIn").addEventListener("keydown", function(e) { if (e.key === "Enter") trackOrder(); });
-
-    // Reviews
+    el("tIn").addEventListener("keydown", function(e){ if(e.key==="Enter") trackOrder(); });
     el("revBtn").addEventListener("click", submitRev);
-
-    // Dashboard tabs
-    document.querySelectorAll(".ni[data-t]").forEach(function(ni) {
-      ni.addEventListener("click", function() { switchTab(this.getAttribute("data-t")); });
-    });
-
-    // View all button
-    el("viewAllBtn").addEventListener("click", function() { switchTab("orders"); });
-
-    // Refresh
+    document.querySelectorAll(".ni[data-t]").forEach(function(ni){ ni.addEventListener("click",function(){switchTab(this.getAttribute("data-t"));}); });
+    el("viewAllBtn").addEventListener("click", function(){switchTab("orders");});
     el("refBtn").addEventListener("click", loadAnalytics);
-
-    // Settings
     el("newP").addEventListener("input", checkStrength);
     el("savePwBtn").addEventListener("click", changePwd);
     el("clearBtn").addEventListener("click", clearData);
-
-    // Order filter/search
     el("fSt").addEventListener("change", loadOrdersTab);
     el("fSr").addEventListener("input", loadOrdersTab);
-
-    // Photo upload
     setupPhoto();
-
-    // Close modals on backdrop click
-    document.querySelectorAll(".mo").forEach(function(m) {
-      m.addEventListener("click", function(e) {
-        if (e.target === m) m.classList.remove("on");
-      });
-    });
-
-    // Load reviews
+    document.querySelectorAll(".mo").forEach(function(m){ m.addEventListener("click",function(e){if(e.target===m)m.classList.remove("on");}); });
     loadRevsPub();
   });
 
